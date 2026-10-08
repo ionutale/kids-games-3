@@ -25,6 +25,10 @@ html {
 body {
 	margin: 0;
 	min-height: 100vh;
+	min-height: 100dvh;
+	/* iPhone notch and home indicator stay clear of buttons. */
+	padding-left: env(safe-area-inset-left);
+	padding-right: env(safe-area-inset-right);
 	font-family:
 		ui-rounded,
 		'SF Pro Rounded',
@@ -46,7 +50,26 @@ body {
 .lumi-shell {
 	max-width: 60rem;
 	margin: 0 auto;
-	padding: 1rem 1.25rem 3rem;
+	padding: 1rem 1.25rem calc(3rem + env(safe-area-inset-bottom));
+}
+
+/* Big fingers, no double-tap zoom delay, no grey tap flash. */
+button,
+.answer-btn,
+.btn,
+.help-btn,
+.tool-btn,
+.level-tile,
+.lang-switch a,
+.back-link {
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.back-link {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
 }
 
 .lumi-header {
@@ -541,6 +564,17 @@ a.level-tile:hover {
 	.hero h1 {
 		font-size: 2.3rem;
 	}
+	.lumi-header {
+		gap: 0.5rem;
+		padding: 0.5rem 0;
+	}
+	.brand {
+		font-size: 1.5rem;
+	}
+	.brand img {
+		width: 2rem;
+		height: 2rem;
+	}
 	.prompt {
 		font-size: 1.6rem;
 	}
@@ -552,6 +586,53 @@ a.level-tile:hover {
 	.game-card {
 		flex-direction: column;
 		text-align: center;
+	}
+	/* Keep a full round visible on a phone screen without scrolling. */
+	.card {
+		padding: 1.1rem;
+	}
+	.fruit-board {
+		min-height: 10rem;
+	}
+	.fruit-board.tall {
+		min-height: 15rem;
+	}
+	.fruit-row {
+		min-height: 10rem;
+		padding: 1rem 0.5rem;
+	}
+	.fruit-row svg {
+		width: 3.8rem;
+		height: 3.8rem;
+	}
+	.fruit-spot svg {
+		width: 3.4rem;
+		height: 3.4rem;
+	}
+	.level-path {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.level-tile {
+		min-height: 8rem;
+	}
+}
+
+/* Short phone screens: tighten the tall scatter board so a round fits. */
+@media (max-width: 40rem) and (max-height: 52rem) {
+	.fruit-board.tall {
+		min-height: 11.5rem;
+	}
+	.feedback {
+		min-height: 1.6rem;
+	}
+	.pips {
+		margin: 0.4rem 0 0;
+	}
+	.answers {
+		margin: 0.75rem 0 0;
+	}
+	.hero {
+		margin: 0.75rem 0 1rem;
 	}
 }
 
