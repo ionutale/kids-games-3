@@ -1,0 +1,66 @@
+/**
+ * One child's progress on this device. Storage is injected so the pure
+ * functions stay unit-testable in Node; components pass `localStorage`.
+ */
+
+export const PROGRESS_KEY = 'lumi-progress';
+export const MUTE_KEY = 'lumi-mute';
+
+export interface GameProgress {
+	cleared: number;
+}
+
+export interface Progress {
+	'count-fruit': GameProgress;
+}
+
+export interface KeyValueStorage {
+	getItem(key: string): string | null;
+	setItem(key: string, value: string): void;
+}
+
+export function defaultProgress(): Progress {
+	return { 'count-fruit': { cleared: 0 } };
+}
+
+function sanitizeCleared(value: unknown): number {
+	if (typeof value !== 'number' || !Number.isInteger(value)) return 0;
+	return Math.min(10, Math.max(0, value));
+}
+
+export function loadProgress(storage?: KeyValueStorage | null): Progress {
+	if (!storage) return defaultProgress();
+	try {
+		const raw = storage.getItem(PROGRESS_KEY);
+		if (!raw) return defaultProgress();
+		const parsed: unknown = JSON.parse(raw);
+		if (typeof parsed !== 'object' || parsed === null) return defaultProgress();
+		const game = (parsed as Record<string, unknown>)['count-fruit'];
+		if (typeof game !== 'object' || game === null) return defaultProgress();
+		return {
+			'count-fruit': { cleared: sanitizeCleared((game as Record<string, unknown>).cleared) }
+		};
+	} catch {
+		return defaultProgress();
+	}
+}
+
+export function saveProgress(progress: Progress, storage: KeyValueStorage): void {
+	storage.setItem(PROGRESS_KEY, JSON.stringify(progress));
+}
+
+/** Record a finished level. Returns the new cleared count. */
+export function clearLevel(progress: Progress, level: number): number {
+	const next = Math.max(progress['count-fruit'].cleared, level);
+	progress['count-fruit'].cleared = Math.min(10, next);
+	return progress['count-fruit'].cleared;
+}
+
+export function loadMuted(storage?: KeyValueStorage | null): boolean {
+	if (!storage) return false;
+	return storage.getItem(MUTE_KEY) === '1';
+}
+
+export function saveMuted(muted: boolean, storage: KeyValueStorage): void {
+	storage.setItem(MUTE_KEY, muted ? '1' : '0');
+}
