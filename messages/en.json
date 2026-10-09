@@ -74,5 +74,9 @@
 	"emotion_angry": "angry",
 	"emotion_scared": "scared",
 	"emotion_surprised": "surprised",
-	"emotion_tired": "tired"
+	"emotion_tired": "tired",
+	"letters_name": "First letters",
+	"letters_desc": "What letter does the fruit start with? Tap it.",
+	"letters_prompt": "{word} starts with…?",
+	"letters_hint_look": "Look at the first letter."
 }

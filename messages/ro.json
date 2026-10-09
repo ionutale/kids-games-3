@@ -74,5 +74,9 @@
 	"emotion_angry": "furios",
 	"emotion_scared": "speriat",
 	"emotion_surprised": "surprins",
-	"emotion_tired": "obosit"
+	"emotion_tired": "obosit",
+	"letters_name": "Primele litere",
+	"letters_desc": "Cu ce literă începe fructul? Atinge-o.",
+	"letters_prompt": "{word} începe cu…?",
+	"letters_hint_look": "Uită-te la prima literă."
 }

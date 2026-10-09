@@ -10,12 +10,13 @@ export interface GameProgress {
 	cleared: number;
 }
 
-export type GameId = 'count-fruit' | 'color-shapes' | 'feelings';
+export type GameId = 'count-fruit' | 'color-shapes' | 'feelings' | 'letters';
 
 export interface Progress {
 	'count-fruit': GameProgress;
 	'color-shapes': GameProgress;
 	feelings: GameProgress;
+	letters: GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -27,7 +28,8 @@ export function defaultProgress(): Progress {
 	return {
 		'count-fruit': { cleared: 0 },
 		'color-shapes': { cleared: 0 },
-		feelings: { cleared: 0 }
+		feelings: { cleared: 0 },
+		letters: { cleared: 0 }
 	};
 }
 
@@ -52,7 +54,8 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 		return {
 			'count-fruit': sanitizeGame(games['count-fruit']),
 			'color-shapes': sanitizeGame(games['color-shapes']),
-			feelings: sanitizeGame(games['feelings'])
+			feelings: sanitizeGame(games['feelings']),
+			letters: sanitizeGame(games['letters'])
 		};
 	} catch {
 		return defaultProgress();

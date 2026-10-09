@@ -74,5 +74,9 @@
 	"emotion_angry": "arrabbiato",
 	"emotion_scared": "spaventato",
 	"emotion_surprised": "sorpreso",
-	"emotion_tired": "stanco"
+	"emotion_tired": "stanco",
+	"letters_name": "Le prime lettere",
+	"letters_desc": "Con quale lettera inizia il frutto? Toccala.",
+	"letters_prompt": "{word} inizia con…?",
+	"letters_hint_look": "Guarda la prima lettera."
 }

@@ -504,6 +504,46 @@ a.level-tile:hover {
 	animation: pulse 1s ease-in-out infinite;
 }
 
+/* One big picture for First letters. */
+.showcase {
+	display: flex;
+	justify-content: center;
+	margin: 1rem auto 0;
+	background: #fbf3e3;
+	border: 3px dashed var(--line);
+	border-radius: var(--radius);
+	padding: 1rem;
+	max-width: 22rem;
+}
+
+.showcase svg {
+	width: 7rem;
+	height: 7rem;
+}
+
+.showcase.hint-pulse svg {
+	animation: pulse 1s ease-in-out infinite;
+}
+
+/* Letter tiles on the path and the shelf. */
+.tile-letter {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 800;
+	color: var(--coral);
+}
+
+.level-tile .tile-letter {
+	font-size: 2.6rem;
+}
+
+.game-card .tile-letter {
+	font-size: 3rem;
+	background: #fff3dd;
+	border-radius: 1.25rem;
+}
+
 @keyframes shake {
 	0%,
 	100% {

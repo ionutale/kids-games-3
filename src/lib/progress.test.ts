@@ -24,7 +24,8 @@ describe('progress', () => {
 		expect(defaultProgress()).toEqual({
 			'count-fruit': { cleared: 0 },
 			'color-shapes': { cleared: 0 },
-			feelings: { cleared: 0 }
+			feelings: { cleared: 0 },
+			letters: { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -36,6 +37,7 @@ describe('progress', () => {
 		expect(clearLevel(progress, 'count-fruit', 1)).toBe(1);
 		expect(clearLevel(progress, 'color-shapes', 3)).toBe(3);
 		expect(clearLevel(progress, 'feelings', 2)).toBe(2);
+		expect(clearLevel(progress, 'letters', 4)).toBe(4);
 		expect(progress['count-fruit'].cleared).toBe(1);
 	});
 
@@ -47,7 +49,8 @@ describe('progress', () => {
 		expect(loadProgress(storage)).toEqual({
 			'count-fruit': { cleared: 2 },
 			'color-shapes': { cleared: 0 },
-			feelings: { cleared: 0 }
+			feelings: { cleared: 0 },
+			letters: { cleared: 0 }
 		});
 	});
 
@@ -63,7 +66,8 @@ describe('progress', () => {
 		).toEqual({
 			'count-fruit': { cleared: 10 },
 			'color-shapes': { cleared: 0 },
-			feelings: { cleared: 0 }
+			feelings: { cleared: 0 },
+			letters: { cleared: 0 }
 		});
 	});
 });
