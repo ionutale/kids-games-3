@@ -124,5 +124,9 @@
 	"memory_name": "Memory",
 	"memory_desc": "Flip two cards that match.",
 	"memory_prompt": "Find the pairs.",
-	"memory_hint": "Look carefully, then try again."
+	"memory_hint": "Look carefully, then try again.",
+	"odd_name": "Odd one out",
+	"odd_desc": "Four pictures. Tap the one that is different.",
+	"odd_prompt": "Which one is different?",
+	"odd_hint": "Three are the same. Find the other one."
 }

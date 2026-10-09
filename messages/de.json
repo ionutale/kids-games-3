@@ -124,5 +124,9 @@
 	"memory_name": "Memory",
 	"memory_desc": "Dreh zwei gleiche Karten um.",
 	"memory_prompt": "Finde die Paare.",
-	"memory_hint": "Schau genau hin, dann versuch es nochmal."
+	"memory_hint": "Schau genau hin, dann versuch es nochmal.",
+	"odd_name": "Was ist anders?",
+	"odd_desc": "Vier Bilder. Tippe das an, das anders ist.",
+	"odd_prompt": "Welches ist anders?",
+	"odd_hint": "Drei sind gleich. Finde das andere."
 }

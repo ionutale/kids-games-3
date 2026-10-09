@@ -124,5 +124,9 @@
 	"memory_name": "Memorie",
 	"memory_desc": "Întoarce două cărți la fel.",
 	"memory_prompt": "Găsește perechile.",
-	"memory_hint": "Uită-te bine, apoi mai încearcă."
+	"memory_hint": "Uită-te bine, apoi mai încearcă.",
+	"odd_name": "Care e diferit",
+	"odd_desc": "Patru imagini. Atinge-o pe cea diferită.",
+	"odd_prompt": "Care e diferit?",
+	"odd_hint": "Trei sunt la fel. Găsește-l pe celălalt."
 }

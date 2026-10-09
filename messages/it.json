@@ -124,5 +124,9 @@
 	"memory_name": "Memoria",
 	"memory_desc": "Gira due carte uguali.",
 	"memory_prompt": "Trova le coppie.",
-	"memory_hint": "Guarda bene, poi riprova."
+	"memory_hint": "Guarda bene, poi riprova.",
+	"odd_name": "Quello diverso",
+	"odd_desc": "Quattro figure. Tocca quella diversa.",
+	"odd_prompt": "Qual è diverso?",
+	"odd_hint": "Tre sono uguali. Trova l'altro."
 }

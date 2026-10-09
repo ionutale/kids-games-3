@@ -588,6 +588,18 @@ a.level-tile:hover {
 	flex-wrap: wrap;
 }
 
+.answers.quad {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	max-width: 22rem;
+	margin-inline: auto;
+}
+
+.answers.quad .figure-btn {
+	width: 100%;
+	min-width: 0;
+}
+
 .answer-btn {
 	border: 3px solid var(--line);
 	background: var(--card);
