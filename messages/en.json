@@ -133,5 +133,21 @@
 	"more_desc": "Two groups of fruit. Tap the one with more, or the one with fewer.",
 	"more_prompt": "Which group has more?",
 	"more_less_prompt": "Which group has fewer?",
-	"more_hint": "Count each group."
+	"more_hint": "Count each group.",
+	"opp_name": "Opposites",
+	"opp_desc": "See one picture. Tap the opposite.",
+	"opp_prompt": "Tap the opposite.",
+	"opp_hint": "Think of the other one. Happy and sad, big and small.",
+	"opp_big": "big",
+	"opp_mid": "medium",
+	"opp_small": "small",
+	"opp_sun": "sun",
+	"opp_moon": "moon",
+	"opp_cloud": "cloud",
+	"opp_star": "star",
+	"opp_rainbow": "rainbow",
+	"opp_up": "up",
+	"opp_down": "down",
+	"opp_side": "sideways",
+	"opp_left": "left"
 }

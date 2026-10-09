@@ -779,6 +779,49 @@ a.level-tile:hover {
 	cursor: default;
 }
 
+.opp-size {
+	display: grid;
+	place-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.opp-size.big svg {
+	width: 4.8rem;
+	height: 4.8rem;
+}
+
+.opp-size.mid svg {
+	width: 3rem;
+	height: 3rem;
+}
+
+.opp-size.small svg {
+	width: 1.7rem;
+	height: 1.7rem;
+}
+
+.opp-tight .opp-size.big svg {
+	width: 4.2rem;
+	height: 4.2rem;
+}
+
+.opp-tight .opp-size.mid svg {
+	width: 3.3rem;
+	height: 3.3rem;
+}
+
+.opp-tight .opp-size.small svg {
+	width: 2.4rem;
+	height: 2.4rem;
+}
+
+.showcase .opp-size.big svg,
+.showcase .opp-size.small svg {
+	width: 6rem;
+	height: 6rem;
+}
+
 .sum-row.equation .pile svg {
 	width: 2.5rem;
 	height: 2.5rem;

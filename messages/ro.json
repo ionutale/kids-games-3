@@ -133,5 +133,21 @@
 	"more_desc": "Două grupuri de fructe. Atinge-l pe cel cu mai multe, sau pe cel cu mai puține.",
 	"more_prompt": "Care grup are mai multe?",
 	"more_less_prompt": "Care grup are mai puține?",
-	"more_hint": "Numără fiecare grup."
+	"more_hint": "Numără fiecare grup.",
+	"opp_name": "Contrarii",
+	"opp_desc": "Vezi o imagine. Atinge contrariul.",
+	"opp_prompt": "Atinge contrariul.",
+	"opp_hint": "Gândește-te la celălalt. Vesel și trist, mare și mic.",
+	"opp_big": "mare",
+	"opp_mid": "mediu",
+	"opp_small": "mic",
+	"opp_sun": "soare",
+	"opp_moon": "lună",
+	"opp_cloud": "nor",
+	"opp_star": "stea",
+	"opp_rainbow": "curcubeu",
+	"opp_up": "sus",
+	"opp_down": "jos",
+	"opp_side": "într-o parte",
+	"opp_left": "stânga"
 }

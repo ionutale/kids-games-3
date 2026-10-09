@@ -133,5 +133,21 @@
 	"more_desc": "Due gruppi di frutta. Tocca quello con più, o quello con meno.",
 	"more_prompt": "Quale gruppo ha più frutta?",
 	"more_less_prompt": "Quale gruppo ha meno frutta?",
-	"more_hint": "Conta ogni gruppo."
+	"more_hint": "Conta ogni gruppo.",
+	"opp_name": "Contrari",
+	"opp_desc": "Vedi una figura. Tocca il contrario.",
+	"opp_prompt": "Tocca il contrario.",
+	"opp_hint": "Pensa all'altro. Felice e triste, grande e piccolo.",
+	"opp_big": "grande",
+	"opp_mid": "medio",
+	"opp_small": "piccolo",
+	"opp_sun": "sole",
+	"opp_moon": "luna",
+	"opp_cloud": "nuvola",
+	"opp_star": "stella",
+	"opp_rainbow": "arcobaleno",
+	"opp_up": "su",
+	"opp_down": "giù",
+	"opp_side": "di lato",
+	"opp_left": "a sinistra"
 }

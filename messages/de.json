@@ -133,5 +133,21 @@
 	"more_desc": "Zwei Gruppen Obst. Tippe die mit mehr, oder die mit weniger.",
 	"more_prompt": "Welche Gruppe hat mehr?",
 	"more_less_prompt": "Welche Gruppe hat weniger?",
-	"more_hint": "Zähle jede Gruppe."
+	"more_hint": "Zähle jede Gruppe.",
+	"opp_name": "Gegenteile",
+	"opp_desc": "Sieh ein Bild. Tippe das Gegenteil an.",
+	"opp_prompt": "Tippe das Gegenteil an.",
+	"opp_hint": "Denk an das andere. Fröhlich und traurig, groß und klein.",
+	"opp_big": "groß",
+	"opp_mid": "mittel",
+	"opp_small": "klein",
+	"opp_sun": "Sonne",
+	"opp_moon": "Mond",
+	"opp_cloud": "Wolke",
+	"opp_star": "Stern",
+	"opp_rainbow": "Regenbogen",
+	"opp_up": "oben",
+	"opp_down": "unten",
+	"opp_side": "seitwärts",
+	"opp_left": "links"
 }
