@@ -12,12 +12,14 @@
 	let clearedShapes = $state(0);
 	let clearedFeelings = $state(0);
 	let clearedLetters = $state(0);
+	let clearedAdding = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
 	const shapesHref = $derived(localizeHref('/play/color-shapes', { locale }));
 	const feelingsHref = $derived(localizeHref('/play/feelings', { locale }));
 	const lettersHref = $derived(localizeHref('/play/letters', { locale }));
+	const addingHref = $derived(localizeHref('/play/adding', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -25,6 +27,7 @@
 		clearedShapes = progress['color-shapes'].cleared;
 		clearedFeelings = progress['feelings'].cleared;
 		clearedLetters = progress['letters'].cleared;
+		clearedAdding = progress['adding'].cleared;
 	});
 </script>
 
@@ -90,6 +93,20 @@
 		<div class="row">
 			<a class="btn" href={lettersHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedLetters })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.adding_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<FruitArt fruit="apple" happy={true} />
+	</div>
+	<div>
+		<h2>{m.adding_name()}</h2>
+		<p>{m.adding_desc()}</p>
+		<div class="row">
+			<a class="btn" href={addingHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedAdding })}</span>
 		</div>
 	</div>
 </section>

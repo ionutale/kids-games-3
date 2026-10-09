@@ -544,6 +544,42 @@ a.level-tile:hover {
 	border-radius: 1.25rem;
 }
 
+.sum-row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+	margin: 1rem auto 0;
+	background: #fbf3e3;
+	border: 3px dashed var(--line);
+	border-radius: var(--radius);
+	padding: 0.75rem;
+}
+
+.pile {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.25rem;
+	max-width: 11rem;
+}
+
+.pile svg {
+	width: 3.2rem;
+	height: 3.2rem;
+}
+
+.sum-plus {
+	font-size: 2.4rem;
+	font-weight: 800;
+	color: var(--coral);
+}
+
+.sum-row.hint-pulse .pile svg {
+	animation: pulse 1s ease-in-out infinite;
+}
+
 @keyframes shake {
 	0%,
 	100% {

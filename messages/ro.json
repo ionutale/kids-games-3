@@ -78,5 +78,8 @@
 	"letters_name": "Primele litere",
 	"letters_desc": "Cu ce literă începe fructul? Atinge-o.",
 	"letters_prompt": "{word} începe cu…?",
-	"letters_hint_look": "Uită-te la prima literă."
+	"letters_hint_look": "Uită-te la prima literă.",
+	"adding_name": "Adună fructele",
+	"adding_desc": "Două grupe de fructe. Atinge câte sunt împreună.",
+	"adding_hint_count": "Numără o grupă, apoi pe cealaltă."
 }

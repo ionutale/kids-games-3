@@ -78,5 +78,8 @@
 	"letters_name": "First letters",
 	"letters_desc": "What letter does the fruit start with? Tap it.",
 	"letters_prompt": "{word} starts with…?",
-	"letters_hint_look": "Look at the first letter."
+	"letters_hint_look": "Look at the first letter.",
+	"adding_name": "Add the fruit",
+	"adding_desc": "Two groups of fruit. Tap how many there are together.",
+	"adding_hint_count": "Count one group, then the other."
 }

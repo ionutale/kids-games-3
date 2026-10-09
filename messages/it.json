@@ -78,5 +78,8 @@
 	"letters_name": "Le prime lettere",
 	"letters_desc": "Con quale lettera inizia il frutto? Toccala.",
 	"letters_prompt": "{word} inizia con…?",
-	"letters_hint_look": "Guarda la prima lettera."
+	"letters_hint_look": "Guarda la prima lettera.",
+	"adding_name": "Somma la frutta",
+	"adding_desc": "Due gruppi di frutta. Tocca quanti sono insieme.",
+	"adding_hint_count": "Conta un gruppo, poi l'altro."
 }

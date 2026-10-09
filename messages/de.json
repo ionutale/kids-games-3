@@ -78,5 +78,8 @@
 	"letters_name": "Erste Buchstaben",
 	"letters_desc": "Mit welchem Buchstaben beginnt die Frucht? Tippe ihn an.",
 	"letters_prompt": "{word} beginnt mit…?",
-	"letters_hint_look": "Schau dir den ersten Buchstaben an."
+	"letters_hint_look": "Schau dir den ersten Buchstaben an.",
+	"adding_name": "Zähle zusammen",
+	"adding_desc": "Zwei Gruppen Obst. Tippe, wie viele es zusammen sind.",
+	"adding_hint_count": "Zähle eine Gruppe, dann die andere."
 }
