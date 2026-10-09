@@ -81,5 +81,16 @@
 	"letters_hint_look": "Look at the first letter.",
 	"adding_name": "Add the fruit",
 	"adding_desc": "Two groups of fruit. Tap how many there are together.",
-	"adding_hint_count": "Count one group, then the other."
+	"adding_hint_count": "Count one group, then the other.",
+	"wash_name": "Wash your hands",
+	"wash_desc": "Tap the steps in the right order.",
+	"wash_prompt": "What comes next?",
+	"wash_hint_first": "Start with clean water.",
+	"wash_hint_next": "Think what comes after that.",
+	"step_wet": "Wet",
+	"step_soap": "Soap",
+	"step_rub": "Rub",
+	"step_fingers": "Fingers",
+	"step_rinse": "Rinse",
+	"step_dry": "Dry"
 }

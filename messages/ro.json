@@ -81,5 +81,16 @@
 	"letters_hint_look": "Uită-te la prima literă.",
 	"adding_name": "Adună fructele",
 	"adding_desc": "Două grupe de fructe. Atinge câte sunt împreună.",
-	"adding_hint_count": "Numără o grupă, apoi pe cealaltă."
+	"adding_hint_count": "Numără o grupă, apoi pe cealaltă.",
+	"wash_name": "Spală-te pe mâini",
+	"wash_desc": "Atinge pașii în ordinea corectă.",
+	"wash_prompt": "Ce urmează?",
+	"wash_hint_first": "Începe cu apa.",
+	"wash_hint_next": "Gândește-te ce urmează.",
+	"step_wet": "Apă",
+	"step_soap": "Săpun",
+	"step_rub": "Freacă",
+	"step_fingers": "Degete",
+	"step_rinse": "Clătește",
+	"step_dry": "Șterge"
 }

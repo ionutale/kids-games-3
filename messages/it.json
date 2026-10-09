@@ -81,5 +81,16 @@
 	"letters_hint_look": "Guarda la prima lettera.",
 	"adding_name": "Somma la frutta",
 	"adding_desc": "Due gruppi di frutta. Tocca quanti sono insieme.",
-	"adding_hint_count": "Conta un gruppo, poi l'altro."
+	"adding_hint_count": "Conta un gruppo, poi l'altro.",
+	"wash_name": "Lavati le mani",
+	"wash_desc": "Tocca i passi nell'ordine giusto.",
+	"wash_prompt": "Cosa viene dopo?",
+	"wash_hint_first": "Si comincia con l'acqua.",
+	"wash_hint_next": "Pensa a cosa viene dopo.",
+	"step_wet": "Acqua",
+	"step_soap": "Sapone",
+	"step_rub": "Strofina",
+	"step_fingers": "Dita",
+	"step_rinse": "Risciacqua",
+	"step_dry": "Asciuga"
 }

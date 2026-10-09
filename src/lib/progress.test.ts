@@ -26,7 +26,8 @@ describe('progress', () => {
 			'color-shapes': { cleared: 0 },
 			feelings: { cleared: 0 },
 			letters: { cleared: 0 },
-			adding: { cleared: 0 }
+			adding: { cleared: 0 },
+			'wash-hands': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -40,6 +41,7 @@ describe('progress', () => {
 		expect(clearLevel(progress, 'feelings', 2)).toBe(2);
 		expect(clearLevel(progress, 'letters', 4)).toBe(4);
 		expect(clearLevel(progress, 'adding', 5)).toBe(5);
+		expect(clearLevel(progress, 'wash-hands', 2)).toBe(2);
 		expect(progress['count-fruit'].cleared).toBe(1);
 	});
 
@@ -53,7 +55,8 @@ describe('progress', () => {
 			'color-shapes': { cleared: 0 },
 			feelings: { cleared: 0 },
 			letters: { cleared: 0 },
-			adding: { cleared: 0 }
+			adding: { cleared: 0 },
+			'wash-hands': { cleared: 0 }
 		});
 	});
 
@@ -71,7 +74,8 @@ describe('progress', () => {
 			'color-shapes': { cleared: 0 },
 			feelings: { cleared: 0 },
 			letters: { cleared: 0 },
-			adding: { cleared: 0 }
+			adding: { cleared: 0 },
+			'wash-hands': { cleared: 0 }
 		});
 	});
 });
