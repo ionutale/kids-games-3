@@ -184,5 +184,9 @@
 	"sides_name": "How many sides?",
 	"sides_desc": "See a shape. Tap how many sides it has.",
 	"sides_prompt": "How many sides?",
-	"sides_hint": "Count the straight edges."
+	"sides_hint": "Count the straight edges.",
+	"shp_name": "Shape pattern",
+	"shp_desc": "Shapes in a row. Tap the shape that comes next.",
+	"shp_prompt": "Which shape comes next?",
+	"shp_hint": "The shapes repeat. Look back at the start."
 }

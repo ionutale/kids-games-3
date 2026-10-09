@@ -41,7 +41,8 @@ describe('progress', () => {
 			position: { cleared: 0 },
 			'match-count': { cleared: 0 },
 			pattern: { cleared: 0 },
-			sides: { cleared: 0 }
+			sides: { cleared: 0 },
+			'shape-pattern': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -70,6 +71,7 @@ describe('progress', () => {
 		expect(clearLevel(progress, 'match-count', 1)).toBe(1);
 		expect(clearLevel(progress, 'pattern', 1)).toBe(1);
 		expect(clearLevel(progress, 'sides', 1)).toBe(1);
+		expect(clearLevel(progress, 'shape-pattern', 1)).toBe(1);
 		expect(progress['count-fruit'].cleared).toBe(1);
 	});
 
@@ -98,7 +100,8 @@ describe('progress', () => {
 			position: { cleared: 0 },
 			'match-count': { cleared: 0 },
 			pattern: { cleared: 0 },
-			sides: { cleared: 0 }
+			sides: { cleared: 0 },
+			'shape-pattern': { cleared: 0 }
 		});
 	});
 
@@ -131,7 +134,8 @@ describe('progress', () => {
 			position: { cleared: 0 },
 			'match-count': { cleared: 0 },
 			pattern: { cleared: 0 },
-			sides: { cleared: 0 }
+			sides: { cleared: 0 },
+			'shape-pattern': { cleared: 0 }
 		});
 	});
 });

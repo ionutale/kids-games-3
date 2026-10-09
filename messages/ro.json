@@ -184,5 +184,9 @@
 	"sides_name": "Câte laturi?",
 	"sides_desc": "Vezi o formă. Atinge câte laturi are.",
 	"sides_prompt": "Câte laturi?",
-	"sides_hint": "Numără laturile drepte."
+	"sides_hint": "Numără laturile drepte.",
+	"shp_name": "Forma următoare",
+	"shp_desc": "Forme la rând. Atinge forma care urmează.",
+	"shp_prompt": "Care formă urmează?",
+	"shp_hint": "Formele se repetă. Uită-te la început."
 }

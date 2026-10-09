@@ -184,5 +184,9 @@
 	"sides_name": "Quanti lati?",
 	"sides_desc": "Vedi una forma. Tocca quanti lati ha.",
 	"sides_prompt": "Quanti lati?",
-	"sides_hint": "Conta i lati dritti."
+	"sides_hint": "Conta i lati dritti.",
+	"shp_name": "La forma dopo",
+	"shp_desc": "Forme in fila. Tocca la forma che viene dopo.",
+	"shp_prompt": "Quale forma viene dopo?",
+	"shp_hint": "Le forme si ripetono. Guarda l'inizio."
 }
