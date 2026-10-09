@@ -149,5 +149,9 @@
 	"opp_up": "su",
 	"opp_down": "giù",
 	"opp_side": "di lato",
-	"opp_left": "a sinistra"
+	"opp_left": "a sinistra",
+	"read_name": "Leggi la parola",
+	"read_desc": "Vedi la parola. Tocca la figura giusta.",
+	"read_tap": "Tocca la figura.",
+	"read_hint": "Leggi la parola, poi trova la figura."
 }

@@ -149,5 +149,9 @@
 	"opp_up": "up",
 	"opp_down": "down",
 	"opp_side": "sideways",
-	"opp_left": "left"
+	"opp_left": "left",
+	"read_name": "Read the word",
+	"read_desc": "See the word. Tap the matching picture.",
+	"read_tap": "Tap the picture.",
+	"read_hint": "Read the word, then find the picture."
 }

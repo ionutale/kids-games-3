@@ -149,5 +149,9 @@
 	"opp_up": "sus",
 	"opp_down": "jos",
 	"opp_side": "într-o parte",
-	"opp_left": "stânga"
+	"opp_left": "stânga",
+	"read_name": "Citește cuvântul",
+	"read_desc": "Vezi cuvântul. Atinge imaginea potrivită.",
+	"read_tap": "Atinge imaginea.",
+	"read_hint": "Citește cuvântul, apoi găsește imaginea."
 }

@@ -34,7 +34,8 @@ describe('progress', () => {
 			memory: { cleared: 0 },
 			'odd-one': { cleared: 0 },
 			'more-less': { cleared: 0 },
-			opposites: { cleared: 0 }
+			opposites: { cleared: 0 },
+			'read-word': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -56,6 +57,7 @@ describe('progress', () => {
 		expect(clearLevel(progress, 'odd-one', 1)).toBe(1);
 		expect(clearLevel(progress, 'more-less', 1)).toBe(1);
 		expect(clearLevel(progress, 'opposites', 1)).toBe(1);
+		expect(clearLevel(progress, 'read-word', 1)).toBe(1);
 		expect(progress['count-fruit'].cleared).toBe(1);
 	});
 
@@ -77,7 +79,8 @@ describe('progress', () => {
 			memory: { cleared: 0 },
 			'odd-one': { cleared: 0 },
 			'more-less': { cleared: 0 },
-			opposites: { cleared: 0 }
+			opposites: { cleared: 0 },
+			'read-word': { cleared: 0 }
 		});
 	});
 
@@ -103,7 +106,8 @@ describe('progress', () => {
 			memory: { cleared: 0 },
 			'odd-one': { cleared: 0 },
 			'more-less': { cleared: 0 },
-			opposites: { cleared: 0 }
+			opposites: { cleared: 0 },
+			'read-word': { cleared: 0 }
 		});
 	});
 });
