@@ -176,5 +176,9 @@
 	"match_name": "Uguale al numero",
 	"match_desc": "Vedi un numero. Tocca il gruppo con tanti frutti.",
 	"match_tap": "Tocca il gruppo.",
-	"match_hint": "Conta la frutta in ogni gruppo."
+	"match_hint": "Conta la frutta in ogni gruppo.",
+	"pat_name": "Cosa viene dopo?",
+	"pat_desc": "Colori in fila. Tocca il colore che viene dopo.",
+	"pat_prompt": "Cosa viene dopo?",
+	"pat_hint": "I colori si ripetono. Guarda l'inizio."
 }

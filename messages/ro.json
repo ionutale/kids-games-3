@@ -176,5 +176,9 @@
 	"match_name": "La fel cu numărul",
 	"match_desc": "Vezi un număr. Atinge grupul cu atâtea fructe.",
 	"match_tap": "Atinge grupul.",
-	"match_hint": "Numără fructele din fiecare grup."
+	"match_hint": "Numără fructele din fiecare grup.",
+	"pat_name": "Ce urmează?",
+	"pat_desc": "Culori la rând. Atinge culoarea care urmează.",
+	"pat_prompt": "Ce urmează?",
+	"pat_hint": "Culorile se repetă. Uită-te la început."
 }

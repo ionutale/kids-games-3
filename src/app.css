@@ -947,6 +947,46 @@ a.level-tile:hover {
 	margin-inline: auto;
 }
 
+.pattern-row {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	margin-top: 1rem;
+}
+
+.pattern-spot {
+	width: 3.1rem;
+	height: 3.1rem;
+	display: grid;
+	place-items: center;
+}
+
+.pattern-spot svg {
+	width: 100%;
+	height: 100%;
+}
+
+.pattern-spot.blank {
+	border: 3px dashed var(--line);
+	border-radius: 1rem;
+	color: var(--honey);
+	font-weight: 800;
+	font-size: 1.6rem;
+	background: #fffdf8;
+}
+
+.pattern-row.hint-pulse .blank {
+	animation: pulse 1s ease-in-out infinite;
+}
+
+@media (max-width: 40rem) {
+	.pattern-spot {
+		width: 2.35rem;
+		height: 2.35rem;
+	}
+}
+
 .sum-row.equation .pile svg {
 	width: 2.5rem;
 	height: 2.5rem;
@@ -1266,6 +1306,7 @@ a.level-tile:hover {
 	.missing-row.hint-pulse .missing-blank,
 	.position-row .glow,
 	.position-row .shake,
+	.pattern-row.hint-pulse .blank,
 	.wash-hand,
 	.wash-drop,
 	.wash-bubble,

@@ -176,5 +176,9 @@
 	"match_name": "Gleich die Zahl",
 	"match_desc": "Sieh eine Zahl. Tippe die Gruppe mit genauso viel Obst.",
 	"match_tap": "Tippe die Gruppe.",
-	"match_hint": "Zähle das Obst in jeder Gruppe."
+	"match_hint": "Zähle das Obst in jeder Gruppe.",
+	"pat_name": "Was kommt danach?",
+	"pat_desc": "Farben in einer Reihe. Tippe die nächste Farbe.",
+	"pat_prompt": "Was kommt danach?",
+	"pat_hint": "Die Farben wiederholen sich. Schau nach vorn."
 }

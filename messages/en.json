@@ -176,5 +176,9 @@
 	"match_name": "Match the number",
 	"match_desc": "See a number. Tap the pile with that many fruit.",
 	"match_tap": "Tap the pile.",
-	"match_hint": "Count the fruit in each pile."
+	"match_hint": "Count the fruit in each pile.",
+	"pat_name": "What comes next?",
+	"pat_desc": "Colors in a row. Tap the color that comes next.",
+	"pat_prompt": "What comes next?",
+	"pat_hint": "The colors repeat. Look back at the start."
 }

@@ -29,6 +29,7 @@
 	let clearedMiss = $state(0);
 	let clearedPos = $state(0);
 	let clearedMatch = $state(0);
+	let clearedPat = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -49,6 +50,7 @@
 	const missHref = $derived(localizeHref('/play/missing', { locale }));
 	const posHref = $derived(localizeHref('/play/position', { locale }));
 	const matchHref = $derived(localizeHref('/play/match-count', { locale }));
+	const patHref = $derived(localizeHref('/play/pattern', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -70,6 +72,7 @@
 		clearedMiss = progress['missing'].cleared;
 		clearedPos = progress['position'].cleared;
 		clearedMatch = progress['match-count'].cleared;
+		clearedPat = progress['pattern'].cleared;
 	});
 </script>
 
@@ -331,6 +334,20 @@
 		<div class="row">
 			<a class="btn" href={matchHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedMatch })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.pat_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<ShapeArt shape="circle" color="red" />
+	</div>
+	<div>
+		<h2>{m.pat_name()}</h2>
+		<p>{m.pat_desc()}</p>
+		<div class="row">
+			<a class="btn" href={patHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedPat })}</span>
 		</div>
 	</div>
 </section>
