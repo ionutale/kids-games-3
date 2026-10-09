@@ -180,5 +180,9 @@
 	"pat_name": "Cosa viene dopo?",
 	"pat_desc": "Colori in fila. Tocca il colore che viene dopo.",
 	"pat_prompt": "Cosa viene dopo?",
-	"pat_hint": "I colori si ripetono. Guarda l'inizio."
+	"pat_hint": "I colori si ripetono. Guarda l'inizio.",
+	"sides_name": "Quanti lati?",
+	"sides_desc": "Vedi una forma. Tocca quanti lati ha.",
+	"sides_prompt": "Quanti lati?",
+	"sides_hint": "Conta i lati dritti."
 }

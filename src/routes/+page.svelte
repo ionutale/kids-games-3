@@ -5,6 +5,7 @@
 	import { loadProgress } from '#lib/progress.js';
 	import FruitArt from '#lib/components/FruitArt.svelte';
 	import ShapeArt from '#lib/components/ShapeArt.svelte';
+	import SidesArt from '#lib/components/SidesArt.svelte';
 	import BunnyFace from '#lib/components/BunnyFace.svelte';
 	import StepArt from '#lib/components/StepArt.svelte';
 	import BrushArt from '#lib/components/BrushArt.svelte';
@@ -30,6 +31,7 @@
 	let clearedPos = $state(0);
 	let clearedMatch = $state(0);
 	let clearedPat = $state(0);
+	let clearedSides = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -51,6 +53,7 @@
 	const posHref = $derived(localizeHref('/play/position', { locale }));
 	const matchHref = $derived(localizeHref('/play/match-count', { locale }));
 	const patHref = $derived(localizeHref('/play/pattern', { locale }));
+	const sidesHref = $derived(localizeHref('/play/sides', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -73,6 +76,7 @@
 		clearedPos = progress['position'].cleared;
 		clearedMatch = progress['match-count'].cleared;
 		clearedPat = progress['pattern'].cleared;
+		clearedSides = progress['sides'].cleared;
 	});
 </script>
 
@@ -348,6 +352,20 @@
 		<div class="row">
 			<a class="btn" href={patHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedPat })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.sides_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<SidesArt shape="triangle" />
+	</div>
+	<div>
+		<h2>{m.sides_name()}</h2>
+		<p>{m.sides_desc()}</p>
+		<div class="row">
+			<a class="btn" href={sidesHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedSides })}</span>
 		</div>
 	</div>
 </section>

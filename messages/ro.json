@@ -180,5 +180,9 @@
 	"pat_name": "Ce urmează?",
 	"pat_desc": "Culori la rând. Atinge culoarea care urmează.",
 	"pat_prompt": "Ce urmează?",
-	"pat_hint": "Culorile se repetă. Uită-te la început."
+	"pat_hint": "Culorile se repetă. Uită-te la început.",
+	"sides_name": "Câte laturi?",
+	"sides_desc": "Vezi o formă. Atinge câte laturi are.",
+	"sides_prompt": "Câte laturi?",
+	"sides_hint": "Numără laturile drepte."
 }

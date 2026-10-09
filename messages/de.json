@@ -180,5 +180,9 @@
 	"pat_name": "Was kommt danach?",
 	"pat_desc": "Farben in einer Reihe. Tippe die nächste Farbe.",
 	"pat_prompt": "Was kommt danach?",
-	"pat_hint": "Die Farben wiederholen sich. Schau nach vorn."
+	"pat_hint": "Die Farben wiederholen sich. Schau nach vorn.",
+	"sides_name": "Wie viele Seiten?",
+	"sides_desc": "Sieh eine Form. Tippe, wie viele Seiten sie hat.",
+	"sides_prompt": "Wie viele Seiten?",
+	"sides_hint": "Zähle die geraden Kanten."
 }

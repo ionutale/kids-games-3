@@ -180,5 +180,9 @@
 	"pat_name": "What comes next?",
 	"pat_desc": "Colors in a row. Tap the color that comes next.",
 	"pat_prompt": "What comes next?",
-	"pat_hint": "The colors repeat. Look back at the start."
+	"pat_hint": "The colors repeat. Look back at the start.",
+	"sides_name": "How many sides?",
+	"sides_desc": "See a shape. Tap how many sides it has.",
+	"sides_prompt": "How many sides?",
+	"sides_hint": "Count the straight edges."
 }
