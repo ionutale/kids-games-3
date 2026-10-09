@@ -157,5 +157,9 @@
 	"order_name": "Dal piccolo al grande",
 	"order_desc": "Tre gruppi di frutta. Toccali dal meno al più.",
 	"order_prompt": "Tocca prima il gruppo più piccolo.",
-	"order_hint": "Conta ogni gruppo. Comincia da quello che ne ha meno."
+	"order_hint": "Conta ogni gruppo. Comincia da quello che ne ha meno.",
+	"miss_name": "Quale manca?",
+	"miss_desc": "Manca un numero. Tocca quello giusto.",
+	"miss_prompt": "Quale numero manca?",
+	"miss_hint": "Conta lungo la riga."
 }

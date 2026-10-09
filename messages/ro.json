@@ -157,5 +157,9 @@
 	"order_name": "De la mic la mare",
 	"order_desc": "Trei grupuri de fructe. Atinge-le de la cele mai puține la cele mai multe.",
 	"order_prompt": "Atinge întâi grupul cel mai mic.",
-	"order_hint": "Numără fiecare grup. Începe cu cel care are mai puține."
+	"order_hint": "Numără fiecare grup. Începe cu cel care are mai puține.",
+	"miss_name": "Care lipsește?",
+	"miss_desc": "Lipsește un număr. Atinge-l pe cel potrivit.",
+	"miss_prompt": "Care număr lipsește?",
+	"miss_hint": "Numără pe rând."
 }

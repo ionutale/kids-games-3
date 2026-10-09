@@ -157,5 +157,9 @@
 	"order_name": "Von klein nach groß",
 	"order_desc": "Drei Gruppen Obst. Tippe sie von wenig nach viel.",
 	"order_prompt": "Tippe zuerst die kleinste Gruppe.",
-	"order_hint": "Zähle jede Gruppe. Fang mit der an, die weniger hat."
+	"order_hint": "Zähle jede Gruppe. Fang mit der an, die weniger hat.",
+	"miss_name": "Was fehlt?",
+	"miss_desc": "Eine Zahl fehlt. Tippe die passende an.",
+	"miss_prompt": "Welche Zahl fehlt?",
+	"miss_hint": "Zähle die Reihe entlang."
 }

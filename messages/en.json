@@ -157,5 +157,9 @@
 	"order_name": "Small to big",
 	"order_desc": "Three groups of fruit. Tap them from fewest to most.",
 	"order_prompt": "Tap the smallest group first.",
-	"order_hint": "Count each group. Start with the one that has less."
+	"order_hint": "Count each group. Start with the one that has less.",
+	"miss_name": "What is missing?",
+	"miss_desc": "A number is missing. Tap the one that fits.",
+	"miss_prompt": "Which number is missing?",
+	"miss_hint": "Count along the row."
 }

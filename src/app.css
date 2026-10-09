@@ -883,6 +883,37 @@ a.level-tile:hover {
 	cursor: default;
 }
 
+.missing-row {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 0.55rem;
+	margin-top: 1rem;
+}
+
+.missing-num,
+.missing-blank {
+	display: grid;
+	place-items: center;
+	width: 4.2rem;
+	height: 4.2rem;
+	border: 3px solid var(--line);
+	border-radius: 1.1rem;
+	background: #fffdf8;
+	font-weight: 800;
+	font-size: 2rem;
+	box-shadow: var(--shadow);
+}
+
+.missing-blank {
+	border-style: dashed;
+	color: var(--honey);
+}
+
+.missing-row.hint-pulse .missing-blank {
+	animation: pulse 1s ease-in-out infinite;
+}
+
 .sum-row.equation .pile svg {
 	width: 2.5rem;
 	height: 2.5rem;
@@ -1199,6 +1230,7 @@ a.level-tile:hover {
 	.compare-pile.shake,
 	.order-pile.glow,
 	.order-pile.shake,
+	.missing-row.hint-pulse .missing-blank,
 	.wash-hand,
 	.wash-drop,
 	.wash-bubble,

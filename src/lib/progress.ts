@@ -25,7 +25,8 @@ export type GameId =
 	| 'more-less'
 	| 'opposites'
 	| 'read-word'
-	| 'small-big';
+	| 'small-big'
+	| 'missing';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -43,6 +44,7 @@ export interface Progress {
 	opposites: GameProgress;
 	'read-word': GameProgress;
 	'small-big': GameProgress;
+	missing: GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -66,7 +68,8 @@ export function defaultProgress(): Progress {
 		'more-less': { cleared: 0 },
 		opposites: { cleared: 0 },
 		'read-word': { cleared: 0 },
-		'small-big': { cleared: 0 }
+		'small-big': { cleared: 0 },
+		missing: { cleared: 0 }
 	};
 }
 
@@ -103,7 +106,8 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			'more-less': sanitizeGame(games['more-less']),
 			opposites: sanitizeGame(games['opposites']),
 			'read-word': sanitizeGame(games['read-word']),
-			'small-big': sanitizeGame(games['small-big'])
+			'small-big': sanitizeGame(games['small-big']),
+			missing: sanitizeGame(games['missing'])
 		};
 	} catch {
 		return defaultProgress();
