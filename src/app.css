@@ -914,6 +914,26 @@ a.level-tile:hover {
 	animation: pulse 1s ease-in-out infinite;
 }
 
+.position-row {
+	display: flex;
+	justify-content: center;
+	gap: 0.4rem;
+	margin-top: 1rem;
+}
+
+.position-row .figure-btn {
+	flex: 1;
+	min-width: 0;
+	max-width: 5.2rem;
+	padding: 0.4rem;
+}
+
+.position-row .figure-btn svg {
+	width: 100%;
+	height: auto;
+	max-height: 3.2rem;
+}
+
 .sum-row.equation .pile svg {
 	width: 2.5rem;
 	height: 2.5rem;
@@ -1231,6 +1251,8 @@ a.level-tile:hover {
 	.order-pile.glow,
 	.order-pile.shake,
 	.missing-row.hint-pulse .missing-blank,
+	.position-row .glow,
+	.position-row .shake,
 	.wash-hand,
 	.wash-drop,
 	.wash-bubble,

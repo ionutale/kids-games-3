@@ -161,5 +161,16 @@
 	"miss_name": "Care lipsește?",
 	"miss_desc": "Lipsește un număr. Atinge-l pe cel potrivit.",
 	"miss_prompt": "Care număr lipsește?",
-	"miss_hint": "Numără pe rând."
+	"miss_hint": "Numără pe rând.",
+	"pos_name": "Primul sau ultimul",
+	"pos_desc": "Un șir de fructe. Atinge primul sau ultimul.",
+	"pos_tap": "Atinge-l pe acesta.",
+	"pos_first": "primul",
+	"pos_last": "ultimul",
+	"pos_middle": "cel de la mijloc",
+	"pos_second": "al doilea",
+	"pos_hint_first": "Este în stânga.",
+	"pos_hint_last": "Este în dreapta.",
+	"pos_hint_middle": "Este la mijloc.",
+	"pos_hint_second": "Numără unul din stânga."
 }

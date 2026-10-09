@@ -161,5 +161,16 @@
 	"miss_name": "Quale manca?",
 	"miss_desc": "Manca un numero. Tocca quello giusto.",
 	"miss_prompt": "Quale numero manca?",
-	"miss_hint": "Conta lungo la riga."
+	"miss_hint": "Conta lungo la riga.",
+	"pos_name": "Il primo o l'ultimo",
+	"pos_desc": "Una fila di frutta. Tocca il primo o l'ultimo.",
+	"pos_tap": "Tocca questo.",
+	"pos_first": "il primo",
+	"pos_last": "l'ultimo",
+	"pos_middle": "quello in mezzo",
+	"pos_second": "il secondo",
+	"pos_hint_first": "È a sinistra.",
+	"pos_hint_last": "È a destra.",
+	"pos_hint_middle": "È in mezzo.",
+	"pos_hint_second": "Conta uno da sinistra."
 }

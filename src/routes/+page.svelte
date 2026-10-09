@@ -27,6 +27,7 @@
 	let clearedRead = $state(0);
 	let clearedOrder = $state(0);
 	let clearedMiss = $state(0);
+	let clearedPos = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -45,6 +46,7 @@
 	const readHref = $derived(localizeHref('/play/read-word', { locale }));
 	const orderHref = $derived(localizeHref('/play/small-big', { locale }));
 	const missHref = $derived(localizeHref('/play/missing', { locale }));
+	const posHref = $derived(localizeHref('/play/position', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -64,6 +66,7 @@
 		clearedRead = progress['read-word'].cleared;
 		clearedOrder = progress['small-big'].cleared;
 		clearedMiss = progress['missing'].cleared;
+		clearedPos = progress['position'].cleared;
 	});
 </script>
 
@@ -297,6 +300,20 @@
 		<div class="row">
 			<a class="btn" href={missHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedMiss })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.pos_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<FruitArt fruit="banana" />
+	</div>
+	<div>
+		<h2>{m.pos_name()}</h2>
+		<p>{m.pos_desc()}</p>
+		<div class="row">
+			<a class="btn" href={posHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedPos })}</span>
 		</div>
 	</div>
 </section>

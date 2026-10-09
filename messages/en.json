@@ -161,5 +161,16 @@
 	"miss_name": "What is missing?",
 	"miss_desc": "A number is missing. Tap the one that fits.",
 	"miss_prompt": "Which number is missing?",
-	"miss_hint": "Count along the row."
+	"miss_hint": "Count along the row.",
+	"pos_name": "First or last",
+	"pos_desc": "A row of fruit. Tap the first one or the last one.",
+	"pos_tap": "Tap this one.",
+	"pos_first": "the first one",
+	"pos_last": "the last one",
+	"pos_middle": "the middle one",
+	"pos_second": "the second one",
+	"pos_hint_first": "It is on the left.",
+	"pos_hint_last": "It is on the right.",
+	"pos_hint_middle": "It is in the middle.",
+	"pos_hint_second": "Count one from the left."
 }

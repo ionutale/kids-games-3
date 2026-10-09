@@ -161,5 +161,16 @@
 	"miss_name": "Was fehlt?",
 	"miss_desc": "Eine Zahl fehlt. Tippe die passende an.",
 	"miss_prompt": "Welche Zahl fehlt?",
-	"miss_hint": "Zähle die Reihe entlang."
+	"miss_hint": "Zähle die Reihe entlang.",
+	"pos_name": "Der erste oder der letzte",
+	"pos_desc": "Eine Reihe Obst. Tippe den ersten oder den letzten an.",
+	"pos_tap": "Tippe diesen an.",
+	"pos_first": "der erste",
+	"pos_last": "der letzte",
+	"pos_middle": "der in der Mitte",
+	"pos_second": "der zweite",
+	"pos_hint_first": "Er ist links.",
+	"pos_hint_last": "Er ist rechts.",
+	"pos_hint_middle": "Er ist in der Mitte.",
+	"pos_hint_second": "Zähle eins von links."
 }
