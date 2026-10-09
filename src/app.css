@@ -934,6 +934,19 @@ a.level-tile:hover {
 	max-height: 3.2rem;
 }
 
+.match-row {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 0.5rem;
+	margin-top: 1rem;
+}
+
+.match-row.two {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	max-width: 18rem;
+	margin-inline: auto;
+}
+
 .sum-row.equation .pile svg {
 	width: 2.5rem;
 	height: 2.5rem;

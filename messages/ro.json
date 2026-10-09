@@ -172,5 +172,9 @@
 	"pos_hint_first": "Este în stânga.",
 	"pos_hint_last": "Este în dreapta.",
 	"pos_hint_middle": "Este la mijloc.",
-	"pos_hint_second": "Numără unul din stânga."
+	"pos_hint_second": "Numără unul din stânga.",
+	"match_name": "La fel cu numărul",
+	"match_desc": "Vezi un număr. Atinge grupul cu atâtea fructe.",
+	"match_tap": "Atinge grupul.",
+	"match_hint": "Numără fructele din fiecare grup."
 }

@@ -38,7 +38,8 @@ describe('progress', () => {
 			'read-word': { cleared: 0 },
 			'small-big': { cleared: 0 },
 			missing: { cleared: 0 },
-			position: { cleared: 0 }
+			position: { cleared: 0 },
+			'match-count': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -64,6 +65,7 @@ describe('progress', () => {
 		expect(clearLevel(progress, 'small-big', 1)).toBe(1);
 		expect(clearLevel(progress, 'missing', 1)).toBe(1);
 		expect(clearLevel(progress, 'position', 1)).toBe(1);
+		expect(clearLevel(progress, 'match-count', 1)).toBe(1);
 		expect(progress['count-fruit'].cleared).toBe(1);
 	});
 
@@ -89,7 +91,8 @@ describe('progress', () => {
 			'read-word': { cleared: 0 },
 			'small-big': { cleared: 0 },
 			missing: { cleared: 0 },
-			position: { cleared: 0 }
+			position: { cleared: 0 },
+			'match-count': { cleared: 0 }
 		});
 	});
 
@@ -119,7 +122,8 @@ describe('progress', () => {
 			'read-word': { cleared: 0 },
 			'small-big': { cleared: 0 },
 			missing: { cleared: 0 },
-			position: { cleared: 0 }
+			position: { cleared: 0 },
+			'match-count': { cleared: 0 }
 		});
 	});
 });

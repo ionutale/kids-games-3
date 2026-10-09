@@ -172,5 +172,9 @@
 	"pos_hint_first": "È a sinistra.",
 	"pos_hint_last": "È a destra.",
 	"pos_hint_middle": "È in mezzo.",
-	"pos_hint_second": "Conta uno da sinistra."
+	"pos_hint_second": "Conta uno da sinistra.",
+	"match_name": "Uguale al numero",
+	"match_desc": "Vedi un numero. Tocca il gruppo con tanti frutti.",
+	"match_tap": "Tocca il gruppo.",
+	"match_hint": "Conta la frutta in ogni gruppo."
 }

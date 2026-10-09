@@ -172,5 +172,9 @@
 	"pos_hint_first": "Er ist links.",
 	"pos_hint_last": "Er ist rechts.",
 	"pos_hint_middle": "Er ist in der Mitte.",
-	"pos_hint_second": "Zähle eins von links."
+	"pos_hint_second": "Zähle eins von links.",
+	"match_name": "Gleich die Zahl",
+	"match_desc": "Sieh eine Zahl. Tippe die Gruppe mit genauso viel Obst.",
+	"match_tap": "Tippe die Gruppe.",
+	"match_hint": "Zähle das Obst in jeder Gruppe."
 }
