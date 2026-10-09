@@ -65,5 +65,14 @@
 	"shape_triangle": "triangle",
 	"shape_star": "star",
 	"shape_heart": "heart",
-	"shapes_hint_look": "Look carefully at the color and the shape."
+	"shapes_hint_look": "Look carefully at the color and the shape.",
+	"feelings_name": "Feelings faces",
+	"feelings_desc": "Look at the bunny and tap how it feels.",
+	"feelings_prompt": "Who is {emotion}?",
+	"emotion_happy": "happy",
+	"emotion_sad": "sad",
+	"emotion_angry": "angry",
+	"emotion_scared": "scared",
+	"emotion_surprised": "surprised",
+	"emotion_tired": "tired"
 }

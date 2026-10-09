@@ -65,5 +65,14 @@
 	"shape_triangle": "triunghiul",
 	"shape_star": "steaua",
 	"shape_heart": "inima",
-	"shapes_hint_look": "Uită-te bine la culoare și formă."
+	"shapes_hint_look": "Uită-te bine la culoare și formă.",
+	"feelings_name": "Emoțiile",
+	"feelings_desc": "Uită-te la iepuraș și atinge cum se simte.",
+	"feelings_prompt": "Cine este {emotion}?",
+	"emotion_happy": "fericit",
+	"emotion_sad": "trist",
+	"emotion_angry": "furios",
+	"emotion_scared": "speriat",
+	"emotion_surprised": "surprins",
+	"emotion_tired": "obosit"
 }

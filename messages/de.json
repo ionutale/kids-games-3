@@ -65,5 +65,14 @@
 	"shape_triangle": "Dreieck",
 	"shape_star": "Stern",
 	"shape_heart": "Herz",
-	"shapes_hint_look": "Schau dir Farbe und Form genau an."
+	"shapes_hint_look": "Schau dir Farbe und Form genau an.",
+	"feelings_name": "Gefühle",
+	"feelings_desc": "Schau dir das Häschen an und tippe, wie es sich fühlt.",
+	"feelings_prompt": "Wer ist {emotion}?",
+	"emotion_happy": "glücklich",
+	"emotion_sad": "traurig",
+	"emotion_angry": "wütend",
+	"emotion_scared": "ängstlich",
+	"emotion_surprised": "überrascht",
+	"emotion_tired": "müde"
 }

@@ -65,5 +65,14 @@
 	"shape_triangle": "il triangolo",
 	"shape_star": "la stella",
 	"shape_heart": "il cuore",
-	"shapes_hint_look": "Guarda bene il colore e la forma."
+	"shapes_hint_look": "Guarda bene il colore e la forma.",
+	"feelings_name": "Le emozioni",
+	"feelings_desc": "Guarda il coniglietto e tocca come si sente.",
+	"feelings_prompt": "Chi è {emotion}?",
+	"emotion_happy": "felice",
+	"emotion_sad": "triste",
+	"emotion_angry": "arrabbiato",
+	"emotion_scared": "spaventato",
+	"emotion_surprised": "sorpreso",
+	"emotion_tired": "stanco"
 }
