@@ -11,7 +11,14 @@ export interface GameProgress {
 }
 
 export type GameId =
-	'count-fruit' | 'color-shapes' | 'feelings' | 'letters' | 'adding' | 'wash-hands' | 'brush-teeth';
+	| 'count-fruit'
+	| 'color-shapes'
+	| 'feelings'
+	| 'letters'
+	| 'adding'
+	| 'wash-hands'
+	| 'brush-teeth'
+	| 'bath';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -21,6 +28,7 @@ export interface Progress {
 	adding: GameProgress;
 	'wash-hands': GameProgress;
 	'brush-teeth': GameProgress;
+	bath: GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -36,7 +44,8 @@ export function defaultProgress(): Progress {
 		letters: { cleared: 0 },
 		adding: { cleared: 0 },
 		'wash-hands': { cleared: 0 },
-		'brush-teeth': { cleared: 0 }
+		'brush-teeth': { cleared: 0 },
+		bath: { cleared: 0 }
 	};
 }
 
@@ -65,7 +74,8 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			letters: sanitizeGame(games['letters']),
 			adding: sanitizeGame(games['adding']),
 			'wash-hands': sanitizeGame(games['wash-hands']),
-			'brush-teeth': sanitizeGame(games['brush-teeth'])
+			'brush-teeth': sanitizeGame(games['brush-teeth']),
+			bath: sanitizeGame(games['bath'])
 		};
 	} catch {
 		return defaultProgress();

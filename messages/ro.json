@@ -103,5 +103,16 @@
 	"tooth_top": "Dinții de sus",
 	"tooth_bottom": "Dinții de jos",
 	"tooth_tongue": "Limba",
-	"tooth_rinse": "Clătește"
+	"tooth_rinse": "Clătește",
+	"bath_name": "Fă baie",
+	"bath_desc": "Atinge pașii în ordinea corectă.",
+	"bath_prompt": "Ce urmează?",
+	"bath_hint_first": "Începe umplând cada.",
+	"bath_hint_next": "Gândește-te ce urmează.",
+	"bath_water": "Apă",
+	"bath_undress": "Hainele jos",
+	"bath_soap": "Săpun",
+	"bath_hair": "Păr",
+	"bath_rinse": "Clătește",
+	"bath_dry": "Șterge"
 }

@@ -103,5 +103,16 @@
 	"tooth_top": "Denti sopra",
 	"tooth_bottom": "Denti sotto",
 	"tooth_tongue": "Lingua",
-	"tooth_rinse": "Risciacqua"
+	"tooth_rinse": "Risciacqua",
+	"bath_name": "Fatti il bagno",
+	"bath_desc": "Tocca i passi nell'ordine giusto.",
+	"bath_prompt": "Cosa viene dopo?",
+	"bath_hint_first": "Si comincia riempiendo la vasca.",
+	"bath_hint_next": "Pensa a cosa viene dopo.",
+	"bath_water": "Acqua",
+	"bath_undress": "Via i vestiti",
+	"bath_soap": "Sapone",
+	"bath_hair": "Capelli",
+	"bath_rinse": "Risciacqua",
+	"bath_dry": "Asciuga"
 }

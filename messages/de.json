@@ -103,5 +103,16 @@
 	"tooth_top": "Oben",
 	"tooth_bottom": "Unten",
 	"tooth_tongue": "Zunge",
-	"tooth_rinse": "Ausspülen"
+	"tooth_rinse": "Ausspülen",
+	"bath_name": "Baden",
+	"bath_desc": "Tippe die Schritte in der richtigen Reihenfolge an.",
+	"bath_prompt": "Was kommt als Nächstes?",
+	"bath_hint_first": "Zuerst kommt Wasser in die Wanne.",
+	"bath_hint_next": "Überleg, was danach kommt.",
+	"bath_water": "Wasser",
+	"bath_undress": "Ausziehen",
+	"bath_soap": "Seife",
+	"bath_hair": "Haare",
+	"bath_rinse": "Abspülen",
+	"bath_dry": "Abtrocknen"
 }

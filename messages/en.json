@@ -103,5 +103,16 @@
 	"tooth_top": "Top teeth",
 	"tooth_bottom": "Bottom teeth",
 	"tooth_tongue": "Tongue",
-	"tooth_rinse": "Rinse"
+	"tooth_rinse": "Rinse",
+	"bath_name": "Take a bath",
+	"bath_desc": "Tap the steps in the right order.",
+	"bath_prompt": "What comes next?",
+	"bath_hint_first": "Start by filling the tub.",
+	"bath_hint_next": "Think what comes after that.",
+	"bath_water": "Water",
+	"bath_undress": "Clothes off",
+	"bath_soap": "Soap",
+	"bath_hair": "Hair",
+	"bath_rinse": "Rinse",
+	"bath_dry": "Dry"
 }
