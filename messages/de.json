@@ -87,6 +87,7 @@
 	"wash_prompt": "Was kommt als Nächstes?",
 	"wash_hint_first": "Zuerst kommt das Wasser.",
 	"wash_hint_next": "Überleg, was danach kommt.",
+	"wash_how": "Bringe die Schritte zum Händewaschen in die richtige Reihenfolge. Tippe zuerst den richtigen an, dann den nächsten.",
 	"step_wet": "Wasser",
 	"step_soap": "Seife",
 	"step_rub": "Reiben",
@@ -109,6 +110,7 @@
 	"bath_prompt": "Was kommt als Nächstes?",
 	"bath_hint_first": "Zuerst kommt Wasser in die Wanne.",
 	"bath_hint_next": "Überleg, was danach kommt.",
+	"bath_how": "Bringe die Schritte zum Baden in die richtige Reihenfolge. Tippe zuerst den richtigen an, dann den nächsten.",
 	"bath_water": "Wasser",
 	"bath_undress": "Ausziehen",
 	"bath_soap": "Seife",
@@ -118,5 +120,9 @@
 	"subtract_name": "Nimm etwas weg",
 	"subtract_desc": "Etwas Obst ist weg. Tippe, wie viele übrig sind.",
 	"subtract_prompt": "Wie viele bleiben übrig?",
-	"subtract_hint": "Zähle die erste Gruppe, dann nimm die blassen weg."
+	"subtract_hint": "Zähle das blasse Obst. So viele sind übrig.",
+	"memory_name": "Memory",
+	"memory_desc": "Dreh zwei gleiche Karten um.",
+	"memory_prompt": "Finde die Paare.",
+	"memory_hint": "Schau genau hin, dann versuch es nochmal."
 }

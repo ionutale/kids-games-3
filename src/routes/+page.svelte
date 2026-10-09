@@ -20,6 +20,7 @@
 	let clearedBrush = $state(0);
 	let clearedBath = $state(0);
 	let clearedSubtract = $state(0);
+	let clearedMemory = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -31,6 +32,7 @@
 	const brushHref = $derived(localizeHref('/play/brush-teeth', { locale }));
 	const bathHref = $derived(localizeHref('/play/bath', { locale }));
 	const subtractHref = $derived(localizeHref('/play/subtract', { locale }));
+	const memoryHref = $derived(localizeHref('/play/memory', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -43,6 +45,7 @@
 		clearedBrush = progress['brush-teeth'].cleared;
 		clearedBath = progress['bath'].cleared;
 		clearedSubtract = progress['subtract'].cleared;
+		clearedMemory = progress['memory'].cleared;
 	});
 </script>
 
@@ -178,6 +181,20 @@
 		<div class="row">
 			<a class="btn" href={subtractHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedSubtract })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.memory_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<img src={favicon} alt="" />
+	</div>
+	<div>
+		<h2>{m.memory_name()}</h2>
+		<p>{m.memory_desc()}</p>
+		<div class="row">
+			<a class="btn" href={memoryHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedMemory })}</span>
 		</div>
 	</div>
 </section>

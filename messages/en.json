@@ -87,6 +87,7 @@
 	"wash_prompt": "What comes next?",
 	"wash_hint_first": "Start with clean water.",
 	"wash_hint_next": "Think what comes after that.",
+	"wash_how": "Put the steps for washing your hands in order. Tap the right one first, then the next.",
 	"step_wet": "Wet",
 	"step_soap": "Soap",
 	"step_rub": "Rub",
@@ -109,6 +110,7 @@
 	"bath_prompt": "What comes next?",
 	"bath_hint_first": "Start by filling the tub.",
 	"bath_hint_next": "Think what comes after that.",
+	"bath_how": "Put the steps for taking a bath in order. Tap the right one first, then the next.",
 	"bath_water": "Water",
 	"bath_undress": "Clothes off",
 	"bath_soap": "Soap",
@@ -118,5 +120,9 @@
 	"subtract_name": "Take some away",
 	"subtract_desc": "Some fruit is gone. Tap how many are left.",
 	"subtract_prompt": "How many are left?",
-	"subtract_hint": "Count the first group, then take away the faded ones."
+	"subtract_hint": "Count the pale fruit. Those are the ones left.",
+	"memory_name": "Memory",
+	"memory_desc": "Flip two cards that match.",
+	"memory_prompt": "Find the pairs.",
+	"memory_hint": "Look carefully, then try again."
 }

@@ -52,9 +52,9 @@
 	const nextHref = $derived(localizeHref(`/play/letters/${levelNumber + 1}`, { locale }));
 
 	const correctKey = $derived(current ? INITIALS[locale as WordLocale][current] : null);
-	const prompt = $derived(
-		current ? m.letters_prompt({ word: WORDS[locale as WordLocale][current] }) : ''
-	);
+	const word = $derived(current ? WORDS[locale as WordLocale][current] : '');
+	const prompt = $derived(word ? m.letters_prompt({ word }) : '');
+	const promptTail = $derived(word && prompt.startsWith(word) ? prompt.slice(word.length) : '');
 
 	function poke(): void {
 		if (idleTimer) clearTimeout(idleTimer);
@@ -200,7 +200,13 @@
 				<button class="help-btn" type="button" onclick={askForHelp}>? {m.help()}</button>
 			</div>
 
-			<p class="prompt">{prompt}</p>
+			<p class="prompt letters-ask">
+				{#if word && promptTail}
+					<strong>{word}</strong>{promptTail}
+				{:else}
+					{prompt}
+				{/if}
+			</p>
 			<div class="pips" aria-hidden="true">
 				{#each pips as done, index (index)}
 					<span class="pip" class:full={done}></span>

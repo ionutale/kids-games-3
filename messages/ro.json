@@ -87,6 +87,7 @@
 	"wash_prompt": "Ce urmează?",
 	"wash_hint_first": "Începe cu apa.",
 	"wash_hint_next": "Gândește-te ce urmează.",
+	"wash_how": "Pune în ordine pașii pentru spălatul pe mâini. Atinge întâi pe cel corect, apoi pe următorul.",
 	"step_wet": "Apă",
 	"step_soap": "Săpun",
 	"step_rub": "Freacă",
@@ -109,6 +110,7 @@
 	"bath_prompt": "Ce urmează?",
 	"bath_hint_first": "Începe umplând cada.",
 	"bath_hint_next": "Gândește-te ce urmează.",
+	"bath_how": "Pune în ordine pașii pentru baie. Atinge întâi pe cel corect, apoi pe următorul.",
 	"bath_water": "Apă",
 	"bath_undress": "Hainele jos",
 	"bath_soap": "Săpun",
@@ -118,5 +120,9 @@
 	"subtract_name": "Ia din fructe",
 	"subtract_desc": "Câteva fructe au dispărut. Atinge câte au rămas.",
 	"subtract_prompt": "Câte au rămas?",
-	"subtract_hint": "Numără prima grupă, apoi scoate-le pe cele șterse."
+	"subtract_hint": "Numără fructele șterse. Acelea au rămas.",
+	"memory_name": "Memorie",
+	"memory_desc": "Întoarce două cărți la fel.",
+	"memory_prompt": "Găsește perechile.",
+	"memory_hint": "Uită-te bine, apoi mai încearcă."
 }

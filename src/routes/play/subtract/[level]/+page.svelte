@@ -197,16 +197,22 @@
 				{/each}
 			</div>
 			{#if problems !== null && current !== null}
-				<div class="sum-row" class:hint-pulse={stage === 1} aria-hidden="true">
+				<div class="sum-row equation" class:hint-pulse={stage === 1} aria-hidden="true">
 					<div class="pile">
 						{#each Array.from({ length: current.start }, (_, i) => i) as i (i)}
 							<FruitArt fruit={config.fruit} happy={fruitHappy} />
 						{/each}
 					</div>
 					<span class="sum-plus">−</span>
-					<div class="pile taken">
+					<div class="pile">
 						{#each Array.from({ length: current.taken }, (_, i) => i) as i (i)}
 							<FruitArt fruit={config.fruit} />
+						{/each}
+					</div>
+					<span class="sum-plus">=</span>
+					<div class="pile result">
+						{#each Array.from({ length: answerRemain ?? 0 }, (_, i) => i) as i (i)}
+							<FruitArt fruit={config.fruit} happy={fruitHappy} />
 						{/each}
 					</div>
 				</div>

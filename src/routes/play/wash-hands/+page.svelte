@@ -5,6 +5,7 @@
 	import { MAX_WASH_LEVEL, WASH_LEVELS } from '#lib/wash-hands.js';
 	import { isLevelOpen } from '#lib/count-fruit.js';
 	import { loadProgress } from '#lib/progress.js';
+	import HandsWash from '#lib/components/HandsWash.svelte';
 	import StepArt from '#lib/components/StepArt.svelte';
 
 	let cleared = $state(0);
@@ -28,7 +29,9 @@
 
 <div class="card">
 	<h2 style="margin: 0; font-size: 2rem;">{m.wash_name()}</h2>
-	<p style="margin: 0.25rem 0 0; color: var(--ink-soft);">{m.chooseLevel()}</p>
+	<HandsWash />
+	<p class="hands-how">{m.wash_how()}</p>
+	<p class="hands-pick">{m.chooseLevel()}</p>
 
 	<ol class="level-path">
 		{#each WASH_LEVELS as entry (entry.level)}

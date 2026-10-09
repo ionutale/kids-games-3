@@ -87,6 +87,7 @@
 	"wash_prompt": "Cosa viene dopo?",
 	"wash_hint_first": "Si comincia con l'acqua.",
 	"wash_hint_next": "Pensa a cosa viene dopo.",
+	"wash_how": "Metti in ordine i passi per lavarti le mani. Tocca prima quello giusto, poi il prossimo.",
 	"step_wet": "Acqua",
 	"step_soap": "Sapone",
 	"step_rub": "Strofina",
@@ -109,6 +110,7 @@
 	"bath_prompt": "Cosa viene dopo?",
 	"bath_hint_first": "Si comincia riempiendo la vasca.",
 	"bath_hint_next": "Pensa a cosa viene dopo.",
+	"bath_how": "Metti in ordine i passi per farti il bagno. Tocca prima quello giusto, poi il prossimo.",
 	"bath_water": "Acqua",
 	"bath_undress": "Via i vestiti",
 	"bath_soap": "Sapone",
@@ -118,5 +120,9 @@
 	"subtract_name": "Togli la frutta",
 	"subtract_desc": "Un po' di frutta non c'è più. Tocca quante ne restano.",
 	"subtract_prompt": "Quante ne restano?",
-	"subtract_hint": "Conta il primo gruppo, poi togli quelle sbiadite."
+	"subtract_hint": "Conta la frutta sbiadita. Sono quelle che restano.",
+	"memory_name": "Memoria",
+	"memory_desc": "Gira due carte uguali.",
+	"memory_prompt": "Trova le coppie.",
+	"memory_hint": "Guarda bene, poi riprova."
 }
