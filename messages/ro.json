@@ -114,5 +114,9 @@
 	"bath_soap": "Săpun",
 	"bath_hair": "Păr",
 	"bath_rinse": "Clătește",
-	"bath_dry": "Șterge"
+	"bath_dry": "Șterge",
+	"subtract_name": "Ia din fructe",
+	"subtract_desc": "Câteva fructe au dispărut. Atinge câte au rămas.",
+	"subtract_prompt": "Câte au rămas?",
+	"subtract_hint": "Numără prima grupă, apoi scoate-le pe cele șterse."
 }

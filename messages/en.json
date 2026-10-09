@@ -114,5 +114,9 @@
 	"bath_soap": "Soap",
 	"bath_hair": "Hair",
 	"bath_rinse": "Rinse",
-	"bath_dry": "Dry"
+	"bath_dry": "Dry",
+	"subtract_name": "Take some away",
+	"subtract_desc": "Some fruit is gone. Tap how many are left.",
+	"subtract_prompt": "How many are left?",
+	"subtract_hint": "Count the first group, then take away the faded ones."
 }

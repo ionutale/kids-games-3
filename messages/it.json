@@ -114,5 +114,9 @@
 	"bath_soap": "Sapone",
 	"bath_hair": "Capelli",
 	"bath_rinse": "Risciacqua",
-	"bath_dry": "Asciuga"
+	"bath_dry": "Asciuga",
+	"subtract_name": "Togli la frutta",
+	"subtract_desc": "Un po' di frutta non c'è più. Tocca quante ne restano.",
+	"subtract_prompt": "Quante ne restano?",
+	"subtract_hint": "Conta il primo gruppo, poi togli quelle sbiadite."
 }

@@ -29,7 +29,8 @@ describe('progress', () => {
 			adding: { cleared: 0 },
 			'wash-hands': { cleared: 0 },
 			'brush-teeth': { cleared: 0 },
-			bath: { cleared: 0 }
+			bath: { cleared: 0 },
+			subtract: { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -46,6 +47,7 @@ describe('progress', () => {
 		expect(clearLevel(progress, 'wash-hands', 2)).toBe(2);
 		expect(clearLevel(progress, 'brush-teeth', 3)).toBe(3);
 		expect(clearLevel(progress, 'bath', 1)).toBe(1);
+		expect(clearLevel(progress, 'subtract', 2)).toBe(2);
 		expect(progress['count-fruit'].cleared).toBe(1);
 	});
 
@@ -62,7 +64,8 @@ describe('progress', () => {
 			adding: { cleared: 0 },
 			'wash-hands': { cleared: 0 },
 			'brush-teeth': { cleared: 0 },
-			bath: { cleared: 0 }
+			bath: { cleared: 0 },
+			subtract: { cleared: 0 }
 		});
 	});
 
@@ -83,7 +86,8 @@ describe('progress', () => {
 			adding: { cleared: 0 },
 			'wash-hands': { cleared: 0 },
 			'brush-teeth': { cleared: 0 },
-			bath: { cleared: 0 }
+			bath: { cleared: 0 },
+			subtract: { cleared: 0 }
 		});
 	});
 });

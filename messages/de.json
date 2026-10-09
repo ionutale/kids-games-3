@@ -114,5 +114,9 @@
 	"bath_soap": "Seife",
 	"bath_hair": "Haare",
 	"bath_rinse": "Abspülen",
-	"bath_dry": "Abtrocknen"
+	"bath_dry": "Abtrocknen",
+	"subtract_name": "Nimm etwas weg",
+	"subtract_desc": "Etwas Obst ist weg. Tippe, wie viele übrig sind.",
+	"subtract_prompt": "Wie viele bleiben übrig?",
+	"subtract_hint": "Zähle die erste Gruppe, dann nimm die blassen weg."
 }

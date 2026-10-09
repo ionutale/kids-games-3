@@ -19,6 +19,7 @@
 	let clearedWash = $state(0);
 	let clearedBrush = $state(0);
 	let clearedBath = $state(0);
+	let clearedSubtract = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -29,6 +30,7 @@
 	const washHref = $derived(localizeHref('/play/wash-hands', { locale }));
 	const brushHref = $derived(localizeHref('/play/brush-teeth', { locale }));
 	const bathHref = $derived(localizeHref('/play/bath', { locale }));
+	const subtractHref = $derived(localizeHref('/play/subtract', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -40,6 +42,7 @@
 		clearedWash = progress['wash-hands'].cleared;
 		clearedBrush = progress['brush-teeth'].cleared;
 		clearedBath = progress['bath'].cleared;
+		clearedSubtract = progress['subtract'].cleared;
 	});
 </script>
 
@@ -161,6 +164,20 @@
 		<div class="row">
 			<a class="btn" href={bathHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedBath })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.subtract_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<FruitArt fruit="pear" />
+	</div>
+	<div>
+		<h2>{m.subtract_name()}</h2>
+		<p>{m.subtract_desc()}</p>
+		<div class="row">
+			<a class="btn" href={subtractHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedSubtract })}</span>
 		</div>
 	</div>
 </section>
