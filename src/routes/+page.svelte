@@ -22,6 +22,7 @@
 	let clearedSubtract = $state(0);
 	let clearedMemory = $state(0);
 	let clearedOdd = $state(0);
+	let clearedMore = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -35,6 +36,7 @@
 	const subtractHref = $derived(localizeHref('/play/subtract', { locale }));
 	const memoryHref = $derived(localizeHref('/play/memory', { locale }));
 	const oddHref = $derived(localizeHref('/play/odd-one', { locale }));
+	const moreHref = $derived(localizeHref('/play/more-less', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -49,6 +51,7 @@
 		clearedSubtract = progress['subtract'].cleared;
 		clearedMemory = progress['memory'].cleared;
 		clearedOdd = progress['odd-one'].cleared;
+		clearedMore = progress['more-less'].cleared;
 	});
 </script>
 
@@ -212,6 +215,20 @@
 		<div class="row">
 			<a class="btn" href={oddHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedOdd })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.more_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<FruitArt fruit="grapes" />
+	</div>
+	<div>
+		<h2>{m.more_name()}</h2>
+		<p>{m.more_desc()}</p>
+		<div class="row">
+			<a class="btn" href={moreHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedMore })}</span>
 		</div>
 	</div>
 </section>

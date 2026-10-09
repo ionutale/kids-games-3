@@ -128,5 +128,10 @@
 	"odd_name": "Quello diverso",
 	"odd_desc": "Quattro figure. Tocca quella diversa.",
 	"odd_prompt": "Qual è diverso?",
-	"odd_hint": "Tre sono uguali. Trova l'altro."
+	"odd_hint": "Tre sono uguali. Trova l'altro.",
+	"more_name": "Più o meno",
+	"more_desc": "Due gruppi di frutta. Tocca quello con più, o quello con meno.",
+	"more_prompt": "Quale gruppo ha più frutta?",
+	"more_less_prompt": "Quale gruppo ha meno frutta?",
+	"more_hint": "Conta ogni gruppo."
 }

@@ -128,5 +128,10 @@
 	"odd_name": "Was ist anders?",
 	"odd_desc": "Vier Bilder. Tippe das an, das anders ist.",
 	"odd_prompt": "Welches ist anders?",
-	"odd_hint": "Drei sind gleich. Finde das andere."
+	"odd_hint": "Drei sind gleich. Finde das andere.",
+	"more_name": "Mehr oder weniger",
+	"more_desc": "Zwei Gruppen Obst. Tippe die mit mehr, oder die mit weniger.",
+	"more_prompt": "Welche Gruppe hat mehr?",
+	"more_less_prompt": "Welche Gruppe hat weniger?",
+	"more_hint": "Zähle jede Gruppe."
 }

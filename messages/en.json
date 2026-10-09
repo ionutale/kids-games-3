@@ -128,5 +128,10 @@
 	"odd_name": "Odd one out",
 	"odd_desc": "Four pictures. Tap the one that is different.",
 	"odd_prompt": "Which one is different?",
-	"odd_hint": "Three are the same. Find the other one."
+	"odd_hint": "Three are the same. Find the other one.",
+	"more_name": "More or less",
+	"more_desc": "Two groups of fruit. Tap the one with more, or the one with fewer.",
+	"more_prompt": "Which group has more?",
+	"more_less_prompt": "Which group has fewer?",
+	"more_hint": "Count each group."
 }

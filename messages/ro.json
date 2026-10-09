@@ -128,5 +128,10 @@
 	"odd_name": "Care e diferit",
 	"odd_desc": "Patru imagini. Atinge-o pe cea diferită.",
 	"odd_prompt": "Care e diferit?",
-	"odd_hint": "Trei sunt la fel. Găsește-l pe celălalt."
+	"odd_hint": "Trei sunt la fel. Găsește-l pe celălalt.",
+	"more_name": "Mai mult sau mai puțin",
+	"more_desc": "Două grupuri de fructe. Atinge-l pe cel cu mai multe, sau pe cel cu mai puține.",
+	"more_prompt": "Care grup are mai multe?",
+	"more_less_prompt": "Care grup are mai puține?",
+	"more_hint": "Numără fiecare grup."
 }
