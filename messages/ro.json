@@ -92,5 +92,16 @@
 	"step_rub": "Freacă",
 	"step_fingers": "Degete",
 	"step_rinse": "Clătește",
-	"step_dry": "Șterge"
+	"step_dry": "Șterge",
+	"brush_name": "Spală-te pe dinți",
+	"brush_desc": "Atinge pașii în ordinea corectă.",
+	"brush_prompt": "Ce urmează?",
+	"brush_hint_first": "Începe udând periuța.",
+	"brush_hint_next": "Gândește-te ce urmează.",
+	"tooth_wet": "Apă",
+	"tooth_paste": "Pastă",
+	"tooth_top": "Dinții de sus",
+	"tooth_bottom": "Dinții de jos",
+	"tooth_tongue": "Limba",
+	"tooth_rinse": "Clătește"
 }

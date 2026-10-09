@@ -92,5 +92,16 @@
 	"step_rub": "Strofina",
 	"step_fingers": "Dita",
 	"step_rinse": "Risciacqua",
-	"step_dry": "Asciuga"
+	"step_dry": "Asciuga",
+	"brush_name": "Lavati i denti",
+	"brush_desc": "Tocca i passi nell'ordine giusto.",
+	"brush_prompt": "Cosa viene dopo?",
+	"brush_hint_first": "Si comincia bagnando lo spazzolino.",
+	"brush_hint_next": "Pensa a cosa viene dopo.",
+	"tooth_wet": "Acqua",
+	"tooth_paste": "Dentifricio",
+	"tooth_top": "Denti sopra",
+	"tooth_bottom": "Denti sotto",
+	"tooth_tongue": "Lingua",
+	"tooth_rinse": "Risciacqua"
 }

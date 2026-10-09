@@ -7,6 +7,7 @@
 	import ShapeArt from '#lib/components/ShapeArt.svelte';
 	import BunnyFace from '#lib/components/BunnyFace.svelte';
 	import StepArt from '#lib/components/StepArt.svelte';
+	import BrushArt from '#lib/components/BrushArt.svelte';
 	import favicon from '#lib/assets/favicon.svg';
 
 	let cleared = $state(0);
@@ -15,6 +16,7 @@
 	let clearedLetters = $state(0);
 	let clearedAdding = $state(0);
 	let clearedWash = $state(0);
+	let clearedBrush = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -23,6 +25,7 @@
 	const lettersHref = $derived(localizeHref('/play/letters', { locale }));
 	const addingHref = $derived(localizeHref('/play/adding', { locale }));
 	const washHref = $derived(localizeHref('/play/wash-hands', { locale }));
+	const brushHref = $derived(localizeHref('/play/brush-teeth', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -32,6 +35,7 @@
 		clearedLetters = progress['letters'].cleared;
 		clearedAdding = progress['adding'].cleared;
 		clearedWash = progress['wash-hands'].cleared;
+		clearedBrush = progress['brush-teeth'].cleared;
 	});
 </script>
 
@@ -125,6 +129,20 @@
 		<div class="row">
 			<a class="btn" href={washHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedWash })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.brush_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<BrushArt step="paste" />
+	</div>
+	<div>
+		<h2>{m.brush_name()}</h2>
+		<p>{m.brush_desc()}</p>
+		<div class="row">
+			<a class="btn" href={brushHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedBrush })}</span>
 		</div>
 	</div>
 </section>

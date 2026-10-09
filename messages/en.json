@@ -92,5 +92,16 @@
 	"step_rub": "Rub",
 	"step_fingers": "Fingers",
 	"step_rinse": "Rinse",
-	"step_dry": "Dry"
+	"step_dry": "Dry",
+	"brush_name": "Brush your teeth",
+	"brush_desc": "Tap the steps in the right order.",
+	"brush_prompt": "What comes next?",
+	"brush_hint_first": "Start with water on the brush.",
+	"brush_hint_next": "Think what comes after that.",
+	"tooth_wet": "Water",
+	"tooth_paste": "Paste",
+	"tooth_top": "Top teeth",
+	"tooth_bottom": "Bottom teeth",
+	"tooth_tongue": "Tongue",
+	"tooth_rinse": "Rinse"
 }

@@ -92,5 +92,16 @@
 	"step_rub": "Reiben",
 	"step_fingers": "Finger",
 	"step_rinse": "Abspülen",
-	"step_dry": "Trocknen"
+	"step_dry": "Trocknen",
+	"brush_name": "Zähne putzen",
+	"brush_desc": "Tippe die Schritte in der richtigen Reihenfolge an.",
+	"brush_prompt": "Was kommt als Nächstes?",
+	"brush_hint_first": "Zuerst kommt Wasser auf die Bürste.",
+	"brush_hint_next": "Überleg, was danach kommt.",
+	"tooth_wet": "Wasser",
+	"tooth_paste": "Zahnpasta",
+	"tooth_top": "Oben",
+	"tooth_bottom": "Unten",
+	"tooth_tongue": "Zunge",
+	"tooth_rinse": "Ausspülen"
 }
