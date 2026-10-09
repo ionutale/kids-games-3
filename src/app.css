@@ -466,6 +466,44 @@ a.level-tile:hover {
 	border-color: var(--coral);
 }
 
+/* Big tappable figures for Colors and shapes. */
+.figure-btn {
+	border: 3px solid var(--line);
+	background: var(--card);
+	border-radius: 1.6rem;
+	min-width: 8rem;
+	min-height: 8rem;
+	padding: 0.75rem;
+	cursor: pointer;
+	box-shadow: var(--shadow);
+}
+
+.figure-btn svg {
+	display: block;
+	width: 5.5rem;
+	height: 5.5rem;
+	margin: 0 auto;
+}
+
+.figure-btn:hover:not(:disabled) {
+	border-color: var(--sky);
+}
+
+.figure-btn.glow {
+	border-color: var(--leaf);
+	box-shadow: 0 0 0 6px rgba(93, 168, 95, 0.35);
+	animation: pulse 1s ease-in-out infinite;
+}
+
+.figure-btn.shake {
+	animation: shake 0.45s ease;
+	border-color: var(--coral);
+}
+
+.answers.hint-pulse .figure-btn svg {
+	animation: pulse 1s ease-in-out infinite;
+}
+
 @keyframes shake {
 	0%,
 	100% {
@@ -582,6 +620,14 @@ a.level-tile:hover {
 		font-size: 2.1rem;
 		min-width: 5.2rem;
 		min-height: 5.2rem;
+	}
+	.figure-btn {
+		min-width: 6.2rem;
+		min-height: 6.2rem;
+	}
+	.figure-btn svg {
+		width: 4.2rem;
+		height: 4.2rem;
 	}
 	.game-card {
 		flex-direction: column;

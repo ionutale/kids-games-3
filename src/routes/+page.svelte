@@ -4,15 +4,20 @@
 	import { m } from '#lib/paraglide/messages.js';
 	import { loadProgress } from '#lib/progress.js';
 	import FruitArt from '#lib/components/FruitArt.svelte';
+	import ShapeArt from '#lib/components/ShapeArt.svelte';
 	import favicon from '#lib/assets/favicon.svg';
 
 	let cleared = $state(0);
+	let clearedShapes = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
+	const shapesHref = $derived(localizeHref('/play/color-shapes', { locale }));
 
 	onMount(() => {
-		cleared = loadProgress(localStorage)['count-fruit'].cleared;
+		const progress = loadProgress(localStorage);
+		cleared = progress['count-fruit'].cleared;
+		clearedShapes = progress['color-shapes'].cleared;
 	});
 </script>
 
@@ -38,6 +43,20 @@
 		<div class="row">
 			<a class="btn" href={gameHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: cleared })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.shapes_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<ShapeArt shape="star" color="blue" happy={true} />
+	</div>
+	<div>
+		<h2>{m.shapes_name()}</h2>
+		<p>{m.shapes_desc()}</p>
+		<div class="row">
+			<a class="btn" href={shapesHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedShapes })}</span>
 		</div>
 	</div>
 </section>

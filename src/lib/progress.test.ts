@@ -20,25 +20,32 @@ function memoryStorage(initial: Record<string, string> = {}): KeyValueStorage {
 }
 
 describe('progress', () => {
-	test('starts with nothing cleared', () => {
-		expect(defaultProgress()).toEqual({ 'count-fruit': { cleared: 0 } });
+	test('starts with nothing cleared in either game', () => {
+		expect(defaultProgress()).toEqual({
+			'count-fruit': { cleared: 0 },
+			'color-shapes': { cleared: 0 }
+		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
 	});
 
 	test('clearing a level never moves backwards', () => {
 		const progress = defaultProgress();
-		expect(clearLevel(progress, 1)).toBe(1);
-		expect(clearLevel(progress, 1)).toBe(1);
-		expect(clearLevel(progress, 3)).toBe(3);
+		expect(clearLevel(progress, 'count-fruit', 1)).toBe(1);
+		expect(clearLevel(progress, 'count-fruit', 1)).toBe(1);
+		expect(clearLevel(progress, 'color-shapes', 3)).toBe(3);
+		expect(progress['count-fruit'].cleared).toBe(1);
 	});
 
 	test('progress survives a save and load round trip', () => {
 		const storage = memoryStorage();
 		const progress = defaultProgress();
-		clearLevel(progress, 2);
+		clearLevel(progress, 'count-fruit', 2);
 		saveProgress(progress, storage);
-		expect(loadProgress(storage)).toEqual({ 'count-fruit': { cleared: 2 } });
+		expect(loadProgress(storage)).toEqual({
+			'count-fruit': { cleared: 2 },
+			'color-shapes': { cleared: 0 }
+		});
 	});
 
 	test('broken saves fall back to a fresh start', () => {
@@ -50,7 +57,7 @@ describe('progress', () => {
 			loadProgress(
 				memoryStorage({ 'lumi-progress': JSON.stringify({ 'count-fruit': { cleared: 99 } }) })
 			)
-		).toEqual({ 'count-fruit': { cleared: 10 } });
+		).toEqual({ 'count-fruit': { cleared: 10 }, 'color-shapes': { cleared: 0 } });
 	});
 });
 

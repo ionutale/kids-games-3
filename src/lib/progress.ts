@@ -10,8 +10,11 @@ export interface GameProgress {
 	cleared: number;
 }
 
+export type GameId = 'count-fruit' | 'color-shapes';
+
 export interface Progress {
 	'count-fruit': GameProgress;
+	'color-shapes': GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -20,12 +23,17 @@ export interface KeyValueStorage {
 }
 
 export function defaultProgress(): Progress {
-	return { 'count-fruit': { cleared: 0 } };
+	return { 'count-fruit': { cleared: 0 }, 'color-shapes': { cleared: 0 } };
 }
 
 function sanitizeCleared(value: unknown): number {
 	if (typeof value !== 'number' || !Number.isInteger(value)) return 0;
 	return Math.min(10, Math.max(0, value));
+}
+
+function sanitizeGame(value: unknown): GameProgress {
+	if (typeof value !== 'object' || value === null) return { cleared: 0 };
+	return { cleared: sanitizeCleared((value as Record<string, unknown>).cleared) };
 }
 
 export function loadProgress(storage?: KeyValueStorage | null): Progress {
@@ -35,10 +43,10 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 		if (!raw) return defaultProgress();
 		const parsed: unknown = JSON.parse(raw);
 		if (typeof parsed !== 'object' || parsed === null) return defaultProgress();
-		const game = (parsed as Record<string, unknown>)['count-fruit'];
-		if (typeof game !== 'object' || game === null) return defaultProgress();
+		const games = parsed as Record<string, unknown>;
 		return {
-			'count-fruit': { cleared: sanitizeCleared((game as Record<string, unknown>).cleared) }
+			'count-fruit': sanitizeGame(games['count-fruit']),
+			'color-shapes': sanitizeGame(games['color-shapes'])
 		};
 	} catch {
 		return defaultProgress();
@@ -50,10 +58,10 @@ export function saveProgress(progress: Progress, storage: KeyValueStorage): void
 }
 
 /** Record a finished level. Returns the new cleared count. */
-export function clearLevel(progress: Progress, level: number): number {
-	const next = Math.max(progress['count-fruit'].cleared, level);
-	progress['count-fruit'].cleared = Math.min(10, next);
-	return progress['count-fruit'].cleared;
+export function clearLevel(progress: Progress, game: GameId, level: number): number {
+	const next = Math.max(progress[game].cleared, level);
+	progress[game].cleared = Math.min(10, next);
+	return progress[game].cleared;
 }
 
 export function loadMuted(storage?: KeyValueStorage | null): boolean {

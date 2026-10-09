@@ -4,66 +4,68 @@
 	import { getLocale, localizeHref, locales } from '#lib/paraglide/runtime.js';
 	import { m } from '#lib/paraglide/messages.js';
 	import {
-		MAX_LEVEL,
-		getLevel,
-		hintStage,
-		isLevelOpen,
-		makeOptions,
-		pickCounts,
-		scatterPositions
-	} from '#lib/count-fruit.js';
+		MAX_SHAPE_LEVEL,
+		SHAPE_ROUNDS_PER_LEVEL,
+		figurePhrase,
+		getShapeLevel,
+		makeFigureOptions,
+		pickFigures,
+		type Figure,
+		type WordLocale
+	} from '#lib/color-shapes.js';
+	import { hintStage, isLevelOpen } from '#lib/count-fruit.js';
 	import { clearLevel, loadProgress, saveProgress } from '#lib/progress.js';
-	import FruitArt from '#lib/components/FruitArt.svelte';
+	import ShapeArt from '#lib/components/ShapeArt.svelte';
 	import Confetti from '#lib/components/Confetti.svelte';
 
 	const IDLE_MS = 20000;
 	const PAUSE_MS = 900;
 
-	let counts = $state<number[] | null>(null);
+	let figures = $state<Figure[] | null>(null);
 	let roundIndex = $state(0);
 	let pips = $state<boolean[]>([false, false, false]);
-	let options = $state<number[]>([]);
+	let options = $state<Figure[]>([]);
 	let misses = $state(0);
 	let manualHints = $state(0);
 	let idleHint = $state(false);
 	let feedback = $state<'correct' | 'wrong' | null>(null);
-	let wrongValue = $state<number | null>(null);
-	let fruitHappy = $state(false);
+	let wrongValue = $state<Figure | null>(null);
+	let figuresHappy = $state(false);
 	let won = $state(false);
 	let decided = $state(false);
 	let unlocked = $state(true);
+	let syncedLevel = $state(0);
 	let alive = true;
 
 	let idleTimer: ReturnType<typeof setTimeout> | null = null;
 	let pauseTimer: ReturnType<typeof setTimeout> | null = null;
 
 	const levelNumber = $derived(Number.parseInt(page.params.level ?? '', 10));
-	const config = $derived(getLevel(levelNumber));
-	const current = $derived(counts !== null ? (counts[roundIndex] ?? null) : null);
+	const config = $derived(getShapeLevel(levelNumber));
+	const current = $derived(figures !== null ? (figures[roundIndex] ?? null) : null);
 	const stage = $derived(hintStage(misses, manualHints, idleHint));
-	const spots = $derived(
-		config && current !== null && config.layout !== 'row'
-			? scatterPositions(current, levelNumber * 100 + roundIndex, config.overlap)
-			: []
-	);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
-	const pathHref = $derived(localizeHref('/play/count-fruit', { locale }));
-	const nextHref = $derived(localizeHref(`/play/count-fruit/${levelNumber + 1}`, { locale }));
+	const pathHref = $derived(localizeHref('/play/color-shapes', { locale }));
+	const nextHref = $derived(localizeHref(`/play/color-shapes/${levelNumber + 1}`, { locale }));
 
-	const prompts = {
-		apple: () => m.prompt_apple(),
-		pear: () => m.prompt_pear(),
-		orange: () => m.prompt_orange(),
-		banana: () => m.prompt_banana(),
-		grapes: () => m.prompt_grapes(),
-		strawberry: () => m.prompt_strawberry(),
-		lemon: () => m.prompt_lemon(),
-		cherry: () => m.prompt_cherry(),
-		peach: () => m.prompt_peach(),
-		watermelon: () => m.prompt_watermelon()
-	};
-	const prompt = $derived(config ? prompts[config.fruit]() : '');
+	const words = $derived(
+		(key: string) => (m as unknown as Record<string, () => string>)[key]?.() ?? ''
+	);
+	const phrase = $derived(
+		config && current ? figurePhrase(words, locale as WordLocale, current, config.fullPrompt) : ''
+	);
+	const prompt = $derived(
+		!config || !current
+			? ''
+			: config.fullPrompt
+				? m.shapes_prompt_full({ phrase })
+				: m.shapes_prompt_color({ phrase })
+	);
+
+	function same(a: Figure | null, b: Figure | null): boolean {
+		return !!a && !!b && a.color === b.color && a.shape === b.shape;
+	}
 
 	function poke(): void {
 		if (idleTimer) clearTimeout(idleTimer);
@@ -74,8 +76,8 @@
 	}
 
 	function startRound(): void {
-		if (!config || counts === null || current === null) return;
-		options = makeOptions(config, current);
+		if (!config || figures === null || current === null) return;
+		options = makeFigureOptions(config, current);
 		misses = 0;
 		manualHints = 0;
 		idleHint = false;
@@ -84,41 +86,70 @@
 
 	function startLevel(): void {
 		if (!config) return;
-		counts = pickCounts(config);
+		figures = pickFigures(config);
 		roundIndex = 0;
-		pips = [false, false, false];
+		pips = Array.from({ length: SHAPE_ROUNDS_PER_LEVEL }, () => false);
 		feedback = null;
 		wrongValue = null;
-		fruitHappy = false;
+		figuresHappy = false;
 		won = false;
 		startRound();
 	}
 
+	function syncLevel(): void {
+		if (!config) return;
+		if (idleTimer) clearTimeout(idleTimer);
+		if (pauseTimer) clearTimeout(pauseTimer);
+		alive = true;
+		figures = null;
+		roundIndex = 0;
+		pips = [false, false, false];
+		options = [];
+		misses = 0;
+		manualHints = 0;
+		idleHint = false;
+		feedback = null;
+		wrongValue = null;
+		figuresHappy = false;
+		won = false;
+		const cleared = loadProgress(localStorage)['color-shapes'].cleared;
+		unlocked = isLevelOpen(cleared, levelNumber);
+		decided = true;
+		if (unlocked) startLevel();
+	}
+
+	$effect(() => {
+		if (config && syncedLevel !== levelNumber) {
+			syncedLevel = levelNumber;
+			syncLevel();
+		}
+	});
+
 	function askForHelp(): void {
-		if (won || counts === null) return;
+		if (won || figures === null) return;
 		manualHints += 1;
 		poke();
 	}
 
-	function answer(value: number): void {
-		if (won || counts === null || current === null || feedback === 'correct') return;
+	function answer(value: Figure): void {
+		if (won || figures === null || current === null || feedback === 'correct') return;
 		poke();
-		const snapshot = counts;
-		if (value === current) {
+		const snapshot = figures;
+		if (same(value, current)) {
 			feedback = 'correct';
 			wrongValue = null;
-			fruitHappy = true;
+			figuresHappy = true;
 			pips = pips.map((done, index) => (index === roundIndex ? true : done));
 			if (pauseTimer) clearTimeout(pauseTimer);
 			pauseTimer = setTimeout(() => {
 				if (!alive || !snapshot) return;
-				fruitHappy = false;
+				figuresHappy = false;
 				feedback = null;
 				if (roundIndex + 1 >= snapshot.length) {
 					won = true;
 					if (idleTimer) clearTimeout(idleTimer);
 					const progress = loadProgress(localStorage);
-					clearLevel(progress, 'count-fruit', levelNumber);
+					clearLevel(progress, 'color-shapes', levelNumber);
 					saveProgress(progress, localStorage);
 				} else {
 					roundIndex += 1;
@@ -138,39 +169,6 @@
 		}
 	}
 
-	// SvelteKit reuses this page component when moving between levels,
-	// so reset explicitly whenever the level param changes.
-	let syncedLevel = $state(0);
-
-	function syncLevel(): void {
-		if (!config) return;
-		if (idleTimer) clearTimeout(idleTimer);
-		if (pauseTimer) clearTimeout(pauseTimer);
-		alive = true;
-		counts = null;
-		roundIndex = 0;
-		pips = [false, false, false];
-		options = [];
-		misses = 0;
-		manualHints = 0;
-		idleHint = false;
-		feedback = null;
-		wrongValue = null;
-		fruitHappy = false;
-		won = false;
-		const cleared = loadProgress(localStorage)['count-fruit'].cleared;
-		unlocked = isLevelOpen(cleared, levelNumber);
-		decided = true;
-		if (unlocked) startLevel();
-	}
-
-	$effect(() => {
-		if (config && syncedLevel !== levelNumber) {
-			syncedLevel = levelNumber;
-			syncLevel();
-		}
-	});
-
 	onDestroy(() => {
 		alive = false;
 		if (idleTimer) clearTimeout(idleTimer);
@@ -179,7 +177,7 @@
 </script>
 
 <svelte:head>
-	<title>Lumi — {config ? m.level({ n: levelNumber }) : m.game_name()}</title>
+	<title>Lumi — {config ? m.level({ n: levelNumber }) : m.shapes_name()}</title>
 </svelte:head>
 
 {#if !config}
@@ -220,57 +218,33 @@
 				{/each}
 			</div>
 
-			{#if counts !== null && current !== null}
-				<div
-					class="fruit-board"
-					class:tall={config.layout === 'scatter'}
-					class:hint-pulse={stage === 1}
-					aria-hidden="true"
-				>
-					{#if config.layout === 'row'}
-						<div class="fruit-row">
-							{#each Array.from({ length: current }, (_, i) => i) as i (i)}
-								<FruitArt fruit={config.fruit} happy={fruitHappy} />
-							{/each}
-						</div>
-					{:else}
-						{#each spots as spot, i (i)}
-							<span
-								class="fruit-spot"
-								style={`left: ${spot.x}%; top: ${spot.y}%; transform: translate(-50%, -50%) scale(${spot.size}) rotate(${spot.tilt}deg);`}
-							>
-								<FruitArt fruit={config.fruit} happy={fruitHappy} />
-							</span>
-						{/each}
-					{/if}
+			{#if figures !== null && current !== null}
+				<div class="answers" class:hint-pulse={stage === 1}>
+					{#each options as option (option.color + '-' + option.shape)}
+						<button
+							class="figure-btn"
+							class:glow={stage === 2 && same(option, current)}
+							class:shake={feedback === 'wrong' && same(option, wrongValue)}
+							type="button"
+							disabled={feedback === 'correct'}
+							onclick={() => answer(option)}
+							aria-label={figurePhrase(words, locale as WordLocale, option, true)}
+						>
+							<ShapeArt shape={option.shape} color={option.color} happy={figuresHappy} />
+						</button>
+					{/each}
 				</div>
 
 				<p class="feedback" class:good={feedback === 'correct'} class:retry={feedback === 'wrong'}>
 					{#if feedback === 'correct'}{m.correctTap()}{:else if feedback === 'wrong'}{m.tryAgain()}{/if}
 				</p>
 
-				<div class="answers">
-					{#each options as option (option)}
-						<button
-							class="answer-btn"
-							class:glow={stage === 2 && option === current}
-							class:shake={feedback === 'wrong' && option === wrongValue}
-							type="button"
-							disabled={feedback === 'correct'}
-							onclick={() => answer(option)}
-						>
-							{option}
-						</button>
-					{/each}
-				</div>
-				<p class="feedback" style="font-size: 1.1rem; color: var(--ink-soft);">{m.tapNumber()}</p>
-
 				{#if stage >= 1}
 					<div class="hint-box">
 						{#if stage === 1}
-							{m.hint1()}
+							{m.shapes_hint_look()}
 						{:else}
-							{m.hint2({ count: current })}
+							{m.shapes_hint_this()}
 						{/if}
 					</div>
 				{/if}
@@ -279,15 +253,17 @@
 			<Confetti />
 			<div class="win">
 				<div class="win-art">
-					<FruitArt fruit={config.fruit} happy={true} />
+					{#if current}
+						<ShapeArt shape={current.shape} color={current.color} happy={true} />
+					{/if}
 				</div>
 				<h2>{m.levelComplete()}</h2>
 				<p class="cheer">{m.cheer()}</p>
-				{#if levelNumber >= MAX_LEVEL}
+				{#if levelNumber >= MAX_SHAPE_LEVEL}
 					<p>{m.finishGame()}</p>
 				{/if}
 				<div class="actions">
-					{#if levelNumber < MAX_LEVEL}
+					{#if levelNumber < MAX_SHAPE_LEVEL}
 						<a class="btn" href={nextHref}>{m.nextLevel()}</a>
 					{/if}
 					<button class="btn secondary" type="button" onclick={startLevel}>{m.replay()}</button>
