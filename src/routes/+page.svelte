@@ -25,6 +25,7 @@
 	let clearedMore = $state(0);
 	let clearedOpp = $state(0);
 	let clearedRead = $state(0);
+	let clearedOrder = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -41,6 +42,7 @@
 	const moreHref = $derived(localizeHref('/play/more-less', { locale }));
 	const oppHref = $derived(localizeHref('/play/opposites', { locale }));
 	const readHref = $derived(localizeHref('/play/read-word', { locale }));
+	const orderHref = $derived(localizeHref('/play/small-big', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -58,6 +60,7 @@
 		clearedMore = progress['more-less'].cleared;
 		clearedOpp = progress['opposites'].cleared;
 		clearedRead = progress['read-word'].cleared;
+		clearedOrder = progress['small-big'].cleared;
 	});
 </script>
 
@@ -263,6 +266,20 @@
 		<div class="row">
 			<a class="btn" href={readHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedRead })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.order_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<FruitArt fruit="pear" />
+	</div>
+	<div>
+		<h2>{m.order_name()}</h2>
+		<p>{m.order_desc()}</p>
+		<div class="row">
+			<a class="btn" href={orderHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedOrder })}</span>
 		</div>
 	</div>
 </section>

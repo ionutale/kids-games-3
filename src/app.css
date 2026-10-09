@@ -827,6 +827,62 @@ a.level-tile:hover {
 	letter-spacing: 0.01em;
 }
 
+.order-row {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 0.5rem;
+	margin-top: 1rem;
+}
+
+.order-pile {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	gap: 0.15rem;
+	min-height: 7.5rem;
+	padding: 0.45rem 0.25rem;
+	border: 3px solid var(--line);
+	border-radius: 1.2rem;
+	background: #fffdf8;
+	box-shadow: var(--shadow);
+	cursor: pointer;
+}
+
+.order-pile svg {
+	width: 1.55rem;
+	height: 1.55rem;
+}
+
+.order-n {
+	position: absolute;
+	top: 0.2rem;
+	left: 0.35rem;
+	font-weight: 800;
+	font-size: 1.1rem;
+	color: var(--leaf);
+}
+
+.order-pile.picked {
+	border-color: var(--leaf);
+}
+
+.order-pile.glow {
+	border-color: var(--leaf);
+	box-shadow: 0 0 0 6px rgba(93, 168, 95, 0.35);
+	animation: pulse 1s ease-in-out infinite;
+}
+
+.order-pile.shake {
+	animation: shake 0.45s ease;
+	border-color: var(--coral);
+}
+
+.order-pile:disabled {
+	cursor: default;
+}
+
 .sum-row.equation .pile svg {
 	width: 2.5rem;
 	height: 2.5rem;
@@ -1141,6 +1197,8 @@ a.level-tile:hover {
 	.answer-btn.shake,
 	.compare-pile.glow,
 	.compare-pile.shake,
+	.order-pile.glow,
+	.order-pile.shake,
 	.wash-hand,
 	.wash-drop,
 	.wash-bubble,

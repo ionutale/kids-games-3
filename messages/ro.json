@@ -153,5 +153,9 @@
 	"read_name": "Citește cuvântul",
 	"read_desc": "Vezi cuvântul. Atinge imaginea potrivită.",
 	"read_tap": "Atinge imaginea.",
-	"read_hint": "Citește cuvântul, apoi găsește imaginea."
+	"read_hint": "Citește cuvântul, apoi găsește imaginea.",
+	"order_name": "De la mic la mare",
+	"order_desc": "Trei grupuri de fructe. Atinge-le de la cele mai puține la cele mai multe.",
+	"order_prompt": "Atinge întâi grupul cel mai mic.",
+	"order_hint": "Numără fiecare grup. Începe cu cel care are mai puține."
 }

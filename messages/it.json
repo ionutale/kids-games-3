@@ -153,5 +153,9 @@
 	"read_name": "Leggi la parola",
 	"read_desc": "Vedi la parola. Tocca la figura giusta.",
 	"read_tap": "Tocca la figura.",
-	"read_hint": "Leggi la parola, poi trova la figura."
+	"read_hint": "Leggi la parola, poi trova la figura.",
+	"order_name": "Dal piccolo al grande",
+	"order_desc": "Tre gruppi di frutta. Toccali dal meno al più.",
+	"order_prompt": "Tocca prima il gruppo più piccolo.",
+	"order_hint": "Conta ogni gruppo. Comincia da quello che ne ha meno."
 }

@@ -153,5 +153,9 @@
 	"read_name": "Lies das Wort",
 	"read_desc": "Sieh das Wort. Tippe das passende Bild an.",
 	"read_tap": "Tippe das Bild an.",
-	"read_hint": "Lies das Wort, dann finde das Bild."
+	"read_hint": "Lies das Wort, dann finde das Bild.",
+	"order_name": "Von klein nach groß",
+	"order_desc": "Drei Gruppen Obst. Tippe sie von wenig nach viel.",
+	"order_prompt": "Tippe zuerst die kleinste Gruppe.",
+	"order_hint": "Zähle jede Gruppe. Fang mit der an, die weniger hat."
 }

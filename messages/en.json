@@ -153,5 +153,9 @@
 	"read_name": "Read the word",
 	"read_desc": "See the word. Tap the matching picture.",
 	"read_tap": "Tap the picture.",
-	"read_hint": "Read the word, then find the picture."
+	"read_hint": "Read the word, then find the picture.",
+	"order_name": "Small to big",
+	"order_desc": "Three groups of fruit. Tap them from fewest to most.",
+	"order_prompt": "Tap the smallest group first.",
+	"order_hint": "Count each group. Start with the one that has less."
 }
