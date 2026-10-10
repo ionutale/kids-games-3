@@ -188,5 +188,11 @@
 	"shp_name": "La forma dopo",
 	"shp_desc": "Forme in fila. Tocca la forma che viene dopo.",
 	"shp_prompt": "Quale forma viene dopo?",
-	"shp_hint": "Le forme si ripetono. Guarda l'inizio."
+	"shp_hint": "Le forme si ripetono. Guarda l'inizio.",
+	"same_name": "Uguali o no",
+	"same_desc": "Due figure. Tocca se sono uguali.",
+	"same_prompt": "Sono uguali?",
+	"same_yes": "Uguali",
+	"same_no": "Diverse",
+	"same_hint": "Guarda bene le due figure."
 }

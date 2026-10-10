@@ -31,7 +31,8 @@ export type GameId =
 	| 'match-count'
 	| 'pattern'
 	| 'sides'
-	| 'shape-pattern';
+	| 'shape-pattern'
+	| 'same-pair';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -55,6 +56,7 @@ export interface Progress {
 	pattern: GameProgress;
 	sides: GameProgress;
 	'shape-pattern': GameProgress;
+	'same-pair': GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -84,7 +86,8 @@ export function defaultProgress(): Progress {
 		'match-count': { cleared: 0 },
 		pattern: { cleared: 0 },
 		sides: { cleared: 0 },
-		'shape-pattern': { cleared: 0 }
+		'shape-pattern': { cleared: 0 },
+		'same-pair': { cleared: 0 }
 	};
 }
 
@@ -127,7 +130,8 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			'match-count': sanitizeGame(games['match-count']),
 			pattern: sanitizeGame(games['pattern']),
 			sides: sanitizeGame(games['sides']),
-			'shape-pattern': sanitizeGame(games['shape-pattern'])
+			'shape-pattern': sanitizeGame(games['shape-pattern']),
+			'same-pair': sanitizeGame(games['same-pair'])
 		};
 	} catch {
 		return defaultProgress();

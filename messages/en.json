@@ -188,5 +188,11 @@
 	"shp_name": "Shape pattern",
 	"shp_desc": "Shapes in a row. Tap the shape that comes next.",
 	"shp_prompt": "Which shape comes next?",
-	"shp_hint": "The shapes repeat. Look back at the start."
+	"shp_hint": "The shapes repeat. Look back at the start.",
+	"same_name": "Same or not",
+	"same_desc": "Two pictures. Tap if they match.",
+	"same_prompt": "Are they the same?",
+	"same_yes": "Same",
+	"same_no": "Different",
+	"same_hint": "Look at both pictures."
 }

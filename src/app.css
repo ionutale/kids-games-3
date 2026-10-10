@@ -614,6 +614,11 @@ a.level-tile:hover {
 	box-shadow: var(--shadow);
 }
 
+.answer-btn.word {
+	font-size: 1.45rem;
+	padding: 0.4rem 0.8rem;
+}
+
 .answer-btn:hover:not(:disabled) {
 	border-color: var(--sky);
 }
@@ -945,6 +950,11 @@ a.level-tile:hover {
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	max-width: 18rem;
 	margin-inline: auto;
+}
+
+.match-row .order-pile svg {
+	width: 4.2rem;
+	height: 4.2rem;
 }
 
 .pattern-row {

@@ -188,5 +188,11 @@
 	"shp_name": "Welche Form kommt?",
 	"shp_desc": "Formen in einer Reihe. Tippe die nächste Form.",
 	"shp_prompt": "Welche Form kommt danach?",
-	"shp_hint": "Die Formen wiederholen sich. Schau nach vorn."
+	"shp_hint": "Die Formen wiederholen sich. Schau nach vorn.",
+	"same_name": "Gleich oder nicht",
+	"same_desc": "Zwei Bilder. Tippe, ob sie gleich sind.",
+	"same_prompt": "Sind sie gleich?",
+	"same_yes": "Gleich",
+	"same_no": "Verschieden",
+	"same_hint": "Schau dir beide an."
 }

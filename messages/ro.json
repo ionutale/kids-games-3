@@ -188,5 +188,11 @@
 	"shp_name": "Forma următoare",
 	"shp_desc": "Forme la rând. Atinge forma care urmează.",
 	"shp_prompt": "Care formă urmează?",
-	"shp_hint": "Formele se repetă. Uită-te la început."
+	"shp_hint": "Formele se repetă. Uită-te la început.",
+	"same_name": "La fel sau nu",
+	"same_desc": "Două imagini. Atinge dacă sunt la fel.",
+	"same_prompt": "Sunt la fel?",
+	"same_yes": "La fel",
+	"same_no": "Diferite",
+	"same_hint": "Uită-te la amândouă."
 }
