@@ -439,5 +439,13 @@
 	"set_name": "Complete the set",
 	"set_desc": "See two matching pictures. Tap the missing one to make three.",
 	"set_prompt": "What completes the set?",
-	"set_hint": "Find the picture that matches the two you already see."
+	"set_hint": "Find the picture that matches the two you already see.",
+	"path_name": "Follow the path",
+	"path_desc": "Blue is start. Green is the goal. Which way next?",
+	"path_prompt": "Which way next?",
+	"path_hint": "Follow the sandy path from blue to green.",
+	"path_up": "up",
+	"path_down": "down",
+	"path_left": "left",
+	"path_right": "right"
 }

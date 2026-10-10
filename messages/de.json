@@ -439,5 +439,13 @@
 	"set_name": "Satz vervollständigen",
 	"set_desc": "Zwei gleiche Bilder. Tippe das fehlende, damit es drei sind.",
 	"set_prompt": "Was vervollständigt den Satz?",
-	"set_hint": "Finde das Bild, das zu den beiden passt, die du schon siehst."
+	"set_hint": "Finde das Bild, das zu den beiden passt, die du schon siehst.",
+	"path_name": "Weg folgen",
+	"path_desc": "Blau ist Start. Grün ist Ziel. Wohin als Nächstes?",
+	"path_prompt": "Wohin als Nächstes?",
+	"path_hint": "Folge dem Sandweg von blau nach grün.",
+	"path_up": "hoch",
+	"path_down": "runter",
+	"path_left": "links",
+	"path_right": "rechts"
 }

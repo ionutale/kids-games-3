@@ -439,5 +439,13 @@
 	"set_name": "Completa il gruppo",
 	"set_desc": "Vedi due immagini uguali. Tocca quella che manca per farne tre.",
 	"set_prompt": "Cosa completa il gruppo?",
-	"set_hint": "Trova l'immagine uguale alle due che vedi già."
+	"set_hint": "Trova l'immagine uguale alle due che vedi già.",
+	"path_name": "Segui il sentiero",
+	"path_desc": "Il blu è l'inizio. Il verde è l'arrivo. Da che parte?",
+	"path_prompt": "Da che parte adesso?",
+	"path_hint": "Segui il sentiero sabbioso dal blu al verde.",
+	"path_up": "su",
+	"path_down": "giù",
+	"path_left": "sinistra",
+	"path_right": "destra"
 }

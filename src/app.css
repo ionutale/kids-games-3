@@ -2285,6 +2285,72 @@ a.level-tile:hover {
 	min-height: auto;
 }
 
+.path-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 0.85rem;
+	overflow: hidden;
+	border: 3px solid #7aba6a;
+}
+
+.path-thumb .path-art,
+.path-thumb svg {
+	width: 100%;
+	height: 100%;
+}
+
+.game-card .path-thumb {
+	width: 4.6rem;
+	height: 4.6rem;
+}
+
+.level-tile .path-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+	border-width: 2px;
+}
+
+.path-stage {
+	display: flex;
+	justify-content: center;
+	margin: 0.75rem 0 0.5rem;
+}
+
+.path-stage .path-art,
+.path-stage svg {
+	width: 11rem;
+	height: auto;
+	border-radius: 1rem;
+}
+
+.path-answers {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(5.5rem, 1fr));
+	gap: 0.65rem;
+}
+
+.path-btn {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.2rem;
+	padding: 0.65rem 0.4rem;
+	min-height: auto;
+}
+
+.path-arrow {
+	font-size: 1.8rem;
+	line-height: 1;
+	font-weight: 800;
+}
+
+.path-dir-label {
+	font-size: 0.95rem;
+	font-weight: 700;
+}
+
 .oless-thumb.big,
 .omore-thumb.big,
 .skip-thumb.big {

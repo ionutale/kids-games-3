@@ -439,5 +439,13 @@
 	"set_name": "Completează setul",
 	"set_desc": "Vezi două imagini la fel. Atinge pe cea care lipsește ca să fie trei.",
 	"set_prompt": "Ce completează setul?",
-	"set_hint": "Găsește imaginea care se potrivește cu cele două pe care le vezi."
+	"set_hint": "Găsește imaginea care se potrivește cu cele două pe care le vezi.",
+	"path_name": "Urmează drumul",
+	"path_desc": "Albastru e startul. Verde e ținta. Încotro acum?",
+	"path_prompt": "Încotro acum?",
+	"path_hint": "Urmează drumul nisipos de la albastru la verde.",
+	"path_up": "sus",
+	"path_down": "jos",
+	"path_left": "stânga",
+	"path_right": "dreapta"
 }
