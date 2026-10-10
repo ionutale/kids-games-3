@@ -428,5 +428,12 @@
 	"healthy_donut": "Donut",
 	"healthy_icecream": "Eis",
 	"healthy_cake": "Kuchen",
-	"healthy_lollipop": "Lolli"
+	"healthy_lollipop": "Lolli",
+	"above_name": "Oben und unten",
+	"above_desc": "Drei Früchte übereinander. Tippe oben, unten oder dazwischen.",
+	"above_prompt": "Tippe das {place}.",
+	"above_hint": "Oben ist oben. Unten ist unten. Die mittlere ist dazwischen.",
+	"above_above": "oben",
+	"above_below": "unten",
+	"above_between": "dazwischen"
 }

@@ -70,7 +70,8 @@ describe('progress', () => {
 			'spell-word': { cleared: 0 },
 			'body-parts': { cleared: 0 },
 			'map-places': { cleared: 0 },
-			'healthy-choice': { cleared: 0 }
+			'healthy-choice': { cleared: 0 },
+			'above-below': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -183,7 +184,8 @@ describe('progress', () => {
 			'spell-word': { cleared: 0 },
 			'body-parts': { cleared: 0 },
 			'map-places': { cleared: 0 },
-			'healthy-choice': { cleared: 0 }
+			'healthy-choice': { cleared: 0 },
+			'above-below': { cleared: 0 }
 		});
 	});
 
@@ -245,7 +247,8 @@ describe('progress', () => {
 			'spell-word': { cleared: 0 },
 			'body-parts': { cleared: 0 },
 			'map-places': { cleared: 0 },
-			'healthy-choice': { cleared: 0 }
+			'healthy-choice': { cleared: 0 },
+			'above-below': { cleared: 0 }
 		});
 	});
 });

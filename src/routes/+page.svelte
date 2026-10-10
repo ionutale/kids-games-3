@@ -70,6 +70,7 @@
 	let clearedBody = $state(0);
 	let clearedMap = $state(0);
 	let clearedHealthy = $state(0);
+	let clearedAbove = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -121,6 +122,7 @@
 	const bodyHref = $derived(localizeHref('/play/body-parts', { locale }));
 	const mapHref = $derived(localizeHref('/play/map-places', { locale }));
 	const healthyHref = $derived(localizeHref('/play/healthy-choice', { locale }));
+	const aboveHref = $derived(localizeHref('/play/above-below', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -173,6 +175,7 @@
 		clearedBody = progress['body-parts'].cleared;
 		clearedMap = progress['map-places'].cleared;
 		clearedHealthy = progress['healthy-choice'].cleared;
+		clearedAbove = progress['above-below'].cleared;
 	});
 </script>
 
@@ -871,6 +874,20 @@
 		<div class="row">
 			<a class="btn" href={healthyHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedHealthy })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.above_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="above-thumb" aria-hidden="true"><FruitArt fruit="pear" /></span>
+	</div>
+	<div>
+		<h2>{m.above_name()}</h2>
+		<p>{m.above_desc()}</p>
+		<div class="row">
+			<a class="btn" href={aboveHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedAbove })}</span>
 		</div>
 	</div>
 </section>

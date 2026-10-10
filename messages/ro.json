@@ -428,5 +428,12 @@
 	"healthy_donut": "gogoașă",
 	"healthy_icecream": "înghețată",
 	"healthy_cake": "tort",
-	"healthy_lollipop": "acadea"
+	"healthy_lollipop": "acadea",
+	"above_name": "Deasupra și dedesubt",
+	"above_desc": "Vezi trei fructe una peste alta. Atinge deasupra, dedesubt sau între.",
+	"above_prompt": "Atinge pe cel {place}.",
+	"above_hint": "Sus e deasupra. Jos e dedesubt. Cel din mijloc e între.",
+	"above_above": "deasupra",
+	"above_below": "dedesubt",
+	"above_between": "între"
 }

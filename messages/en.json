@@ -428,5 +428,12 @@
 	"healthy_donut": "donut",
 	"healthy_icecream": "ice cream",
 	"healthy_cake": "cake",
-	"healthy_lollipop": "lollipop"
+	"healthy_lollipop": "lollipop",
+	"above_name": "Above and below",
+	"above_desc": "See three fruits in a stack. Tap above, below, or between.",
+	"above_prompt": "Tap the one {place}.",
+	"above_hint": "Top is above. Bottom is below. The middle one is between.",
+	"above_above": "above",
+	"above_below": "below",
+	"above_between": "between"
 }

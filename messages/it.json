@@ -428,5 +428,12 @@
 	"healthy_donut": "ciambella",
 	"healthy_icecream": "gelato",
 	"healthy_cake": "torta",
-	"healthy_lollipop": "lecca-lecca"
+	"healthy_lollipop": "lecca-lecca",
+	"above_name": "Sopra e sotto",
+	"above_desc": "Vedi tre frutti in colonna. Tocca sopra, sotto o in mezzo.",
+	"above_prompt": "Tocca quello {place}.",
+	"above_hint": "In alto è sopra. In basso è sotto. Quello di mezzo è in mezzo.",
+	"above_above": "sopra",
+	"above_below": "sotto",
+	"above_between": "in mezzo"
 }

@@ -59,7 +59,8 @@ export type GameId =
 	| 'spell-word'
 	| 'body-parts'
 	| 'map-places'
-	| 'healthy-choice';
+	| 'healthy-choice'
+	| 'above-below';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -111,6 +112,7 @@ export interface Progress {
 	'body-parts': GameProgress;
 	'map-places': GameProgress;
 	'healthy-choice': GameProgress;
+	'above-below': GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -168,7 +170,8 @@ export function defaultProgress(): Progress {
 		'spell-word': { cleared: 0 },
 		'body-parts': { cleared: 0 },
 		'map-places': { cleared: 0 },
-		'healthy-choice': { cleared: 0 }
+		'healthy-choice': { cleared: 0 },
+		'above-below': { cleared: 0 }
 	};
 }
 
@@ -239,7 +242,8 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			'spell-word': sanitizeGame(games['spell-word']),
 			'body-parts': sanitizeGame(games['body-parts']),
 			'map-places': sanitizeGame(games['map-places']),
-			'healthy-choice': sanitizeGame(games['healthy-choice'])
+			'healthy-choice': sanitizeGame(games['healthy-choice']),
+			'above-below': sanitizeGame(games['above-below'])
 		};
 	} catch {
 		return defaultProgress();
