@@ -354,5 +354,13 @@
 	"half_prompt_lead": "Dividi in ",
 	"half_prompt_word": "due parti uguali",
 	"half_prompt_tail": ". Quanti in ciascuna?",
-	"half_hint": "Dividi il gruppo in due parti uguali. Conta una parte."
+	"half_hint": "Dividi il gruppo in due parti uguali. Conta una parte.",
+	"cmp_name": "Confronta i numeri",
+	"cmp_desc": "Vedi due numeri. Tocca il più grande — o il più piccolo.",
+	"cmp_prompt_lead": "Quale numero è ",
+	"cmp_prompt_bigger": "più grande",
+	"cmp_prompt_smaller": "più piccolo",
+	"cmp_prompt_tail": "?",
+	"cmp_hint_bigger": "Guarda entrambi i numeri. Quale è di più?",
+	"cmp_hint_smaller": "Guarda entrambi i numeri. Quale è di meno?"
 }

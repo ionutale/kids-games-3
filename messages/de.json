@@ -354,5 +354,13 @@
 	"half_prompt_lead": "Teile in ",
 	"half_prompt_word": "zwei gleiche Teile",
 	"half_prompt_tail": ". Wie viele in jedem?",
-	"half_hint": "Teile die Menge in zwei gleiche Gruppen. Zähle eine Gruppe."
+	"half_hint": "Teile die Menge in zwei gleiche Gruppen. Zähle eine Gruppe.",
+	"cmp_name": "Zahlen vergleichen",
+	"cmp_desc": "Sieh zwei Zahlen. Tippe die größere — oder die kleinere.",
+	"cmp_prompt_lead": "Welche Zahl ist ",
+	"cmp_prompt_bigger": "größer",
+	"cmp_prompt_smaller": "kleiner",
+	"cmp_prompt_tail": "?",
+	"cmp_hint_bigger": "Schau beide Zahlen an. Welche ist mehr?",
+	"cmp_hint_smaller": "Schau beide Zahlen an. Welche ist weniger?"
 }

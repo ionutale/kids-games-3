@@ -354,5 +354,13 @@
 	"half_prompt_lead": "Share into ",
 	"half_prompt_word": "two equal parts",
 	"half_prompt_tail": ". How many in each?",
-	"half_hint": "Split the pile into two equal groups. Count one group."
+	"half_hint": "Split the pile into two equal groups. Count one group.",
+	"cmp_name": "Compare numbers",
+	"cmp_desc": "See two numbers. Tap the bigger one — or the smaller one.",
+	"cmp_prompt_lead": "Which number is ",
+	"cmp_prompt_bigger": "bigger",
+	"cmp_prompt_smaller": "smaller",
+	"cmp_prompt_tail": "?",
+	"cmp_hint_bigger": "Look at both numbers. Which one is more?",
+	"cmp_hint_smaller": "Look at both numbers. Which one is less?"
 }

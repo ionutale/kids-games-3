@@ -1561,6 +1561,71 @@ a.level-tile:hover {
 	display: block;
 }
 
+.cmp-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 0.85rem;
+	background: linear-gradient(160deg, #e0f4ff 0%, #5aa9e6 100%);
+	border: 3px solid #3d8fd1;
+	color: #1a4a6e;
+	font-weight: 800;
+	font-size: 1.5rem;
+}
+
+.cmp-thumb.big {
+	width: 5.2rem;
+	height: 5.2rem;
+	font-size: 2.2rem;
+	border-radius: 1.1rem;
+}
+
+.game-card .cmp-thumb {
+	width: 4.6rem;
+	height: 4.6rem;
+	font-size: 1.85rem;
+}
+
+.level-tile .cmp-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+	font-size: 1.15rem;
+	border-width: 2px;
+}
+
+.cmp-row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.75rem;
+	margin-top: 1.1rem;
+}
+
+.cmp-vs {
+	font-size: 1.6rem;
+	font-weight: 800;
+	color: var(--ink-soft);
+}
+
+.cmp-num {
+	min-width: 5.2rem;
+	min-height: 5.2rem;
+	border: 3px solid var(--line);
+	border-radius: 1.3rem;
+	background: #fffdf8;
+	box-shadow: var(--shadow);
+	font-size: 2.2rem;
+	font-weight: 800;
+	color: var(--ink);
+	cursor: pointer;
+}
+
+.cmp-num.glow {
+	border-color: var(--sky);
+	box-shadow: 0 0 0 5px rgba(90, 169, 230, 0.35);
+}
+
 .oless-thumb.big,
 .omore-thumb.big,
 .skip-thumb.big {

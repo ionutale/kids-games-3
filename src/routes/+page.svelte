@@ -59,6 +59,7 @@
 	let clearedSkip = $state(0);
 	let clearedKind = $state(0);
 	let clearedHalf = $state(0);
+	let clearedCmp = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -102,6 +103,7 @@
 	const skipHref = $derived(localizeHref('/play/skip-count', { locale }));
 	const kindHref = $derived(localizeHref('/play/sort-kind', { locale }));
 	const halfHref = $derived(localizeHref('/play/half-share', { locale }));
+	const cmpHref = $derived(localizeHref('/play/compare-numbers', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -146,6 +148,7 @@
 		clearedSkip = progress['skip-count'].cleared;
 		clearedKind = progress['sort-kind'].cleared;
 		clearedHalf = progress['half-share'].cleared;
+		clearedCmp = progress['compare-numbers'].cleared;
 	});
 </script>
 
@@ -732,6 +735,20 @@
 		<div class="row">
 			<a class="btn" href={halfHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedHalf })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.cmp_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="cmp-thumb" aria-hidden="true">&gt;</span>
+	</div>
+	<div>
+		<h2>{m.cmp_name()}</h2>
+		<p>{m.cmp_desc()}</p>
+		<div class="row">
+			<a class="btn" href={cmpHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedCmp })}</span>
 		</div>
 	</div>
 </section>

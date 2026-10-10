@@ -51,7 +51,8 @@ export type GameId =
 	| 'months'
 	| 'skip-count'
 	| 'sort-kind'
-	| 'half-share';
+	| 'half-share'
+	| 'compare-numbers';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -95,6 +96,7 @@ export interface Progress {
 	'skip-count': GameProgress;
 	'sort-kind': GameProgress;
 	'half-share': GameProgress;
+	'compare-numbers': GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -144,7 +146,8 @@ export function defaultProgress(): Progress {
 		months: { cleared: 0 },
 		'skip-count': { cleared: 0 },
 		'sort-kind': { cleared: 0 },
-		'half-share': { cleared: 0 }
+		'half-share': { cleared: 0 },
+		'compare-numbers': { cleared: 0 }
 	};
 }
 
@@ -207,7 +210,8 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			months: sanitizeGame(games.months),
 			'skip-count': sanitizeGame(games['skip-count']),
 			'sort-kind': sanitizeGame(games['sort-kind']),
-			'half-share': sanitizeGame(games['half-share'])
+			'half-share': sanitizeGame(games['half-share']),
+			'compare-numbers': sanitizeGame(games['compare-numbers'])
 		};
 	} catch {
 		return defaultProgress();

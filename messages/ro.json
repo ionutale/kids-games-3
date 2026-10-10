@@ -354,5 +354,13 @@
 	"half_prompt_lead": "Împarte în ",
 	"half_prompt_word": "două părți egale",
 	"half_prompt_tail": ". Câte în fiecare?",
-	"half_hint": "Împarte grupul în două părți egale. Numără o parte."
+	"half_hint": "Împarte grupul în două părți egale. Numără o parte.",
+	"cmp_name": "Compară numerele",
+	"cmp_desc": "Vezi două numere. Atinge pe cel mai mare — sau pe cel mai mic.",
+	"cmp_prompt_lead": "Care număr este ",
+	"cmp_prompt_bigger": "mai mare",
+	"cmp_prompt_smaller": "mai mic",
+	"cmp_prompt_tail": "?",
+	"cmp_hint_bigger": "Uită-te la ambele numere. Care e mai mult?",
+	"cmp_hint_smaller": "Uită-te la ambele numere. Care e mai puțin?"
 }
