@@ -5,14 +5,12 @@
 	import { m } from '#lib/paraglide/messages.js';
 	import { hintStage, isLevelOpen } from '#lib/count-fruit.js';
 	import {
-		MAX_MORE_LEVEL,
-		MORE_ROUNDS,
-		correctSide,
-		getMoreLevel,
-		pickPairs,
-		type Compare,
-		type Side
-	} from '#lib/more-less.js';
+		MAX_ONE_MORE_LEVEL,
+		ONE_MORE_ROUNDS,
+		getOneMoreLevel,
+		pickRounds,
+		type OneMoreRound
+	} from '#lib/one-more.js';
 	import { clearLevel, loadProgress, saveProgress } from '#lib/progress.js';
 	import Confetti from '#lib/components/Confetti.svelte';
 	import FruitArt from '#lib/components/FruitArt.svelte';
@@ -21,14 +19,14 @@
 	const IDLE_MS = 20000;
 	const PAUSE_MS = 900;
 
-	let pairs = $state<Compare[] | null>(null);
+	let rounds = $state<OneMoreRound[] | null>(null);
 	let roundIndex = $state(0);
 	let pips = $state<boolean[]>([false, false, false]);
 	let misses = $state(0);
 	let manualHints = $state(0);
 	let idleHint = $state(false);
 	let feedback = $state<'correct' | 'wrong' | null>(null);
-	let wrongSide = $state<Side | null>(null);
+	let wrongValue = $state<number | null>(null);
 	let won = $state(false);
 	let decided = $state(false);
 	let unlocked = $state(true);
@@ -39,14 +37,13 @@
 	let pauseTimer: ReturnType<typeof setTimeout> | null = null;
 
 	const levelNumber = $derived(Number.parseInt(page.params.level ?? '', 10));
-	const config = $derived(getMoreLevel(levelNumber));
-	const current = $derived(pairs !== null ? (pairs[roundIndex] ?? null) : null);
+	const config = $derived(getOneMoreLevel(levelNumber));
+	const current = $derived(rounds !== null ? (rounds[roundIndex] ?? null) : null);
 	const stage = $derived(hintStage(misses, manualHints, idleHint));
-	const answerSide = $derived(current && config ? correctSide(current, config.ask) : null);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
-	const pathHref = $derived(localizeHref('/play/more-less', { locale }));
-	const nextHref = $derived(localizeHref(`/play/more-less/${levelNumber + 1}`, { locale }));
+	const pathHref = $derived(localizeHref('/play/one-more', { locale }));
+	const nextHref = $derived(localizeHref(`/play/one-more/${levelNumber + 1}`, { locale }));
 
 	function poke(): void {
 		if (idleTimer) clearTimeout(idleTimer);
@@ -65,11 +62,11 @@
 
 	function startLevel(): void {
 		if (!config) return;
-		pairs = pickPairs(config);
+		rounds = pickRounds(config);
 		roundIndex = 0;
-		pips = Array.from({ length: MORE_ROUNDS }, () => false);
+		pips = Array.from({ length: ONE_MORE_ROUNDS }, () => false);
 		feedback = null;
-		wrongSide = null;
+		wrongValue = null;
 		won = false;
 		startRound();
 	}
@@ -79,16 +76,16 @@
 		if (idleTimer) clearTimeout(idleTimer);
 		if (pauseTimer) clearTimeout(pauseTimer);
 		alive = true;
-		pairs = null;
+		rounds = null;
 		roundIndex = 0;
 		pips = [false, false, false];
 		misses = 0;
 		manualHints = 0;
 		idleHint = false;
 		feedback = null;
-		wrongSide = null;
+		wrongValue = null;
 		won = false;
-		const cleared = loadProgress(localStorage)['more-less'].cleared;
+		const cleared = loadProgress(localStorage)['one-more'].cleared;
 		unlocked = isLevelOpen(cleared, levelNumber);
 		decided = true;
 		if (unlocked) startLevel();
@@ -102,19 +99,19 @@
 	});
 
 	function askForHelp(): void {
-		if (won || pairs === null) return;
+		if (won || rounds === null) return;
 		manualHints += 1;
 		poke();
 	}
 
-	function answer(side: Side): void {
-		if (won || pairs === null || current === null || !config || feedback === 'correct') return;
+	function answer(value: number): void {
+		if (won || rounds === null || current === null || feedback === 'correct') return;
 		poke();
-		const snapshot = pairs;
-		if (side === correctSide(current, config.ask)) {
+		const snapshot = rounds;
+		if (value === current.answer) {
 			feedback = 'correct';
 			playSfx('correct');
-			wrongSide = null;
+			wrongValue = null;
 			pips = pips.map((done, index) => (index === roundIndex ? true : done));
 			if (pauseTimer) clearTimeout(pauseTimer);
 			pauseTimer = setTimeout(() => {
@@ -125,7 +122,7 @@
 					playSfx('win');
 					if (idleTimer) clearTimeout(idleTimer);
 					const progress = loadProgress(localStorage);
-					clearLevel(progress, 'more-less', levelNumber);
+					clearLevel(progress, 'one-more', levelNumber);
 					saveProgress(progress, localStorage);
 				} else {
 					roundIndex += 1;
@@ -134,14 +131,14 @@
 			}, PAUSE_MS);
 		} else {
 			misses += 1;
-			wrongSide = side;
+			wrongValue = value;
 			feedback = 'wrong';
 			playSfx('wrong');
 			if (pauseTimer) clearTimeout(pauseTimer);
 			pauseTimer = setTimeout(() => {
 				if (!alive) return;
 				feedback = null;
-				wrongSide = null;
+				wrongValue = null;
 			}, PAUSE_MS);
 		}
 	}
@@ -154,7 +151,7 @@
 </script>
 
 <svelte:head>
-	<title>Lumi — {config ? m.level({ n: levelNumber }) : m.more_name()}</title>
+	<title>Lumi — {config ? m.level({ n: levelNumber }) : m.omore_name()}</title>
 </svelte:head>
 
 {#if !config}
@@ -186,11 +183,7 @@
 				<button class="help-btn" type="button" onclick={askForHelp}>? {m.help()}</button>
 			</div>
 			<p class="prompt letters-ask">
-				{#if config.ask === 'more'}
-					{m.more_prompt_lead()}<strong>{m.more_prompt_word()}</strong>{m.more_prompt_tail()}
-				{:else}
-					{m.more_less_prompt_lead()}<strong>{m.more_less_prompt_word()}</strong>{m.more_less_prompt_tail()}
-				{/if}
+				{m.omore_prompt_lead()}<strong>{m.omore_prompt_word()}</strong>{m.omore_prompt_tail()}
 			</p>
 			<div class="pips" aria-hidden="true">
 				{#each pips as done, index (index)}
@@ -198,25 +191,28 @@
 				{/each}
 			</div>
 			{#if current}
-				<div class="compare-row">
-					{#each ['left', 'right'] as side (side)}
-						{@const count = side === 'left' ? current.left : current.right}
+				<div class="omore-show" class:hint-pulse={stage === 1} aria-hidden="true">
+					<span class="omore-count">{current.shown}</span>
+					<div class="omore-pile">
+						{#each Array.from({ length: current.shown }, (_, i) => i) as i (i)}
+							<FruitArt
+								fruit={config.fruit}
+								happy={feedback === 'correct'}
+							/>
+						{/each}
+					</div>
+				</div>
+				<div class="answers">
+					{#each current.options as option (option)}
 						<button
-							class="compare-pile"
-							class:hint-pulse={stage === 1}
-							class:glow={stage === 2 && side === answerSide}
-							class:shake={feedback === 'wrong' && side === wrongSide}
+							class="answer-btn"
+							class:glow={stage === 2 && option === current.answer}
+							class:shake={feedback === 'wrong' && option === wrongValue}
 							type="button"
 							disabled={feedback === 'correct'}
-							aria-label={String(count)}
-							onclick={() => answer(side as Side)}
+							onclick={() => answer(option)}
 						>
-							{#each Array.from({ length: count }, (_, i) => i) as i (i)}
-								<FruitArt
-									fruit={config.fruit}
-									happy={feedback === 'correct' && side === answerSide}
-								/>
-							{/each}
+							{option}
 						</button>
 					{/each}
 				</div>
@@ -226,7 +222,7 @@
 				{#if stage >= 1}
 					<div class="hint-box">
 						{#if stage === 1}
-							{m.more_hint()}
+							{m.omore_hint()}
 						{:else}
 							{m.shapes_hint_this()}
 						{/if}
@@ -236,16 +232,14 @@
 		{:else}
 			<Confetti />
 			<div class="win">
-				<div class="win-art">
-					<FruitArt fruit={config.fruit} happy={true} />
-				</div>
+				<div class="win-art"><span class="omore-thumb big">+1</span></div>
 				<h2>{m.levelComplete()}</h2>
 				<p class="cheer">{m.cheer()}</p>
-				{#if levelNumber >= MAX_MORE_LEVEL}
+				{#if levelNumber >= MAX_ONE_MORE_LEVEL}
 					<p>{m.finishGame()}</p>
 				{/if}
 				<div class="actions">
-					{#if levelNumber < MAX_MORE_LEVEL}
+					{#if levelNumber < MAX_ONE_MORE_LEVEL}
 						<a class="btn" href={nextHref}>{m.nextLevel()}</a>
 					{/if}
 					<button class="btn secondary" type="button" onclick={startLevel}>{m.replay()}</button>

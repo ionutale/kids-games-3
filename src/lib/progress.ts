@@ -45,7 +45,9 @@ export type GameId =
 	| 'days-week'
 	| 'weather'
 	| 'left-right'
-	| 'jigsaw';
+	| 'jigsaw'
+	| 'one-less'
+	| 'one-more';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -83,6 +85,8 @@ export interface Progress {
 	weather: GameProgress;
 	'left-right': GameProgress;
 	jigsaw: GameProgress;
+	'one-less': GameProgress;
+	'one-more': GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -126,7 +130,9 @@ export function defaultProgress(): Progress {
 		'days-week': { cleared: 0 },
 		weather: { cleared: 0 },
 		'left-right': { cleared: 0 },
-		jigsaw: { cleared: 0 }
+		jigsaw: { cleared: 0 },
+		'one-less': { cleared: 0 },
+		'one-more': { cleared: 0 }
 	};
 }
 
@@ -183,7 +189,9 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			'days-week': sanitizeGame(games['days-week']),
 			weather: sanitizeGame(games.weather),
 			'left-right': sanitizeGame(games['left-right']),
-			jigsaw: sanitizeGame(games.jigsaw)
+			jigsaw: sanitizeGame(games.jigsaw),
+			'one-less': sanitizeGame(games['one-less']),
+			'one-more': sanitizeGame(games['one-more'])
 		};
 	} catch {
 		return defaultProgress();

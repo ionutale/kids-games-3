@@ -7,6 +7,7 @@
 	import { getSound, trackForPath, type SoundPlayer } from '#lib/music.js';
 	import { loadMuted, saveMuted } from '#lib/progress.js';
 	import favicon from '#lib/assets/favicon.svg';
+	import LumiSun from '#lib/components/LumiSun.svelte';
 	import type { LayoutProps } from './$types';
 
 	let { children }: LayoutProps = $props();
@@ -91,7 +92,7 @@
 <div class="lumi-shell">
 	<header class="lumi-header">
 		<a class="brand" href={hrefFor('/')}>
-			<img src={favicon} alt="" />
+			<LumiSun />
 			<span>Lumi</span>
 		</a>
 		<div class="header-tools">

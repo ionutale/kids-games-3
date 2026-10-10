@@ -56,7 +56,9 @@ describe('progress', () => {
 			'days-week': { cleared: 0 },
 			weather: { cleared: 0 },
 			'left-right': { cleared: 0 },
-			jigsaw: { cleared: 0 }
+			jigsaw: { cleared: 0 },
+			'one-less': { cleared: 0 },
+			'one-more': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -100,6 +102,8 @@ describe('progress', () => {
 		expect(clearLevel(progress, 'weather', 1)).toBe(1);
 		expect(clearLevel(progress, 'left-right', 1)).toBe(1);
 		expect(clearLevel(progress, 'jigsaw', 1)).toBe(1);
+		expect(clearLevel(progress, 'one-less', 1)).toBe(1);
+		expect(clearLevel(progress, 'one-more', 1)).toBe(1);
 		expect(progress['count-fruit'].cleared).toBe(1);
 	});
 
@@ -143,7 +147,9 @@ describe('progress', () => {
 			'days-week': { cleared: 0 },
 			weather: { cleared: 0 },
 			'left-right': { cleared: 0 },
-			jigsaw: { cleared: 0 }
+			jigsaw: { cleared: 0 },
+			'one-less': { cleared: 0 },
+			'one-more': { cleared: 0 }
 		});
 	});
 
@@ -191,7 +197,9 @@ describe('progress', () => {
 			'days-week': { cleared: 0 },
 			weather: { cleared: 0 },
 			'left-right': { cleared: 0 },
-			jigsaw: { cleared: 0 }
+			jigsaw: { cleared: 0 },
+			'one-less': { cleared: 0 },
+			'one-more': { cleared: 0 }
 		});
 	});
 });

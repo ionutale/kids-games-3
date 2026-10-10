@@ -17,14 +17,23 @@ describe('syllable levels', () => {
 			expect(getSylLevel(level)).toBeDefined();
 		}
 		expect(getSylLevel(1)!.maxParts).toBe(2);
+		expect(getSylLevel(7)!.minParts).toBe(2);
+		expect(getSylLevel(7)!.maxParts).toBe(4);
+		expect(getSylLevel(8)!.minParts).toBe(3);
 		expect(getSylLevel(8)!.maxParts).toBe(4);
+		expect(getSylLevel(9)!.minParts).toBe(3);
+		expect(getSylLevel(9)!.maxParts).toBe(5);
+		expect(getSylLevel(10)!.minParts).toBe(4);
 		expect(getSylLevel(11)).toBeUndefined();
 		for (const locale of LOCALES) {
-			expect(SYL_BANK[locale].length).toBeGreaterThanOrEqual(18);
+			expect(SYL_BANK[locale].length).toBeGreaterThanOrEqual(40);
 			expect(SYL_BANK[locale].some((word) => word.parts === 1)).toBe(true);
 			expect(SYL_BANK[locale].some((word) => word.parts === 2)).toBe(true);
 			expect(SYL_BANK[locale].some((word) => word.parts === 3)).toBe(true);
 			expect(SYL_BANK[locale].some((word) => word.parts === 4)).toBe(true);
+			expect(SYL_BANK[locale].some((word) => word.parts === 5)).toBe(true);
+			const hardPool = SYL_BANK[locale].filter((word) => word.parts >= 3 && word.parts <= 5);
+			expect(hardPool.length).toBeGreaterThanOrEqual(12);
 		}
 	});
 

@@ -92,9 +92,31 @@ button,
 	letter-spacing: 0.02em;
 }
 
-.brand img {
+.brand img,
+.brand .lumi-sun {
 	width: 2.6rem;
 	height: 2.6rem;
+	flex-shrink: 0;
+}
+
+.lumi-sun-rays {
+	transform-origin: 32px 32px;
+	animation: lumi-sun-spin 10s linear infinite;
+}
+
+@keyframes lumi-sun-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.lumi-sun-rays {
+		animation: none;
+	}
 }
 
 .header-tools {
@@ -1394,6 +1416,91 @@ a.level-tile:hover {
 	height: 5.2rem;
 }
 
+.oless-thumb,
+.omore-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 0.85rem;
+	background: linear-gradient(160deg, #ffe0c2 0%, #f5a623 100%);
+	border: 3px solid #e08a1a;
+	color: #5a3d1a;
+	font-weight: 800;
+	font-size: 1.25rem;
+	letter-spacing: -0.02em;
+}
+
+.omore-thumb {
+	background: linear-gradient(160deg, #d8f0c8 0%, #5da85f 100%);
+	border-color: #4a8f4c;
+	color: #2f4f2f;
+}
+
+.oless-thumb.big,
+.omore-thumb.big {
+	width: 5.2rem;
+	height: 5.2rem;
+	font-size: 2rem;
+	border-radius: 1.1rem;
+}
+
+.game-card .oless-thumb,
+.game-card .omore-thumb {
+	width: 4.6rem;
+	height: 4.6rem;
+	font-size: 1.55rem;
+}
+
+.level-tile .oless-thumb,
+.level-tile .omore-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+	font-size: 1rem;
+	border-width: 2px;
+}
+
+.oless-show,
+.omore-show {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.65rem;
+	margin-top: 1rem;
+}
+
+.oless-count,
+.omore-count {
+	display: grid;
+	place-items: center;
+	min-width: 3.6rem;
+	min-height: 3.6rem;
+	padding: 0.2rem 0.7rem;
+	border-radius: 1rem;
+	background: #fff3dd;
+	border: 3px solid var(--line);
+	box-shadow: var(--shadow);
+	font-weight: 800;
+	font-size: 2.4rem;
+	color: var(--ink);
+	line-height: 1;
+}
+
+.oless-pile,
+.omore-pile {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.35rem;
+	max-width: 18rem;
+}
+
+.oless-pile svg,
+.omore-pile svg {
+	width: 2.8rem;
+	height: 2.8rem;
+}
+
 .jigsaw-board {
 	position: relative;
 	display: grid;
@@ -1688,6 +1795,130 @@ a.level-tile:hover {
 	font-weight: 700;
 }
 
+.days-fill-board {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.4rem;
+	margin-top: 1rem;
+}
+
+.days-fill-board .days-chip.fixed,
+.days-fill-board .days-chip.filled,
+.days-tray .days-chip,
+.days-drag-ghost {
+	display: inline-grid;
+	place-items: center;
+	min-width: 4.4rem;
+	min-height: 3.2rem;
+	padding: 0.35rem 0.55rem;
+	border: 3px solid var(--line);
+	border-radius: 0.95rem;
+	background: #fffdf8;
+	box-shadow: var(--shadow);
+	font-weight: 800;
+	font-size: 0.95rem;
+	color: var(--ink);
+	line-height: 1.15;
+	text-align: center;
+}
+
+.days-fill-board .days-chip.filled {
+	border-color: var(--leaf);
+	animation: jig-snap 0.45s cubic-bezier(0.22, 1.4, 0.36, 1);
+}
+
+.days-slot {
+	position: relative;
+	min-width: 4.4rem;
+	min-height: 3.2rem;
+}
+
+.days-slot.open {
+	outline: 2px dashed rgba(90, 61, 26, 0.28);
+	outline-offset: -2px;
+	border-radius: 0.95rem;
+	background: rgba(255, 247, 236, 0.7);
+}
+
+.days-slot.glow {
+	outline-color: var(--sky);
+	animation: pulse 1s ease-in-out infinite;
+}
+
+.days-fill-board.drop-ready .days-slot.open {
+	outline-color: rgba(61, 143, 209, 0.65);
+	background: rgba(61, 143, 209, 0.08);
+	animation: jig-slot-breathe 1.1s ease-in-out infinite;
+}
+
+.days-slot-hit {
+	width: 100%;
+	height: 100%;
+	min-height: 3.2rem;
+	border: 0;
+	background: transparent;
+	border-radius: 0.95rem;
+	font-weight: 800;
+	font-size: 1.4rem;
+	color: var(--ink-soft);
+	cursor: pointer;
+}
+
+.days-slot-hit:disabled {
+	cursor: default;
+}
+
+.days-tray {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.5rem;
+	margin-top: 0.85rem;
+}
+
+.days-tray .days-chip {
+	cursor: grab;
+	touch-action: none;
+	user-select: none;
+	-webkit-user-select: none;
+	background: #fff3dd;
+}
+
+.days-tray .days-chip.selected {
+	border-color: var(--sky);
+	box-shadow: 0 0 0 3px rgba(61, 143, 209, 0.25);
+	transform: scale(1.05);
+}
+
+.days-tray .days-chip.lifting {
+	opacity: 0.25;
+	transform: scale(0.92);
+}
+
+.days-tray .days-chip.glow {
+	animation: pulse 1s ease-in-out infinite;
+}
+
+.days-drag-ghost {
+	position: fixed;
+	z-index: 80;
+	pointer-events: none;
+	background: #fff3dd;
+	border-color: var(--sky);
+	box-shadow: 0 10px 18px rgba(48, 36, 24, 0.22);
+	transform: scale(1.06) rotate(-2deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.days-fill-board .days-chip.filled,
+	.days-fill-board.drop-ready .days-slot.open,
+	.days-tray .days-chip.glow,
+	.days-slot.glow {
+		animation: none;
+	}
+}
+
 .position-row {
 	display: flex;
 	justify-content: center;
@@ -1800,7 +2031,10 @@ a.level-tile:hover {
 
 .mem-card {
 	position: relative;
-	aspect-ratio: 1;
+	display: block;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	min-height: 4.5rem;
 	border: 0;
 	background: transparent;
 	padding: 0;
@@ -1809,10 +2043,11 @@ a.level-tile:hover {
 	animation-delay: calc(var(--mem-i, 0) * 40ms);
 }
 
+/* Absolute fill so aspect-ratio on the button keeps a real box size
+   even though both faces are absolutely positioned. */
 .mem-card-inner {
-	position: relative;
-	width: 100%;
-	height: 100%;
+	position: absolute;
+	inset: 0;
 	transform-style: preserve-3d;
 	transition: transform 0.42s cubic-bezier(0.22, 1.1, 0.36, 1);
 	will-change: transform;
@@ -2081,7 +2316,8 @@ a.level-tile:hover {
 	.brand {
 		font-size: 1.5rem;
 	}
-	.brand img {
+	.brand img,
+	.brand .lumi-sun {
 		width: 2rem;
 		height: 2rem;
 	}

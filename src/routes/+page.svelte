@@ -15,6 +15,7 @@
 	import WeatherArt from '#lib/components/WeatherArt.svelte';
 	import LeftRightArt from '#lib/components/LeftRightArt.svelte';
 	import favicon from '#lib/assets/favicon.svg';
+	import LumiSun from '#lib/components/LumiSun.svelte';
 
 	let cleared = $state(0);
 	let clearedShapes = $state(0);
@@ -51,6 +52,8 @@
 	let clearedWeather = $state(0);
 	let clearedLr = $state(0);
 	let clearedJigsaw = $state(0);
+	let clearedOless = $state(0);
+	let clearedOmore = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -88,6 +91,8 @@
 	const weatherHref = $derived(localizeHref('/play/weather', { locale }));
 	const lrHref = $derived(localizeHref('/play/left-right', { locale }));
 	const jigsawHref = $derived(localizeHref('/play/jigsaw', { locale }));
+	const olessHref = $derived(localizeHref('/play/one-less', { locale }));
+	const omoreHref = $derived(localizeHref('/play/one-more', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -126,6 +131,8 @@
 		clearedWeather = progress.weather.cleared;
 		clearedLr = progress['left-right'].cleared;
 		clearedJigsaw = progress.jigsaw.cleared;
+		clearedOless = progress['one-less'].cleared;
+		clearedOmore = progress['one-more'].cleared;
 	});
 </script>
 
@@ -135,7 +142,7 @@
 
 <div class="hero">
 	<div class="hero-art">
-		<img src={favicon} alt="" width="112" height="112" />
+		<LumiSun size="7rem" />
 	</div>
 	<h1>Lumi</h1>
 	<p>{m.tagline()}</p>
@@ -628,6 +635,34 @@
 		<div class="row">
 			<a class="btn" href={jigsawHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedJigsaw })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.oless_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="oless-thumb" aria-hidden="true">−1</span>
+	</div>
+	<div>
+		<h2>{m.oless_name()}</h2>
+		<p>{m.oless_desc()}</p>
+		<div class="row">
+			<a class="btn" href={olessHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedOless })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.omore_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="omore-thumb" aria-hidden="true">+1</span>
+	</div>
+	<div>
+		<h2>{m.omore_name()}</h2>
+		<p>{m.omore_desc()}</p>
+		<div class="row">
+			<a class="btn" href={omoreHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedOmore })}</span>
 		</div>
 	</div>
 </section>
