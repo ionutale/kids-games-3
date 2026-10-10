@@ -40,7 +40,8 @@ export type GameId =
 	| 'syllable'
 	| 'sort-color'
 	| 'shadow-match'
-	| 'what-time';
+	| 'what-time'
+	| 'seasons';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -73,6 +74,7 @@ export interface Progress {
 	'sort-color': GameProgress;
 	'shadow-match': GameProgress;
 	'what-time': GameProgress;
+	seasons: GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -111,7 +113,8 @@ export function defaultProgress(): Progress {
 		syllable: { cleared: 0 },
 		'sort-color': { cleared: 0 },
 		'shadow-match': { cleared: 0 },
-		'what-time': { cleared: 0 }
+		'what-time': { cleared: 0 },
+		seasons: { cleared: 0 }
 	};
 }
 
@@ -163,7 +166,8 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			syllable: sanitizeGame(games['syllable']),
 			'sort-color': sanitizeGame(games['sort-color']),
 			'shadow-match': sanitizeGame(games['shadow-match']),
-			'what-time': sanitizeGame(games['what-time'])
+			'what-time': sanitizeGame(games['what-time']),
+			seasons: sanitizeGame(games.seasons)
 		};
 	} catch {
 		return defaultProgress();

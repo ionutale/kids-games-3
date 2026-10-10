@@ -11,6 +11,7 @@
 	import BrushArt from '#lib/components/BrushArt.svelte';
 	import BathArt from '#lib/components/BathArt.svelte';
 	import ClockArt from '#lib/components/ClockArt.svelte';
+	import SeasonArt from '#lib/components/SeasonArt.svelte';
 	import favicon from '#lib/assets/favicon.svg';
 
 	let cleared = $state(0);
@@ -43,6 +44,7 @@
 	let clearedSort = $state(0);
 	let clearedShadow = $state(0);
 	let clearedTime = $state(0);
+	let clearedSeason = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -75,6 +77,7 @@
 	const sortHref = $derived(localizeHref('/play/sort-color', { locale }));
 	const shadowHref = $derived(localizeHref('/play/shadow-match', { locale }));
 	const timeHref = $derived(localizeHref('/play/what-time', { locale }));
+	const seasonHref = $derived(localizeHref('/play/seasons', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -108,6 +111,7 @@
 		clearedSort = progress['sort-color'].cleared;
 		clearedShadow = progress['shadow-match'].cleared;
 		clearedTime = progress['what-time'].cleared;
+		clearedSeason = progress.seasons.cleared;
 	});
 </script>
 
@@ -537,6 +541,20 @@
 		<div class="row">
 			<a class="btn" href={timeHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedTime })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.season_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="season-thumb" aria-hidden="true"><SeasonArt season="spring" /></span>
+	</div>
+	<div>
+		<h2>{m.season_name()}</h2>
+		<p>{m.season_desc()}</p>
+		<div class="row">
+			<a class="btn" href={seasonHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedSeason })}</span>
 		</div>
 	</div>
 </section>

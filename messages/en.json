@@ -233,5 +233,13 @@
 	"time_hint_hour": "Look at the short hand. Which number does it point to?",
 	"time_morning": "Morning",
 	"time_day": "Day",
-	"time_night": "Night"
+	"time_night": "Night",
+	"season_name": "Seasons",
+	"season_desc": "See a scene. Tap spring, summer, autumn, or winter.",
+	"season_prompt": "Which season is this?",
+	"season_hint": "Look at the sky, leaves, and snow.",
+	"season_spring": "Spring",
+	"season_summer": "Summer",
+	"season_autumn": "Autumn",
+	"season_winter": "Winter"
 }

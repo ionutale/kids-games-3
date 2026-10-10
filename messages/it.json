@@ -233,5 +233,13 @@
 	"time_hint_hour": "Guarda la lancetta corta. A quale numero punta?",
 	"time_morning": "Mattina",
 	"time_day": "Giorno",
-	"time_night": "Notte"
+	"time_night": "Notte",
+	"season_name": "Le stagioni",
+	"season_desc": "Vedi una scena. Tocca primavera, estate, autunno o inverno.",
+	"season_prompt": "Che stagione è?",
+	"season_hint": "Guarda il cielo, le foglie e la neve.",
+	"season_spring": "Primavera",
+	"season_summer": "Estate",
+	"season_autumn": "Autunno",
+	"season_winter": "Inverno"
 }

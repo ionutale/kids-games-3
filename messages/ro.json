@@ -233,5 +233,13 @@
 	"time_hint_hour": "Uită-te la limbă scurtă. Spre ce cifră arată?",
 	"time_morning": "Dimineața",
 	"time_day": "Ziua",
-	"time_night": "Noaptea"
+	"time_night": "Noaptea",
+	"season_name": "Anotimpuri",
+	"season_desc": "Vezi o scenă. Atinge primăvara, vara, toamna sau iarna.",
+	"season_prompt": "Ce anotimp e?",
+	"season_hint": "Uită-te la cer, frunze și zăpadă.",
+	"season_spring": "Primăvara",
+	"season_summer": "Vara",
+	"season_autumn": "Toamna",
+	"season_winter": "Iarna"
 }

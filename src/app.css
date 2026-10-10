@@ -1161,6 +1161,43 @@ a.level-tile:hover {
 	width: 4.6rem;
 }
 
+.season-prompt {
+	display: flex;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+.season-prompt.hint-pulse {
+	animation: pulse 1s ease-in-out infinite;
+}
+
+.season-prompt svg {
+	width: 9.5rem;
+	height: auto;
+	display: block;
+	filter: drop-shadow(0 6px 10px rgba(48, 36, 24, 0.12));
+}
+
+.season-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+}
+
+.season-thumb svg {
+	width: 100%;
+}
+
+.game-card .season-thumb svg {
+	width: 4.6rem;
+}
+
+.level-tile .season-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+}
+
 .position-row {
 	display: flex;
 	justify-content: center;

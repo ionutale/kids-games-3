@@ -233,5 +233,13 @@
 	"time_hint_hour": "Schau auf den kurzen Zeiger. Auf welche Zahl zeigt er?",
 	"time_morning": "Morgen",
 	"time_day": "Tag",
-	"time_night": "Nacht"
+	"time_night": "Nacht",
+	"season_name": "Jahreszeiten",
+	"season_desc": "Sieh eine Szene. Tippe Frühling, Sommer, Herbst oder Winter.",
+	"season_prompt": "Welche Jahreszeit ist das?",
+	"season_hint": "Schau Himmel, Blätter und Schnee an.",
+	"season_spring": "Frühling",
+	"season_summer": "Sommer",
+	"season_autumn": "Herbst",
+	"season_winter": "Winter"
 }
