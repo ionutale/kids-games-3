@@ -35,6 +35,7 @@
 	let clearedShp = $state(0);
 	let clearedSame = $state(0);
 	let clearedNext = $state(0);
+	let clearedAbc = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -60,6 +61,7 @@
 	const shpHref = $derived(localizeHref('/play/shape-pattern', { locale }));
 	const sameHref = $derived(localizeHref('/play/same-pair', { locale }));
 	const nextNumHref = $derived(localizeHref('/play/next-number', { locale }));
+	const abcHref = $derived(localizeHref('/play/abc-order', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -86,6 +88,7 @@
 		clearedShp = progress['shape-pattern'].cleared;
 		clearedSame = progress['same-pair'].cleared;
 		clearedNext = progress['next-number'].cleared;
+		clearedAbc = progress['abc-order'].cleared;
 	});
 </script>
 
@@ -417,6 +420,20 @@
 		<div class="row">
 			<a class="btn" href={nextNumHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedNext })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.abc_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="tile-letter">C</span>
+	</div>
+	<div>
+		<h2>{m.abc_name()}</h2>
+		<p>{m.abc_desc()}</p>
+		<div class="row">
+			<a class="btn" href={abcHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedAbc })}</span>
 		</div>
 	</div>
 </section>

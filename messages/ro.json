@@ -198,5 +198,9 @@
 	"next_name": "Ce număr urmează?",
 	"next_desc": "Numere în șir. Atinge numărul care urmează.",
 	"next_prompt": "Ce număr urmează?",
-	"next_hint": "Continuă numărătoarea. Ce vine după ultimul?"
+	"next_hint": "Continuă numărătoarea. Ce vine după ultimul?",
+	"abc_name": "A, B, C",
+	"abc_desc": "Litere în șir. Atinge litera care urmează.",
+	"abc_prompt": "Ce literă urmează?",
+	"abc_hint": "Spune alfabetul. Ce vine după ultima literă?"
 }

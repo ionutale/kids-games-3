@@ -198,5 +198,9 @@
 	"next_name": "What number is next?",
 	"next_desc": "Numbers in a row. Tap the number that comes next.",
 	"next_prompt": "What number is next?",
-	"next_hint": "Keep counting. What comes after the last number?"
+	"next_hint": "Keep counting. What comes after the last number?",
+	"abc_name": "A, B, C",
+	"abc_desc": "Letters in a row. Tap the letter that comes next.",
+	"abc_prompt": "Which letter comes next?",
+	"abc_hint": "Say the alphabet. What comes after the last letter?"
 }

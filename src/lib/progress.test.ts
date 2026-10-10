@@ -44,7 +44,8 @@ describe('progress', () => {
 			sides: { cleared: 0 },
 			'shape-pattern': { cleared: 0 },
 			'same-pair': { cleared: 0 },
-			'next-number': { cleared: 0 }
+			'next-number': { cleared: 0 },
+			'abc-order': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -76,6 +77,7 @@ describe('progress', () => {
 		expect(clearLevel(progress, 'shape-pattern', 1)).toBe(1);
 		expect(clearLevel(progress, 'same-pair', 1)).toBe(1);
 		expect(clearLevel(progress, 'next-number', 1)).toBe(1);
+		expect(clearLevel(progress, 'abc-order', 1)).toBe(1);
 		expect(progress['count-fruit'].cleared).toBe(1);
 	});
 
@@ -107,7 +109,8 @@ describe('progress', () => {
 			sides: { cleared: 0 },
 			'shape-pattern': { cleared: 0 },
 			'same-pair': { cleared: 0 },
-			'next-number': { cleared: 0 }
+			'next-number': { cleared: 0 },
+			'abc-order': { cleared: 0 }
 		});
 	});
 
@@ -143,7 +146,8 @@ describe('progress', () => {
 			sides: { cleared: 0 },
 			'shape-pattern': { cleared: 0 },
 			'same-pair': { cleared: 0 },
-			'next-number': { cleared: 0 }
+			'next-number': { cleared: 0 },
+			'abc-order': { cleared: 0 }
 		});
 	});
 });

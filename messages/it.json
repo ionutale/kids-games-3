@@ -198,5 +198,9 @@
 	"next_name": "Che numero viene dopo?",
 	"next_desc": "Numeri in fila. Tocca il numero che viene dopo.",
 	"next_prompt": "Che numero viene dopo?",
-	"next_hint": "Continua a contare. Cosa viene dopo l'ultimo?"
+	"next_hint": "Continua a contare. Cosa viene dopo l'ultimo?",
+	"abc_name": "A, B, C",
+	"abc_desc": "Lettere in fila. Tocca la lettera che viene dopo.",
+	"abc_prompt": "Quale lettera viene dopo?",
+	"abc_hint": "Dì l'alfabeto. Cosa viene dopo l'ultima lettera?"
 }

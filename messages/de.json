@@ -198,5 +198,9 @@
 	"next_name": "Welche Zahl kommt danach?",
 	"next_desc": "Zahlen in einer Reihe. Tippe die nächste Zahl.",
 	"next_prompt": "Welche Zahl kommt danach?",
-	"next_hint": "Zähle weiter. Was kommt nach der letzten Zahl?"
+	"next_hint": "Zähle weiter. Was kommt nach der letzten Zahl?",
+	"abc_name": "A, B, C",
+	"abc_desc": "Buchstaben in einer Reihe. Tippe den nächsten Buchstaben.",
+	"abc_prompt": "Welcher Buchstabe kommt danach?",
+	"abc_hint": "Sag das Alphabet. Was kommt nach dem letzten Buchstaben?"
 }
