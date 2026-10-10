@@ -202,5 +202,11 @@
 	"abc_name": "A, B, C",
 	"abc_desc": "Letters in a row. Tap the letter that comes next.",
 	"abc_prompt": "Which letter comes next?",
-	"abc_hint": "Say the alphabet. What comes after the last letter?"
+	"abc_hint": "Say the alphabet. What comes after the last letter?",
+	"bef_name": "Before or after",
+	"bef_desc": "See a letter. Tap the one before or after it.",
+	"bef_prompt_before": "Which letter comes before?",
+	"bef_prompt_after": "Which letter comes after?",
+	"bef_hint_before": "Say the alphabet. What comes just before?",
+	"bef_hint_after": "Say the alphabet. What comes just after?"
 }

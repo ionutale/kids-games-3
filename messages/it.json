@@ -202,5 +202,11 @@
 	"abc_name": "A, B, C",
 	"abc_desc": "Lettere in fila. Tocca la lettera che viene dopo.",
 	"abc_prompt": "Quale lettera viene dopo?",
-	"abc_hint": "Dì l'alfabeto. Cosa viene dopo l'ultima lettera?"
+	"abc_hint": "Dì l'alfabeto. Cosa viene dopo l'ultima lettera?",
+	"bef_name": "Prima o dopo",
+	"bef_desc": "Vedi una lettera. Tocca quella prima o dopo.",
+	"bef_prompt_before": "Quale lettera viene prima?",
+	"bef_prompt_after": "Quale lettera viene dopo?",
+	"bef_hint_before": "Dì l'alfabeto. Cosa viene appena prima?",
+	"bef_hint_after": "Dì l'alfabeto. Cosa viene appena dopo?"
 }

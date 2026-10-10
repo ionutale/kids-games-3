@@ -202,5 +202,11 @@
 	"abc_name": "A, B, C",
 	"abc_desc": "Litere în șir. Atinge litera care urmează.",
 	"abc_prompt": "Ce literă urmează?",
-	"abc_hint": "Spune alfabetul. Ce vine după ultima literă?"
+	"abc_hint": "Spune alfabetul. Ce vine după ultima literă?",
+	"bef_name": "Înainte sau după",
+	"bef_desc": "Vezi o literă. Atinge pe cea dinainte sau de după.",
+	"bef_prompt_before": "Ce literă vine înainte?",
+	"bef_prompt_after": "Ce literă vine după?",
+	"bef_hint_before": "Spune alfabetul. Ce vine chiar înainte?",
+	"bef_hint_after": "Spune alfabetul. Ce vine chiar după?"
 }

@@ -202,5 +202,11 @@
 	"abc_name": "A, B, C",
 	"abc_desc": "Buchstaben in einer Reihe. Tippe den nächsten Buchstaben.",
 	"abc_prompt": "Welcher Buchstabe kommt danach?",
-	"abc_hint": "Sag das Alphabet. Was kommt nach dem letzten Buchstaben?"
+	"abc_hint": "Sag das Alphabet. Was kommt nach dem letzten Buchstaben?",
+	"bef_name": "Davor oder danach",
+	"bef_desc": "Sieh einen Buchstaben. Tippe den davor oder danach.",
+	"bef_prompt_before": "Welcher Buchstabe kommt davor?",
+	"bef_prompt_after": "Welcher Buchstabe kommt danach?",
+	"bef_hint_before": "Sag das Alphabet. Was kommt direkt davor?",
+	"bef_hint_after": "Sag das Alphabet. Was kommt direkt danach?"
 }
