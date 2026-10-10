@@ -16,6 +16,7 @@
 	import { clearLevel, loadProgress, saveProgress } from '#lib/progress.js';
 	import Confetti from '#lib/components/Confetti.svelte';
 	import FruitArt from '#lib/components/FruitArt.svelte';
+	import { playSfx } from '#lib/sound.js';
 
 	const IDLE_MS = 20000;
 	const PAUSE_MS = 900;
@@ -112,6 +113,7 @@
 		const snapshot = pairs;
 		if (side === correctSide(current, config.ask)) {
 			feedback = 'correct';
+			playSfx('correct');
 			wrongSide = null;
 			pips = pips.map((done, index) => (index === roundIndex ? true : done));
 			if (pauseTimer) clearTimeout(pauseTimer);
@@ -120,6 +122,7 @@
 				feedback = null;
 				if (roundIndex + 1 >= snapshot.length) {
 					won = true;
+					playSfx('win');
 					if (idleTimer) clearTimeout(idleTimer);
 					const progress = loadProgress(localStorage);
 					clearLevel(progress, 'more-less', levelNumber);
@@ -133,6 +136,7 @@
 			misses += 1;
 			wrongSide = side;
 			feedback = 'wrong';
+			playSfx('wrong');
 			if (pauseTimer) clearTimeout(pauseTimer);
 			pauseTimer = setTimeout(() => {
 				if (!alive) return;

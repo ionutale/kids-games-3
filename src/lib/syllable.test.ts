@@ -4,6 +4,7 @@ import {
 	SYL_ROUNDS,
 	bankFor,
 	getSylLevel,
+	joinChunks,
 	pickRounds,
 	type SylLocale
 } from './syllable';
@@ -24,6 +25,18 @@ describe('syllable levels', () => {
 			expect(SYL_BANK[locale].some((word) => word.parts === 2)).toBe(true);
 			expect(SYL_BANK[locale].some((word) => word.parts === 3)).toBe(true);
 			expect(SYL_BANK[locale].some((word) => word.parts === 4)).toBe(true);
+		}
+	});
+
+	test('every word has matching syllable chunks', () => {
+		for (const locale of LOCALES) {
+			for (const entry of SYL_BANK[locale]) {
+				expect(entry.chunks).toHaveLength(entry.parts);
+				expect(entry.chunks.join('').toLowerCase()).toBe(
+					entry.word.replace(/[\s'-]/g, '').toLowerCase()
+				);
+				expect(joinChunks(entry.chunks)).toContain(entry.chunks[0]);
+			}
 		}
 	});
 });

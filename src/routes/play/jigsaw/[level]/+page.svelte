@@ -20,6 +20,7 @@
 	import Confetti from '#lib/components/Confetti.svelte';
 	import JigsawPiece from '#lib/components/JigsawPiece.svelte';
 	import JigsawSceneArt from '#lib/components/JigsawSceneArt.svelte';
+	import { playSfx } from '#lib/sound.js';
 
 	const IDLE_MS = 20000;
 	const PAUSE_MS = 700;
@@ -46,6 +47,9 @@
 	let placed = $state<Record<string, boolean>>({});
 	let selected = $state<string | null>(null);
 	let drag = $state<DragState | null>(null);
+	let justPlaced = $state<string | null>(null);
+	let boardComplete = $state(false);
+	let trayAnimKey = $state(0);
 	let misses = $state(0);
 	let manualHints = $state(0);
 	let idleHint = $state(false);
@@ -95,6 +99,9 @@
 		placed = {};
 		selected = null;
 		clearDrag();
+		justPlaced = null;
+		boardComplete = false;
+		trayAnimKey += 1;
 		misses = 0;
 		manualHints = 0;
 		idleHint = false;
@@ -160,21 +167,27 @@
 		if (pieceId === slotId) {
 			placed = { ...placed, [slotId]: true };
 			selected = null;
+			justPlaced = slotId;
 			feedback = 'correct';
+			playSfx('place');
 			wrongSlot = null;
 			const done = current.pieces.every((piece) =>
 				piece.id === slotId ? true : placed[piece.id]
 			);
+			if (done) boardComplete = true;
 			if (pauseTimer) clearTimeout(pauseTimer);
 			pauseTimer = setTimeout(() => {
 				if (!alive) return;
 				feedback = null;
+				justPlaced = null;
 				if (done) {
 					pips = pips.map((pip, index) => (index === roundIndex ? true : pip));
 					const snapshot = rounds;
 					if (!snapshot) return;
 					if (roundIndex + 1 >= snapshot.length) {
 						won = true;
+						playSfx('win');
+						boardComplete = false;
 						if (idleTimer) clearTimeout(idleTimer);
 						const progress = loadProgress(localStorage);
 						clearLevel(progress, 'jigsaw', levelNumber);
@@ -184,11 +197,12 @@
 						startRound();
 					}
 				}
-			}, PAUSE_MS);
+			}, done ? 1100 : PAUSE_MS);
 		} else {
 			misses += 1;
 			wrongSlot = slotId;
 			feedback = 'wrong';
+			playSfx('wrong');
 			if (pauseTimer) clearTimeout(pauseTimer);
 			pauseTimer = setTimeout(() => {
 				if (!alive) return;
@@ -337,6 +351,7 @@
 			<div
 				class="jigsaw-board"
 				class:drop-ready={drag?.active}
+				class:complete={boardComplete}
 				style="--jig-cols: {current.cols}; --jig-rows: {current.rows}; --jig-pad: {pad}px; --jig-overflow: {JIGSAW_OVERFLOW};"
 			>
 				<div class="jigsaw-board-ghost" aria-hidden="true">
@@ -364,6 +379,7 @@
 								rows={current.rows}
 								cols={current.cols}
 								placed={true}
+								snap={justPlaced === piece.id}
 							/>
 						{:else}
 							<button
@@ -388,29 +404,31 @@
 				{/if}
 			</p>
 
-			<div class="jigsaw-tray">
-				{#each current.tray as id (id)}
-					{@const piece = pieceById(id)}
-					{#if piece && !placed[id]}
-						<div
-							class="jigsaw-tray-item"
-							class:lifting={drag?.active && drag.id === id}
-							style="width: calc(4.2rem + {JIGSAW_TAB}px);"
-						>
-							<JigsawPiece
-								{piece}
-								scene={current.scene}
-								rows={current.rows}
-								cols={current.cols}
-								selected={selected === id}
-								dragging={drag?.active && drag.id === id}
-								glow={stage === 2 && hintPieceId === id}
-								onpointerdown={(event) => onPiecePointerDown(id, event)}
-							/>
-						</div>
-					{/if}
-				{/each}
-			</div>
+			{#key trayAnimKey}
+				<div class="jigsaw-tray">
+					{#each current.tray as id, trayIndex (id)}
+						{@const piece = pieceById(id)}
+						{#if piece && !placed[id]}
+							<div
+								class="jigsaw-tray-item"
+								class:lifting={drag?.active && drag.id === id}
+								style="width: calc(4.2rem + {JIGSAW_TAB}px); --jig-i: {trayIndex};"
+							>
+								<JigsawPiece
+									{piece}
+									scene={current.scene}
+									rows={current.rows}
+									cols={current.cols}
+									selected={selected === id}
+									dragging={drag?.active && drag.id === id}
+									glow={stage === 2 && hintPieceId === id}
+									onpointerdown={(event) => onPiecePointerDown(id, event)}
+								/>
+							</div>
+						{/if}
+					{/each}
+				</div>
+			{/key}
 
 			{#if drag?.active && dragPiece && current}
 				<div

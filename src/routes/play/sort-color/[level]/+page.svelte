@@ -16,6 +16,7 @@
 	import { clearLevel, loadProgress, saveProgress } from '#lib/progress.js';
 	import Confetti from '#lib/components/Confetti.svelte';
 	import ShapeArt from '#lib/components/ShapeArt.svelte';
+	import { playSfx } from '#lib/sound.js';
 
 	const IDLE_MS = 20000;
 	const PAUSE_MS = 900;
@@ -134,6 +135,7 @@
 		if (target.color === bucket) {
 			const nextPlaced = { ...placed, [target.id]: true };
 			feedback = 'correct';
+			playSfx('correct');
 			wrongBucket = null;
 			placed = nextPlaced;
 			selectedId = null;
@@ -146,6 +148,7 @@
 					pips = pips.map((done, index) => (index === roundIndex ? true : done));
 					if (roundIndex + 1 >= snapshot.length) {
 						won = true;
+						playSfx('win');
 						if (idleTimer) clearTimeout(idleTimer);
 						const progress = loadProgress(localStorage);
 						clearLevel(progress, 'sort-color', levelNumber);
@@ -160,6 +163,7 @@
 			misses += 1;
 			wrongBucket = bucket;
 			feedback = 'wrong';
+			playSfx('wrong');
 			selectedId = target.id;
 			if (pauseTimer) clearTimeout(pauseTimer);
 			pauseTimer = setTimeout(() => {

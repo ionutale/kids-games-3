@@ -16,6 +16,7 @@
 	import ShapeArt from '#lib/components/ShapeArt.svelte';
 	import Confetti from '#lib/components/Confetti.svelte';
 	import favicon from '#lib/assets/favicon.svg';
+	import { playSfx } from '#lib/sound.js';
 
 	interface Card {
 		face: MemoryFace;
@@ -24,7 +25,8 @@
 		matched: boolean;
 	}
 
-	const FLIP_BACK_MS = 800;
+	const FLIP_MS = 420;
+	const FLIP_BACK_MS = 900;
 	const PEEK_MS = 1400;
 
 	let cards = $state<Card[]>([]);
@@ -36,6 +38,7 @@
 	let decided = $state(false);
 	let unlocked = $state(true);
 	let syncedLevel = $state(0);
+	let dealKey = $state(0);
 	let alive = true;
 
 	let flipTimer: ReturnType<typeof setTimeout> | null = null;
@@ -62,6 +65,7 @@
 		misses = 0;
 		peek = false;
 		won = false;
+		dealKey += 1;
 	}
 
 	function syncLevel(): void {
@@ -85,6 +89,7 @@
 	function finishIfDone(): void {
 		if (cards.length > 0 && cards.every((card) => card.matched)) {
 			won = true;
+			playSfx('win');
 			const progress = loadProgress(localStorage);
 			clearLevel(progress, 'memory', levelNumber);
 			saveProgress(progress, localStorage);
@@ -105,6 +110,7 @@
 		const card = cards[index];
 		if (!card || card.matched || card.up || busy || won || peek) return;
 		cards[index] = { ...card, up: true };
+		playSfx('tap');
 		if (first === null) {
 			first = index;
 			return;
@@ -114,6 +120,7 @@
 			cards[first] = { ...other, matched: true };
 			cards[index] = { ...cards[index], matched: true };
 			first = null;
+			playSfx('correct');
 			finishIfDone();
 			return;
 		}
@@ -121,11 +128,15 @@
 		first = null;
 		busy = true;
 		misses += 1;
+		playSfx('wrong');
 		flipTimer = setTimeout(() => {
 			if (!alive) return;
 			cards[previous] = { ...cards[previous], up: false };
 			cards[index] = { ...cards[index], up: false };
-			busy = false;
+			// Let the flip-back finish before the next tap.
+			setTimeout(() => {
+				if (alive) busy = false;
+			}, FLIP_MS);
 		}, FLIP_BACK_MS);
 	}
 
@@ -170,27 +181,36 @@
 			</div>
 			<p class="prompt">{m.memory_prompt()}</p>
 			<div class="mem-grid" style={`--cols: ${columns}`}>
-				{#each cards as card, index (index)}
-					<button
-						class="mem-card"
-						class:show={card.up || card.matched || peek}
-						class:matched={card.matched}
-						type="button"
-						disabled={card.matched || busy}
-						onclick={() => flip(index)}
-						aria-label={card.up || card.matched || peek ? card.key : m.memory_prompt()}
-						data-key={card.key}
-					>
-						<span class="mem-face back"><img src={favicon} alt="" /></span>
-						<span class="mem-face front">
-							{#if card.face.kind === 'fruit'}
-								<FruitArt fruit={card.face.fruit} happy={card.matched} />
-							{:else}
-								<ShapeArt shape={card.face.shape} color={card.face.color} happy={card.matched} />
-							{/if}
-						</span>
-					</button>
-				{/each}
+				{#key dealKey}
+					{#each cards as card, index (`${dealKey}-${index}`)}
+						<button
+							class="mem-card"
+							class:flipped={card.up || card.matched || peek}
+							class:matched={card.matched}
+							style="--mem-i: {index}"
+							type="button"
+							disabled={card.matched || busy}
+							onclick={() => flip(index)}
+							aria-label={card.up || card.matched || peek ? card.key : m.memory_prompt()}
+							data-key={card.key}
+						>
+							<span class="mem-card-inner">
+								<span class="mem-face back"><img src={favicon} alt="" /></span>
+								<span class="mem-face front">
+									{#if card.face.kind === 'fruit'}
+										<FruitArt fruit={card.face.fruit} happy={card.matched} />
+									{:else}
+										<ShapeArt
+											shape={card.face.shape}
+											color={card.face.color}
+											happy={card.matched}
+										/>
+									{/if}
+								</span>
+							</span>
+						</button>
+					{/each}
+				{/key}
 			</div>
 			{#if misses >= 2}
 				<p class="hint-box">{m.memory_hint()}</p>

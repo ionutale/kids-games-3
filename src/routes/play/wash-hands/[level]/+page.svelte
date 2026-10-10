@@ -14,6 +14,7 @@
 	import { clearLevel, loadProgress, saveProgress } from '#lib/progress.js';
 	import StepArt from '#lib/components/StepArt.svelte';
 	import Confetti from '#lib/components/Confetti.svelte';
+	import { playSfx } from '#lib/sound.js';
 
 	const IDLE_MS = 20000;
 	const PAUSE_MS = 700;
@@ -98,6 +99,7 @@
 		poke();
 		if (isNextStep(order, placed, step)) {
 			feedback = 'correct';
+			playSfx('correct');
 			wrongValue = null;
 			if (pauseTimer) clearTimeout(pauseTimer);
 			pauseTimer = setTimeout(() => {
@@ -110,6 +112,7 @@
 				idleHint = false;
 				if (placed >= order.length) {
 					won = true;
+					playSfx('win');
 					if (idleTimer) clearTimeout(idleTimer);
 					const progress = loadProgress(localStorage);
 					clearLevel(progress, 'wash-hands', levelNumber);
@@ -120,6 +123,7 @@
 			misses += 1;
 			wrongValue = step;
 			feedback = 'wrong';
+			playSfx('wrong');
 			if (pauseTimer) clearTimeout(pauseTimer);
 			pauseTimer = setTimeout(() => {
 				if (!alive) return;

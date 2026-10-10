@@ -4,7 +4,7 @@
 	import { page } from '$app/state';
 	import { getLocale, locales, localizeHref, setLocale } from '#lib/paraglide/runtime.js';
 	import { m } from '#lib/paraglide/messages.js';
-	import { MusicPlayer, trackForPath } from '#lib/music.js';
+	import { getSound, trackForPath, type SoundPlayer } from '#lib/music.js';
 	import { loadMuted, saveMuted } from '#lib/progress.js';
 	import favicon from '#lib/assets/favicon.svg';
 	import type { LayoutProps } from './$types';
@@ -16,7 +16,7 @@
 	let muted = $state(false);
 	let rememberedLocale = $state<Locale | null>(null);
 	let soundStarted = false;
-	let player: MusicPlayer | null = null;
+	let player: SoundPlayer | null = null;
 
 	const pathname = $derived(page.url.pathname);
 
@@ -59,7 +59,7 @@
 			return;
 		}
 		muted = loadMuted(localStorage);
-		player = new MusicPlayer();
+		player = getSound();
 		player.setMuted(muted);
 		window.addEventListener('pointerdown', startSound, { once: true });
 		window.addEventListener('keydown', startSound, { once: true });

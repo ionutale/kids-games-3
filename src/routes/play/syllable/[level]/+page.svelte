@@ -14,6 +14,7 @@
 	} from '#lib/syllable.js';
 	import { clearLevel, loadProgress, saveProgress } from '#lib/progress.js';
 	import Confetti from '#lib/components/Confetti.svelte';
+	import { playSfx } from '#lib/sound.js';
 
 	const IDLE_MS = 20000;
 	const PAUSE_MS = 900;
@@ -111,6 +112,7 @@
 		const snapshot = rounds;
 		if (value === current.answer) {
 			feedback = 'correct';
+			playSfx('correct');
 			wrongValue = null;
 			pips = pips.map((done, index) => (index === roundIndex ? true : done));
 			if (pauseTimer) clearTimeout(pauseTimer);
@@ -119,6 +121,7 @@
 				feedback = null;
 				if (roundIndex + 1 >= snapshot.length) {
 					won = true;
+					playSfx('win');
 					if (idleTimer) clearTimeout(idleTimer);
 					const progress = loadProgress(localStorage);
 					clearLevel(progress, 'syllable', levelNumber);
@@ -132,6 +135,7 @@
 			misses += 1;
 			wrongValue = value;
 			feedback = 'wrong';
+			playSfx('wrong');
 			if (pauseTimer) clearTimeout(pauseTimer);
 			pauseTimer = setTimeout(() => {
 				if (!alive) return;
@@ -187,12 +191,26 @@
 				{/each}
 			</div>
 			{#if current}
-				<div class="rhyme-prompt" class:hint-pulse={stage === 1} aria-hidden="true">
+				<div
+					class="rhyme-prompt"
+					class:hint-pulse={stage === 1}
+					class:syl-reveal={feedback === 'correct' || stage >= 1}
+				>
 					<span class="rhyme-face">
-						<span class="rhyme-picture">{current.prompt.picture}</span>
+						<span class="rhyme-picture" aria-hidden="true">{current.prompt.picture}</span>
 						<span class="rhyme-word">{current.prompt.word}</span>
+						<span class="syl-chunks" aria-label={current.prompt.chunks.join(' · ')}>
+							{#each current.prompt.chunks as chunk, index (index)}
+								{#if index > 0}<span class="syl-dot" aria-hidden="true">·</span>{/if}
+								<span
+									class="syl-chunk"
+									class:glow={stage >= 1 || feedback === 'correct'}
+									style="--syl-i: {index}"
+								>{chunk}</span>
+							{/each}
+						</span>
 						{#if stage >= 1}
-							<span class="syl-claps">
+							<span class="syl-claps" aria-hidden="true">
 								{#each Array(current.answer) as _, index (index)}
 									<span class="syl-clap"></span>
 								{/each}

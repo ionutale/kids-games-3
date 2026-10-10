@@ -2,15 +2,25 @@ import { describe, expect, test } from 'vitest';
 import { DAYS_ROUNDS, WEEK_DAYS, getDaysLevel, pickRounds } from './days-week';
 
 describe('days-week levels', () => {
-	test('ten levels, week starts Monday', () => {
+	test('ten levels, week starts Monday, shown chips climb', () => {
 		for (let level = 1; level <= 10; level++) {
 			expect(getDaysLevel(level)).toBeDefined();
 		}
 		expect(WEEK_DAYS).toEqual(['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']);
-		expect(getDaysLevel(1)!.max).toBe(3);
+		expect(getDaysLevel(1)!.shown).toBe(1);
 		expect(getDaysLevel(1)!.optionCount).toBe(2);
+		expect(getDaysLevel(10)!.shown).toBe(5);
 		expect(getDaysLevel(8)!.tight).toBe(true);
 		expect(getDaysLevel(11)).toBeUndefined();
+
+		let prevPieces = 0;
+		for (let level = 1; level <= 10; level++) {
+			const config = getDaysLevel(level)!;
+			const pieces = config.shown + config.optionCount;
+			expect(pieces).toBeGreaterThanOrEqual(prevPieces);
+			expect(config.shown).toBeGreaterThanOrEqual(getDaysLevel(Math.max(1, level - 1))!.shown);
+			prevPieces = pieces;
+		}
 	});
 });
 
@@ -27,11 +37,14 @@ describe('pickRounds', () => {
 				expect(round.options).toContain(round.answer);
 				expect(round.options).toHaveLength(config.optionCount);
 				expect(new Set(round.options).size).toBe(round.options.length);
-				for (const day of [...round.shown, ...round.options]) {
+				for (const day of round.shown) {
 					const index = WEEK_DAYS.indexOf(day);
 					expect(index).toBeGreaterThanOrEqual(config.min);
 					expect(index).toBeLessThanOrEqual(config.max);
 				}
+				const answerIndex = WEEK_DAYS.indexOf(round.answer);
+				expect(answerIndex).toBeGreaterThanOrEqual(config.min);
+				expect(answerIndex).toBeLessThanOrEqual(config.max);
 			}
 		}
 	});

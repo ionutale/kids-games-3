@@ -1,4 +1,4 @@
-Drop two looping mp3 files next to this note:
-- home.mp3 plays on the shelf,
-- game.mp3 plays inside the games.
-The app stays quiet when a file is missing.
+Lumi plays soft cream-and-honey tones with the Web Audio API — no files required.
+
+Optional: drop `home.mp3` / `game.mp3` here later if you want recorded loops;
+the in-browser music already covers the shelf and games.

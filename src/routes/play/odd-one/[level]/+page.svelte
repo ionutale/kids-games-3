@@ -22,6 +22,7 @@
 	import Confetti from '#lib/components/Confetti.svelte';
 	import FruitArt from '#lib/components/FruitArt.svelte';
 	import ShapeArt from '#lib/components/ShapeArt.svelte';
+	import { playSfx } from '#lib/sound.js';
 
 	const IDLE_MS = 20000;
 	const PAUSE_MS = 900;
@@ -128,6 +129,7 @@
 		const snapshot = boards;
 		if (isOddCard(board, card)) {
 			feedback = 'correct';
+			playSfx('correct');
 			wrongId = null;
 			pips = pips.map((done, index) => (index === roundIndex ? true : done));
 			if (pauseTimer) clearTimeout(pauseTimer);
@@ -136,6 +138,7 @@
 				feedback = null;
 				if (roundIndex + 1 >= snapshot.length) {
 					won = true;
+					playSfx('win');
 					if (idleTimer) clearTimeout(idleTimer);
 					const progress = loadProgress(localStorage);
 					clearLevel(progress, 'odd-one', levelNumber);
@@ -149,6 +152,7 @@
 			misses += 1;
 			wrongId = card.id;
 			feedback = 'wrong';
+			playSfx('wrong');
 			if (pauseTimer) clearTimeout(pauseTimer);
 			pauseTimer = setTimeout(() => {
 				if (!alive) return;

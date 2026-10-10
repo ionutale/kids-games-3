@@ -20,6 +20,7 @@
 		shake?: boolean;
 		dragging?: boolean;
 		ghost?: boolean;
+		snap?: boolean;
 		onclick?: () => void;
 		onpointerdown?: (event: PointerEvent) => void;
 	}
@@ -35,6 +36,7 @@
 		shake = false,
 		dragging = false,
 		ghost = false,
+		snap = false,
 		onclick,
 		onpointerdown
 	}: Props = $props();
@@ -61,6 +63,7 @@
 	class:shake
 	class:dragging
 	class:ghost
+	class:snap
 	type="button"
 	aria-label={piece.id}
 	aria-grabbed={dragging || ghost ? 'true' : 'false'}
