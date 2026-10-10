@@ -447,5 +447,10 @@
 	"path_up": "hoch",
 	"path_down": "runter",
 	"path_left": "links",
-	"path_right": "rechts"
+	"path_right": "rechts",
+	"money_name": "Münzen",
+	"money_desc": "Ordne eine Münze ihrem Wert zu: 1, 5 oder 10.",
+	"money_prompt_value": "Wieviel ist diese Münze wert?",
+	"money_prompt_coin": "Welche Münze ist so viel wert?",
+	"money_hint": "Schau die Zahl auf der Münze an. Finde dieselbe Zahl."
 }

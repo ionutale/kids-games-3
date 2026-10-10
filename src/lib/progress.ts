@@ -62,7 +62,8 @@ export type GameId =
 	| 'healthy-choice'
 	| 'above-below'
 	| 'complete-set'
-	| 'follow-path';
+	| 'follow-path'
+	| 'money-coins';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -117,6 +118,7 @@ export interface Progress {
 	'above-below': GameProgress;
 	'complete-set': GameProgress;
 	'follow-path': GameProgress;
+	'money-coins': GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -177,7 +179,8 @@ export function defaultProgress(): Progress {
 		'healthy-choice': { cleared: 0 },
 		'above-below': { cleared: 0 },
 		'complete-set': { cleared: 0 },
-		'follow-path': { cleared: 0 }
+		'follow-path': { cleared: 0 },
+		'money-coins': { cleared: 0 }
 	};
 }
 
@@ -251,7 +254,8 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			'healthy-choice': sanitizeGame(games['healthy-choice']),
 			'above-below': sanitizeGame(games['above-below']),
 			'complete-set': sanitizeGame(games['complete-set']),
-			'follow-path': sanitizeGame(games['follow-path'])
+			'follow-path': sanitizeGame(games['follow-path']),
+			'money-coins': sanitizeGame(games['money-coins'])
 		};
 	} catch {
 		return defaultProgress();

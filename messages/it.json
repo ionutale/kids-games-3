@@ -447,5 +447,10 @@
 	"path_up": "su",
 	"path_down": "giù",
 	"path_left": "sinistra",
-	"path_right": "destra"
+	"path_right": "destra",
+	"money_name": "Monete",
+	"money_desc": "Abbina una moneta al suo valore: 1, 5 o 10.",
+	"money_prompt_value": "Quanto vale questa moneta?",
+	"money_prompt_coin": "Quale moneta vale così tanto?",
+	"money_hint": "Guarda il numero sulla moneta. Abbinalo allo stesso numero."
 }

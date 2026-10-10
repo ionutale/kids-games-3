@@ -2351,6 +2351,75 @@ a.level-tile:hover {
 	font-weight: 700;
 }
 
+.coin-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.coin-thumb .coin-art,
+.coin-thumb svg {
+	width: 100%;
+	height: auto;
+}
+
+.coin-thumb.big {
+	width: 5.5rem;
+	height: 5.5rem;
+}
+
+.game-card .coin-thumb {
+	width: 4.6rem;
+	height: 4.6rem;
+}
+
+.level-tile .coin-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+}
+
+.money-stage {
+	display: flex;
+	justify-content: center;
+	margin: 0.75rem 0 0.5rem;
+}
+
+.money-value {
+	display: grid;
+	place-items: center;
+	min-width: 5.5rem;
+	min-height: 5.5rem;
+	padding: 0.5rem 1rem;
+	border-radius: 1.2rem;
+	background: linear-gradient(160deg, #fff8e0 0%, #ffe8a8 100%);
+	border: 4px solid #e0a840;
+	font-size: 3rem;
+	font-weight: 800;
+	color: var(--ink);
+}
+
+.money-answers {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+	gap: 0.65rem;
+}
+
+.money-btn {
+	display: grid;
+	place-items: center;
+	padding: 0.55rem;
+	min-height: auto;
+}
+
+.money-opt-num {
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1;
+}
+
 .oless-thumb.big,
 .omore-thumb.big,
 .skip-thumb.big {

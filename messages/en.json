@@ -447,5 +447,10 @@
 	"path_up": "up",
 	"path_down": "down",
 	"path_left": "left",
-	"path_right": "right"
+	"path_right": "right",
+	"money_name": "Money coins",
+	"money_desc": "Match a coin to its value: 1, 5, or 10.",
+	"money_prompt_value": "How much is this coin?",
+	"money_prompt_coin": "Which coin is this much?",
+	"money_hint": "Look at the number on the coin. Match it to the same number."
 }

@@ -447,5 +447,10 @@
 	"path_up": "sus",
 	"path_down": "jos",
 	"path_left": "stânga",
-	"path_right": "dreapta"
+	"path_right": "dreapta",
+	"money_name": "Monede",
+	"money_desc": "Potrivește moneda cu valoarea: 1, 5 sau 10.",
+	"money_prompt_value": "Cât valorează această monedă?",
+	"money_prompt_coin": "Care monedă valorează atât?",
+	"money_hint": "Uită-te la numărul de pe monedă. Potrivește-l cu același număr."
 }
