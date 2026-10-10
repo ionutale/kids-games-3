@@ -60,7 +60,8 @@ export type GameId =
 	| 'body-parts'
 	| 'map-places'
 	| 'healthy-choice'
-	| 'above-below';
+	| 'above-below'
+	| 'complete-set';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -113,6 +114,7 @@ export interface Progress {
 	'map-places': GameProgress;
 	'healthy-choice': GameProgress;
 	'above-below': GameProgress;
+	'complete-set': GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -171,7 +173,8 @@ export function defaultProgress(): Progress {
 		'body-parts': { cleared: 0 },
 		'map-places': { cleared: 0 },
 		'healthy-choice': { cleared: 0 },
-		'above-below': { cleared: 0 }
+		'above-below': { cleared: 0 },
+		'complete-set': { cleared: 0 }
 	};
 }
 
@@ -243,7 +246,8 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			'body-parts': sanitizeGame(games['body-parts']),
 			'map-places': sanitizeGame(games['map-places']),
 			'healthy-choice': sanitizeGame(games['healthy-choice']),
-			'above-below': sanitizeGame(games['above-below'])
+			'above-below': sanitizeGame(games['above-below']),
+			'complete-set': sanitizeGame(games['complete-set'])
 		};
 	} catch {
 		return defaultProgress();

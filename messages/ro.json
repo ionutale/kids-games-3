@@ -435,5 +435,9 @@
 	"above_hint": "Sus e deasupra. Jos e dedesubt. Cel din mijloc e între.",
 	"above_above": "deasupra",
 	"above_below": "dedesubt",
-	"above_between": "între"
+	"above_between": "între",
+	"set_name": "Completează setul",
+	"set_desc": "Vezi două imagini la fel. Atinge pe cea care lipsește ca să fie trei.",
+	"set_prompt": "Ce completează setul?",
+	"set_hint": "Găsește imaginea care se potrivește cu cele două pe care le vezi."
 }

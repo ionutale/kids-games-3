@@ -435,5 +435,9 @@
 	"above_hint": "In alto è sopra. In basso è sotto. Quello di mezzo è in mezzo.",
 	"above_above": "sopra",
 	"above_below": "sotto",
-	"above_between": "in mezzo"
+	"above_between": "in mezzo",
+	"set_name": "Completa il gruppo",
+	"set_desc": "Vedi due immagini uguali. Tocca quella che manca per farne tre.",
+	"set_prompt": "Cosa completa il gruppo?",
+	"set_hint": "Trova l'immagine uguale alle due che vedi già."
 }

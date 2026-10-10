@@ -435,5 +435,9 @@
 	"above_hint": "Oben ist oben. Unten ist unten. Die mittlere ist dazwischen.",
 	"above_above": "oben",
 	"above_below": "unten",
-	"above_between": "dazwischen"
+	"above_between": "dazwischen",
+	"set_name": "Satz vervollständigen",
+	"set_desc": "Zwei gleiche Bilder. Tippe das fehlende, damit es drei sind.",
+	"set_prompt": "Was vervollständigt den Satz?",
+	"set_hint": "Finde das Bild, das zu den beiden passt, die du schon siehst."
 }

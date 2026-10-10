@@ -435,5 +435,9 @@
 	"above_hint": "Top is above. Bottom is below. The middle one is between.",
 	"above_above": "above",
 	"above_below": "below",
-	"above_between": "between"
+	"above_between": "between",
+	"set_name": "Complete the set",
+	"set_desc": "See two matching pictures. Tap the missing one to make three.",
+	"set_prompt": "What completes the set?",
+	"set_hint": "Find the picture that matches the two you already see."
 }

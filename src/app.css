@@ -2197,6 +2197,94 @@ a.level-tile:hover {
 	height: auto;
 }
 
+.set-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 0.85rem;
+	background: linear-gradient(160deg, #fff4e0 0%, #ffe0a8 100%);
+	border: 3px solid #e0a840;
+	overflow: hidden;
+}
+
+.set-thumb svg {
+	width: 2.4rem;
+	height: auto;
+}
+
+.game-card .set-thumb {
+	width: 4.6rem;
+	height: 4.6rem;
+}
+
+.game-card .set-thumb svg {
+	width: 3.2rem;
+}
+
+.level-tile .set-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+	border-width: 2px;
+}
+
+.level-tile .set-thumb svg {
+	width: 1.9rem;
+}
+
+.set-row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.55rem;
+	margin: 0.85rem 0 0.5rem;
+	flex-wrap: wrap;
+}
+
+.set-slot {
+	display: grid;
+	place-items: center;
+	width: 4.4rem;
+	height: 4.4rem;
+	border-radius: 1rem;
+	border: 3px solid var(--line);
+	background: var(--card);
+}
+
+.set-slot.empty {
+	font-size: 1.8rem;
+	font-weight: 800;
+	color: var(--ink-soft);
+	border-style: dashed;
+	background: rgba(255, 255, 255, 0.45);
+}
+
+.set-face {
+	display: grid;
+	place-items: center;
+	width: 3.4rem;
+	height: 3.4rem;
+}
+
+.set-face svg {
+	width: 3.2rem;
+	height: auto;
+}
+
+.set-answers {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(4.5rem, 1fr));
+	gap: 0.65rem;
+	margin-top: 0.5rem;
+}
+
+.set-btn {
+	display: grid;
+	place-items: center;
+	padding: 0.45rem;
+	min-height: auto;
+}
+
 .oless-thumb.big,
 .omore-thumb.big,
 .skip-thumb.big {
