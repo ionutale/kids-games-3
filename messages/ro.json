@@ -208,5 +208,9 @@
 	"bef_prompt_before": "Ce literă vine înainte?",
 	"bef_prompt_after": "Ce literă vine după?",
 	"bef_hint_before": "Spune alfabetul. Ce vine chiar înainte?",
-	"bef_hint_after": "Spune alfabetul. Ce vine chiar după?"
+	"bef_hint_after": "Spune alfabetul. Ce vine chiar după?",
+	"rhyme_name": "Rimă",
+	"rhyme_desc": "Vezi un cuvânt. Atinge cuvântul care rimează.",
+	"rhyme_prompt": "Care cuvânt rimează?",
+	"rhyme_hint": "Spune ambele cuvinte cu voce tare. Se termină la fel?"
 }

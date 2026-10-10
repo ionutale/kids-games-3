@@ -208,5 +208,9 @@
 	"bef_prompt_before": "Welcher Buchstabe kommt davor?",
 	"bef_prompt_after": "Welcher Buchstabe kommt danach?",
 	"bef_hint_before": "Sag das Alphabet. Was kommt direkt davor?",
-	"bef_hint_after": "Sag das Alphabet. Was kommt direkt danach?"
+	"bef_hint_after": "Sag das Alphabet. Was kommt direkt danach?",
+	"rhyme_name": "Reimpaar",
+	"rhyme_desc": "Sieh ein Wort. Tippe das Wort, das sich reimt.",
+	"rhyme_prompt": "Welches Wort reimt sich?",
+	"rhyme_hint": "Sag beide Wörter laut. Klingen sie am Ende gleich?"
 }

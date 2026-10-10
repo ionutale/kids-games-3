@@ -208,5 +208,9 @@
 	"bef_prompt_before": "Which letter comes before?",
 	"bef_prompt_after": "Which letter comes after?",
 	"bef_hint_before": "Say the alphabet. What comes just before?",
-	"bef_hint_after": "Say the alphabet. What comes just after?"
+	"bef_hint_after": "Say the alphabet. What comes just after?",
+	"rhyme_name": "Rhyming pair",
+	"rhyme_desc": "See a word. Tap the word that rhymes.",
+	"rhyme_prompt": "Which word rhymes?",
+	"rhyme_hint": "Say both words out loud. Do they sound the same at the end?"
 }

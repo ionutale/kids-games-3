@@ -919,6 +919,56 @@ a.level-tile:hover {
 	animation: pulse 1s ease-in-out infinite;
 }
 
+.rhyme-prompt {
+	display: flex;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+.rhyme-prompt.hint-pulse .rhyme-face {
+	animation: pulse 1s ease-in-out infinite;
+}
+
+.rhyme-face {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.35rem;
+}
+
+.rhyme-picture {
+	font-size: 3.4rem;
+	line-height: 1;
+}
+
+.rhyme-word {
+	font-weight: 800;
+	font-size: 1.55rem;
+	color: var(--ink);
+}
+
+.rhyme-prompt .rhyme-face {
+	min-width: 7.5rem;
+	padding: 0.85rem 1rem;
+	border: 3px solid var(--line);
+	border-radius: 1.4rem;
+	background: #fffdf8;
+	box-shadow: var(--shadow);
+}
+
+.rhyme-btn {
+	min-width: 7.2rem;
+	min-height: 7.2rem;
+}
+
+.rhyme-btn .rhyme-picture {
+	font-size: 2.6rem;
+}
+
+.rhyme-btn .rhyme-word {
+	font-size: 1.25rem;
+}
+
 .position-row {
 	display: flex;
 	justify-content: center;
