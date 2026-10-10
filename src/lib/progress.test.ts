@@ -61,7 +61,8 @@ describe('progress', () => {
 			'one-more': { cleared: 0 },
 			months: { cleared: 0 },
 			'skip-count': { cleared: 0 },
-			'sort-kind': { cleared: 0 }
+			'sort-kind': { cleared: 0 },
+			'half-share': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -110,6 +111,7 @@ describe('progress', () => {
 		expect(clearLevel(progress, 'months', 1)).toBe(1);
 		expect(clearLevel(progress, 'skip-count', 1)).toBe(1);
 		expect(clearLevel(progress, 'sort-kind', 1)).toBe(1);
+		expect(clearLevel(progress, 'half-share', 1)).toBe(1);
 		expect(progress['count-fruit'].cleared).toBe(1);
 	});
 
@@ -158,7 +160,8 @@ describe('progress', () => {
 			'one-more': { cleared: 0 },
 			months: { cleared: 0 },
 			'skip-count': { cleared: 0 },
-			'sort-kind': { cleared: 0 }
+			'sort-kind': { cleared: 0 },
+			'half-share': { cleared: 0 }
 		});
 	});
 
@@ -211,7 +214,8 @@ describe('progress', () => {
 			'one-more': { cleared: 0 },
 			months: { cleared: 0 },
 			'skip-count': { cleared: 0 },
-			'sort-kind': { cleared: 0 }
+			'sort-kind': { cleared: 0 },
+			'half-share': { cleared: 0 }
 		});
 	});
 });

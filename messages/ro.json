@@ -348,5 +348,11 @@
 	"kind_face_car": "Mașină",
 	"kind_face_doll": "Păpușă",
 	"kind_face_kite": "Zmeu",
-	"kind_face_drum": "Tobă"
+	"kind_face_drum": "Tobă",
+	"half_name": "Jumătate și împarte",
+	"half_desc": "Vezi un grup par. Atinge câte sunt în fiecare jumătate.",
+	"half_prompt_lead": "Împarte în ",
+	"half_prompt_word": "două părți egale",
+	"half_prompt_tail": ". Câte în fiecare?",
+	"half_hint": "Împarte grupul în două părți egale. Numără o parte."
 }

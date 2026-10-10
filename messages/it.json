@@ -348,5 +348,11 @@
 	"kind_face_car": "Macchina",
 	"kind_face_doll": "Bambola",
 	"kind_face_kite": "Aquilone",
-	"kind_face_drum": "Tamburo"
+	"kind_face_drum": "Tamburo",
+	"half_name": "Metà e condividi",
+	"half_desc": "Vedi un gruppo pari. Tocca quanti ce ne sono in ogni metà.",
+	"half_prompt_lead": "Dividi in ",
+	"half_prompt_word": "due parti uguali",
+	"half_prompt_tail": ". Quanti in ciascuna?",
+	"half_hint": "Dividi il gruppo in due parti uguali. Conta una parte."
 }

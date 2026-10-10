@@ -348,5 +348,11 @@
 	"kind_face_car": "Auto",
 	"kind_face_doll": "Puppe",
 	"kind_face_kite": "Drachen",
-	"kind_face_drum": "Trommel"
+	"kind_face_drum": "Trommel",
+	"half_name": "Halbieren und teilen",
+	"half_desc": "Sieh eine gerade Menge. Tippe, wie viele in jede Hälfte gehören.",
+	"half_prompt_lead": "Teile in ",
+	"half_prompt_word": "zwei gleiche Teile",
+	"half_prompt_tail": ". Wie viele in jedem?",
+	"half_hint": "Teile die Menge in zwei gleiche Gruppen. Zähle eine Gruppe."
 }

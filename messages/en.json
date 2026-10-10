@@ -348,5 +348,11 @@
 	"kind_face_car": "Car",
 	"kind_face_doll": "Doll",
 	"kind_face_kite": "Kite",
-	"kind_face_drum": "Drum"
+	"kind_face_drum": "Drum",
+	"half_name": "Half and share",
+	"half_desc": "See an even pile. Tap how many are in each half.",
+	"half_prompt_lead": "Share into ",
+	"half_prompt_word": "two equal parts",
+	"half_prompt_tail": ". How many in each?",
+	"half_hint": "Split the pile into two equal groups. Count one group."
 }
