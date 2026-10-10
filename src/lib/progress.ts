@@ -38,7 +38,8 @@ export type GameId =
 	| 'before-after'
 	| 'rhyme'
 	| 'syllable'
-	| 'sort-color';
+	| 'sort-color'
+	| 'shadow-match';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -69,6 +70,7 @@ export interface Progress {
 	rhyme: GameProgress;
 	syllable: GameProgress;
 	'sort-color': GameProgress;
+	'shadow-match': GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -105,7 +107,8 @@ export function defaultProgress(): Progress {
 		'before-after': { cleared: 0 },
 		rhyme: { cleared: 0 },
 		syllable: { cleared: 0 },
-		'sort-color': { cleared: 0 }
+		'sort-color': { cleared: 0 },
+		'shadow-match': { cleared: 0 }
 	};
 }
 
@@ -155,7 +158,8 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			'before-after': sanitizeGame(games['before-after']),
 			rhyme: sanitizeGame(games['rhyme']),
 			syllable: sanitizeGame(games['syllable']),
-			'sort-color': sanitizeGame(games['sort-color'])
+			'sort-color': sanitizeGame(games['sort-color']),
+			'shadow-match': sanitizeGame(games['shadow-match'])
 		};
 	} catch {
 		return defaultProgress();

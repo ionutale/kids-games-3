@@ -220,5 +220,9 @@
 	"sort_name": "Sortează după culoare",
 	"sort_desc": "Atinge o formă, apoi grupul ei de culoare.",
 	"sort_prompt": "Pune fiecare formă la culoarea ei.",
-	"sort_hint": "Atinge întâi o formă. Apoi atinge culoarea potrivită."
+	"sort_hint": "Atinge întâi o formă. Apoi atinge culoarea potrivită.",
+	"shadow_name": "Potrivește umbra",
+	"shadow_desc": "Vezi o siluetă. Atinge imaginea potrivită.",
+	"shadow_prompt": "Care imagine se potrivește cu umbra?",
+	"shadow_hint": "Uită-te la contur. Găsește aceeași formă."
 }

@@ -1090,6 +1090,43 @@ a.level-tile:hover {
 	animation: shake 0.45s ease;
 }
 
+.shadow-prompt {
+	display: flex;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+.shadow-prompt.hint-pulse .shadow-art {
+	animation: pulse 1s ease-in-out infinite;
+}
+
+.shadow-art {
+	display: grid;
+	place-items: center;
+	width: 7.5rem;
+	height: 7.5rem;
+	padding: 0.6rem;
+	border: 3px dashed var(--line);
+	border-radius: 1.4rem;
+	background: #eef1f5;
+}
+
+.shadow-art svg {
+	width: 100%;
+	height: auto;
+	display: block;
+	filter: brightness(0) saturate(100%);
+	opacity: 0.82;
+}
+
+.level-tile .shadow-art {
+	width: 3.4rem;
+	height: 3.4rem;
+	padding: 0.15rem;
+	border-width: 2px;
+	border-radius: 0.8rem;
+}
+
 .position-row {
 	display: flex;
 	justify-content: center;

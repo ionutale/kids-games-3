@@ -220,5 +220,9 @@
 	"sort_name": "Ordina per colore",
 	"sort_desc": "Tocca una figura, poi il suo gruppo di colore.",
 	"sort_prompt": "Metti ogni figura nel suo colore.",
-	"sort_hint": "Prima tocca una figura. Poi tocca il colore giusto."
+	"sort_hint": "Prima tocca una figura. Poi tocca il colore giusto.",
+	"shadow_name": "Trova l'ombra",
+	"shadow_desc": "Vedi una silhouette. Tocca la figura uguale.",
+	"shadow_prompt": "Quale figura corrisponde all'ombra?",
+	"shadow_hint": "Guarda il contorno. Trova la stessa forma."
 }

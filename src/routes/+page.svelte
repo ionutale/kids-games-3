@@ -40,6 +40,7 @@
 	let clearedRhyme = $state(0);
 	let clearedSyl = $state(0);
 	let clearedSort = $state(0);
+	let clearedShadow = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -70,6 +71,7 @@
 	const rhymeHref = $derived(localizeHref('/play/rhyme', { locale }));
 	const sylHref = $derived(localizeHref('/play/syllable', { locale }));
 	const sortHref = $derived(localizeHref('/play/sort-color', { locale }));
+	const shadowHref = $derived(localizeHref('/play/shadow-match', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -101,6 +103,7 @@
 		clearedRhyme = progress.rhyme.cleared;
 		clearedSyl = progress.syllable.cleared;
 		clearedSort = progress['sort-color'].cleared;
+		clearedShadow = progress['shadow-match'].cleared;
 	});
 </script>
 
@@ -502,6 +505,20 @@
 		<div class="row">
 			<a class="btn" href={sortHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedSort })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.shadow_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="shadow-art" aria-hidden="true"><FruitArt fruit="apple" /></span>
+	</div>
+	<div>
+		<h2>{m.shadow_name()}</h2>
+		<p>{m.shadow_desc()}</p>
+		<div class="row">
+			<a class="btn" href={shadowHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedShadow })}</span>
 		</div>
 	</div>
 </section>
