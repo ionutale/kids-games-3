@@ -11,9 +11,7 @@
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const homeHref = $derived(localizeHref('/', { locale }));
-	const levelHref = $derived((level: number) =>
-		localizeHref(`/play/seasons/${level}`, { locale })
-	);
+	const levelHref = $derived((level: number) => localizeHref(`/play/seasons/${level}`, { locale }));
 
 	onMount(() => {
 		cleared = loadProgress(localStorage).seasons.cleared;

@@ -10,12 +10,8 @@
 	let { hour, part, label = '' }: Props = $props();
 
 	const hourAngle = $derived(((hour % 12) / 12) * 360);
-	const sky = $derived(
-		part === 'morning' ? '#ffe2b0' : part === 'day' ? '#9fd7ff' : '#2c3a66'
-	);
-	const ground = $derived(
-		part === 'morning' ? '#8fbf6a' : part === 'day' ? '#6aa84f' : '#3d4a3a'
-	);
+	const sky = $derived(part === 'morning' ? '#ffe2b0' : part === 'day' ? '#9fd7ff' : '#2c3a66');
+	const ground = $derived(part === 'morning' ? '#8fbf6a' : part === 'day' ? '#6aa84f' : '#3d4a3a');
 </script>
 
 <svg viewBox="0 0 96 96" role="img" aria-label={label}>
@@ -30,10 +26,7 @@
 		<circle cx="48" cy="14" r="1.2" fill="#fff" />
 	{:else if part === 'morning'}
 		<circle cx="74" cy="26" r="12" fill="#f2c230" />
-		<path
-			d="M10,58 C24,48 36,52 48,58 C60,64 72,60 86,52 L86,68 L10,68 Z"
-			fill="#fff6"
-		/>
+		<path d="M10,58 C24,48 36,52 48,58 C60,64 72,60 86,52 L86,68 L10,68 Z" fill="#fff6" />
 	{:else}
 		<circle cx="72" cy="22" r="13" fill="#f2c230" />
 	{/if}

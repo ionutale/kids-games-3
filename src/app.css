@@ -1417,7 +1417,8 @@ a.level-tile:hover {
 }
 
 .oless-thumb,
-.omore-thumb {
+.omore-thumb,
+.skip-thumb {
 	display: grid;
 	place-items: center;
 	width: 3.6rem;
@@ -1437,8 +1438,15 @@ a.level-tile:hover {
 	color: #2f4f2f;
 }
 
+.skip-thumb {
+	background: linear-gradient(160deg, #e8e0ff 0%, #9b8ad4 100%);
+	border-color: #7a6bb0;
+	color: #2f2850;
+}
+
 .oless-thumb.big,
-.omore-thumb.big {
+.omore-thumb.big,
+.skip-thumb.big {
 	width: 5.2rem;
 	height: 5.2rem;
 	font-size: 2rem;
@@ -1446,14 +1454,16 @@ a.level-tile:hover {
 }
 
 .game-card .oless-thumb,
-.game-card .omore-thumb {
+.game-card .omore-thumb,
+.game-card .skip-thumb {
 	width: 4.6rem;
 	height: 4.6rem;
 	font-size: 1.55rem;
 }
 
 .level-tile .oless-thumb,
-.level-tile .omore-thumb {
+.level-tile .omore-thumb,
+.level-tile .skip-thumb {
 	width: 2.8rem;
 	height: 2.8rem;
 	font-size: 1rem;
@@ -1552,7 +1562,9 @@ a.level-tile:hover {
 	outline: 1.5px dashed rgba(90, 61, 26, 0.22);
 	outline-offset: -2px;
 	border-radius: 0.35rem;
-	transition: outline-color 0.2s ease, background-color 0.2s ease;
+	transition:
+		outline-color 0.2s ease,
+		background-color 0.2s ease;
 }
 
 .jigsaw-slot.glow {
@@ -1754,7 +1766,8 @@ a.level-tile:hover {
 	}
 }
 
-.days-thumb {
+.days-thumb,
+.months-thumb {
 	display: grid;
 	place-items: center;
 	width: 3.6rem;
@@ -1768,23 +1781,39 @@ a.level-tile:hover {
 	letter-spacing: 0.02em;
 }
 
-.days-thumb.big {
+.months-thumb {
+	background: linear-gradient(160deg, #dff3ff 0%, #8ec8ef 100%);
+	border-color: #5aa4d4;
+	color: #1f4a68;
+}
+
+.days-thumb.big,
+.months-thumb.big {
 	width: 5.2rem;
 	height: 5.2rem;
 	font-size: 1.7rem;
 }
 
-.game-card .days-thumb {
+.game-card .days-thumb,
+.game-card .months-thumb {
 	width: 4.6rem;
 	height: 4.6rem;
 	font-size: 1.35rem;
 }
 
-.level-tile .days-thumb {
+.level-tile .days-thumb,
+.level-tile .months-thumb {
 	width: 2.8rem;
 	height: 2.8rem;
 	font-size: 0.95rem;
 	border-width: 2px;
+}
+
+.months-fill-board .days-chip.fixed,
+.months-fill-board .days-chip.filled,
+.months-fill-board .days-slot {
+	min-width: 4rem;
+	font-size: 0.85rem;
 }
 
 .days-row .days-chip {
@@ -2072,8 +2101,7 @@ a.level-tile:hover {
 .mem-card .back {
 	background:
 		radial-gradient(circle at 30% 25%, #ffe9c9 0, transparent 45%),
-		radial-gradient(circle at 80% 75%, #dcefff 0, transparent 40%),
-		#fff3dd;
+		radial-gradient(circle at 80% 75%, #dcefff 0, transparent 40%), #fff3dd;
 }
 
 .mem-card .back img {

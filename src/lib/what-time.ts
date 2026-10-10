@@ -183,10 +183,7 @@ function hourOptions(
 }
 
 /** Three clocks. Answer is the day part or the hour. */
-export function pickRounds(
-	config: TimeLevelConfig,
-	rand: () => number = Math.random
-): TimeRound[] {
+export function pickRounds(config: TimeLevelConfig, rand: () => number = Math.random): TimeRound[] {
 	if (config.mode === 'part') {
 		const parts = shuffled(config.parts, rand);
 		return Array.from({ length: TIME_ROUNDS }, (_, index) => {

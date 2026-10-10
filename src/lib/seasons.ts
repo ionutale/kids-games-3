@@ -52,10 +52,7 @@ function shuffled<T>(items: T[], rand: () => number): T[] {
 
 function neighbors(season: SeasonId): SeasonId[] {
 	const index = SEASON_ORDER.indexOf(season);
-	return [
-		SEASON_ORDER[(index + 3) % 4],
-		SEASON_ORDER[(index + 1) % 4]
-	];
+	return [SEASON_ORDER[(index + 3) % 4], SEASON_ORDER[(index + 1) % 4]];
 }
 
 function optionsFor(
@@ -69,7 +66,10 @@ function optionsFor(
 	const far = pool.filter((season) => season !== answer && !near.includes(season));
 	const ordered = tight
 		? [...near, ...shuffled(far, rand)]
-		: [...shuffled(far.length > 0 ? far : pool.filter((season) => season !== answer), rand), ...near];
+		: [
+				...shuffled(far.length > 0 ? far : pool.filter((season) => season !== answer), rand),
+				...near
+			];
 	const picked: SeasonId[] = [];
 	for (const season of ordered) {
 		if (picked.length >= count - 1) break;

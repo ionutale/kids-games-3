@@ -11,15 +11,22 @@
 	let { side, cue, subtle = false, label = '' }: Props = $props();
 
 	const arrowPath = $derived(
-		side === 'left'
-			? 'M62,48 L38,48 M48,34 L34,48 L48,62'
-			: 'M34,48 L58,48 M48,34 L62,48 L48,62'
+		side === 'left' ? 'M62,48 L38,48 M48,34 L34,48 L48,62' : 'M34,48 L58,48 M48,34 L62,48 L48,62'
 	);
 </script>
 
 <svg viewBox="0 0 96 96" role="img" aria-label={label} class:subtle>
 	<rect x="0" y="0" width="96" height="96" rx="18" fill="#e8f4ff" />
-	<rect x="8" y="8" width="80" height="80" rx="14" fill="#fff7ec" stroke="#e8d4b8" stroke-width="2" />
+	<rect
+		x="8"
+		y="8"
+		width="80"
+		height="80"
+		rx="14"
+		fill="#fff7ec"
+		stroke="#e8d4b8"
+		stroke-width="2"
+	/>
 
 	{#if cue === 'arrow'}
 		<path

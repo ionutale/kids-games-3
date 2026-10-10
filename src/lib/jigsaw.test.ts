@@ -1,11 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import {
-	JIGSAW_ROUNDS,
-	buildEdges,
-	getJigsawLevel,
-	pickRounds,
-	piecePath
-} from './jigsaw';
+import { JIGSAW_ROUNDS, buildEdges, getJigsawLevel, pickRounds, piecePath } from './jigsaw';
 
 describe('jigsaw levels', () => {
 	test('ten levels, each with more pieces than the last', () => {

@@ -35,13 +35,49 @@ export const SORT_LEVELS: SortLevelConfig[] = [
 	{ level: 1, colors: ['red', 'blue'], shapes: ['circle'], bucketCount: 2, itemCount: 2 },
 	{ level: 2, colors: ['red', 'blue', 'yellow'], shapes: ['circle'], bucketCount: 2, itemCount: 3 },
 	{ level: 3, colors: BASIC, shapes: ['circle', 'square'], bucketCount: 3, itemCount: 3 },
-	{ level: 4, colors: BASIC, shapes: ['circle', 'square', 'triangle'], bucketCount: 3, itemCount: 4 },
-	{ level: 5, colors: MORE, shapes: ['circle', 'square', 'triangle'], bucketCount: 4, itemCount: 4 },
+	{
+		level: 4,
+		colors: BASIC,
+		shapes: ['circle', 'square', 'triangle'],
+		bucketCount: 3,
+		itemCount: 4
+	},
+	{
+		level: 5,
+		colors: MORE,
+		shapes: ['circle', 'square', 'triangle'],
+		bucketCount: 4,
+		itemCount: 4
+	},
 	{ level: 6, colors: MORE, shapes: ['circle', 'square', 'star'], bucketCount: 4, itemCount: 5 },
-	{ level: 7, colors: MORE, shapes: ['circle', 'square', 'triangle', 'star'], bucketCount: 4, itemCount: 6 },
-	{ level: 8, colors: ALL, shapes: ['circle', 'square', 'triangle', 'star'], bucketCount: 5, itemCount: 5 },
-	{ level: 9, colors: ALL, shapes: ['circle', 'square', 'triangle', 'star', 'heart'], bucketCount: 5, itemCount: 6 },
-	{ level: 10, colors: ALL, shapes: ['circle', 'square', 'triangle', 'star', 'heart'], bucketCount: 6, itemCount: 6 }
+	{
+		level: 7,
+		colors: MORE,
+		shapes: ['circle', 'square', 'triangle', 'star'],
+		bucketCount: 4,
+		itemCount: 6
+	},
+	{
+		level: 8,
+		colors: ALL,
+		shapes: ['circle', 'square', 'triangle', 'star'],
+		bucketCount: 5,
+		itemCount: 5
+	},
+	{
+		level: 9,
+		colors: ALL,
+		shapes: ['circle', 'square', 'triangle', 'star', 'heart'],
+		bucketCount: 5,
+		itemCount: 6
+	},
+	{
+		level: 10,
+		colors: ALL,
+		shapes: ['circle', 'square', 'triangle', 'star', 'heart'],
+		bucketCount: 6,
+		itemCount: 6
+	}
 ];
 
 export function getSortLevel(level: number): SortLevelConfig | undefined {
@@ -66,10 +102,7 @@ function colorCounts(buckets: ColorId[], itemCount: number, rand: () => number):
 }
 
 /** Three sorting boards. Every item has a matching bucket. */
-export function pickRounds(
-	config: SortLevelConfig,
-	rand: () => number = Math.random
-): SortRound[] {
+export function pickRounds(config: SortLevelConfig, rand: () => number = Math.random): SortRound[] {
 	return Array.from({ length: SORT_ROUNDS }, (_, roundIndex) => {
 		const buckets = shuffled(config.colors, rand).slice(0, config.bucketCount);
 		const colors = colorCounts(buckets, config.itemCount, rand);

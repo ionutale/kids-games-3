@@ -135,9 +135,7 @@ function optionsFor(
 	tight: boolean,
 	rand: () => number
 ): RhymeWord[] {
-	const others = pool.filter(
-		(word) => word.word !== answer.word && word.word !== prompt.word
-	);
+	const others = pool.filter((word) => word.word !== answer.word && word.word !== prompt.word);
 	const near = others.filter((word) => sameStart(word.word, answer.word));
 	const far = others.filter((word) => !sameStart(word.word, answer.word));
 	const ordered = tight

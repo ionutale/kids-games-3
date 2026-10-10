@@ -90,10 +90,7 @@ function optionsFor(
 }
 
 /** Three rows. The answer is the next number in the count. */
-export function pickRounds(
-	config: NextLevelConfig,
-	rand: () => number = Math.random
-): NextRound[] {
+export function pickRounds(config: NextLevelConfig, rand: () => number = Math.random): NextRound[] {
 	return shuffled(sequences(config), rand)
 		.slice(0, NEXT_ROUNDS)
 		.map(({ shown, answer }) => ({

@@ -35,13 +35,53 @@
 	{#if weather === 'sunny'}
 		<circle cx="68" cy="26" r="12" fill="#f2c230" />
 		<line x1="68" y1="8" x2="68" y2="2" stroke="#f2c230" stroke-width="3" stroke-linecap="round" />
-		<line x1="68" y1="44" x2="68" y2="50" stroke="#f2c230" stroke-width="3" stroke-linecap="round" />
-		<line x1="50" y1="26" x2="44" y2="26" stroke="#f2c230" stroke-width="3" stroke-linecap="round" />
-		<line x1="86" y1="26" x2="92" y2="26" stroke="#f2c230" stroke-width="3" stroke-linecap="round" />
+		<line
+			x1="68"
+			y1="44"
+			x2="68"
+			y2="50"
+			stroke="#f2c230"
+			stroke-width="3"
+			stroke-linecap="round"
+		/>
+		<line
+			x1="50"
+			y1="26"
+			x2="44"
+			y2="26"
+			stroke="#f2c230"
+			stroke-width="3"
+			stroke-linecap="round"
+		/>
+		<line
+			x1="86"
+			y1="26"
+			x2="92"
+			y2="26"
+			stroke="#f2c230"
+			stroke-width="3"
+			stroke-linecap="round"
+		/>
 		<line x1="55" y1="13" x2="51" y2="9" stroke="#f2c230" stroke-width="3" stroke-linecap="round" />
-		<line x1="81" y1="39" x2="85" y2="43" stroke="#f2c230" stroke-width="3" stroke-linecap="round" />
+		<line
+			x1="81"
+			y1="39"
+			x2="85"
+			y2="43"
+			stroke="#f2c230"
+			stroke-width="3"
+			stroke-linecap="round"
+		/>
 		<line x1="81" y1="13" x2="85" y2="9" stroke="#f2c230" stroke-width="3" stroke-linecap="round" />
-		<line x1="55" y1="39" x2="51" y2="43" stroke="#f2c230" stroke-width="3" stroke-linecap="round" />
+		<line
+			x1="55"
+			y1="39"
+			x2="51"
+			y2="43"
+			stroke="#f2c230"
+			stroke-width="3"
+			stroke-linecap="round"
+		/>
 	{:else if weather === 'cloudy'}
 		<ellipse cx="38" cy="30" rx="16" ry="10" fill="#fff" />
 		<ellipse cx="52" cy="28" rx="14" ry="12" fill="#f4f7fa" />
@@ -50,13 +90,69 @@
 		<ellipse cx="38" cy="26" rx="16" ry="10" fill="#9aabbc" />
 		<ellipse cx="52" cy="24" rx="14" ry="12" fill="#8799ab" />
 		<ellipse cx="64" cy="28" rx="12" ry="9" fill="#9aabbc" />
-		<line x1="30" y1="42" x2="28" y2="52" stroke="#5a9fd4" stroke-width="2.2" stroke-linecap="round" />
-		<line x1="42" y1="48" x2="40" y2="58" stroke="#5a9fd4" stroke-width="2.2" stroke-linecap="round" />
-		<line x1="54" y1="44" x2="52" y2="54" stroke="#5a9fd4" stroke-width="2.2" stroke-linecap="round" />
-		<line x1="66" y1="50" x2="64" y2="60" stroke="#5a9fd4" stroke-width="2.2" stroke-linecap="round" />
-		<line x1="36" y1="56" x2="34" y2="66" stroke="#5a9fd4" stroke-width="2.2" stroke-linecap="round" />
-		<line x1="50" y1="58" x2="48" y2="68" stroke="#5a9fd4" stroke-width="2.2" stroke-linecap="round" />
-		<line x1="62" y1="54" x2="60" y2="64" stroke="#5a9fd4" stroke-width="2.2" stroke-linecap="round" />
+		<line
+			x1="30"
+			y1="42"
+			x2="28"
+			y2="52"
+			stroke="#5a9fd4"
+			stroke-width="2.2"
+			stroke-linecap="round"
+		/>
+		<line
+			x1="42"
+			y1="48"
+			x2="40"
+			y2="58"
+			stroke="#5a9fd4"
+			stroke-width="2.2"
+			stroke-linecap="round"
+		/>
+		<line
+			x1="54"
+			y1="44"
+			x2="52"
+			y2="54"
+			stroke="#5a9fd4"
+			stroke-width="2.2"
+			stroke-linecap="round"
+		/>
+		<line
+			x1="66"
+			y1="50"
+			x2="64"
+			y2="60"
+			stroke="#5a9fd4"
+			stroke-width="2.2"
+			stroke-linecap="round"
+		/>
+		<line
+			x1="36"
+			y1="56"
+			x2="34"
+			y2="66"
+			stroke="#5a9fd4"
+			stroke-width="2.2"
+			stroke-linecap="round"
+		/>
+		<line
+			x1="50"
+			y1="58"
+			x2="48"
+			y2="68"
+			stroke="#5a9fd4"
+			stroke-width="2.2"
+			stroke-linecap="round"
+		/>
+		<line
+			x1="62"
+			y1="54"
+			x2="60"
+			y2="64"
+			stroke="#5a9fd4"
+			stroke-width="2.2"
+			stroke-linecap="round"
+		/>
 	{:else}
 		<ellipse cx="38" cy="26" rx="16" ry="10" fill="#dce6ef" />
 		<ellipse cx="52" cy="24" rx="14" ry="12" fill="#cfdceb" />

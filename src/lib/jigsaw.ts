@@ -90,8 +90,8 @@ export function buildEdges(
 	for (let r = 0; r < rows; r++) {
 		grid[r] = [];
 		for (let c = 0; c < cols; c++) {
-			const top: Tab = r === 0 ? 0 : ((-grid[r - 1][c].bottom) as Tab);
-			const left: Tab = c === 0 ? 0 : ((-grid[r][c - 1].right) as Tab);
+			const top: Tab = r === 0 ? 0 : (-grid[r - 1][c].bottom as Tab);
+			const left: Tab = c === 0 ? 0 : (-grid[r][c - 1].right as Tab);
 			const right: Tab = c === cols - 1 ? 0 : randomTab(rand);
 			const bottom: Tab = r === rows - 1 ? 0 : randomTab(rand);
 			grid[r][c] = { top, right, bottom, left };

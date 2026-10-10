@@ -34,9 +34,7 @@ describe('pickRounds', () => {
 				const bank = bankFor(locale).slice(0, config.poolSize);
 				for (const round of rounds) {
 					expect(round.options).toHaveLength(config.optionCount);
-					expect(new Set(round.options.map((word) => word.word)).size).toBe(
-						round.options.length
-					);
+					expect(new Set(round.options.map((word) => word.word)).size).toBe(round.options.length);
 					expect(round.options.map((word) => word.word)).toContain(round.answer.word);
 					expect(round.options.map((word) => word.word)).not.toContain(round.prompt.word);
 					const pair = bank.find(

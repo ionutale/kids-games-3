@@ -101,8 +101,11 @@ function optionsFor(
 }
 
 function sidesFor(config: BefLevelConfig, rand: () => number): BefSide[] {
-	if (config.side !== 'mixed') return Array.from({ length: BEF_ROUNDS }, () => config.side);
-	return shuffled(['before', 'after', rand() < 0.5 ? 'before' : 'after'], rand);
+	if (config.side !== 'mixed') {
+		const side = config.side;
+		return Array.from({ length: BEF_ROUNDS }, () => side);
+	}
+	return shuffled(['before', 'after', rand() < 0.5 ? 'before' : 'after'] as BefSide[], rand);
 }
 
 /** Three letters. The answer is the neighbor before or after. */

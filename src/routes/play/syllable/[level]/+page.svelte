@@ -205,8 +205,8 @@
 								<span
 									class="syl-chunk"
 									class:glow={stage >= 1 || feedback === 'correct'}
-									style="--syl-i: {index}"
-								>{chunk}</span>
+									style="--syl-i: {index}">{chunk}</span
+								>
 							{/each}
 						</span>
 						{#if stage >= 1}

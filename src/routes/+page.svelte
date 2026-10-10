@@ -54,6 +54,8 @@
 	let clearedJigsaw = $state(0);
 	let clearedOless = $state(0);
 	let clearedOmore = $state(0);
+	let clearedMonths = $state(0);
+	let clearedSkip = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -93,6 +95,8 @@
 	const jigsawHref = $derived(localizeHref('/play/jigsaw', { locale }));
 	const olessHref = $derived(localizeHref('/play/one-less', { locale }));
 	const omoreHref = $derived(localizeHref('/play/one-more', { locale }));
+	const monthsHref = $derived(localizeHref('/play/months', { locale }));
+	const skipHref = $derived(localizeHref('/play/skip-count', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -133,6 +137,8 @@
 		clearedJigsaw = progress.jigsaw.cleared;
 		clearedOless = progress['one-less'].cleared;
 		clearedOmore = progress['one-more'].cleared;
+		clearedMonths = progress.months.cleared;
+		clearedSkip = progress['skip-count'].cleared;
 	});
 </script>
 
@@ -594,6 +600,20 @@
 	</div>
 </section>
 
+<section class="card game-card" aria-label={m.months_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="months-thumb" aria-hidden="true">Ja</span>
+	</div>
+	<div>
+		<h2>{m.months_name()}</h2>
+		<p>{m.months_desc()}</p>
+		<div class="row">
+			<a class="btn" href={monthsHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedMonths })}</span>
+		</div>
+	</div>
+</section>
+
 <section class="card game-card" aria-label={m.weather_name()} style="margin-top: 1.25rem;">
 	<div class="thumb">
 		<span class="weather-thumb" aria-hidden="true"><WeatherArt weather="sunny" /></span>
@@ -663,6 +683,20 @@
 		<div class="row">
 			<a class="btn" href={omoreHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedOmore })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.skip_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="skip-thumb" aria-hidden="true">2</span>
+	</div>
+	<div>
+		<h2>{m.skip_name()}</h2>
+		<p>{m.skip_desc()}</p>
+		<div class="row">
+			<a class="btn" href={skipHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedSkip })}</span>
 		</div>
 	</div>
 </section>

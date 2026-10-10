@@ -131,11 +131,11 @@ function skyRound(index: number, tight: boolean, rand: () => number): OppRound {
 function wayRound(index: number, rand: () => number): OppRound {
 	const promptWay: WayId = index % 2 === 0 ? 'up' : 'down';
 	const answerWay: WayId = promptWay === 'up' ? 'down' : 'up';
-	const options = shuffled(
+	const options = shuffled<OppCard>(
 		[
-			{ id: `${index}-0`, kind: 'way' as const, way: answerWay },
-			{ id: `${index}-1`, kind: 'way' as const, way: 'side' },
-			{ id: `${index}-2`, kind: 'way' as const, way: 'left' }
+			{ id: `${index}-0`, kind: 'way', way: answerWay },
+			{ id: `${index}-1`, kind: 'way', way: 'side' },
+			{ id: `${index}-2`, kind: 'way', way: 'left' }
 		],
 		rand
 	);

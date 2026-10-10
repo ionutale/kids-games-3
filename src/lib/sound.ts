@@ -124,13 +124,7 @@ export class SoundPlayer {
 		}
 	}
 
-	private tone(
-		freq: number,
-		when: number,
-		duration: number,
-		peak: number,
-		dest: GainNode
-	): void {
+	private tone(freq: number, when: number, duration: number, peak: number, dest: GainNode): void {
 		if (!this.ctx) return;
 		const osc = this.ctx.createOscillator();
 		const gain = this.ctx.createGain();

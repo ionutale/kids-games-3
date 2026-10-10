@@ -189,7 +189,8 @@
 				{#if config.ask === 'more'}
 					{m.more_prompt_lead()}<strong>{m.more_prompt_word()}</strong>{m.more_prompt_tail()}
 				{:else}
-					{m.more_less_prompt_lead()}<strong>{m.more_less_prompt_word()}</strong>{m.more_less_prompt_tail()}
+					{m.more_less_prompt_lead()}<strong>{m.more_less_prompt_word()}</strong
+					>{m.more_less_prompt_tail()}
 				{/if}
 			</p>
 			<div class="pips" aria-hidden="true">

@@ -1,11 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import {
-	PART_HOUR,
-	TIME_ROUNDS,
-	getTimeLevel,
-	partForHour,
-	pickRounds
-} from './what-time';
+import { PART_HOUR, TIME_ROUNDS, getTimeLevel, partForHour, pickRounds } from './what-time';
 
 describe('what time levels', () => {
 	test('ten levels', () => {

@@ -69,9 +69,7 @@
 	const current = $derived(rounds !== null ? (rounds[roundIndex] ?? null) : null);
 	const stage = $derived(hintStage(misses, manualHints, idleHint));
 	const pad = boardPadding();
-	const allPlaced = $derived(
-		current !== null && current.pieces.every((piece) => placed[piece.id])
-	);
+	const allPlaced = $derived(current !== null && current.pieces.every((piece) => placed[piece.id]));
 	const hintPieceId = $derived(current?.tray.find((id) => !placed[id]) ?? null);
 	const dragPiece = $derived(drag ? pieceById(drag.id) : null);
 
@@ -171,33 +169,34 @@
 			feedback = 'correct';
 			playSfx('place');
 			wrongSlot = null;
-			const done = current.pieces.every((piece) =>
-				piece.id === slotId ? true : placed[piece.id]
-			);
+			const done = current.pieces.every((piece) => (piece.id === slotId ? true : placed[piece.id]));
 			if (done) boardComplete = true;
 			if (pauseTimer) clearTimeout(pauseTimer);
-			pauseTimer = setTimeout(() => {
-				if (!alive) return;
-				feedback = null;
-				justPlaced = null;
-				if (done) {
-					pips = pips.map((pip, index) => (index === roundIndex ? true : pip));
-					const snapshot = rounds;
-					if (!snapshot) return;
-					if (roundIndex + 1 >= snapshot.length) {
-						won = true;
-						playSfx('win');
-						boardComplete = false;
-						if (idleTimer) clearTimeout(idleTimer);
-						const progress = loadProgress(localStorage);
-						clearLevel(progress, 'jigsaw', levelNumber);
-						saveProgress(progress, localStorage);
-					} else {
-						roundIndex += 1;
-						startRound();
+			pauseTimer = setTimeout(
+				() => {
+					if (!alive) return;
+					feedback = null;
+					justPlaced = null;
+					if (done) {
+						pips = pips.map((pip, index) => (index === roundIndex ? true : pip));
+						const snapshot = rounds;
+						if (!snapshot) return;
+						if (roundIndex + 1 >= snapshot.length) {
+							won = true;
+							playSfx('win');
+							boardComplete = false;
+							if (idleTimer) clearTimeout(idleTimer);
+							const progress = loadProgress(localStorage);
+							clearLevel(progress, 'jigsaw', levelNumber);
+							saveProgress(progress, localStorage);
+						} else {
+							roundIndex += 1;
+							startRound();
+						}
 					}
-				}
-			}, done ? 1100 : PAUSE_MS);
+				},
+				done ? 1100 : PAUSE_MS
+			);
 		} else {
 			misses += 1;
 			wrongSlot = slotId;

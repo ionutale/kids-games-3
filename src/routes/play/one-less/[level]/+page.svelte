@@ -195,10 +195,7 @@
 					<span class="oless-count">{current.shown}</span>
 					<div class="oless-pile">
 						{#each Array.from({ length: current.shown }, (_, i) => i) as i (i)}
-							<FruitArt
-								fruit={config.fruit}
-								happy={feedback === 'correct'}
-							/>
+							<FruitArt fruit={config.fruit} happy={feedback === 'correct'} />
 						{/each}
 					</div>
 				</div>

@@ -47,7 +47,9 @@ export type GameId =
 	| 'left-right'
 	| 'jigsaw'
 	| 'one-less'
-	| 'one-more';
+	| 'one-more'
+	| 'months'
+	| 'skip-count';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -87,6 +89,8 @@ export interface Progress {
 	jigsaw: GameProgress;
 	'one-less': GameProgress;
 	'one-more': GameProgress;
+	months: GameProgress;
+	'skip-count': GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -132,7 +136,9 @@ export function defaultProgress(): Progress {
 		'left-right': { cleared: 0 },
 		jigsaw: { cleared: 0 },
 		'one-less': { cleared: 0 },
-		'one-more': { cleared: 0 }
+		'one-more': { cleared: 0 },
+		months: { cleared: 0 },
+		'skip-count': { cleared: 0 }
 	};
 }
 
@@ -191,7 +197,9 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			'left-right': sanitizeGame(games['left-right']),
 			jigsaw: sanitizeGame(games.jigsaw),
 			'one-less': sanitizeGame(games['one-less']),
-			'one-more': sanitizeGame(games['one-more'])
+			'one-more': sanitizeGame(games['one-more']),
+			months: sanitizeGame(games.months),
+			'skip-count': sanitizeGame(games['skip-count'])
 		};
 	} catch {
 		return defaultProgress();

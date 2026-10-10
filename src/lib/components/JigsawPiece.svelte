@@ -50,9 +50,7 @@
 	const viewY = $derived(-tab);
 	const viewW = $derived(cell + tab * 2);
 	const viewH = $derived(cell + tab * 2);
-	const clipId = $derived(
-		`jig-clip-${piece.id}-${placed ? 'p' : ghost ? 'g' : 't'}`
-	);
+	const clipId = $derived(`jig-clip-${piece.id}-${placed ? 'p' : ghost ? 'g' : 't'}`);
 </script>
 
 <button

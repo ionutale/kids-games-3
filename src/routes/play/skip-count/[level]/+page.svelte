@@ -5,21 +5,20 @@
 	import { m } from '#lib/paraglide/messages.js';
 	import { hintStage, isLevelOpen } from '#lib/count-fruit.js';
 	import {
-		MAX_ONE_MORE_LEVEL,
-		ONE_MORE_ROUNDS,
-		getOneMoreLevel,
+		MAX_SKIP_LEVEL,
+		SKIP_ROUNDS,
+		getSkipLevel,
 		pickRounds,
-		type OneMoreRound
-	} from '#lib/one-more.js';
+		type SkipRound
+	} from '#lib/skip-count.js';
 	import { clearLevel, loadProgress, saveProgress } from '#lib/progress.js';
 	import Confetti from '#lib/components/Confetti.svelte';
-	import FruitArt from '#lib/components/FruitArt.svelte';
 	import { playSfx } from '#lib/sound.js';
 
 	const IDLE_MS = 20000;
 	const PAUSE_MS = 900;
 
-	let rounds = $state<OneMoreRound[] | null>(null);
+	let rounds = $state<SkipRound[] | null>(null);
 	let roundIndex = $state(0);
 	let pips = $state<boolean[]>([false, false, false]);
 	let misses = $state(0);
@@ -37,13 +36,13 @@
 	let pauseTimer: ReturnType<typeof setTimeout> | null = null;
 
 	const levelNumber = $derived(Number.parseInt(page.params.level ?? '', 10));
-	const config = $derived(getOneMoreLevel(levelNumber));
+	const config = $derived(getSkipLevel(levelNumber));
 	const current = $derived(rounds !== null ? (rounds[roundIndex] ?? null) : null);
 	const stage = $derived(hintStage(misses, manualHints, idleHint));
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
-	const pathHref = $derived(localizeHref('/play/one-more', { locale }));
-	const nextHref = $derived(localizeHref(`/play/one-more/${levelNumber + 1}`, { locale }));
+	const pathHref = $derived(localizeHref('/play/skip-count', { locale }));
+	const nextHref = $derived(localizeHref(`/play/skip-count/${levelNumber + 1}`, { locale }));
 
 	function poke(): void {
 		if (idleTimer) clearTimeout(idleTimer);
@@ -64,7 +63,7 @@
 		if (!config) return;
 		rounds = pickRounds(config);
 		roundIndex = 0;
-		pips = Array.from({ length: ONE_MORE_ROUNDS }, () => false);
+		pips = Array.from({ length: SKIP_ROUNDS }, () => false);
 		feedback = null;
 		wrongValue = null;
 		won = false;
@@ -85,7 +84,7 @@
 		feedback = null;
 		wrongValue = null;
 		won = false;
-		const cleared = loadProgress(localStorage)['one-more'].cleared;
+		const cleared = loadProgress(localStorage)['skip-count'].cleared;
 		unlocked = isLevelOpen(cleared, levelNumber);
 		decided = true;
 		if (unlocked) startLevel();
@@ -122,7 +121,7 @@
 					playSfx('win');
 					if (idleTimer) clearTimeout(idleTimer);
 					const progress = loadProgress(localStorage);
-					clearLevel(progress, 'one-more', levelNumber);
+					clearLevel(progress, 'skip-count', levelNumber);
 					saveProgress(progress, localStorage);
 				} else {
 					roundIndex += 1;
@@ -151,7 +150,7 @@
 </script>
 
 <svelte:head>
-	<title>Lumi — {config ? m.level({ n: levelNumber }) : m.omore_name()}</title>
+	<title>Lumi — {config ? m.level({ n: levelNumber }) : m.skip_name()}</title>
 </svelte:head>
 
 {#if !config}
@@ -182,22 +181,18 @@
 				<h2 style="margin: 0; font-size: 1.8rem;">{m.level({ n: levelNumber })}</h2>
 				<button class="help-btn" type="button" onclick={askForHelp}>? {m.help()}</button>
 			</div>
-			<p class="prompt letters-ask">
-				{m.omore_prompt_lead()}<strong>{m.omore_prompt_word()}</strong>{m.omore_prompt_tail()}
-			</p>
+			<p class="prompt">{current ? m.skip_prompt({ n: current.step }) : m.skip_name()}</p>
 			<div class="pips" aria-hidden="true">
 				{#each pips as done, index (index)}
 					<span class="pip" class:full={done}></span>
 				{/each}
 			</div>
 			{#if current}
-				<div class="omore-show" class:hint-pulse={stage === 1} aria-hidden="true">
-					<span class="omore-count">{current.shown}</span>
-					<div class="omore-pile">
-						{#each Array.from({ length: current.shown }, (_, i) => i) as i (i)}
-							<FruitArt fruit={config.fruit} happy={feedback === 'correct'} />
-						{/each}
-					</div>
+				<div class="missing-row" class:hint-pulse={stage === 1} aria-hidden="true">
+					{#each current.shown as value, index (index)}
+						<span class="missing-num">{value}</span>
+					{/each}
+					<span class="missing-blank">?</span>
 				</div>
 				<div class="answers">
 					{#each current.options as option (option)}
@@ -219,7 +214,7 @@
 				{#if stage >= 1}
 					<div class="hint-box">
 						{#if stage === 1}
-							{m.omore_hint()}
+							{m.skip_hint({ n: current.step })}
 						{:else}
 							{m.shapes_hint_this()}
 						{/if}
@@ -229,14 +224,14 @@
 		{:else}
 			<Confetti />
 			<div class="win">
-				<div class="win-art"><span class="omore-thumb big">+1</span></div>
+				<div class="win-art"><span class="skip-thumb big">2</span></div>
 				<h2>{m.levelComplete()}</h2>
 				<p class="cheer">{m.cheer()}</p>
-				{#if levelNumber >= MAX_ONE_MORE_LEVEL}
+				{#if levelNumber >= MAX_SKIP_LEVEL}
 					<p>{m.finishGame()}</p>
 				{/if}
 				<div class="actions">
-					{#if levelNumber < MAX_ONE_MORE_LEVEL}
+					{#if levelNumber < MAX_SKIP_LEVEL}
 						<a class="btn" href={nextHref}>{m.nextLevel()}</a>
 					{/if}
 					<button class="btn secondary" type="button" onclick={startLevel}>{m.replay()}</button>

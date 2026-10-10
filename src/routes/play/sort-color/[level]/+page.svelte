@@ -24,7 +24,7 @@
 	let rounds = $state<SortRound[] | null>(null);
 	let roundIndex = $state(0);
 	let pips = $state<boolean[]>([false, false, false]);
-	let placed = $state<Record<string, true>>({});
+	let placed = $state<Record<string, boolean>>({});
 	let selectedId = $state<string | null>(null);
 	let misses = $state(0);
 	let manualHints = $state(0);
@@ -225,7 +225,11 @@
 				{/each}
 			</div>
 			{#if current}
-				<div class="sort-loose" class:hint-pulse={stage === 1 && !!selected} aria-label={m.sort_prompt()}>
+				<div
+					class="sort-loose"
+					class:hint-pulse={stage === 1 && !!selected}
+					aria-label={m.sort_prompt()}
+				>
 					{#each loose as item (item.id)}
 						<button
 							class="sort-item"
