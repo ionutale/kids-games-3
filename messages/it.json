@@ -260,5 +260,11 @@
 	"weather_sunny": "Sole",
 	"weather_cloudy": "Nuvole",
 	"weather_rainy": "Pioggia",
-	"weather_snowy": "Neve"
+	"weather_snowy": "Neve",
+	"lr_name": "Sinistra o destra",
+	"lr_desc": "Vedi una freccia o un indizio di lato. Tocca sinistra o destra.",
+	"lr_prompt": "Sinistra o destra?",
+	"lr_hint": "Guarda dove punta la freccia, o da che parte sta il frutto.",
+	"lr_left": "Sinistra",
+	"lr_right": "Destra"
 }

@@ -13,6 +13,7 @@
 	import ClockArt from '#lib/components/ClockArt.svelte';
 	import SeasonArt from '#lib/components/SeasonArt.svelte';
 	import WeatherArt from '#lib/components/WeatherArt.svelte';
+	import LeftRightArt from '#lib/components/LeftRightArt.svelte';
 	import favicon from '#lib/assets/favicon.svg';
 
 	let cleared = $state(0);
@@ -48,6 +49,7 @@
 	let clearedSeason = $state(0);
 	let clearedDays = $state(0);
 	let clearedWeather = $state(0);
+	let clearedLr = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -83,6 +85,7 @@
 	const seasonHref = $derived(localizeHref('/play/seasons', { locale }));
 	const daysHref = $derived(localizeHref('/play/days-week', { locale }));
 	const weatherHref = $derived(localizeHref('/play/weather', { locale }));
+	const lrHref = $derived(localizeHref('/play/left-right', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -119,6 +122,7 @@
 		clearedSeason = progress.seasons.cleared;
 		clearedDays = progress['days-week'].cleared;
 		clearedWeather = progress.weather.cleared;
+		clearedLr = progress['left-right'].cleared;
 	});
 </script>
 
@@ -590,6 +594,20 @@
 		<div class="row">
 			<a class="btn" href={weatherHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedWeather })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.lr_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="lr-thumb" aria-hidden="true"><LeftRightArt side="right" cue="arrow" /></span>
+	</div>
+	<div>
+		<h2>{m.lr_name()}</h2>
+		<p>{m.lr_desc()}</p>
+		<div class="row">
+			<a class="btn" href={lrHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedLr })}</span>
 		</div>
 	</div>
 </section>

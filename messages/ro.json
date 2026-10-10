@@ -260,5 +260,11 @@
 	"weather_sunny": "Soare",
 	"weather_cloudy": "Nori",
 	"weather_rainy": "Ploaie",
-	"weather_snowy": "Zăpadă"
+	"weather_snowy": "Zăpadă",
+	"lr_name": "Stânga sau dreapta",
+	"lr_desc": "Vezi o săgeată sau un indiciu de parte. Atinge stânga sau dreapta.",
+	"lr_prompt": "Stânga sau dreapta?",
+	"lr_hint": "Uită-te încotro arată săgeata, sau pe ce parte e fructul.",
+	"lr_left": "Stânga",
+	"lr_right": "Dreapta"
 }

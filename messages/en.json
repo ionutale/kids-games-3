@@ -260,5 +260,11 @@
 	"weather_sunny": "Sunny",
 	"weather_cloudy": "Cloudy",
 	"weather_rainy": "Rainy",
-	"weather_snowy": "Snowy"
+	"weather_snowy": "Snowy",
+	"lr_name": "Left or right",
+	"lr_desc": "See an arrow or a side cue. Tap left or right.",
+	"lr_prompt": "Left or right?",
+	"lr_hint": "Look which way the arrow points, or which side the fruit is on.",
+	"lr_left": "Left",
+	"lr_right": "Right"
 }

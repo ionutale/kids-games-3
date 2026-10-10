@@ -54,7 +54,8 @@ describe('progress', () => {
 			'what-time': { cleared: 0 },
 			seasons: { cleared: 0 },
 			'days-week': { cleared: 0 },
-			weather: { cleared: 0 }
+			weather: { cleared: 0 },
+			'left-right': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -96,6 +97,7 @@ describe('progress', () => {
 		expect(clearLevel(progress, 'seasons', 1)).toBe(1);
 		expect(clearLevel(progress, 'days-week', 1)).toBe(1);
 		expect(clearLevel(progress, 'weather', 1)).toBe(1);
+		expect(clearLevel(progress, 'left-right', 1)).toBe(1);
 		expect(progress['count-fruit'].cleared).toBe(1);
 	});
 
@@ -137,7 +139,8 @@ describe('progress', () => {
 			'what-time': { cleared: 0 },
 			seasons: { cleared: 0 },
 			'days-week': { cleared: 0 },
-			weather: { cleared: 0 }
+			weather: { cleared: 0 },
+			'left-right': { cleared: 0 }
 		});
 	});
 
@@ -183,7 +186,8 @@ describe('progress', () => {
 			'what-time': { cleared: 0 },
 			seasons: { cleared: 0 },
 			'days-week': { cleared: 0 },
-			weather: { cleared: 0 }
+			weather: { cleared: 0 },
+			'left-right': { cleared: 0 }
 		});
 	});
 });

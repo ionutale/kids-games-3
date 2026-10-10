@@ -260,5 +260,11 @@
 	"weather_sunny": "Sonnig",
 	"weather_cloudy": "Bewölkt",
 	"weather_rainy": "Regen",
-	"weather_snowy": "Schnee"
+	"weather_snowy": "Schnee",
+	"lr_name": "Links oder rechts",
+	"lr_desc": "Sieh einen Pfeil oder einen Seitenhinweis. Tippe links oder rechts.",
+	"lr_prompt": "Links oder rechts?",
+	"lr_hint": "Schau, wohin der Pfeil zeigt, oder auf welcher Seite die Frucht ist.",
+	"lr_left": "Links",
+	"lr_right": "Rechts"
 }
