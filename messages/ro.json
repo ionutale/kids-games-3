@@ -374,5 +374,10 @@
 	"blend_name": "Unește sunetele",
 	"blend_desc": "Vezi două părți de sunet. Atinge imaginea cuvântului.",
 	"blend_prompt": "Unește sunetele. Care imagine e?",
-	"blend_hint": "Spune primul sunet, apoi restul. Ce cuvânt auzi?"
+	"blend_hint": "Spune primul sunet, apoi restul. Ce cuvânt auzi?",
+	"case_name": "Majusculă și minusculă",
+	"case_desc": "Vezi o literă. Atinge perechea ei mare sau mică.",
+	"case_prompt_lower": "Găsește litera mică.",
+	"case_prompt_upper": "Găsește litera mare.",
+	"case_hint": "Aceeași literă, formă diferită. Caută perechea."
 }

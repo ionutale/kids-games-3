@@ -374,5 +374,10 @@
 	"blend_name": "Unisci i suoni",
 	"blend_desc": "Vedi due parti di suono. Tocca l'immagine della parola.",
 	"blend_prompt": "Unisci i suoni. Quale immagine è?",
-	"blend_hint": "Di' il primo suono, poi il resto. Che parola senti?"
+	"blend_hint": "Di' il primo suono, poi il resto. Che parola senti?",
+	"case_name": "Maiuscola e minuscola",
+	"case_desc": "Vedi una lettera. Tocca la sua gemella maiuscola o minuscola.",
+	"case_prompt_lower": "Trova la lettera minuscola.",
+	"case_prompt_upper": "Trova la lettera maiuscola.",
+	"case_hint": "Stessa lettera, forma diversa. Cerca la gemella."
 }

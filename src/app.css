@@ -1778,6 +1778,58 @@ a.level-tile:hover {
 	font-size: 0.95rem;
 }
 
+.case-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 0.85rem;
+	background: linear-gradient(160deg, #ffe8d6 0%, #ef8c3b 100%);
+	border: 3px solid #d06e20;
+	color: #5a3d1a;
+	font-weight: 800;
+	font-size: 1.25rem;
+}
+
+.case-thumb.big {
+	width: 5.2rem;
+	height: 5.2rem;
+	font-size: 1.9rem;
+	border-radius: 1.1rem;
+}
+
+.game-card .case-thumb {
+	width: 4.6rem;
+	height: 4.6rem;
+	font-size: 1.55rem;
+}
+
+.level-tile .case-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+	font-size: 1rem;
+	border-width: 2px;
+}
+
+.case-show {
+	display: flex;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+.case-letter {
+	display: grid;
+	place-items: center;
+	min-width: 5rem;
+	min-height: 5rem;
+	border: 3px solid var(--line);
+	border-radius: 1.2rem;
+	background: #fffdf8;
+	box-shadow: var(--shadow);
+	font-size: 2.6rem;
+	font-weight: 800;
+}
+
 .oless-thumb.big,
 .omore-thumb.big,
 .skip-thumb.big {

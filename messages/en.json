@@ -374,5 +374,10 @@
 	"blend_name": "Blend sounds",
 	"blend_desc": "See two sound parts. Tap the picture that makes the word.",
 	"blend_prompt": "Put the sounds together. Which picture is it?",
-	"blend_hint": "Say the first sound, then the rest. What word do you hear?"
+	"blend_hint": "Say the first sound, then the rest. What word do you hear?",
+	"case_name": "Capital and small",
+	"case_desc": "See a letter. Tap its capital or small twin.",
+	"case_prompt_lower": "Find the small letter.",
+	"case_prompt_upper": "Find the capital letter.",
+	"case_hint": "Same letter, different size. Look for the matching twin."
 }

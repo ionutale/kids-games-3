@@ -374,5 +374,10 @@
 	"blend_name": "Laute verbinden",
 	"blend_desc": "Sieh zwei Lautteile. Tippe das Bild zum Wort.",
 	"blend_prompt": "Verbinde die Laute. Welches Bild ist es?",
-	"blend_hint": "Sag den ersten Laut, dann den Rest. Welches Wort hörst du?"
+	"blend_hint": "Sag den ersten Laut, dann den Rest. Welches Wort hörst du?",
+	"case_name": "Groß und klein",
+	"case_desc": "Sieh einen Buchstaben. Tippe seinen großen oder kleinen Zwilling.",
+	"case_prompt_lower": "Finde den kleinen Buchstaben.",
+	"case_prompt_upper": "Finde den großen Buchstaben.",
+	"case_hint": "Gleicher Buchstabe, andere Form. Suche den Zwilling."
 }
