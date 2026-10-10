@@ -384,5 +384,19 @@
 	"spell_desc": "Vezi o imagine. Atinge literele în căsuțe ca să scrii cuvântul.",
 	"spell_prompt": "Scrie cuvântul.",
 	"spell_tap": "Atinge litera următoare.",
-	"spell_hint": "Spune cuvântul încet. Ce literă urmează?"
+	"spell_hint": "Spune cuvântul încet. Ce literă urmează?",
+	"body_name": "Părți ale corpului",
+	"body_desc": "Vezi o figurină. Atinge partea corpului pe care o auzi.",
+	"body_prompt": "Unde este {part}?",
+	"body_hint": "Uită-te la figurină. Arată acea parte a corpului.",
+	"body_head": "capul",
+	"body_eye": "ochiul",
+	"body_nose": "nasul",
+	"body_mouth": "gura",
+	"body_ear": "urechea",
+	"body_arm": "brațul",
+	"body_hand": "mâna",
+	"body_leg": "piciorul",
+	"body_foot": "talpa",
+	"body_tummy": "burta"
 }

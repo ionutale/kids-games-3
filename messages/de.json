@@ -384,5 +384,19 @@
 	"spell_desc": "Sieh ein Bild. Tippe Buchstaben in die Kästchen, um das Wort zu schreiben.",
 	"spell_prompt": "Schreibe das Wort.",
 	"spell_tap": "Tippe den nächsten Buchstaben.",
-	"spell_hint": "Sag das Wort langsam. Welcher Buchstabe kommt als Nächstes?"
+	"spell_hint": "Sag das Wort langsam. Welcher Buchstabe kommt als Nächstes?",
+	"body_name": "Körperteile",
+	"body_desc": "Sieh eine Figur. Tippe den Körperteil, den du hörst.",
+	"body_prompt": "Wo ist {part}?",
+	"body_hint": "Schau die Figur an. Zeige auf diesen Körperteil.",
+	"body_head": "der Kopf",
+	"body_eye": "das Auge",
+	"body_nose": "die Nase",
+	"body_mouth": "der Mund",
+	"body_ear": "das Ohr",
+	"body_arm": "der Arm",
+	"body_hand": "die Hand",
+	"body_leg": "das Bein",
+	"body_foot": "der Fuß",
+	"body_tummy": "der Bauch"
 }

@@ -384,5 +384,19 @@
 	"spell_desc": "See a picture. Tap letters into the boxes to spell the word.",
 	"spell_prompt": "Spell the word.",
 	"spell_tap": "Tap the next letter.",
-	"spell_hint": "Say the word slowly. What letter comes next?"
+	"spell_hint": "Say the word slowly. What letter comes next?",
+	"body_name": "Body parts",
+	"body_desc": "See a figure. Tap the body part you hear.",
+	"body_prompt": "Where is the {part}?",
+	"body_hint": "Look at the figure. Point to that body part.",
+	"body_head": "head",
+	"body_eye": "eye",
+	"body_nose": "nose",
+	"body_mouth": "mouth",
+	"body_ear": "ear",
+	"body_arm": "arm",
+	"body_hand": "hand",
+	"body_leg": "leg",
+	"body_foot": "foot",
+	"body_tummy": "tummy"
 }

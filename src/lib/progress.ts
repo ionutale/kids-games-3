@@ -56,7 +56,8 @@ export type GameId =
 	| 'place-value'
 	| 'blend-sounds'
 	| 'letter-case'
-	| 'spell-word';
+	| 'spell-word'
+	| 'body-parts';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -105,6 +106,7 @@ export interface Progress {
 	'blend-sounds': GameProgress;
 	'letter-case': GameProgress;
 	'spell-word': GameProgress;
+	'body-parts': GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -159,7 +161,8 @@ export function defaultProgress(): Progress {
 		'place-value': { cleared: 0 },
 		'blend-sounds': { cleared: 0 },
 		'letter-case': { cleared: 0 },
-		'spell-word': { cleared: 0 }
+		'spell-word': { cleared: 0 },
+		'body-parts': { cleared: 0 }
 	};
 }
 
@@ -227,7 +230,8 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			'place-value': sanitizeGame(games['place-value']),
 			'blend-sounds': sanitizeGame(games['blend-sounds']),
 			'letter-case': sanitizeGame(games['letter-case']),
-			'spell-word': sanitizeGame(games['spell-word'])
+			'spell-word': sanitizeGame(games['spell-word']),
+			'body-parts': sanitizeGame(games['body-parts'])
 		};
 	} catch {
 		return defaultProgress();

@@ -67,7 +67,8 @@ describe('progress', () => {
 			'place-value': { cleared: 0 },
 			'blend-sounds': { cleared: 0 },
 			'letter-case': { cleared: 0 },
-			'spell-word': { cleared: 0 }
+			'spell-word': { cleared: 0 },
+			'body-parts': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -122,6 +123,7 @@ describe('progress', () => {
 		expect(clearLevel(progress, 'blend-sounds', 1)).toBe(1);
 		expect(clearLevel(progress, 'letter-case', 1)).toBe(1);
 		expect(clearLevel(progress, 'spell-word', 1)).toBe(1);
+		expect(clearLevel(progress, 'body-parts', 1)).toBe(1);
 		expect(progress['count-fruit'].cleared).toBe(1);
 	});
 
@@ -176,7 +178,8 @@ describe('progress', () => {
 			'place-value': { cleared: 0 },
 			'blend-sounds': { cleared: 0 },
 			'letter-case': { cleared: 0 },
-			'spell-word': { cleared: 0 }
+			'spell-word': { cleared: 0 },
+			'body-parts': { cleared: 0 }
 		});
 	});
 
@@ -235,7 +238,8 @@ describe('progress', () => {
 			'place-value': { cleared: 0 },
 			'blend-sounds': { cleared: 0 },
 			'letter-case': { cleared: 0 },
-			'spell-word': { cleared: 0 }
+			'spell-word': { cleared: 0 },
+			'body-parts': { cleared: 0 }
 		});
 	});
 });

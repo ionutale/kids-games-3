@@ -1928,6 +1928,60 @@ a.level-tile:hover {
 	box-shadow: 0 0 0 4px rgba(90, 169, 230, 0.3);
 }
 
+.body-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 0.85rem;
+	background: linear-gradient(160deg, #fff8e8 0%, #f0d6a8 100%);
+	border: 3px solid #d4a574;
+	overflow: hidden;
+	font-size: 1.5rem;
+}
+
+.body-thumb .body-art,
+.body-thumb svg {
+	width: 2.4rem;
+	height: auto;
+}
+
+.body-thumb.big {
+	width: 5.2rem;
+	height: 5.2rem;
+	font-size: 2.4rem;
+	border-radius: 1.1rem;
+}
+
+.game-card .body-thumb {
+	width: 4.6rem;
+	height: 4.6rem;
+}
+
+.game-card .body-thumb .body-art,
+.game-card .body-thumb svg {
+	width: 3.2rem;
+}
+
+.level-tile .body-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+	border-width: 2px;
+	font-size: 1.1rem;
+}
+
+.body-stage {
+	display: flex;
+	justify-content: center;
+	margin-top: 0.75rem;
+}
+
+.body-stage .body-art,
+.body-stage svg {
+	width: 7.5rem;
+	height: auto;
+}
+
 .oless-thumb.big,
 .omore-thumb.big,
 .skip-thumb.big {

@@ -384,5 +384,19 @@
 	"spell_desc": "Vedi un'immagine. Tocca le lettere nelle caselle per scrivere la parola.",
 	"spell_prompt": "Scrivi la parola.",
 	"spell_tap": "Tocca la lettera successiva.",
-	"spell_hint": "Di' la parola piano. Quale lettera viene dopo?"
+	"spell_hint": "Di' la parola piano. Quale lettera viene dopo?",
+	"body_name": "Parti del corpo",
+	"body_desc": "Vedi una figurina. Tocca la parte del corpo che senti.",
+	"body_prompt": "Dov'è {part}?",
+	"body_hint": "Guarda la figurina. Indica quella parte del corpo.",
+	"body_head": "la testa",
+	"body_eye": "l'occhio",
+	"body_nose": "il naso",
+	"body_mouth": "la bocca",
+	"body_ear": "l'orecchio",
+	"body_arm": "il braccio",
+	"body_hand": "la mano",
+	"body_leg": "la gamba",
+	"body_foot": "il piede",
+	"body_tummy": "la pancia"
 }
