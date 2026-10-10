@@ -362,5 +362,13 @@
 	"cmp_prompt_smaller": "smaller",
 	"cmp_prompt_tail": "?",
 	"cmp_hint_bigger": "Look at both numbers. Which one is more?",
-	"cmp_hint_smaller": "Look at both numbers. Which one is less?"
+	"cmp_hint_smaller": "Look at both numbers. Which one is less?",
+	"place_name": "Tens and ones",
+	"place_desc": "See tens rods and ones cubes. Tap the number — or count the tens or ones.",
+	"place_prompt_number": "What number is this?",
+	"place_prompt_tens": "How many tens?",
+	"place_prompt_ones": "How many ones?",
+	"place_hint_number": "Each long rod is 10. Each small cube is 1. Add them.",
+	"place_hint_tens": "Count the long rods. Each one is a ten.",
+	"place_hint_ones": "Count the small cubes. Each one is a one."
 }

@@ -362,5 +362,13 @@
 	"cmp_prompt_smaller": "più piccolo",
 	"cmp_prompt_tail": "?",
 	"cmp_hint_bigger": "Guarda entrambi i numeri. Quale è di più?",
-	"cmp_hint_smaller": "Guarda entrambi i numeri. Quale è di meno?"
+	"cmp_hint_smaller": "Guarda entrambi i numeri. Quale è di meno?",
+	"place_name": "Decine e unità",
+	"place_desc": "Vedi bastoncini da 10 e cubetti da 1. Tocca il numero — o conta le decine o le unità.",
+	"place_prompt_number": "Che numero è?",
+	"place_prompt_tens": "Quante decine?",
+	"place_prompt_ones": "Quante unità?",
+	"place_hint_number": "Ogni bastoncino lungo vale 10. Ogni cubetto vale 1. Sommali.",
+	"place_hint_tens": "Conta i bastoncini lunghi. Ognuno è una decina.",
+	"place_hint_ones": "Conta i cubetti piccoli. Ognuno è un'unità."
 }

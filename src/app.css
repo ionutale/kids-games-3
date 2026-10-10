@@ -1626,6 +1626,78 @@ a.level-tile:hover {
 	box-shadow: 0 0 0 5px rgba(90, 169, 230, 0.35);
 }
 
+.place-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 0.85rem;
+	background: linear-gradient(160deg, #fff0d6 0%, #e8a838 100%);
+	border: 3px solid #c88820;
+	color: #5a3d1a;
+	font-weight: 800;
+	font-size: 1.15rem;
+}
+
+.place-thumb.big {
+	width: 5.2rem;
+	height: 5.2rem;
+	font-size: 1.7rem;
+	border-radius: 1.1rem;
+}
+
+.game-card .place-thumb {
+	width: 4.6rem;
+	height: 4.6rem;
+	font-size: 1.4rem;
+}
+
+.level-tile .place-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+	font-size: 0.95rem;
+	border-width: 2px;
+}
+
+.place-board {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	gap: 0.85rem;
+	flex-wrap: wrap;
+	margin-top: 1rem;
+	min-height: 7rem;
+}
+
+.place-tens,
+.place-ones {
+	display: flex;
+	align-items: flex-end;
+	gap: 0.3rem;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.place-rod {
+	display: block;
+	width: 0.85rem;
+	height: 5.5rem;
+	border-radius: 0.35rem;
+	background: linear-gradient(180deg, #7ec8e8 0%, #3d8fd1 100%);
+	border: 2px solid #2a6fa8;
+	box-shadow: var(--shadow);
+}
+
+.place-cube {
+	display: block;
+	width: 1.15rem;
+	height: 1.15rem;
+	border-radius: 0.28rem;
+	background: linear-gradient(160deg, #ffe08a 0%, #e8a838 100%);
+	border: 2px solid #c88820;
+	box-shadow: var(--shadow);
+}
+
 .oless-thumb.big,
 .omore-thumb.big,
 .skip-thumb.big {

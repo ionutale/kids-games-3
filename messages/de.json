@@ -362,5 +362,13 @@
 	"cmp_prompt_smaller": "kleiner",
 	"cmp_prompt_tail": "?",
 	"cmp_hint_bigger": "Schau beide Zahlen an. Welche ist mehr?",
-	"cmp_hint_smaller": "Schau beide Zahlen an. Welche ist weniger?"
+	"cmp_hint_smaller": "Schau beide Zahlen an. Welche ist weniger?",
+	"place_name": "Zehner und Einer",
+	"place_desc": "Sieh Zehnerstäbe und Einerwürfel. Tippe die Zahl — oder zähle Zehner oder Einer.",
+	"place_prompt_number": "Welche Zahl ist das?",
+	"place_prompt_tens": "Wie viele Zehner?",
+	"place_prompt_ones": "Wie viele Einer?",
+	"place_hint_number": "Jeder lange Stab ist 10. Jeder kleine Würfel ist 1. Addiere sie.",
+	"place_hint_tens": "Zähle die langen Stäbe. Jeder ist ein Zehner.",
+	"place_hint_ones": "Zähle die kleinen Würfel. Jeder ist ein Einer."
 }

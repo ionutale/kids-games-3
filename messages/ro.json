@@ -362,5 +362,13 @@
 	"cmp_prompt_smaller": "mai mic",
 	"cmp_prompt_tail": "?",
 	"cmp_hint_bigger": "Uită-te la ambele numere. Care e mai mult?",
-	"cmp_hint_smaller": "Uită-te la ambele numere. Care e mai puțin?"
+	"cmp_hint_smaller": "Uită-te la ambele numere. Care e mai puțin?",
+	"place_name": "Zeci și unități",
+	"place_desc": "Vezi bețișoare de 10 și cuburi de 1. Atinge numărul — sau numără zecile ori unitățile.",
+	"place_prompt_number": "Ce număr este?",
+	"place_prompt_tens": "Câte zeci?",
+	"place_prompt_ones": "Câte unități?",
+	"place_hint_number": "Fiecare bețișor lung este 10. Fiecare cub mic este 1. Adună-le.",
+	"place_hint_tens": "Numără bețișoarele lungi. Fiecare este o zece.",
+	"place_hint_ones": "Numără cuburile mici. Fiecare este o unitate."
 }

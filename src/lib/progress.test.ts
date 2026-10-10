@@ -63,7 +63,8 @@ describe('progress', () => {
 			'skip-count': { cleared: 0 },
 			'sort-kind': { cleared: 0 },
 			'half-share': { cleared: 0 },
-			'compare-numbers': { cleared: 0 }
+			'compare-numbers': { cleared: 0 },
+			'place-value': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -114,6 +115,7 @@ describe('progress', () => {
 		expect(clearLevel(progress, 'sort-kind', 1)).toBe(1);
 		expect(clearLevel(progress, 'half-share', 1)).toBe(1);
 		expect(clearLevel(progress, 'compare-numbers', 1)).toBe(1);
+		expect(clearLevel(progress, 'place-value', 1)).toBe(1);
 		expect(progress['count-fruit'].cleared).toBe(1);
 	});
 
@@ -164,7 +166,8 @@ describe('progress', () => {
 			'skip-count': { cleared: 0 },
 			'sort-kind': { cleared: 0 },
 			'half-share': { cleared: 0 },
-			'compare-numbers': { cleared: 0 }
+			'compare-numbers': { cleared: 0 },
+			'place-value': { cleared: 0 }
 		});
 	});
 
@@ -219,7 +222,8 @@ describe('progress', () => {
 			'skip-count': { cleared: 0 },
 			'sort-kind': { cleared: 0 },
 			'half-share': { cleared: 0 },
-			'compare-numbers': { cleared: 0 }
+			'compare-numbers': { cleared: 0 },
+			'place-value': { cleared: 0 }
 		});
 	});
 });
