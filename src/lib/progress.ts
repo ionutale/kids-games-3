@@ -49,7 +49,8 @@ export type GameId =
 	| 'one-less'
 	| 'one-more'
 	| 'months'
-	| 'skip-count';
+	| 'skip-count'
+	| 'sort-kind';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -91,6 +92,7 @@ export interface Progress {
 	'one-more': GameProgress;
 	months: GameProgress;
 	'skip-count': GameProgress;
+	'sort-kind': GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -138,7 +140,8 @@ export function defaultProgress(): Progress {
 		'one-less': { cleared: 0 },
 		'one-more': { cleared: 0 },
 		months: { cleared: 0 },
-		'skip-count': { cleared: 0 }
+		'skip-count': { cleared: 0 },
+		'sort-kind': { cleared: 0 }
 	};
 }
 
@@ -199,7 +202,8 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			'one-less': sanitizeGame(games['one-less']),
 			'one-more': sanitizeGame(games['one-more']),
 			months: sanitizeGame(games.months),
-			'skip-count': sanitizeGame(games['skip-count'])
+			'skip-count': sanitizeGame(games['skip-count']),
+			'sort-kind': sanitizeGame(games['sort-kind'])
 		};
 	} catch {
 		return defaultProgress();

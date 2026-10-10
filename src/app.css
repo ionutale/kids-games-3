@@ -1141,6 +1141,66 @@ a.level-tile:hover {
 	--swatch: #9b7ed9;
 }
 
+.sort-bucket[data-kind='animal'] {
+	--swatch: #5da85f;
+}
+
+.sort-bucket[data-kind='food'] {
+	--swatch: #ef8c3b;
+}
+
+.sort-bucket[data-kind='toy'] {
+	--swatch: #9b7ed9;
+}
+
+.kind-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 0.85rem;
+	background: linear-gradient(160deg, #e8f6e4 0%, #a8d49a 100%);
+	border: 3px solid #6aaa5c;
+	overflow: hidden;
+}
+
+.kind-thumb svg {
+	width: 2.8rem;
+	height: 2.8rem;
+}
+
+.kind-thumb.big {
+	width: 5.2rem;
+	height: 5.2rem;
+	border-radius: 1.1rem;
+}
+
+.kind-thumb.big svg {
+	width: 4.2rem;
+	height: 4.2rem;
+}
+
+.game-card .kind-thumb {
+	width: 4.6rem;
+	height: 4.6rem;
+}
+
+.game-card .kind-thumb svg {
+	width: 3.6rem;
+	height: 3.6rem;
+}
+
+.level-tile .kind-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+	border-width: 2px;
+}
+
+.level-tile .kind-thumb svg {
+	width: 2.1rem;
+	height: 2.1rem;
+}
+
 .sort-bucket-label {
 	font-weight: 800;
 	font-size: 0.95rem;

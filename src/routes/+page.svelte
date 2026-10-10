@@ -14,6 +14,7 @@
 	import SeasonArt from '#lib/components/SeasonArt.svelte';
 	import WeatherArt from '#lib/components/WeatherArt.svelte';
 	import LeftRightArt from '#lib/components/LeftRightArt.svelte';
+	import KindArt from '#lib/components/KindArt.svelte';
 	import favicon from '#lib/assets/favicon.svg';
 	import LumiSun from '#lib/components/LumiSun.svelte';
 
@@ -56,6 +57,7 @@
 	let clearedOmore = $state(0);
 	let clearedMonths = $state(0);
 	let clearedSkip = $state(0);
+	let clearedKind = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -97,6 +99,7 @@
 	const omoreHref = $derived(localizeHref('/play/one-more', { locale }));
 	const monthsHref = $derived(localizeHref('/play/months', { locale }));
 	const skipHref = $derived(localizeHref('/play/skip-count', { locale }));
+	const kindHref = $derived(localizeHref('/play/sort-kind', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -139,6 +142,7 @@
 		clearedOmore = progress['one-more'].cleared;
 		clearedMonths = progress.months.cleared;
 		clearedSkip = progress['skip-count'].cleared;
+		clearedKind = progress['sort-kind'].cleared;
 	});
 </script>
 
@@ -540,6 +544,20 @@
 		<div class="row">
 			<a class="btn" href={sortHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedSort })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.kind_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="kind-thumb" aria-hidden="true"><KindArt face="cat" /></span>
+	</div>
+	<div>
+		<h2>{m.kind_name()}</h2>
+		<p>{m.kind_desc()}</p>
+		<div class="row">
+			<a class="btn" href={kindHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedKind })}</span>
 		</div>
 	</div>
 </section>
