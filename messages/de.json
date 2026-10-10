@@ -224,5 +224,14 @@
 	"shadow_name": "Schatten finden",
 	"shadow_desc": "Sieh eine Silhouette. Tippe das passende Bild.",
 	"shadow_prompt": "Welches Bild passt zum Schatten?",
-	"shadow_hint": "Schau dir die Umrisse an. Finde die gleiche Form."
+	"shadow_hint": "Schau dir die Umrisse an. Finde die gleiche Form.",
+	"time_name": "Wie spät ist es?",
+	"time_desc": "Sieh eine Uhr. Tippe Morgen, Tag, Nacht — oder die Stunde.",
+	"time_prompt_part": "Ist es Morgen, Tag oder Nacht?",
+	"time_prompt_hour": "Wie spät ist es?",
+	"time_hint_part": "Schau den Himmel an. Geht die Sonne auf, steht sie hoch, oder ist Nacht?",
+	"time_hint_hour": "Schau auf den kurzen Zeiger. Auf welche Zahl zeigt er?",
+	"time_morning": "Morgen",
+	"time_day": "Tag",
+	"time_night": "Nacht"
 }

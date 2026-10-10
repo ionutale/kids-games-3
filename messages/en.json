@@ -224,5 +224,14 @@
 	"shadow_name": "Shadow match",
 	"shadow_desc": "See a silhouette. Tap the matching picture.",
 	"shadow_prompt": "Which picture matches the shadow?",
-	"shadow_hint": "Look at the outline. Find the same shape."
+	"shadow_hint": "Look at the outline. Find the same shape.",
+	"time_name": "What time?",
+	"time_desc": "See a clock. Tap morning, day, night — or the hour.",
+	"time_prompt_part": "Is it morning, day, or night?",
+	"time_prompt_hour": "What hour is it?",
+	"time_hint_part": "Look at the sky. Is the sun rising, high, or gone?",
+	"time_hint_hour": "Look at the short hand. Which number does it point to?",
+	"time_morning": "Morning",
+	"time_day": "Day",
+	"time_night": "Night"
 }

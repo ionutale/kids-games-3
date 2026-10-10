@@ -224,5 +224,14 @@
 	"shadow_name": "Potrivește umbra",
 	"shadow_desc": "Vezi o siluetă. Atinge imaginea potrivită.",
 	"shadow_prompt": "Care imagine se potrivește cu umbra?",
-	"shadow_hint": "Uită-te la contur. Găsește aceeași formă."
+	"shadow_hint": "Uită-te la contur. Găsește aceeași formă.",
+	"time_name": "Cât e ceasul?",
+	"time_desc": "Vezi un ceas. Atinge dimineața, ziua, noaptea — sau ora.",
+	"time_prompt_part": "E dimineață, zi sau noapte?",
+	"time_prompt_hour": "Cât e ceasul?",
+	"time_hint_part": "Uită-te la cer. Soarele răsare, e sus, sau e noapte?",
+	"time_hint_hour": "Uită-te la limbă scurtă. Spre ce cifră arată?",
+	"time_morning": "Dimineața",
+	"time_day": "Ziua",
+	"time_night": "Noaptea"
 }

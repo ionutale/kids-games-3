@@ -224,5 +224,14 @@
 	"shadow_name": "Trova l'ombra",
 	"shadow_desc": "Vedi una silhouette. Tocca la figura uguale.",
 	"shadow_prompt": "Quale figura corrisponde all'ombra?",
-	"shadow_hint": "Guarda il contorno. Trova la stessa forma."
+	"shadow_hint": "Guarda il contorno. Trova la stessa forma.",
+	"time_name": "Che ora è?",
+	"time_desc": "Vedi un orologio. Tocca mattina, giorno, notte — o l'ora.",
+	"time_prompt_part": "È mattina, giorno o notte?",
+	"time_prompt_hour": "Che ora è?",
+	"time_hint_part": "Guarda il cielo. Il sole sorge, è alto, o è notte?",
+	"time_hint_hour": "Guarda la lancetta corta. A quale numero punta?",
+	"time_morning": "Mattina",
+	"time_day": "Giorno",
+	"time_night": "Notte"
 }

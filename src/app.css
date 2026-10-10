@@ -1127,6 +1127,40 @@ a.level-tile:hover {
 	border-radius: 0.8rem;
 }
 
+.time-prompt {
+	display: flex;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+.time-prompt.hint-pulse {
+	animation: pulse 1s ease-in-out infinite;
+}
+
+.time-prompt svg,
+.win-art svg,
+.time-thumb svg {
+	width: 9.5rem;
+	height: auto;
+	display: block;
+	filter: drop-shadow(0 6px 10px rgba(48, 36, 24, 0.12));
+}
+
+.time-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+}
+
+.time-thumb svg {
+	width: 100%;
+}
+
+.game-card .time-thumb svg {
+	width: 4.6rem;
+}
+
 .position-row {
 	display: flex;
 	justify-content: center;
