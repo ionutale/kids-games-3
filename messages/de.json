@@ -194,5 +194,9 @@
 	"same_prompt": "Sind sie gleich?",
 	"same_yes": "Gleich",
 	"same_no": "Verschieden",
-	"same_hint": "Schau dir beide an."
+	"same_hint": "Schau dir beide an.",
+	"next_name": "Welche Zahl kommt danach?",
+	"next_desc": "Zahlen in einer Reihe. Tippe die nächste Zahl.",
+	"next_prompt": "Welche Zahl kommt danach?",
+	"next_hint": "Zähle weiter. Was kommt nach der letzten Zahl?"
 }

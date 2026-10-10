@@ -194,5 +194,9 @@
 	"same_prompt": "Sono uguali?",
 	"same_yes": "Uguali",
 	"same_no": "Diverse",
-	"same_hint": "Guarda bene le due figure."
+	"same_hint": "Guarda bene le due figure.",
+	"next_name": "Che numero viene dopo?",
+	"next_desc": "Numeri in fila. Tocca il numero che viene dopo.",
+	"next_prompt": "Che numero viene dopo?",
+	"next_hint": "Continua a contare. Cosa viene dopo l'ultimo?"
 }

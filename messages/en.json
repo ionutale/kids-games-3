@@ -194,5 +194,9 @@
 	"same_prompt": "Are they the same?",
 	"same_yes": "Same",
 	"same_no": "Different",
-	"same_hint": "Look at both pictures."
+	"same_hint": "Look at both pictures.",
+	"next_name": "What number is next?",
+	"next_desc": "Numbers in a row. Tap the number that comes next.",
+	"next_prompt": "What number is next?",
+	"next_hint": "Keep counting. What comes after the last number?"
 }

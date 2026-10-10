@@ -194,5 +194,9 @@
 	"same_prompt": "Sunt la fel?",
 	"same_yes": "La fel",
 	"same_no": "Diferite",
-	"same_hint": "Uită-te la amândouă."
+	"same_hint": "Uită-te la amândouă.",
+	"next_name": "Ce număr urmează?",
+	"next_desc": "Numere în șir. Atinge numărul care urmează.",
+	"next_prompt": "Ce număr urmează?",
+	"next_hint": "Continuă numărătoarea. Ce vine după ultimul?"
 }
