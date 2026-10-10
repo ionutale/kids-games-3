@@ -252,5 +252,13 @@
 	"day_thu": "Donnerstag",
 	"day_fri": "Freitag",
 	"day_sat": "Samstag",
-	"day_sun": "Sonntag"
+	"day_sun": "Sonntag",
+	"weather_name": "Wetter",
+	"weather_desc": "Sieh eine Szene. Tippe sonnig, regnerisch, bewölkt oder schneereich.",
+	"weather_prompt": "Wie ist das Wetter?",
+	"weather_hint": "Schau den Himmel an. Gibt es Sonne, Wolken, Regen oder Schnee?",
+	"weather_sunny": "Sonnig",
+	"weather_cloudy": "Bewölkt",
+	"weather_rainy": "Regen",
+	"weather_snowy": "Schnee"
 }

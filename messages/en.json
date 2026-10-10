@@ -252,5 +252,13 @@
 	"day_thu": "Thursday",
 	"day_fri": "Friday",
 	"day_sat": "Saturday",
-	"day_sun": "Sunday"
+	"day_sun": "Sunday",
+	"weather_name": "Weather",
+	"weather_desc": "See a scene. Tap sunny, rainy, cloudy, or snowy.",
+	"weather_prompt": "What is the weather?",
+	"weather_hint": "Look at the sky. Is there sun, clouds, rain, or snow?",
+	"weather_sunny": "Sunny",
+	"weather_cloudy": "Cloudy",
+	"weather_rainy": "Rainy",
+	"weather_snowy": "Snowy"
 }

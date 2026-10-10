@@ -252,5 +252,13 @@
 	"day_thu": "Joi",
 	"day_fri": "Vineri",
 	"day_sat": "Sâmbătă",
-	"day_sun": "Duminică"
+	"day_sun": "Duminică",
+	"weather_name": "Vremea",
+	"weather_desc": "Vezi o scenă. Atinge soare, ploaie, nori sau zăpadă.",
+	"weather_prompt": "Ce vreme e?",
+	"weather_hint": "Uită-te la cer. E soare, nori, ploaie sau zăpadă?",
+	"weather_sunny": "Soare",
+	"weather_cloudy": "Nori",
+	"weather_rainy": "Ploaie",
+	"weather_snowy": "Zăpadă"
 }

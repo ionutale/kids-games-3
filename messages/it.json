@@ -252,5 +252,13 @@
 	"day_thu": "Giovedì",
 	"day_fri": "Venerdì",
 	"day_sat": "Sabato",
-	"day_sun": "Domenica"
+	"day_sun": "Domenica",
+	"weather_name": "Il tempo",
+	"weather_desc": "Vedi una scena. Tocca sole, pioggia, nuvole o neve.",
+	"weather_prompt": "Che tempo fa?",
+	"weather_hint": "Guarda il cielo. C'è sole, nuvole, pioggia o neve?",
+	"weather_sunny": "Sole",
+	"weather_cloudy": "Nuvole",
+	"weather_rainy": "Pioggia",
+	"weather_snowy": "Neve"
 }

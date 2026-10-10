@@ -1198,6 +1198,43 @@ a.level-tile:hover {
 	height: 2.8rem;
 }
 
+.weather-prompt {
+	display: flex;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+.weather-prompt.hint-pulse {
+	animation: pulse 1s ease-in-out infinite;
+}
+
+.weather-prompt svg {
+	width: 9.5rem;
+	height: auto;
+	display: block;
+	filter: drop-shadow(0 6px 10px rgba(48, 36, 24, 0.12));
+}
+
+.weather-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+}
+
+.weather-thumb svg {
+	width: 100%;
+}
+
+.game-card .weather-thumb svg {
+	width: 4.6rem;
+}
+
+.level-tile .weather-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+}
+
 .days-thumb {
 	display: grid;
 	place-items: center;
