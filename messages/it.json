@@ -216,5 +216,9 @@
 	"syl_name": "Batti le sillabe",
 	"syl_desc": "Vedi una parola. Tocca quante parti ha.",
 	"syl_prompt": "Quante parti?",
-	"syl_hint": "Dì la parola piano. Batti le mani per ogni parte."
+	"syl_hint": "Dì la parola piano. Batti le mani per ogni parte.",
+	"sort_name": "Ordina per colore",
+	"sort_desc": "Tocca una figura, poi il suo gruppo di colore.",
+	"sort_prompt": "Metti ogni figura nel suo colore.",
+	"sort_hint": "Prima tocca una figura. Poi tocca il colore giusto."
 }

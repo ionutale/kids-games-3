@@ -48,7 +48,8 @@ describe('progress', () => {
 			'abc-order': { cleared: 0 },
 			'before-after': { cleared: 0 },
 			rhyme: { cleared: 0 },
-			syllable: { cleared: 0 }
+			syllable: { cleared: 0 },
+			'sort-color': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -84,6 +85,7 @@ describe('progress', () => {
 		expect(clearLevel(progress, 'before-after', 1)).toBe(1);
 		expect(clearLevel(progress, 'rhyme', 1)).toBe(1);
 		expect(clearLevel(progress, 'syllable', 1)).toBe(1);
+		expect(clearLevel(progress, 'sort-color', 1)).toBe(1);
 		expect(progress['count-fruit'].cleared).toBe(1);
 	});
 
@@ -119,7 +121,8 @@ describe('progress', () => {
 			'abc-order': { cleared: 0 },
 			'before-after': { cleared: 0 },
 			rhyme: { cleared: 0 },
-			syllable: { cleared: 0 }
+			syllable: { cleared: 0 },
+			'sort-color': { cleared: 0 }
 		});
 	});
 
@@ -159,7 +162,8 @@ describe('progress', () => {
 			'abc-order': { cleared: 0 },
 			'before-after': { cleared: 0 },
 			rhyme: { cleared: 0 },
-			syllable: { cleared: 0 }
+			syllable: { cleared: 0 },
+			'sort-color': { cleared: 0 }
 		});
 	});
 });

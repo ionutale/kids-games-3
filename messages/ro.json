@@ -216,5 +216,9 @@
 	"syl_name": "Bate silabele",
 	"syl_desc": "Vezi un cuvânt. Atinge câte părți are.",
 	"syl_prompt": "Câte părți?",
-	"syl_hint": "Spune cuvântul încet. Bate din palme pentru fiecare parte."
+	"syl_hint": "Spune cuvântul încet. Bate din palme pentru fiecare parte.",
+	"sort_name": "Sortează după culoare",
+	"sort_desc": "Atinge o formă, apoi grupul ei de culoare.",
+	"sort_prompt": "Pune fiecare formă la culoarea ei.",
+	"sort_hint": "Atinge întâi o formă. Apoi atinge culoarea potrivită."
 }

@@ -216,5 +216,9 @@
 	"syl_name": "Syllable clap",
 	"syl_desc": "See a word. Tap how many parts it has.",
 	"syl_prompt": "How many parts?",
-	"syl_hint": "Say the word slowly. Clap once for each part."
+	"syl_hint": "Say the word slowly. Clap once for each part.",
+	"sort_name": "Sort by color",
+	"sort_desc": "Tap a shape, then tap its color group.",
+	"sort_prompt": "Put each shape in its color.",
+	"sort_hint": "Tap a shape first. Then tap the matching color."
 }

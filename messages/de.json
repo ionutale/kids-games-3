@@ -216,5 +216,9 @@
 	"syl_name": "Silben klatschen",
 	"syl_desc": "Sieh ein Wort. Tippe, wie viele Teile es hat.",
 	"syl_prompt": "Wie viele Teile?",
-	"syl_hint": "Sag das Wort langsam. Klatsch einmal für jeden Teil."
+	"syl_hint": "Sag das Wort langsam. Klatsch einmal für jeden Teil.",
+	"sort_name": "Nach Farbe sortieren",
+	"sort_desc": "Tippe eine Form, dann ihre Farbgruppe.",
+	"sort_prompt": "Lege jede Form in ihre Farbe.",
+	"sort_hint": "Tippe zuerst eine Form. Dann tippe die passende Farbe."
 }
