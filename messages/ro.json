@@ -241,5 +241,16 @@
 	"season_spring": "Primăvara",
 	"season_summer": "Vara",
 	"season_autumn": "Toamna",
-	"season_winter": "Iarna"
+	"season_winter": "Iarna",
+	"days_name": "Zilele săptămânii",
+	"days_desc": "Vezi o zi. Atinge ziua care urmează.",
+	"days_prompt": "Ce zi urmează?",
+	"days_hint": "Spune zilele în ordine. Ce vine după aceasta?",
+	"day_mon": "Luni",
+	"day_tue": "Marți",
+	"day_wed": "Miercuri",
+	"day_thu": "Joi",
+	"day_fri": "Vineri",
+	"day_sat": "Sâmbătă",
+	"day_sun": "Duminică"
 }

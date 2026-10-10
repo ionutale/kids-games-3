@@ -241,5 +241,16 @@
 	"season_spring": "Spring",
 	"season_summer": "Summer",
 	"season_autumn": "Autumn",
-	"season_winter": "Winter"
+	"season_winter": "Winter",
+	"days_name": "Days of the week",
+	"days_desc": "See a day. Tap the one that comes next.",
+	"days_prompt": "Which day comes next?",
+	"days_hint": "Say the days in order. What comes after this one?",
+	"day_mon": "Monday",
+	"day_tue": "Tuesday",
+	"day_wed": "Wednesday",
+	"day_thu": "Thursday",
+	"day_fri": "Friday",
+	"day_sat": "Saturday",
+	"day_sun": "Sunday"
 }

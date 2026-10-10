@@ -241,5 +241,16 @@
 	"season_spring": "Primavera",
 	"season_summer": "Estate",
 	"season_autumn": "Autunno",
-	"season_winter": "Inverno"
+	"season_winter": "Inverno",
+	"days_name": "I giorni della settimana",
+	"days_desc": "Vedi un giorno. Tocca quello che viene dopo.",
+	"days_prompt": "Quale giorno viene dopo?",
+	"days_hint": "Di' i giorni in ordine. Cosa viene dopo questo?",
+	"day_mon": "Lunedì",
+	"day_tue": "Martedì",
+	"day_wed": "Mercoledì",
+	"day_thu": "Giovedì",
+	"day_fri": "Venerdì",
+	"day_sat": "Sabato",
+	"day_sun": "Domenica"
 }

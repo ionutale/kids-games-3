@@ -45,6 +45,7 @@
 	let clearedShadow = $state(0);
 	let clearedTime = $state(0);
 	let clearedSeason = $state(0);
+	let clearedDays = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -78,6 +79,7 @@
 	const shadowHref = $derived(localizeHref('/play/shadow-match', { locale }));
 	const timeHref = $derived(localizeHref('/play/what-time', { locale }));
 	const seasonHref = $derived(localizeHref('/play/seasons', { locale }));
+	const daysHref = $derived(localizeHref('/play/days-week', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -112,6 +114,7 @@
 		clearedShadow = progress['shadow-match'].cleared;
 		clearedTime = progress['what-time'].cleared;
 		clearedSeason = progress.seasons.cleared;
+		clearedDays = progress['days-week'].cleared;
 	});
 </script>
 
@@ -555,6 +558,20 @@
 		<div class="row">
 			<a class="btn" href={seasonHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedSeason })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.days_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="days-thumb" aria-hidden="true">Mo</span>
+	</div>
+	<div>
+		<h2>{m.days_name()}</h2>
+		<p>{m.days_desc()}</p>
+		<div class="row">
+			<a class="btn" href={daysHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedDays })}</span>
 		</div>
 	</div>
 </section>

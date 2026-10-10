@@ -241,5 +241,16 @@
 	"season_spring": "Frühling",
 	"season_summer": "Sommer",
 	"season_autumn": "Herbst",
-	"season_winter": "Winter"
+	"season_winter": "Winter",
+	"days_name": "Wochentage",
+	"days_desc": "Sieh einen Tag. Tippe den, der danach kommt.",
+	"days_prompt": "Welcher Tag kommt danach?",
+	"days_hint": "Sag die Tage der Reihe nach. Was kommt nach diesem?",
+	"day_mon": "Montag",
+	"day_tue": "Dienstag",
+	"day_wed": "Mittwoch",
+	"day_thu": "Donnerstag",
+	"day_fri": "Freitag",
+	"day_sat": "Samstag",
+	"day_sun": "Sonntag"
 }
