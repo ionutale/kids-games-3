@@ -379,5 +379,10 @@
 	"case_desc": "Vezi o literă. Atinge perechea ei mare sau mică.",
 	"case_prompt_lower": "Găsește litera mică.",
 	"case_prompt_upper": "Găsește litera mare.",
-	"case_hint": "Aceeași literă, formă diferită. Caută perechea."
+	"case_hint": "Aceeași literă, formă diferită. Caută perechea.",
+	"spell_name": "Scrie cuvântul",
+	"spell_desc": "Vezi o imagine. Atinge literele în căsuțe ca să scrii cuvântul.",
+	"spell_prompt": "Scrie cuvântul.",
+	"spell_tap": "Atinge litera următoare.",
+	"spell_hint": "Spune cuvântul încet. Ce literă urmează?"
 }

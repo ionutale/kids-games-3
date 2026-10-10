@@ -379,5 +379,10 @@
 	"case_desc": "Sieh einen Buchstaben. Tippe seinen großen oder kleinen Zwilling.",
 	"case_prompt_lower": "Finde den kleinen Buchstaben.",
 	"case_prompt_upper": "Finde den großen Buchstaben.",
-	"case_hint": "Gleicher Buchstabe, andere Form. Suche den Zwilling."
+	"case_hint": "Gleicher Buchstabe, andere Form. Suche den Zwilling.",
+	"spell_name": "Wort buchstabieren",
+	"spell_desc": "Sieh ein Bild. Tippe Buchstaben in die Kästchen, um das Wort zu schreiben.",
+	"spell_prompt": "Schreibe das Wort.",
+	"spell_tap": "Tippe den nächsten Buchstaben.",
+	"spell_hint": "Sag das Wort langsam. Welcher Buchstabe kommt als Nächstes?"
 }

@@ -379,5 +379,10 @@
 	"case_desc": "Vedi una lettera. Tocca la sua gemella maiuscola o minuscola.",
 	"case_prompt_lower": "Trova la lettera minuscola.",
 	"case_prompt_upper": "Trova la lettera maiuscola.",
-	"case_hint": "Stessa lettera, forma diversa. Cerca la gemella."
+	"case_hint": "Stessa lettera, forma diversa. Cerca la gemella.",
+	"spell_name": "Scrivi la parola",
+	"spell_desc": "Vedi un'immagine. Tocca le lettere nelle caselle per scrivere la parola.",
+	"spell_prompt": "Scrivi la parola.",
+	"spell_tap": "Tocca la lettera successiva.",
+	"spell_hint": "Di' la parola piano. Quale lettera viene dopo?"
 }

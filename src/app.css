@@ -1830,6 +1830,104 @@ a.level-tile:hover {
 	font-weight: 800;
 }
 
+.spell-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 0.85rem;
+	background: linear-gradient(160deg, #e8fff0 0%, #5da85f 100%);
+	border: 3px solid #3d7a40;
+	color: #1f3f22;
+	font-weight: 800;
+	font-size: 0.95rem;
+}
+
+.spell-thumb.big {
+	width: 5.2rem;
+	height: 5.2rem;
+	font-size: 1.4rem;
+	border-radius: 1.1rem;
+}
+
+.game-card .spell-thumb {
+	width: 4.6rem;
+	height: 4.6rem;
+	font-size: 1.15rem;
+}
+
+.level-tile .spell-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+	font-size: 0.75rem;
+	border-width: 2px;
+}
+
+.spell-pic {
+	text-align: center;
+	font-size: 3.2rem;
+	margin-top: 0.75rem;
+	line-height: 1;
+}
+
+.spell-slots {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin-top: 0.85rem;
+}
+
+.spell-slot {
+	display: grid;
+	place-items: center;
+	min-width: 2.8rem;
+	min-height: 3.2rem;
+	border: 3px solid var(--line);
+	border-radius: 0.85rem;
+	background: #fffdf8;
+	font-weight: 800;
+	font-size: 1.4rem;
+	box-shadow: var(--shadow);
+}
+
+.spell-slot.open {
+	outline: 2px dashed rgba(90, 61, 26, 0.28);
+	outline-offset: -2px;
+	color: var(--ink-soft);
+	background: rgba(255, 247, 236, 0.7);
+}
+
+.spell-slot.glow {
+	outline-color: var(--sky);
+	animation: pulse 1s ease-in-out infinite;
+}
+
+.spell-tray {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 0.45rem;
+	margin-top: 0.85rem;
+}
+
+.spell-chip {
+	min-width: 2.8rem;
+	min-height: 3rem;
+	border: 3px solid var(--line);
+	border-radius: 0.85rem;
+	background: #fff3dd;
+	box-shadow: var(--shadow);
+	font-weight: 800;
+	font-size: 1.35rem;
+	cursor: pointer;
+}
+
+.spell-chip.glow {
+	border-color: var(--sky);
+	box-shadow: 0 0 0 4px rgba(90, 169, 230, 0.3);
+}
+
 .oless-thumb.big,
 .omore-thumb.big,
 .skip-thumb.big {

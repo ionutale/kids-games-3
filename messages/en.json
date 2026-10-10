@@ -379,5 +379,10 @@
 	"case_desc": "See a letter. Tap its capital or small twin.",
 	"case_prompt_lower": "Find the small letter.",
 	"case_prompt_upper": "Find the capital letter.",
-	"case_hint": "Same letter, different size. Look for the matching twin."
+	"case_hint": "Same letter, different size. Look for the matching twin.",
+	"spell_name": "Spell the word",
+	"spell_desc": "See a picture. Tap letters into the boxes to spell the word.",
+	"spell_prompt": "Spell the word.",
+	"spell_tap": "Tap the next letter.",
+	"spell_hint": "Say the word slowly. What letter comes next?"
 }
