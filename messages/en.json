@@ -266,5 +266,14 @@
 	"lr_prompt": "Left or right?",
 	"lr_hint": "Look which way the arrow points, or which side the fruit is on.",
 	"lr_left": "Left",
-	"lr_right": "Right"
+	"lr_right": "Right",
+	"jigsaw_name": "Jigsaw puzzle",
+	"jigsaw_desc": "Put the round puzzle pieces in the right places.",
+	"jigsaw_prompt": "Build the picture.",
+	"jigsaw_hint": "Drag a piece onto the empty spot that matches. Or tap, then tap the spot.",
+	"jigsaw_tap_piece": "Tap a piece.",
+	"jigsaw_tap_slot": "Now tap its empty spot — or drag it there.",
+	"jigsaw_drag": "Drag a piece onto the board.",
+	"jigsaw_drop": "Drop it on the matching spot.",
+	"jigsaw_slot": "Empty puzzle spot"
 }

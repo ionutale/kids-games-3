@@ -1272,6 +1272,205 @@ a.level-tile:hover {
 	height: 2.8rem;
 }
 
+.jigsaw-thumb {
+	position: relative;
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+}
+
+.jigsaw-thumb-piece {
+	position: absolute;
+	width: 1.7rem;
+	height: 1.7rem;
+	border-radius: 0.55rem;
+	background: linear-gradient(145deg, #7ec8ff, #5da85f);
+	border: 2px solid #5a3d1a;
+	left: 0.35rem;
+	top: 0.55rem;
+}
+
+.jigsaw-thumb-piece.mid {
+	left: 1.35rem;
+	top: 1.05rem;
+	background: linear-gradient(145deg, #f2c230, #e85d4c);
+}
+
+.game-card .jigsaw-thumb {
+	width: 4.6rem;
+	height: 4.6rem;
+}
+
+.game-card .jigsaw-thumb-piece {
+	width: 2.1rem;
+	height: 2.1rem;
+}
+
+.level-tile .jigsaw-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+}
+
+.level-tile .jigsaw-thumb-piece {
+	width: 1.25rem;
+	height: 1.25rem;
+	left: 0.25rem;
+	top: 0.4rem;
+}
+
+.level-tile .jigsaw-thumb-piece.mid {
+	left: 1rem;
+	top: 0.8rem;
+}
+
+.jigsaw-win-art .jigsaw-thumb {
+	width: 5.2rem;
+	height: 5.2rem;
+}
+
+.jigsaw-board {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(var(--jig-cols), 1fr);
+	grid-template-rows: repeat(var(--jig-rows), 1fr);
+	gap: 0;
+	width: min(100%, calc(var(--jig-cols) * 5.2rem));
+	aspect-ratio: var(--jig-cols) / var(--jig-rows);
+	margin: 1rem auto 0;
+	padding: var(--jig-pad);
+	background: #fff7ec;
+	border: 3px solid var(--line);
+	border-radius: 1.1rem;
+	overflow: visible;
+}
+
+.jigsaw-board-ghost {
+	position: absolute;
+	inset: var(--jig-pad);
+	opacity: 0.18;
+	pointer-events: none;
+	border-radius: 0.6rem;
+	overflow: hidden;
+}
+
+.jigsaw-board-ghost svg {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.jigsaw-slot {
+	position: relative;
+	min-width: 0;
+	min-height: 0;
+	overflow: visible;
+}
+
+.jigsaw-slot.open {
+	outline: 1.5px dashed rgba(90, 61, 26, 0.22);
+	outline-offset: -2px;
+	border-radius: 0.35rem;
+}
+
+.jigsaw-slot.glow {
+	outline-color: var(--sky);
+	animation: pulse 1s ease-in-out infinite;
+}
+
+.jigsaw-slot-hit {
+	position: absolute;
+	inset: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+	border-radius: 0.35rem;
+	z-index: 1;
+}
+
+.jigsaw-slot-hit:disabled {
+	cursor: default;
+}
+
+.jigsaw-piece {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: grab;
+	touch-action: none;
+	user-select: none;
+	-webkit-user-select: none;
+	filter: drop-shadow(0 3px 4px rgba(48, 36, 24, 0.18));
+}
+
+.jigsaw-piece.selected {
+	filter: drop-shadow(0 0 8px rgba(61, 143, 209, 0.7));
+	transform: scale(1.04);
+}
+
+/* Cell body fills the slot; tabs overflow so neighbors lock flush. */
+.jigsaw-slot .jigsaw-piece.placed {
+	position: absolute;
+	/* matches JIGSAW_OVERFLOW (tab/cell) */
+	inset: calc(-100% * var(--jig-overflow, 0.225));
+	width: auto;
+	height: auto;
+	z-index: 2;
+	cursor: default;
+	touch-action: auto;
+	filter: none;
+}
+
+.jigsaw-piece.dragging {
+	opacity: 0.25;
+	cursor: grabbing;
+}
+
+.jigsaw-piece.ghost {
+	cursor: grabbing;
+	pointer-events: none;
+	filter: drop-shadow(0 10px 16px rgba(48, 36, 24, 0.28));
+	transform: scale(1.06);
+}
+
+.jigsaw-piece.glow {
+	animation: pulse 1s ease-in-out infinite;
+}
+
+.jigsaw-tray {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.55rem;
+	margin-top: 1rem;
+}
+
+.jigsaw-tray-item {
+	height: calc(4.2rem + 14px);
+}
+
+.jigsaw-tray-item.lifting {
+	pointer-events: none;
+}
+
+.jigsaw-tray-item .jigsaw-piece {
+	width: 100%;
+	height: 100%;
+}
+
+.jigsaw-drag-ghost {
+	position: fixed;
+	z-index: 80;
+	pointer-events: none;
+}
+
+.jigsaw-board.drop-ready .jigsaw-slot.open {
+	outline-color: rgba(61, 143, 209, 0.55);
+}
+
 .days-thumb {
 	display: grid;
 	place-items: center;
@@ -1391,13 +1590,28 @@ a.level-tile:hover {
 	}
 }
 
+/* Keep each group on one line — wrapping mid-count confuses kids. */
+.sum-row.equation .pile {
+	flex-wrap: nowrap;
+	max-width: none;
+	gap: 0.12rem;
+}
+
 .sum-row.equation .pile svg {
-	width: 2.5rem;
-	height: 2.5rem;
+	width: 2.15rem;
+	height: 2.15rem;
+	flex-shrink: 0;
 }
 
 .sum-row.equation .pile.result {
 	opacity: 0.4;
+}
+
+@media (max-width: 40rem) {
+	.sum-row.equation .pile svg {
+		width: 1.85rem;
+		height: 1.85rem;
+	}
 }
 
 .mem-grid {

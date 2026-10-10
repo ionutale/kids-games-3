@@ -50,6 +50,7 @@
 	let clearedDays = $state(0);
 	let clearedWeather = $state(0);
 	let clearedLr = $state(0);
+	let clearedJigsaw = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -86,6 +87,7 @@
 	const daysHref = $derived(localizeHref('/play/days-week', { locale }));
 	const weatherHref = $derived(localizeHref('/play/weather', { locale }));
 	const lrHref = $derived(localizeHref('/play/left-right', { locale }));
+	const jigsawHref = $derived(localizeHref('/play/jigsaw', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -123,6 +125,7 @@
 		clearedDays = progress['days-week'].cleared;
 		clearedWeather = progress.weather.cleared;
 		clearedLr = progress['left-right'].cleared;
+		clearedJigsaw = progress.jigsaw.cleared;
 	});
 </script>
 
@@ -608,6 +611,23 @@
 		<div class="row">
 			<a class="btn" href={lrHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedLr })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.jigsaw_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="jigsaw-thumb" aria-hidden="true">
+			<span class="jigsaw-thumb-piece"></span>
+			<span class="jigsaw-thumb-piece mid"></span>
+		</span>
+	</div>
+	<div>
+		<h2>{m.jigsaw_name()}</h2>
+		<p>{m.jigsaw_desc()}</p>
+		<div class="row">
+			<a class="btn" href={jigsawHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedJigsaw })}</span>
 		</div>
 	</div>
 </section>

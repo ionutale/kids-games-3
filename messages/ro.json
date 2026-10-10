@@ -266,5 +266,14 @@
 	"lr_prompt": "Stânga sau dreapta?",
 	"lr_hint": "Uită-te încotro arată săgeata, sau pe ce parte e fructul.",
 	"lr_left": "Stânga",
-	"lr_right": "Dreapta"
+	"lr_right": "Dreapta",
+	"jigsaw_name": "Puzzle",
+	"jigsaw_desc": "Pune piesele rotunjite la locul potrivit.",
+	"jigsaw_prompt": "Construiește imaginea.",
+	"jigsaw_hint": "Trage o piesă pe spațiul gol potrivit. Sau atinge, apoi atinge spațiul.",
+	"jigsaw_tap_piece": "Atinge o piesă.",
+	"jigsaw_tap_slot": "Acum atinge spațiul ei gol — sau trage-o acolo.",
+	"jigsaw_drag": "Trage o piesă pe tablă.",
+	"jigsaw_drop": "Lasă-o pe spațiul potrivit.",
+	"jigsaw_slot": "Spațiu gol din puzzle"
 }

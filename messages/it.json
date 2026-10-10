@@ -266,5 +266,14 @@
 	"lr_prompt": "Sinistra o destra?",
 	"lr_hint": "Guarda dove punta la freccia, o da che parte sta il frutto.",
 	"lr_left": "Sinistra",
-	"lr_right": "Destra"
+	"lr_right": "Destra",
+	"jigsaw_name": "Puzzle",
+	"jigsaw_desc": "Metti i pezzi arrotondati al posto giusto.",
+	"jigsaw_prompt": "Costruisci l'immagine.",
+	"jigsaw_hint": "Trascina un pezzo sullo spazio vuoto giusto. Oppure tocca, poi tocca lo spazio.",
+	"jigsaw_tap_piece": "Tocca un pezzo.",
+	"jigsaw_tap_slot": "Ora tocca il suo spazio vuoto — o trascinalo lì.",
+	"jigsaw_drag": "Trascina un pezzo sul tabellone.",
+	"jigsaw_drop": "Lascia il pezzo sullo spazio giusto.",
+	"jigsaw_slot": "Spazio vuoto del puzzle"
 }

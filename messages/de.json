@@ -266,5 +266,14 @@
 	"lr_prompt": "Links oder rechts?",
 	"lr_hint": "Schau, wohin der Pfeil zeigt, oder auf welcher Seite die Frucht ist.",
 	"lr_left": "Links",
-	"lr_right": "Rechts"
+	"lr_right": "Rechts",
+	"jigsaw_name": "Puzzle",
+	"jigsaw_desc": "Lege die runden Puzzleteile an die richtige Stelle.",
+	"jigsaw_prompt": "Baue das Bild.",
+	"jigsaw_hint": "Ziehe ein Teil auf die passende leere Stelle. Oder tippe, dann tippe die Stelle.",
+	"jigsaw_tap_piece": "Tippe ein Teil.",
+	"jigsaw_tap_slot": "Jetzt tippe die leere Stelle — oder ziehe es dorthin.",
+	"jigsaw_drag": "Ziehe ein Teil aufs Brett.",
+	"jigsaw_drop": "Lass es auf der passenden Stelle los.",
+	"jigsaw_slot": "Leere Puzzle-Stelle"
 }
