@@ -370,5 +370,9 @@
 	"place_prompt_ones": "Wie viele Einer?",
 	"place_hint_number": "Jeder lange Stab ist 10. Jeder kleine Würfel ist 1. Addiere sie.",
 	"place_hint_tens": "Zähle die langen Stäbe. Jeder ist ein Zehner.",
-	"place_hint_ones": "Zähle die kleinen Würfel. Jeder ist ein Einer."
+	"place_hint_ones": "Zähle die kleinen Würfel. Jeder ist ein Einer.",
+	"blend_name": "Laute verbinden",
+	"blend_desc": "Sieh zwei Lautteile. Tippe das Bild zum Wort.",
+	"blend_prompt": "Verbinde die Laute. Welches Bild ist es?",
+	"blend_hint": "Sag den ersten Laut, dann den Rest. Welches Wort hörst du?"
 }

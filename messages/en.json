@@ -370,5 +370,9 @@
 	"place_prompt_ones": "How many ones?",
 	"place_hint_number": "Each long rod is 10. Each small cube is 1. Add them.",
 	"place_hint_tens": "Count the long rods. Each one is a ten.",
-	"place_hint_ones": "Count the small cubes. Each one is a one."
+	"place_hint_ones": "Count the small cubes. Each one is a one.",
+	"blend_name": "Blend sounds",
+	"blend_desc": "See two sound parts. Tap the picture that makes the word.",
+	"blend_prompt": "Put the sounds together. Which picture is it?",
+	"blend_hint": "Say the first sound, then the rest. What word do you hear?"
 }

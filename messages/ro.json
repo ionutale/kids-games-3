@@ -370,5 +370,9 @@
 	"place_prompt_ones": "Câte unități?",
 	"place_hint_number": "Fiecare bețișor lung este 10. Fiecare cub mic este 1. Adună-le.",
 	"place_hint_tens": "Numără bețișoarele lungi. Fiecare este o zece.",
-	"place_hint_ones": "Numără cuburile mici. Fiecare este o unitate."
+	"place_hint_ones": "Numără cuburile mici. Fiecare este o unitate.",
+	"blend_name": "Unește sunetele",
+	"blend_desc": "Vezi două părți de sunet. Atinge imaginea cuvântului.",
+	"blend_prompt": "Unește sunetele. Care imagine e?",
+	"blend_hint": "Spune primul sunet, apoi restul. Ce cuvânt auzi?"
 }

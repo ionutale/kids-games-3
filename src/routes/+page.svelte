@@ -61,6 +61,7 @@
 	let clearedHalf = $state(0);
 	let clearedCmp = $state(0);
 	let clearedPlace = $state(0);
+	let clearedBlend = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -106,6 +107,7 @@
 	const halfHref = $derived(localizeHref('/play/half-share', { locale }));
 	const cmpHref = $derived(localizeHref('/play/compare-numbers', { locale }));
 	const placeHref = $derived(localizeHref('/play/place-value', { locale }));
+	const blendHref = $derived(localizeHref('/play/blend-sounds', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -152,6 +154,7 @@
 		clearedHalf = progress['half-share'].cleared;
 		clearedCmp = progress['compare-numbers'].cleared;
 		clearedPlace = progress['place-value'].cleared;
+		clearedBlend = progress['blend-sounds'].cleared;
 	});
 </script>
 
@@ -766,6 +769,20 @@
 		<div class="row">
 			<a class="btn" href={placeHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedPlace })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.blend_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="blend-thumb" aria-hidden="true">c+at</span>
+	</div>
+	<div>
+		<h2>{m.blend_name()}</h2>
+		<p>{m.blend_desc()}</p>
+		<div class="row">
+			<a class="btn" href={blendHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedBlend })}</span>
 		</div>
 	</div>
 </section>

@@ -370,5 +370,9 @@
 	"place_prompt_ones": "Quante unità?",
 	"place_hint_number": "Ogni bastoncino lungo vale 10. Ogni cubetto vale 1. Sommali.",
 	"place_hint_tens": "Conta i bastoncini lunghi. Ognuno è una decina.",
-	"place_hint_ones": "Conta i cubetti piccoli. Ognuno è un'unità."
+	"place_hint_ones": "Conta i cubetti piccoli. Ognuno è un'unità.",
+	"blend_name": "Unisci i suoni",
+	"blend_desc": "Vedi due parti di suono. Tocca l'immagine della parola.",
+	"blend_prompt": "Unisci i suoni. Quale immagine è?",
+	"blend_hint": "Di' il primo suono, poi il resto. Che parola senti?"
 }
