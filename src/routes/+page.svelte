@@ -17,6 +17,7 @@
 	import KindArt from '#lib/components/KindArt.svelte';
 	import BodyArt from '#lib/components/BodyArt.svelte';
 	import PlaceArt from '#lib/components/PlaceArt.svelte';
+	import FoodArt from '#lib/components/FoodArt.svelte';
 	import favicon from '#lib/assets/favicon.svg';
 	import LumiSun from '#lib/components/LumiSun.svelte';
 
@@ -68,6 +69,7 @@
 	let clearedSpell = $state(0);
 	let clearedBody = $state(0);
 	let clearedMap = $state(0);
+	let clearedHealthy = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -118,6 +120,7 @@
 	const spellHref = $derived(localizeHref('/play/spell-word', { locale }));
 	const bodyHref = $derived(localizeHref('/play/body-parts', { locale }));
 	const mapHref = $derived(localizeHref('/play/map-places', { locale }));
+	const healthyHref = $derived(localizeHref('/play/healthy-choice', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -169,6 +172,7 @@
 		clearedSpell = progress['spell-word'].cleared;
 		clearedBody = progress['body-parts'].cleared;
 		clearedMap = progress['map-places'].cleared;
+		clearedHealthy = progress['healthy-choice'].cleared;
 	});
 </script>
 
@@ -853,6 +857,20 @@
 		<div class="row">
 			<a class="btn" href={mapHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedMap })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.healthy_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="food-thumb" aria-hidden="true"><FoodArt food="apple" /></span>
+	</div>
+	<div>
+		<h2>{m.healthy_name()}</h2>
+		<p>{m.healthy_desc()}</p>
+		<div class="row">
+			<a class="btn" href={healthyHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedHealthy })}</span>
 		</div>
 	</div>
 </section>

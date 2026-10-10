@@ -2052,6 +2052,77 @@ a.level-tile:hover {
 	color: var(--ink);
 }
 
+.food-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 0.85rem;
+	background: linear-gradient(160deg, #eef8e8 0%, #d0ecc8 100%);
+	border: 3px solid #7aba6a;
+	overflow: hidden;
+}
+
+.food-thumb .food-art,
+.food-thumb svg {
+	width: 2.6rem;
+	height: auto;
+}
+
+.food-thumb.big {
+	width: 5rem;
+	height: 5rem;
+	border-radius: 1.1rem;
+}
+
+.food-thumb.big .food-art,
+.food-thumb.big svg {
+	width: 3.8rem;
+}
+
+.game-card .food-thumb {
+	width: 4.6rem;
+	height: 4.6rem;
+}
+
+.game-card .food-thumb .food-art,
+.game-card .food-thumb svg {
+	width: 3.4rem;
+}
+
+.level-tile .food-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+	border-width: 2px;
+}
+
+.level-tile .food-thumb .food-art,
+.level-tile .food-thumb svg {
+	width: 2rem;
+}
+
+.healthy-answers {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.85rem;
+	margin-top: 0.75rem;
+}
+
+.food-btn {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.35rem;
+	padding: 0.75rem 0.5rem;
+	min-height: auto;
+}
+
+.food-label {
+	font-size: 1.05rem;
+	font-weight: 700;
+	color: var(--ink);
+}
+
 .oless-thumb.big,
 .omore-thumb.big,
 .skip-thumb.big {
