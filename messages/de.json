@@ -398,5 +398,15 @@
 	"body_hand": "die Hand",
 	"body_leg": "das Bein",
 	"body_foot": "der Fuß",
-	"body_tummy": "der Bauch"
+	"body_tummy": "der Bauch",
+	"map_name": "Orte auf der Karte",
+	"map_desc": "Hör einen Ort. Tippe Haus, Schule, Park oder Laden.",
+	"map_prompt": "Wo ist {place}?",
+	"map_hint": "Schau die Bilder an. Welcher Ort passt?",
+	"map_home": "Zuhause",
+	"map_school": "Schule",
+	"map_park": "Park",
+	"map_store": "Laden",
+	"map_library": "Bibliothek",
+	"map_beach": "Strand"
 }

@@ -398,5 +398,15 @@
 	"body_hand": "mâna",
 	"body_leg": "piciorul",
 	"body_foot": "talpa",
-	"body_tummy": "burta"
+	"body_tummy": "burta",
+	"map_name": "Locuri pe hartă",
+	"map_desc": "Auzi un loc. Atinge casă, școală, parc sau magazin.",
+	"map_prompt": "Unde este {place}?",
+	"map_hint": "Uită-te la imagini. Care loc se potrivește?",
+	"map_home": "casa",
+	"map_school": "școala",
+	"map_park": "parcul",
+	"map_store": "magazinul",
+	"map_library": "biblioteca",
+	"map_beach": "plaja"
 }

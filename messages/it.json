@@ -398,5 +398,15 @@
 	"body_hand": "la mano",
 	"body_leg": "la gamba",
 	"body_foot": "il piede",
-	"body_tummy": "la pancia"
+	"body_tummy": "la pancia",
+	"map_name": "Luoghi",
+	"map_desc": "Senti un luogo. Tocca casa, scuola, parco o negozio.",
+	"map_prompt": "Dov'è {place}?",
+	"map_hint": "Guarda le immagini. Quale luogo corrisponde?",
+	"map_home": "casa",
+	"map_school": "scuola",
+	"map_park": "parco",
+	"map_store": "negozio",
+	"map_library": "biblioteca",
+	"map_beach": "spiaggia"
 }

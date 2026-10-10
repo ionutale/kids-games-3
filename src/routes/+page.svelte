@@ -16,6 +16,7 @@
 	import LeftRightArt from '#lib/components/LeftRightArt.svelte';
 	import KindArt from '#lib/components/KindArt.svelte';
 	import BodyArt from '#lib/components/BodyArt.svelte';
+	import PlaceArt from '#lib/components/PlaceArt.svelte';
 	import favicon from '#lib/assets/favicon.svg';
 	import LumiSun from '#lib/components/LumiSun.svelte';
 
@@ -66,6 +67,7 @@
 	let clearedCase = $state(0);
 	let clearedSpell = $state(0);
 	let clearedBody = $state(0);
+	let clearedMap = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -115,6 +117,7 @@
 	const caseHref = $derived(localizeHref('/play/letter-case', { locale }));
 	const spellHref = $derived(localizeHref('/play/spell-word', { locale }));
 	const bodyHref = $derived(localizeHref('/play/body-parts', { locale }));
+	const mapHref = $derived(localizeHref('/play/map-places', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -165,6 +168,7 @@
 		clearedCase = progress['letter-case'].cleared;
 		clearedSpell = progress['spell-word'].cleared;
 		clearedBody = progress['body-parts'].cleared;
+		clearedMap = progress['map-places'].cleared;
 	});
 </script>
 
@@ -835,6 +839,20 @@
 		<div class="row">
 			<a class="btn" href={bodyHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedBody })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.map_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="place-thumb" aria-hidden="true"><PlaceArt place="home" /></span>
+	</div>
+	<div>
+		<h2>{m.map_name()}</h2>
+		<p>{m.map_desc()}</p>
+		<div class="row">
+			<a class="btn" href={mapHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedMap })}</span>
 		</div>
 	</div>
 </section>

@@ -398,5 +398,15 @@
 	"body_hand": "hand",
 	"body_leg": "leg",
 	"body_foot": "foot",
-	"body_tummy": "tummy"
+	"body_tummy": "tummy",
+	"map_name": "Map places",
+	"map_desc": "Hear a place. Tap home, school, park, or store.",
+	"map_prompt": "Where is {place}?",
+	"map_hint": "Look at the pictures. Which place matches?",
+	"map_home": "home",
+	"map_school": "school",
+	"map_park": "park",
+	"map_store": "store",
+	"map_library": "library",
+	"map_beach": "beach"
 }

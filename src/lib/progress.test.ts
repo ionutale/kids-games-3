@@ -68,7 +68,8 @@ describe('progress', () => {
 			'blend-sounds': { cleared: 0 },
 			'letter-case': { cleared: 0 },
 			'spell-word': { cleared: 0 },
-			'body-parts': { cleared: 0 }
+			'body-parts': { cleared: 0 },
+			'map-places': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -179,7 +180,8 @@ describe('progress', () => {
 			'blend-sounds': { cleared: 0 },
 			'letter-case': { cleared: 0 },
 			'spell-word': { cleared: 0 },
-			'body-parts': { cleared: 0 }
+			'body-parts': { cleared: 0 },
+			'map-places': { cleared: 0 }
 		});
 	});
 
@@ -239,7 +241,8 @@ describe('progress', () => {
 			'blend-sounds': { cleared: 0 },
 			'letter-case': { cleared: 0 },
 			'spell-word': { cleared: 0 },
-			'body-parts': { cleared: 0 }
+			'body-parts': { cleared: 0 },
+			'map-places': { cleared: 0 }
 		});
 	});
 });
