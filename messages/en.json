@@ -212,5 +212,9 @@
 	"rhyme_name": "Rhyming pair",
 	"rhyme_desc": "See a word. Tap the word that rhymes.",
 	"rhyme_prompt": "Which word rhymes?",
-	"rhyme_hint": "Say both words out loud. Do they sound the same at the end?"
+	"rhyme_hint": "Say both words out loud. Do they sound the same at the end?",
+	"syl_name": "Syllable clap",
+	"syl_desc": "See a word. Tap how many parts it has.",
+	"syl_prompt": "How many parts?",
+	"syl_hint": "Say the word slowly. Clap once for each part."
 }

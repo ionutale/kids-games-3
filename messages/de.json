@@ -212,5 +212,9 @@
 	"rhyme_name": "Reimpaar",
 	"rhyme_desc": "Sieh ein Wort. Tippe das Wort, das sich reimt.",
 	"rhyme_prompt": "Welches Wort reimt sich?",
-	"rhyme_hint": "Sag beide Wörter laut. Klingen sie am Ende gleich?"
+	"rhyme_hint": "Sag beide Wörter laut. Klingen sie am Ende gleich?",
+	"syl_name": "Silben klatschen",
+	"syl_desc": "Sieh ein Wort. Tippe, wie viele Teile es hat.",
+	"syl_prompt": "Wie viele Teile?",
+	"syl_hint": "Sag das Wort langsam. Klatsch einmal für jeden Teil."
 }

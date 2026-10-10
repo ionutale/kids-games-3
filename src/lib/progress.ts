@@ -36,7 +36,8 @@ export type GameId =
 	| 'next-number'
 	| 'abc-order'
 	| 'before-after'
-	| 'rhyme';
+	| 'rhyme'
+	| 'syllable';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -65,6 +66,7 @@ export interface Progress {
 	'abc-order': GameProgress;
 	'before-after': GameProgress;
 	rhyme: GameProgress;
+	syllable: GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -99,7 +101,8 @@ export function defaultProgress(): Progress {
 		'next-number': { cleared: 0 },
 		'abc-order': { cleared: 0 },
 		'before-after': { cleared: 0 },
-		rhyme: { cleared: 0 }
+		rhyme: { cleared: 0 },
+		syllable: { cleared: 0 }
 	};
 }
 
@@ -147,7 +150,8 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			'next-number': sanitizeGame(games['next-number']),
 			'abc-order': sanitizeGame(games['abc-order']),
 			'before-after': sanitizeGame(games['before-after']),
-			rhyme: sanitizeGame(games['rhyme'])
+			rhyme: sanitizeGame(games['rhyme']),
+			syllable: sanitizeGame(games['syllable'])
 		};
 	} catch {
 		return defaultProgress();

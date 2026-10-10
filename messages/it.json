@@ -212,5 +212,9 @@
 	"rhyme_name": "Rima",
 	"rhyme_desc": "Vedi una parola. Tocca quella che fa rima.",
 	"rhyme_prompt": "Quale parola fa rima?",
-	"rhyme_hint": "Dì le due parole a voce alta. Finiscono allo stesso modo?"
+	"rhyme_hint": "Dì le due parole a voce alta. Finiscono allo stesso modo?",
+	"syl_name": "Batti le sillabe",
+	"syl_desc": "Vedi una parola. Tocca quante parti ha.",
+	"syl_prompt": "Quante parti?",
+	"syl_hint": "Dì la parola piano. Batti le mani per ogni parte."
 }

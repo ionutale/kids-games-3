@@ -38,6 +38,7 @@
 	let clearedAbc = $state(0);
 	let clearedBef = $state(0);
 	let clearedRhyme = $state(0);
+	let clearedSyl = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -66,6 +67,7 @@
 	const abcHref = $derived(localizeHref('/play/abc-order', { locale }));
 	const befHref = $derived(localizeHref('/play/before-after', { locale }));
 	const rhymeHref = $derived(localizeHref('/play/rhyme', { locale }));
+	const sylHref = $derived(localizeHref('/play/syllable', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -95,6 +97,7 @@
 		clearedAbc = progress['abc-order'].cleared;
 		clearedBef = progress['before-after'].cleared;
 		clearedRhyme = progress.rhyme.cleared;
+		clearedSyl = progress.syllable.cleared;
 	});
 </script>
 
@@ -468,6 +471,20 @@
 		<div class="row">
 			<a class="btn" href={rhymeHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedRhyme })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.syl_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="tile-letter">2</span>
+	</div>
+	<div>
+		<h2>{m.syl_name()}</h2>
+		<p>{m.syl_desc()}</p>
+		<div class="row">
+			<a class="btn" href={sylHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedSyl })}</span>
 		</div>
 	</div>
 </section>
