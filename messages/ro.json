@@ -452,5 +452,15 @@
 	"money_desc": "Potrivește moneda cu valoarea: 1, 5 sau 10.",
 	"money_prompt_value": "Cât valorează această monedă?",
 	"money_prompt_coin": "Care monedă valorează atât?",
-	"money_hint": "Uită-te la numărul de pe monedă. Potrivește-l cu același număr."
+	"money_hint": "Uită-te la numărul de pe monedă. Potrivește-l cu același număr.",
+	"dress_name": "Îmbracă-te după vreme",
+	"dress_desc": "Vezi vremea. Atinge o pălărie pentru soare, o haină pentru frig.",
+	"dress_prompt": "Este {weather}. Ce te îmbraci?",
+	"dress_hint": "Soare: pălărie. Ploaie: pelerină. Zăpadă: haină caldă.",
+	"dress_hat": "pălărie",
+	"dress_coat": "haină",
+	"dress_raincoat": "pelerină",
+	"dress_boots": "cizme",
+	"dress_scarf": "fular",
+	"dress_sunglasses": "ochelari de soare"
 }

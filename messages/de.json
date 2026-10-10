@@ -452,5 +452,15 @@
 	"money_desc": "Ordne eine Münze ihrem Wert zu: 1, 5 oder 10.",
 	"money_prompt_value": "Wieviel ist diese Münze wert?",
 	"money_prompt_coin": "Welche Münze ist so viel wert?",
-	"money_hint": "Schau die Zahl auf der Münze an. Finde dieselbe Zahl."
+	"money_hint": "Schau die Zahl auf der Münze an. Finde dieselbe Zahl.",
+	"dress_name": "Anziehen nach Wetter",
+	"dress_desc": "Sieh das Wetter. Tippe Hut bei Sonne, Mantel bei Kälte.",
+	"dress_prompt": "Es ist {weather}. Was ziehst du an?",
+	"dress_hint": "Sonne: Hut. Regen: Regenmantel. Schnee: warmer Mantel.",
+	"dress_hat": "Hut",
+	"dress_coat": "Mantel",
+	"dress_raincoat": "Regenmantel",
+	"dress_boots": "Stiefel",
+	"dress_scarf": "Schal",
+	"dress_sunglasses": "Sonnenbrille"
 }

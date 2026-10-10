@@ -21,6 +21,7 @@
 	import SetFaceArt from '#lib/components/SetFaceArt.svelte';
 	import PathArt from '#lib/components/PathArt.svelte';
 	import CoinArt from '#lib/components/CoinArt.svelte';
+	import ClothesArt from '#lib/components/ClothesArt.svelte';
 	import favicon from '#lib/assets/favicon.svg';
 	import LumiSun from '#lib/components/LumiSun.svelte';
 
@@ -77,6 +78,7 @@
 	let clearedSet = $state(0);
 	let clearedPath = $state(0);
 	let clearedMoney = $state(0);
+	let clearedDress = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -132,6 +134,7 @@
 	const setHref = $derived(localizeHref('/play/complete-set', { locale }));
 	const pathGameHref = $derived(localizeHref('/play/follow-path', { locale }));
 	const moneyHref = $derived(localizeHref('/play/money-coins', { locale }));
+	const dressHref = $derived(localizeHref('/play/dress-weather', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -188,6 +191,7 @@
 		clearedSet = progress['complete-set'].cleared;
 		clearedPath = progress['follow-path'].cleared;
 		clearedMoney = progress['money-coins'].cleared;
+		clearedDress = progress['dress-weather'].cleared;
 	});
 </script>
 
@@ -942,6 +946,20 @@
 		<div class="row">
 			<a class="btn" href={moneyHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedMoney })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.dress_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="clothes-thumb" aria-hidden="true"><ClothesArt clothes="coat" /></span>
+	</div>
+	<div>
+		<h2>{m.dress_name()}</h2>
+		<p>{m.dress_desc()}</p>
+		<div class="row">
+			<a class="btn" href={dressHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedDress })}</span>
 		</div>
 	</div>
 </section>

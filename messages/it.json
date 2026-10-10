@@ -452,5 +452,15 @@
 	"money_desc": "Abbina una moneta al suo valore: 1, 5 o 10.",
 	"money_prompt_value": "Quanto vale questa moneta?",
 	"money_prompt_coin": "Quale moneta vale così tanto?",
-	"money_hint": "Guarda il numero sulla moneta. Abbinalo allo stesso numero."
+	"money_hint": "Guarda il numero sulla moneta. Abbinalo allo stesso numero.",
+	"dress_name": "Vestiti per il tempo",
+	"dress_desc": "Guarda il tempo. Tocca un cappello per il sole, un cappotto per il freddo.",
+	"dress_prompt": "Fa {weather}. Cosa ti metti?",
+	"dress_hint": "Sole: cappello. Pioggia: impermeabile. Neve: cappotto caldo.",
+	"dress_hat": "cappello",
+	"dress_coat": "cappotto",
+	"dress_raincoat": "impermeabile",
+	"dress_boots": "stivali",
+	"dress_scarf": "sciarpa",
+	"dress_sunglasses": "occhiali da sole"
 }

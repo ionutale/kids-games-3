@@ -63,7 +63,8 @@ export type GameId =
 	| 'above-below'
 	| 'complete-set'
 	| 'follow-path'
-	| 'money-coins';
+	| 'money-coins'
+	| 'dress-weather';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -119,6 +120,7 @@ export interface Progress {
 	'complete-set': GameProgress;
 	'follow-path': GameProgress;
 	'money-coins': GameProgress;
+	'dress-weather': GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -180,7 +182,8 @@ export function defaultProgress(): Progress {
 		'above-below': { cleared: 0 },
 		'complete-set': { cleared: 0 },
 		'follow-path': { cleared: 0 },
-		'money-coins': { cleared: 0 }
+		'money-coins': { cleared: 0 },
+		'dress-weather': { cleared: 0 }
 	};
 }
 
@@ -255,7 +258,8 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			'above-below': sanitizeGame(games['above-below']),
 			'complete-set': sanitizeGame(games['complete-set']),
 			'follow-path': sanitizeGame(games['follow-path']),
-			'money-coins': sanitizeGame(games['money-coins'])
+			'money-coins': sanitizeGame(games['money-coins']),
+			'dress-weather': sanitizeGame(games['dress-weather'])
 		};
 	} catch {
 		return defaultProgress();

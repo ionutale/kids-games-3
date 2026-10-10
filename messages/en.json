@@ -452,5 +452,15 @@
 	"money_desc": "Match a coin to its value: 1, 5, or 10.",
 	"money_prompt_value": "How much is this coin?",
 	"money_prompt_coin": "Which coin is this much?",
-	"money_hint": "Look at the number on the coin. Match it to the same number."
+	"money_hint": "Look at the number on the coin. Match it to the same number.",
+	"dress_name": "Dress for weather",
+	"dress_desc": "See the weather. Tap a hat for sun, a coat for cold, and more.",
+	"dress_prompt": "It is {weather}. What should you wear?",
+	"dress_hint": "Sunny needs a hat. Rain needs a raincoat. Snow needs a warm coat.",
+	"dress_hat": "hat",
+	"dress_coat": "coat",
+	"dress_raincoat": "raincoat",
+	"dress_boots": "boots",
+	"dress_scarf": "scarf",
+	"dress_sunglasses": "sunglasses"
 }
