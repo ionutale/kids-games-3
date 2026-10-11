@@ -185,7 +185,7 @@
 		<h2>{m.level({ n: levelNumber })} — {m.locked()}</h2>
 		<p class="cheer">{m.lockedDetail({ n: levelNumber - 1 })}</p>
 		<div class="actions">
-			<a class="btn" href={pathHref}>{m.allLevels()}</a>
+			<a class="btn back-link" href={pathHref}>{m.allLevels()}</a>
 		</div>
 	</div>
 {:else}
@@ -249,7 +249,7 @@
 						<a class="btn" href={nextHref}>{m.nextLevel()}</a>
 					{/if}
 					<button class="btn secondary" type="button" onclick={startLevel}>{m.replay()}</button>
-					<a class="btn" href={pathHref}>{m.allLevels()}</a>
+					<a class="btn back-link" href={pathHref}>{m.allLevels()}</a>
 				</div>
 			</div>
 		{/if}

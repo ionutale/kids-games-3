@@ -286,9 +286,19 @@ button,
 	box-shadow: none;
 }
 
-/* Spacing only — looks come from `.btn` (same coral CTA as Play / Next level). */
-.back-link {
+/* Lumi / All levels — honey CTA; Play & Next stay coral. */
+.btn.back-link {
+	background: var(--honey);
+	box-shadow: 0 4px 0 #c4841a;
 	margin-bottom: 1rem;
+}
+
+.btn.back-link:active {
+	box-shadow: 0 2px 0 #c4841a;
+}
+
+.actions .btn.back-link {
+	margin-bottom: 0;
 }
 
 .level-path {
