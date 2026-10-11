@@ -28,6 +28,9 @@
 	import InsideOutsideArt from '#lib/components/InsideOutsideArt.svelte';
 	import LandWaterAirArt from '#lib/components/LandWaterAirArt.svelte';
 	import WetDryArt from '#lib/components/WetDryArt.svelte';
+	import HotColdArt from '#lib/components/HotColdArt.svelte';
+	import BatchSceneArt from '#lib/components/BatchSceneArt.svelte';
+	import FirstSoundArt from '#lib/components/FirstSoundArt.svelte';
 	import PlantAnimalArt from '#lib/components/PlantAnimalArt.svelte';
 	import SinkFloatTank from '#lib/components/SinkFloatTank.svelte';
 	import DayJobsArt from '#lib/components/DayJobsArt.svelte';
@@ -38,7 +41,6 @@
 	import NearFarArt from '#lib/components/NearFarArt.svelte';
 	import OpenClosedArt from '#lib/components/OpenClosedArt.svelte';
 	import UpDownArt from '#lib/components/UpDownArt.svelte';
-	import FirstSoundArt from '#lib/components/FirstSoundArt.svelte';
 	import SentenceOrderArt from '#lib/components/SentenceOrderArt.svelte';
 	import favicon from '#lib/assets/favicon.svg';
 	import LumiSun from '#lib/components/LumiSun.svelte';
@@ -119,6 +121,31 @@
 	let clearedNearFar = $state(0);
 	let clearedOpen = $state(0);
 	let clearedUpDown = $state(0);
+	let clearedHotCold = $state(0);
+	let clearedLoudQuiet = $state(0);
+	let clearedFullEmpty = $state(0);
+	let clearedStopGo = $state(0);
+	let clearedLiving = $state(0);
+	let clearedHardSoft = $state(0);
+	let clearedRough = $state(0);
+	let clearedObjSize = $state(0);
+	let clearedNewOld = $state(0);
+	let clearedMornEve = $state(0);
+	let clearedClean = $state(0);
+	let clearedShare = $state(0);
+	let clearedAsk = $state(0);
+	let clearedMagnet = $state(0);
+	let clearedSolid = $state(0);
+	let clearedDna = $state(0);
+	let clearedDouble = $state(0);
+	let clearedEvenOdd = $state(0);
+	let clearedHowMore = $state(0);
+	let clearedLastSound = $state(0);
+	let clearedRealWord = $state(0);
+	let clearedWop = $state(0);
+	let clearedInOn = $state(0);
+	let clearedFront = $state(0);
+	let clearedPush = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -197,6 +224,31 @@
 	const nearFarHref = $derived(localizeHref('/play/near-far', { locale }));
 	const openHref = $derived(localizeHref('/play/open-closed', { locale }));
 	const upDownHref = $derived(localizeHref('/play/up-down', { locale }));
+	const hotColdHref = $derived(localizeHref('/play/hot-cold', { locale }));
+	const loudQuietHref = $derived(localizeHref('/play/loud-quiet', { locale }));
+	const fullEmptyHref = $derived(localizeHref('/play/full-empty', { locale }));
+	const stopGoHref = $derived(localizeHref('/play/stop-go', { locale }));
+	const livingHref = $derived(localizeHref('/play/living-nonliving', { locale }));
+	const hardSoftHref = $derived(localizeHref('/play/hard-soft', { locale }));
+	const roughHref = $derived(localizeHref('/play/rough-smooth', { locale }));
+	const objSizeHref = $derived(localizeHref('/play/object-size', { locale }));
+	const newOldHref = $derived(localizeHref('/play/new-old', { locale }));
+	const mornEveHref = $derived(localizeHref('/play/morning-evening', { locale }));
+	const cleanHref = $derived(localizeHref('/play/clean-dirty', { locale }));
+	const shareHref = $derived(localizeHref('/play/share-keep', { locale }));
+	const askHref = $derived(localizeHref('/play/ask-grab', { locale }));
+	const magnetHref = $derived(localizeHref('/play/magnet-or-not', { locale }));
+	const solidHref = $derived(localizeHref('/play/solid-liquid', { locale }));
+	const dnaHref = $derived(localizeHref('/play/day-night-animal', { locale }));
+	const doubleHref = $derived(localizeHref('/play/double-number', { locale }));
+	const evenOddHref = $derived(localizeHref('/play/even-odd', { locale }));
+	const howMoreHref = $derived(localizeHref('/play/how-many-more', { locale }));
+	const lastSoundHref = $derived(localizeHref('/play/last-sound', { locale }));
+	const realWordHref = $derived(localizeHref('/play/real-word', { locale }));
+	const wopHref = $derived(localizeHref('/play/word-or-picture', { locale }));
+	const inOnHref = $derived(localizeHref('/play/in-on-under', { locale }));
+	const frontHref = $derived(localizeHref('/play/front-behind', { locale }));
+	const pushHref = $derived(localizeHref('/play/push-pull', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -276,6 +328,31 @@
 		clearedNearFar = progress['near-far'].cleared;
 		clearedOpen = progress['open-closed'].cleared;
 		clearedUpDown = progress['up-down'].cleared;
+		clearedHotCold = progress['hot-cold'].cleared;
+		clearedLoudQuiet = progress['loud-quiet'].cleared;
+		clearedFullEmpty = progress['full-empty'].cleared;
+		clearedStopGo = progress['stop-go'].cleared;
+		clearedLiving = progress['living-nonliving'].cleared;
+		clearedHardSoft = progress['hard-soft'].cleared;
+		clearedRough = progress['rough-smooth'].cleared;
+		clearedObjSize = progress['object-size'].cleared;
+		clearedNewOld = progress['new-old'].cleared;
+		clearedMornEve = progress['morning-evening'].cleared;
+		clearedClean = progress['clean-dirty'].cleared;
+		clearedShare = progress['share-keep'].cleared;
+		clearedAsk = progress['ask-grab'].cleared;
+		clearedMagnet = progress['magnet-or-not'].cleared;
+		clearedSolid = progress['solid-liquid'].cleared;
+		clearedDna = progress['day-night-animal'].cleared;
+		clearedDouble = progress['double-number'].cleared;
+		clearedEvenOdd = progress['even-odd'].cleared;
+		clearedHowMore = progress['how-many-more'].cleared;
+		clearedLastSound = progress['last-sound'].cleared;
+		clearedRealWord = progress['real-word'].cleared;
+		clearedWop = progress['word-or-picture'].cleared;
+		clearedInOn = progress['in-on-under'].cleared;
+		clearedFront = progress['front-behind'].cleared;
+		clearedPush = progress['push-pull'].cleared;
 	});
 </script>
 
@@ -1212,4 +1289,131 @@
 	<div><h2>{m.updown_name()}</h2><p>{m.updown_desc()}</p>
 		<div class="row"><a class="btn" href={upDownHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedUpDown })}</span></div></div>
 </section>
+
+<section class="card game-card" aria-label={m.hotcold_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><HotColdArt scene="sun" /></span></div>
+	<div><h2>{m.hotcold_name()}</h2><p>{m.hotcold_desc()}</p>
+		<div class="row"><a class="btn" href={hotColdHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedHotCold })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.loudquiet_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="loud-quiet" scene="drum" /></span></div>
+	<div><h2>{m.loudquiet_name()}</h2><p>{m.loudquiet_desc()}</p>
+		<div class="row"><a class="btn" href={loudQuietHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedLoudQuiet })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.fullempty_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="full-empty" scene="bowl-full" /></span></div>
+	<div><h2>{m.fullempty_name()}</h2><p>{m.fullempty_desc()}</p>
+		<div class="row"><a class="btn" href={fullEmptyHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedFullEmpty })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.stopgo_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="stop-go" scene="red-light" /></span></div>
+	<div><h2>{m.stopgo_name()}</h2><p>{m.stopgo_desc()}</p>
+		<div class="row"><a class="btn" href={stopGoHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedStopGo })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.living_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="living-nonliving" scene="cat" /></span></div>
+	<div><h2>{m.living_name()}</h2><p>{m.living_desc()}</p>
+		<div class="row"><a class="btn" href={livingHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedLiving })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.hardsoft_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="hard-soft" scene="rock" /></span></div>
+	<div><h2>{m.hardsoft_name()}</h2><p>{m.hardsoft_desc()}</p>
+		<div class="row"><a class="btn" href={hardSoftHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedHardSoft })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.roughsmooth_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="rough-smooth" scene="bark" /></span></div>
+	<div><h2>{m.roughsmooth_name()}</h2><p>{m.roughsmooth_desc()}</p>
+		<div class="row"><a class="btn" href={roughHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedRough })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.objsize_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="object-size" scene="elephant" /></span></div>
+	<div><h2>{m.objsize_name()}</h2><p>{m.objsize_desc()}</p>
+		<div class="row"><a class="btn" href={objSizeHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedObjSize })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.newold_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="new-old" scene="shiny-shoe" /></span></div>
+	<div><h2>{m.newold_name()}</h2><p>{m.newold_desc()}</p>
+		<div class="row"><a class="btn" href={newOldHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedNewOld })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.morneve_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="morning-evening" scene="sunrise" /></span></div>
+	<div><h2>{m.morneve_name()}</h2><p>{m.morneve_desc()}</p>
+		<div class="row"><a class="btn" href={mornEveHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedMornEve })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.cleandirty_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="clean-dirty" scene="clean-plate" /></span></div>
+	<div><h2>{m.cleandirty_name()}</h2><p>{m.cleandirty_desc()}</p>
+		<div class="row"><a class="btn" href={cleanHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedClean })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.sharekeep_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="share-keep" scene="two-kids-toy" /></span></div>
+	<div><h2>{m.sharekeep_name()}</h2><p>{m.sharekeep_desc()}</p>
+		<div class="row"><a class="btn" href={shareHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedShare })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.askgrab_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="ask-grab" scene="raise-hand" /></span></div>
+	<div><h2>{m.askgrab_name()}</h2><p>{m.askgrab_desc()}</p>
+		<div class="row"><a class="btn" href={askHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedAsk })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.magnet_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="magnet-or-not" scene="paperclip" /></span></div>
+	<div><h2>{m.magnet_name()}</h2><p>{m.magnet_desc()}</p>
+		<div class="row"><a class="btn" href={magnetHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedMagnet })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.solidliq_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="solid-liquid" scene="block" /></span></div>
+	<div><h2>{m.solidliq_name()}</h2><p>{m.solidliq_desc()}</p>
+		<div class="row"><a class="btn" href={solidHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedSolid })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.dna_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="day-night-animal" scene="rooster" /></span></div>
+	<div><h2>{m.dna_name()}</h2><p>{m.dna_desc()}</p>
+		<div class="row"><a class="btn" href={dnaHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedDna })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.doublenum_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb num" aria-hidden="true">×2</span></div>
+	<div><h2>{m.doublenum_name()}</h2><p>{m.doublenum_desc()}</p>
+		<div class="row"><a class="btn" href={doubleHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedDouble })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.evenodd_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb num" aria-hidden="true">2</span></div>
+	<div><h2>{m.evenodd_name()}</h2><p>{m.evenodd_desc()}</p>
+		<div class="row"><a class="btn" href={evenOddHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedEvenOdd })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.howmore_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb num" aria-hidden="true">+?</span></div>
+	<div><h2>{m.howmore_name()}</h2><p>{m.howmore_desc()}</p>
+		<div class="row"><a class="btn" href={howMoreHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedHowMore })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.lastsound_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><FirstSoundArt word="cat" /></span></div>
+	<div><h2>{m.lastsound_name()}</h2><p>{m.lastsound_desc()}</p>
+		<div class="row"><a class="btn" href={lastSoundHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedLastSound })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.realword_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb num" aria-hidden="true">Aa</span></div>
+	<div><h2>{m.realword_name()}</h2><p>{m.realword_desc()}</p>
+		<div class="row"><a class="btn" href={realWordHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedRealWord })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.wop_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><KindArt face="cat" /></span></div>
+	<div><h2>{m.wop_name()}</h2><p>{m.wop_desc()}</p>
+		<div class="row"><a class="btn" href={wopHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedWop })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.inonunder_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="in-on-under" scene="ball-in" /></span></div>
+	<div><h2>{m.inonunder_name()}</h2><p>{m.inonunder_desc()}</p>
+		<div class="row"><a class="btn" href={inOnHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedInOn })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.frontbehind_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="front-behind" scene="ball-front" /></span></div>
+	<div><h2>{m.frontbehind_name()}</h2><p>{m.frontbehind_desc()}</p>
+		<div class="row"><a class="btn" href={frontHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedFront })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.pushpull_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="batch25-thumb" aria-hidden="true"><BatchSceneArt game="push-pull" scene="push-door" /></span></div>
+	<div><h2>{m.pushpull_name()}</h2><p>{m.pushpull_desc()}</p>
+		<div class="row"><a class="btn" href={pushHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedPush })}</span></div></div>
+</section>
+
 

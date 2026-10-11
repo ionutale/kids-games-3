@@ -86,7 +86,32 @@ export type GameId =
 	| 'sentence-order'
 	| 'near-far'
 	| 'open-closed'
-	| 'up-down';
+	| 'up-down'
+	| 'hot-cold'
+	| 'loud-quiet'
+	| 'full-empty'
+	| 'stop-go'
+	| 'living-nonliving'
+	| 'hard-soft'
+	| 'rough-smooth'
+	| 'object-size'
+	| 'new-old'
+	| 'morning-evening'
+	| 'clean-dirty'
+	| 'share-keep'
+	| 'ask-grab'
+	| 'magnet-or-not'
+	| 'solid-liquid'
+	| 'day-night-animal'
+	| 'double-number'
+	| 'even-odd'
+	| 'how-many-more'
+	| 'last-sound'
+	| 'real-word'
+	| 'word-or-picture'
+	| 'in-on-under'
+	| 'front-behind'
+	| 'push-pull';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -165,6 +190,31 @@ export interface Progress {
 	'near-far': GameProgress;
 	'open-closed': GameProgress;
 	'up-down': GameProgress;
+	'hot-cold': GameProgress;
+	'loud-quiet': GameProgress;
+	'full-empty': GameProgress;
+	'stop-go': GameProgress;
+	'living-nonliving': GameProgress;
+	'hard-soft': GameProgress;
+	'rough-smooth': GameProgress;
+	'object-size': GameProgress;
+	'new-old': GameProgress;
+	'morning-evening': GameProgress;
+	'clean-dirty': GameProgress;
+	'share-keep': GameProgress;
+	'ask-grab': GameProgress;
+	'magnet-or-not': GameProgress;
+	'solid-liquid': GameProgress;
+	'day-night-animal': GameProgress;
+	'double-number': GameProgress;
+	'even-odd': GameProgress;
+	'how-many-more': GameProgress;
+	'last-sound': GameProgress;
+	'real-word': GameProgress;
+	'word-or-picture': GameProgress;
+	'in-on-under': GameProgress;
+	'front-behind': GameProgress;
+	'push-pull': GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -249,7 +299,32 @@ export function defaultProgress(): Progress {
 		'sentence-order': { cleared: 0 },
 		'near-far': { cleared: 0 },
 		'open-closed': { cleared: 0 },
-		'up-down': { cleared: 0 }
+		'up-down': { cleared: 0 },
+		'hot-cold': { cleared: 0 },
+		'loud-quiet': { cleared: 0 },
+		'full-empty': { cleared: 0 },
+		'stop-go': { cleared: 0 },
+		'living-nonliving': { cleared: 0 },
+		'hard-soft': { cleared: 0 },
+		'rough-smooth': { cleared: 0 },
+		'object-size': { cleared: 0 },
+		'new-old': { cleared: 0 },
+		'morning-evening': { cleared: 0 },
+		'clean-dirty': { cleared: 0 },
+		'share-keep': { cleared: 0 },
+		'ask-grab': { cleared: 0 },
+		'magnet-or-not': { cleared: 0 },
+		'solid-liquid': { cleared: 0 },
+		'day-night-animal': { cleared: 0 },
+		'double-number': { cleared: 0 },
+		'even-odd': { cleared: 0 },
+		'how-many-more': { cleared: 0 },
+		'last-sound': { cleared: 0 },
+		'real-word': { cleared: 0 },
+		'word-or-picture': { cleared: 0 },
+		'in-on-under': { cleared: 0 },
+		'front-behind': { cleared: 0 },
+		'push-pull': { cleared: 0 }
 	};
 }
 
@@ -347,7 +422,32 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			'sentence-order': sanitizeGame(games['sentence-order']),
 			'near-far': sanitizeGame(games['near-far']),
 			'open-closed': sanitizeGame(games['open-closed']),
-			'up-down': sanitizeGame(games['up-down'])
+			'up-down': sanitizeGame(games['up-down']),
+			'hot-cold': sanitizeGame(games['hot-cold']),
+			'loud-quiet': sanitizeGame(games['loud-quiet']),
+			'full-empty': sanitizeGame(games['full-empty']),
+			'stop-go': sanitizeGame(games['stop-go']),
+			'living-nonliving': sanitizeGame(games['living-nonliving']),
+			'hard-soft': sanitizeGame(games['hard-soft']),
+			'rough-smooth': sanitizeGame(games['rough-smooth']),
+			'object-size': sanitizeGame(games['object-size']),
+			'new-old': sanitizeGame(games['new-old']),
+			'morning-evening': sanitizeGame(games['morning-evening']),
+			'clean-dirty': sanitizeGame(games['clean-dirty']),
+			'share-keep': sanitizeGame(games['share-keep']),
+			'ask-grab': sanitizeGame(games['ask-grab']),
+			'magnet-or-not': sanitizeGame(games['magnet-or-not']),
+			'solid-liquid': sanitizeGame(games['solid-liquid']),
+			'day-night-animal': sanitizeGame(games['day-night-animal']),
+			'double-number': sanitizeGame(games['double-number']),
+			'even-odd': sanitizeGame(games['even-odd']),
+			'how-many-more': sanitizeGame(games['how-many-more']),
+			'last-sound': sanitizeGame(games['last-sound']),
+			'real-word': sanitizeGame(games['real-word']),
+			'word-or-picture': sanitizeGame(games['word-or-picture']),
+			'in-on-under': sanitizeGame(games['in-on-under']),
+			'front-behind': sanitizeGame(games['front-behind']),
+			'push-pull': sanitizeGame(games['push-pull'])
 		};
 	} catch {
 		return defaultProgress();
