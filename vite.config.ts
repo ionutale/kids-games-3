@@ -1,7 +1,7 @@
 import { paraglideVitePlugin } from '@inlang/paraglide-js';
 import { defineConfig } from 'vitest/config';
-import adapter from '@sveltejs/adapter-static';
 import { sveltekit } from '@sveltejs/kit/vite';
+import adapter from './scripts/adapter-static-vercel-safe.js';
 
 export default defineConfig({
 	plugins: [
@@ -11,6 +11,8 @@ export default defineConfig({
 				runes: ({ filename }) =>
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
+			// Same as adapter-static, but collapses Vercel's per-page trailing-slash
+			// route pairs so we stay under the 2048 route cap.
 			adapter: adapter()
 		}),
 
