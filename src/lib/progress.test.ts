@@ -81,7 +81,23 @@ describe('progress', () => {
 			'day-night': { cleared: 0 },
 			'inside-outside': { cleared: 0 },
 			'land-water-air': { cleared: 0 },
-			'wet-dry': { cleared: 0 }
+			'wet-dry': { cleared: 0 },
+			'plant-animal': { cleared: 0 },
+			'sink-float': { cleared: 0 },
+			'day-jobs': { cleared: 0 },
+			'recycle-sort': { cleared: 0 },
+			'hungry-thirsty': { cleared: 0 },
+			'safe-choice': { cleared: 0 },
+			'five-senses': { cleared: 0 },
+			'same-number': { cleared: 0 },
+			'num-before-after': { cleared: 0 },
+			'make-ten': { cleared: 0 },
+			'first-sound': { cleared: 0 },
+			'word-length': { cleared: 0 },
+			'sentence-order': { cleared: 0 },
+			'near-far': { cleared: 0 },
+			'open-closed': { cleared: 0 },
+			'up-down': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -205,7 +221,23 @@ describe('progress', () => {
 			'day-night': { cleared: 0 },
 			'inside-outside': { cleared: 0 },
 			'land-water-air': { cleared: 0 },
-			'wet-dry': { cleared: 0 }
+			'wet-dry': { cleared: 0 },
+			'plant-animal': { cleared: 0 },
+			'sink-float': { cleared: 0 },
+			'day-jobs': { cleared: 0 },
+			'recycle-sort': { cleared: 0 },
+			'hungry-thirsty': { cleared: 0 },
+			'safe-choice': { cleared: 0 },
+			'five-senses': { cleared: 0 },
+			'same-number': { cleared: 0 },
+			'num-before-after': { cleared: 0 },
+			'make-ten': { cleared: 0 },
+			'first-sound': { cleared: 0 },
+			'word-length': { cleared: 0 },
+			'sentence-order': { cleared: 0 },
+			'near-far': { cleared: 0 },
+			'open-closed': { cleared: 0 },
+			'up-down': { cleared: 0 }
 		});
 	});
 
@@ -278,7 +310,23 @@ describe('progress', () => {
 			'day-night': { cleared: 0 },
 			'inside-outside': { cleared: 0 },
 			'land-water-air': { cleared: 0 },
-			'wet-dry': { cleared: 0 }
+			'wet-dry': { cleared: 0 },
+			'plant-animal': { cleared: 0 },
+			'sink-float': { cleared: 0 },
+			'day-jobs': { cleared: 0 },
+			'recycle-sort': { cleared: 0 },
+			'hungry-thirsty': { cleared: 0 },
+			'safe-choice': { cleared: 0 },
+			'five-senses': { cleared: 0 },
+			'same-number': { cleared: 0 },
+			'num-before-after': { cleared: 0 },
+			'make-ten': { cleared: 0 },
+			'first-sound': { cleared: 0 },
+			'word-length': { cleared: 0 },
+			'sentence-order': { cleared: 0 },
+			'near-far': { cleared: 0 },
+			'open-closed': { cleared: 0 },
+			'up-down': { cleared: 0 }
 		});
 	});
 });

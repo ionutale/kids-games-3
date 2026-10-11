@@ -28,6 +28,18 @@
 	import InsideOutsideArt from '#lib/components/InsideOutsideArt.svelte';
 	import LandWaterAirArt from '#lib/components/LandWaterAirArt.svelte';
 	import WetDryArt from '#lib/components/WetDryArt.svelte';
+	import PlantAnimalArt from '#lib/components/PlantAnimalArt.svelte';
+	import SinkFloatTank from '#lib/components/SinkFloatTank.svelte';
+	import DayJobsArt from '#lib/components/DayJobsArt.svelte';
+	import RecycleArt from '#lib/components/RecycleArt.svelte';
+	import HungryThirstyArt from '#lib/components/HungryThirstyArt.svelte';
+	import SafeChoiceArt from '#lib/components/SafeChoiceArt.svelte';
+	import FiveSensesArt from '#lib/components/FiveSensesArt.svelte';
+	import NearFarArt from '#lib/components/NearFarArt.svelte';
+	import OpenClosedArt from '#lib/components/OpenClosedArt.svelte';
+	import UpDownArt from '#lib/components/UpDownArt.svelte';
+	import FirstSoundArt from '#lib/components/FirstSoundArt.svelte';
+	import SentenceOrderArt from '#lib/components/SentenceOrderArt.svelte';
 	import favicon from '#lib/assets/favicon.svg';
 	import LumiSun from '#lib/components/LumiSun.svelte';
 
@@ -91,6 +103,22 @@
 	let clearedInOut = $state(0);
 	let clearedHabitat = $state(0);
 	let clearedWetDry = $state(0);
+	let clearedPlant = $state(0);
+	let clearedSink = $state(0);
+	let clearedJobs = $state(0);
+	let clearedRecycle = $state(0);
+	let clearedHunger = $state(0);
+	let clearedSafe = $state(0);
+	let clearedSenses = $state(0);
+	let clearedSameNum = $state(0);
+	let clearedNumBa = $state(0);
+	let clearedMakeTen = $state(0);
+	let clearedFirstSound = $state(0);
+	let clearedWordLen = $state(0);
+	let clearedSentOrd = $state(0);
+	let clearedNearFar = $state(0);
+	let clearedOpen = $state(0);
+	let clearedUpDown = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -153,6 +181,22 @@
 	const inOutHref = $derived(localizeHref('/play/inside-outside', { locale }));
 	const habitatHref = $derived(localizeHref('/play/land-water-air', { locale }));
 	const wetDryHref = $derived(localizeHref('/play/wet-dry', { locale }));
+	const plantHref = $derived(localizeHref('/play/plant-animal', { locale }));
+	const sinkHref = $derived(localizeHref('/play/sink-float', { locale }));
+	const jobsHref = $derived(localizeHref('/play/day-jobs', { locale }));
+	const recycleHref = $derived(localizeHref('/play/recycle-sort', { locale }));
+	const hungerHref = $derived(localizeHref('/play/hungry-thirsty', { locale }));
+	const safeHref = $derived(localizeHref('/play/safe-choice', { locale }));
+	const sensesHref = $derived(localizeHref('/play/five-senses', { locale }));
+	const sameNumHref = $derived(localizeHref('/play/same-number', { locale }));
+	const numBaHref = $derived(localizeHref('/play/num-before-after', { locale }));
+	const makeTenHref = $derived(localizeHref('/play/make-ten', { locale }));
+	const firstSoundHref = $derived(localizeHref('/play/first-sound', { locale }));
+	const wordLenHref = $derived(localizeHref('/play/word-length', { locale }));
+	const sentOrdHref = $derived(localizeHref('/play/sentence-order', { locale }));
+	const nearFarHref = $derived(localizeHref('/play/near-far', { locale }));
+	const openHref = $derived(localizeHref('/play/open-closed', { locale }));
+	const upDownHref = $derived(localizeHref('/play/up-down', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -216,6 +260,22 @@
 		clearedInOut = progress['inside-outside'].cleared;
 		clearedHabitat = progress['land-water-air'].cleared;
 		clearedWetDry = progress['wet-dry'].cleared;
+		clearedPlant = progress['plant-animal'].cleared;
+		clearedSink = progress['sink-float'].cleared;
+		clearedJobs = progress['day-jobs'].cleared;
+		clearedRecycle = progress['recycle-sort'].cleared;
+		clearedHunger = progress['hungry-thirsty'].cleared;
+		clearedSafe = progress['safe-choice'].cleared;
+		clearedSenses = progress['five-senses'].cleared;
+		clearedSameNum = progress['same-number'].cleared;
+		clearedNumBa = progress['num-before-after'].cleared;
+		clearedMakeTen = progress['make-ten'].cleared;
+		clearedFirstSound = progress['first-sound'].cleared;
+		clearedWordLen = progress['word-length'].cleared;
+		clearedSentOrd = progress['sentence-order'].cleared;
+		clearedNearFar = progress['near-far'].cleared;
+		clearedOpen = progress['open-closed'].cleared;
+		clearedUpDown = progress['up-down'].cleared;
 	});
 </script>
 
@@ -1071,3 +1131,85 @@
 		</div>
 	</div>
 </section>
+
+<section class="card game-card" aria-label={m.plantani_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="plantani-thumb" aria-hidden="true"><PlantAnimalArt subject="flower" /></span></div>
+	<div><h2>{m.plantani_name()}</h2><p>{m.plantani_desc()}</p>
+		<div class="row"><a class="btn" href={plantHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedPlant })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.sinkfloat_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="sinkfloat-thumb" aria-hidden="true"><SinkFloatTank object="leaf" /></span></div>
+	<div><h2>{m.sinkfloat_name()}</h2><p>{m.sinkfloat_desc()}</p>
+		<div class="row"><a class="btn" href={sinkHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedSink })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.dayjobs_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="dayjobs-thumb" aria-hidden="true"><DayJobsArt scene="bandage" /></span></div>
+	<div><h2>{m.dayjobs_name()}</h2><p>{m.dayjobs_desc()}</p>
+		<div class="row"><a class="btn" href={jobsHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedJobs })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.recycle_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="recycle-thumb" aria-hidden="true"><RecycleArt item="newspaper" /></span></div>
+	<div><h2>{m.recycle_name()}</h2><p>{m.recycle_desc()}</p>
+		<div class="row"><a class="btn" href={recycleHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedRecycle })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.hunger_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="hunger-thumb" aria-hidden="true"><HungryThirstyArt cue="apple" /></span></div>
+	<div><h2>{m.hunger_name()}</h2><p>{m.hunger_desc()}</p>
+		<div class="row"><a class="btn" href={hungerHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedHunger })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.safe_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="safe-thumb" aria-hidden="true"><SafeChoiceArt scene="crosswalk" /></span></div>
+	<div><h2>{m.safe_name()}</h2><p>{m.safe_desc()}</p>
+		<div class="row"><a class="btn" href={safeHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedSafe })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.senses_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="senses-thumb" aria-hidden="true"><FiveSensesArt cue="rainbow" /></span></div>
+	<div><h2>{m.senses_name()}</h2><p>{m.senses_desc()}</p>
+		<div class="row"><a class="btn" href={sensesHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedSenses })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.samenum_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="samenum-thumb" aria-hidden="true"><FruitArt fruit="apple" /></span></div>
+	<div><h2>{m.samenum_name()}</h2><p>{m.samenum_desc()}</p>
+		<div class="row"><a class="btn" href={sameNumHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedSameNum })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.numba_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="numba-thumb" aria-hidden="true">5</span></div>
+	<div><h2>{m.numba_name()}</h2><p>{m.numba_desc()}</p>
+		<div class="row"><a class="btn" href={numBaHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedNumBa })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.maketen_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="maketen-thumb" aria-hidden="true">10</span></div>
+	<div><h2>{m.maketen_name()}</h2><p>{m.maketen_desc()}</p>
+		<div class="row"><a class="btn" href={makeTenHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedMakeTen })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.firstsound_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="firstsound-thumb" aria-hidden="true"><FirstSoundArt word="sun" /></span></div>
+	<div><h2>{m.firstsound_name()}</h2><p>{m.firstsound_desc()}</p>
+		<div class="row"><a class="btn" href={firstSoundHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedFirstSound })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.wordlen_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="wordlen-thumb" aria-hidden="true">cat</span></div>
+	<div><h2>{m.wordlen_name()}</h2><p>{m.wordlen_desc()}</p>
+		<div class="row"><a class="btn" href={wordLenHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedWordLen })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.sentord_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="sentord-thumb" aria-hidden="true"><SentenceOrderArt story="wash" step={0} /></span></div>
+	<div><h2>{m.sentord_name()}</h2><p>{m.sentord_desc()}</p>
+		<div class="row"><a class="btn" href={sentOrdHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedSentOrd })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.nearfar_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="nearfar-thumb" aria-hidden="true"><NearFarArt scene="ball-near" /></span></div>
+	<div><h2>{m.nearfar_name()}</h2><p>{m.nearfar_desc()}</p>
+		<div class="row"><a class="btn" href={nearFarHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedNearFar })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.openclosed_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="openclosed-thumb" aria-hidden="true"><OpenClosedArt subject="door-open" /></span></div>
+	<div><h2>{m.openclosed_name()}</h2><p>{m.openclosed_desc()}</p>
+		<div class="row"><a class="btn" href={openHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedOpen })}</span></div></div>
+</section>
+<section class="card game-card" aria-label={m.updown_name()} style="margin-top: 1.25rem;">
+	<div class="thumb"><span class="updown-thumb" aria-hidden="true"><UpDownArt scene="balloon" /></span></div>
+	<div><h2>{m.updown_name()}</h2><p>{m.updown_desc()}</p>
+		<div class="row"><a class="btn" href={upDownHref}>{m.play()}</a><span class="progress-note">{m.progress({ done: clearedUpDown })}</span></div></div>
+</section>
+

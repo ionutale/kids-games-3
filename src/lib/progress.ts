@@ -70,7 +70,23 @@ export type GameId =
 	| 'day-night'
 	| 'inside-outside'
 	| 'land-water-air'
-	| 'wet-dry';
+	| 'wet-dry'
+	| 'plant-animal'
+	| 'sink-float'
+	| 'day-jobs'
+	| 'recycle-sort'
+	| 'hungry-thirsty'
+	| 'safe-choice'
+	| 'five-senses'
+	| 'same-number'
+	| 'num-before-after'
+	| 'make-ten'
+	| 'first-sound'
+	| 'word-length'
+	| 'sentence-order'
+	| 'near-far'
+	| 'open-closed'
+	| 'up-down';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -133,6 +149,22 @@ export interface Progress {
 	'inside-outside': GameProgress;
 	'land-water-air': GameProgress;
 	'wet-dry': GameProgress;
+	'plant-animal': GameProgress;
+	'sink-float': GameProgress;
+	'day-jobs': GameProgress;
+	'recycle-sort': GameProgress;
+	'hungry-thirsty': GameProgress;
+	'safe-choice': GameProgress;
+	'five-senses': GameProgress;
+	'same-number': GameProgress;
+	'num-before-after': GameProgress;
+	'make-ten': GameProgress;
+	'first-sound': GameProgress;
+	'word-length': GameProgress;
+	'sentence-order': GameProgress;
+	'near-far': GameProgress;
+	'open-closed': GameProgress;
+	'up-down': GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -201,7 +233,23 @@ export function defaultProgress(): Progress {
 		'day-night': { cleared: 0 },
 		'inside-outside': { cleared: 0 },
 		'land-water-air': { cleared: 0 },
-		'wet-dry': { cleared: 0 }
+		'wet-dry': { cleared: 0 },
+		'plant-animal': { cleared: 0 },
+		'sink-float': { cleared: 0 },
+		'day-jobs': { cleared: 0 },
+		'recycle-sort': { cleared: 0 },
+		'hungry-thirsty': { cleared: 0 },
+		'safe-choice': { cleared: 0 },
+		'five-senses': { cleared: 0 },
+		'same-number': { cleared: 0 },
+		'num-before-after': { cleared: 0 },
+		'make-ten': { cleared: 0 },
+		'first-sound': { cleared: 0 },
+		'word-length': { cleared: 0 },
+		'sentence-order': { cleared: 0 },
+		'near-far': { cleared: 0 },
+		'open-closed': { cleared: 0 },
+		'up-down': { cleared: 0 }
 	};
 }
 
@@ -283,7 +331,23 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			'day-night': sanitizeGame(games['day-night']),
 			'inside-outside': sanitizeGame(games['inside-outside']),
 			'land-water-air': sanitizeGame(games['land-water-air']),
-			'wet-dry': sanitizeGame(games['wet-dry'])
+			'wet-dry': sanitizeGame(games['wet-dry']),
+			'plant-animal': sanitizeGame(games['plant-animal']),
+			'sink-float': sanitizeGame(games['sink-float']),
+			'day-jobs': sanitizeGame(games['day-jobs']),
+			'recycle-sort': sanitizeGame(games['recycle-sort']),
+			'hungry-thirsty': sanitizeGame(games['hungry-thirsty']),
+			'safe-choice': sanitizeGame(games['safe-choice']),
+			'five-senses': sanitizeGame(games['five-senses']),
+			'same-number': sanitizeGame(games['same-number']),
+			'num-before-after': sanitizeGame(games['num-before-after']),
+			'make-ten': sanitizeGame(games['make-ten']),
+			'first-sound': sanitizeGame(games['first-sound']),
+			'word-length': sanitizeGame(games['word-length']),
+			'sentence-order': sanitizeGame(games['sentence-order']),
+			'near-far': sanitizeGame(games['near-far']),
+			'open-closed': sanitizeGame(games['open-closed']),
+			'up-down': sanitizeGame(games['up-down'])
 		};
 	} catch {
 		return defaultProgress();

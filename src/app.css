@@ -3844,3 +3844,51 @@ a.level-tile:hover {
 		transform: none;
 	}
 }
+
+/* Batch-16 game thumbs */
+.plantani-thumb, .sinkfloat-thumb, .dayjobs-thumb, .recycle-thumb,
+.hunger-thumb, .safe-thumb, .senses-thumb, .samenum-thumb, .numba-thumb,
+.maketen-thumb, .firstsound-thumb, .wordlen-thumb, .sentord-thumb,
+.nearfar-thumb, .openclosed-thumb, .updown-thumb, .num-thumb {
+	display: grid; place-items: center; width: 3.6rem; height: 3.6rem;
+	border-radius: 0.85rem; overflow: hidden; border: 3px solid #a09078;
+	background: linear-gradient(160deg, #f5efe4, #d8e8f0);
+	font-weight: 800; font-size: 1.1rem; color: var(--ink);
+}
+.sinkfloat-thumb { width: 4.6rem; height: 5rem; }
+.game-card .sinkfloat-thumb { width: 4.6rem; height: 5rem; }
+.game-card .sinkfloat-thumb :global(.sf-tank) { width: 4rem; height: 4.4rem; transform: scale(0.85); }
+.plantani-thumb.big, .dayjobs-thumb.big, .hunger-thumb.big, .safe-thumb.big,
+.senses-thumb.big, .firstsound-thumb.big, .nearfar-thumb.big,
+.openclosed-thumb.big, .updown-thumb.big { width: 6.5rem; height: 6.5rem; }
+.plantani-stage, .sinkfloat-stage, .dayjobs-stage, .recycle-stage,
+.hunger-stage, .safe-stage, .senses-stage, .samenum-stage, .numba-stage,
+.maketen-stage, .firstsound-stage, .wordlen-stage, .sentord-stage,
+.nearfar-stage, .openclosed-stage, .updown-stage {
+	display: flex; justify-content: center; align-items: center; gap: 0.75rem;
+	margin: 0.75rem 0 0.5rem; flex-wrap: wrap;
+}
+.samenum-stage .compare-pile { display: flex; flex-wrap: wrap; gap: 0.2rem; max-width: 6rem; justify-content: center; }
+.maketen-shown, .numba-anchor {
+	display: grid; place-items: center; min-width: 3.5rem; min-height: 3.5rem;
+	border-radius: 1rem; background: #fff8e8; border: 3px solid #e0c060;
+	font-size: 2rem; font-weight: 800;
+}
+.maketen-plus, .maketen-eq, .maketen-q { font-size: 1.6rem; font-weight: 800; }
+.wordlen-stage { gap: 1rem; }
+.wordlen-card {
+	padding: 0.6rem 1rem; border-radius: 0.85rem; background: #fff8e8;
+	border: 3px solid #d4b896; font-size: 1.3rem; font-weight: 800;
+}
+.sentord-stage { gap: 0.5rem; }
+.sentord-card {
+	padding: 0.25rem; border: 3px solid #d4b896; border-radius: 0.85rem;
+	background: #fff; cursor: pointer;
+}
+.sentord-card :global(svg) { width: 4.5rem; height: auto; display: block; }
+.level-tile .plantani-thumb, .level-tile .dayjobs-thumb, .level-tile .firstsound-thumb,
+.level-tile .nearfar-thumb, .level-tile .openclosed-thumb, .level-tile .updown-thumb,
+.level-tile .sentord-thumb, .level-tile .wordlen-thumb, .level-tile .num-thumb,
+.level-tile .numba-thumb, .level-tile .maketen-thumb, .level-tile .samenum-thumb,
+.level-tile .hunger-thumb, .level-tile .safe-thumb, .level-tile .senses-thumb,
+.level-tile .recycle-thumb { width: 2.8rem; height: 2.8rem; border-width: 2px; font-size: 0.85rem; }
