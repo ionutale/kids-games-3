@@ -8,6 +8,7 @@
  */
 import adapter from '@sveltejs/adapter-static';
 import fs from 'node:fs';
+import process from 'node:process';
 
 /**
  * @param {string} src
@@ -90,7 +91,9 @@ export default function (options) {
 		/** @param {import('@sveltejs/kit').Builder} builder */
 		async adapt(builder) {
 			await base.adapt(builder);
-			compactVercelRoutes(builder.log);
+			// Only touch Vercel's Build Output API config when deploying there.
+			// Local builds leave a leftover `.vercel/` alone if one exists.
+			if (process.env.VERCEL) compactVercelRoutes(builder.log);
 		}
 	};
 }
