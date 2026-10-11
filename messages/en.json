@@ -500,5 +500,11 @@
 	"homes_kennel": "doghouse",
 	"homes_cave": "cave",
 	"homes_hive": "hive",
-	"homes_cushion": "cushion"
+	"homes_cushion": "cushion",
+	"daynight_name": "Day or night",
+	"daynight_desc": "See the sky. Tap day or night.",
+	"daynight_prompt": "Is it day or night?",
+	"daynight_hint": "Look for the sun (day) or the moon and stars (night).",
+	"daynight_day": "Day",
+	"daynight_night": "Night"
 }

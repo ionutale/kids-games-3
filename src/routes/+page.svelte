@@ -24,6 +24,7 @@
 	import ClothesArt from '#lib/components/ClothesArt.svelte';
 	import WeightArt from '#lib/components/WeightArt.svelte';
 	import HomeAnimalArt from '#lib/components/HomeAnimalArt.svelte';
+	import DayNightArt from '#lib/components/DayNightArt.svelte';
 	import favicon from '#lib/assets/favicon.svg';
 	import LumiSun from '#lib/components/LumiSun.svelte';
 
@@ -83,6 +84,7 @@
 	let clearedDress = $state(0);
 	let clearedHeavy = $state(0);
 	let clearedHomes = $state(0);
+	let clearedDayNight = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -141,6 +143,7 @@
 	const dressHref = $derived(localizeHref('/play/dress-weather', { locale }));
 	const heavyHref = $derived(localizeHref('/play/heavy-light', { locale }));
 	const homesHref = $derived(localizeHref('/play/animal-homes', { locale }));
+	const dayNightHref = $derived(localizeHref('/play/day-night', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -200,6 +203,7 @@
 		clearedDress = progress['dress-weather'].cleared;
 		clearedHeavy = progress['heavy-light'].cleared;
 		clearedHomes = progress['animal-homes'].cleared;
+		clearedDayNight = progress['day-night'].cleared;
 	});
 </script>
 
@@ -996,6 +1000,20 @@
 		<div class="row">
 			<a class="btn" href={homesHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedHomes })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.daynight_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="daynight-thumb" aria-hidden="true"><DayNightArt scene="sunny" /></span>
+	</div>
+	<div>
+		<h2>{m.daynight_name()}</h2>
+		<p>{m.daynight_desc()}</p>
+		<div class="row">
+			<a class="btn" href={dayNightHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedDayNight })}</span>
 		</div>
 	</div>
 </section>

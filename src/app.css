@@ -2679,6 +2679,61 @@ a.level-tile:hover {
 	text-align: center;
 }
 
+.daynight-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 0.85rem;
+	background: linear-gradient(160deg, #8ec8f0 0%, #1a2744 100%);
+	border: 3px solid #4a6a9a;
+	overflow: hidden;
+}
+
+.daynight-thumb .day-night-art,
+.daynight-thumb svg {
+	width: 2.6rem;
+	height: auto;
+}
+
+.daynight-thumb.big {
+	width: 6.5rem;
+	height: 6.5rem;
+	border-radius: 1.2rem;
+}
+
+.daynight-thumb.big .day-night-art,
+.daynight-thumb.big svg {
+	width: 5.5rem;
+}
+
+.game-card .daynight-thumb {
+	width: 4.6rem;
+	height: 4.6rem;
+}
+
+.game-card .daynight-thumb .day-night-art,
+.game-card .daynight-thumb svg {
+	width: 3.4rem;
+}
+
+.level-tile .daynight-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+	border-width: 2px;
+}
+
+.level-tile .daynight-thumb .day-night-art,
+.level-tile .daynight-thumb svg {
+	width: 2rem;
+}
+
+.daynight-stage {
+	display: flex;
+	justify-content: center;
+	margin: 0.75rem 0 0.5rem;
+}
+
 .oless-thumb.big,
 .omore-thumb.big,
 .skip-thumb.big {

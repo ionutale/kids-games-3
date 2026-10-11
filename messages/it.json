@@ -500,5 +500,11 @@
 	"homes_kennel": "la cuccia",
 	"homes_cave": "la grotta",
 	"homes_hive": "l'alveare",
-	"homes_cushion": "il cuscino"
+	"homes_cushion": "il cuscino",
+	"daynight_name": "Giorno o notte",
+	"daynight_desc": "Guarda il cielo. Tocca giorno o notte.",
+	"daynight_prompt": "È giorno o notte?",
+	"daynight_hint": "Cerca il sole (giorno) oppure la luna e le stelle (notte).",
+	"daynight_day": "Giorno",
+	"daynight_night": "Notte"
 }

@@ -500,5 +500,11 @@
 	"homes_kennel": "cușcă",
 	"homes_cave": "peșteră",
 	"homes_hive": "stup",
-	"homes_cushion": "pernă"
+	"homes_cushion": "pernă",
+	"daynight_name": "Zi sau noapte",
+	"daynight_desc": "Vezi cerul. Atinge zi sau noapte.",
+	"daynight_prompt": "Este zi sau noapte?",
+	"daynight_hint": "Caută soarele (zi) sau luna și stelele (noapte).",
+	"daynight_day": "Zi",
+	"daynight_night": "Noapte"
 }

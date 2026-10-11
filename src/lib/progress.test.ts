@@ -77,7 +77,8 @@ describe('progress', () => {
 			'money-coins': { cleared: 0 },
 			'dress-weather': { cleared: 0 },
 			'heavy-light': { cleared: 0 },
-			'animal-homes': { cleared: 0 }
+			'animal-homes': { cleared: 0 },
+			'day-night': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -197,7 +198,8 @@ describe('progress', () => {
 			'money-coins': { cleared: 0 },
 			'dress-weather': { cleared: 0 },
 			'heavy-light': { cleared: 0 },
-			'animal-homes': { cleared: 0 }
+			'animal-homes': { cleared: 0 },
+			'day-night': { cleared: 0 }
 		});
 	});
 
@@ -266,7 +268,8 @@ describe('progress', () => {
 			'money-coins': { cleared: 0 },
 			'dress-weather': { cleared: 0 },
 			'heavy-light': { cleared: 0 },
-			'animal-homes': { cleared: 0 }
+			'animal-homes': { cleared: 0 },
+			'day-night': { cleared: 0 }
 		});
 	});
 });

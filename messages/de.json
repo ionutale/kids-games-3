@@ -500,5 +500,11 @@
 	"homes_kennel": "Hundehütte",
 	"homes_cave": "Höhle",
 	"homes_hive": "Bienenstock",
-	"homes_cushion": "Kissen"
+	"homes_cushion": "Kissen",
+	"daynight_name": "Tag oder Nacht",
+	"daynight_desc": "Schau den Himmel an. Tippe Tag oder Nacht.",
+	"daynight_prompt": "Ist es Tag oder Nacht?",
+	"daynight_hint": "Such die Sonne (Tag) oder Mond und Sterne (Nacht).",
+	"daynight_day": "Tag",
+	"daynight_night": "Nacht"
 }
