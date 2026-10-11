@@ -64,7 +64,9 @@ export type GameId =
 	| 'complete-set'
 	| 'follow-path'
 	| 'money-coins'
-	| 'dress-weather';
+	| 'dress-weather'
+	| 'heavy-light'
+	| 'animal-homes';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -121,6 +123,8 @@ export interface Progress {
 	'follow-path': GameProgress;
 	'money-coins': GameProgress;
 	'dress-weather': GameProgress;
+	'heavy-light': GameProgress;
+	'animal-homes': GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -183,7 +187,9 @@ export function defaultProgress(): Progress {
 		'complete-set': { cleared: 0 },
 		'follow-path': { cleared: 0 },
 		'money-coins': { cleared: 0 },
-		'dress-weather': { cleared: 0 }
+		'dress-weather': { cleared: 0 },
+		'heavy-light': { cleared: 0 },
+		'animal-homes': { cleared: 0 }
 	};
 }
 
@@ -259,7 +265,9 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			'complete-set': sanitizeGame(games['complete-set']),
 			'follow-path': sanitizeGame(games['follow-path']),
 			'money-coins': sanitizeGame(games['money-coins']),
-			'dress-weather': sanitizeGame(games['dress-weather'])
+			'dress-weather': sanitizeGame(games['dress-weather']),
+			'heavy-light': sanitizeGame(games['heavy-light']),
+			'animal-homes': sanitizeGame(games['animal-homes'])
 		};
 	} catch {
 		return defaultProgress();

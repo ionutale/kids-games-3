@@ -22,6 +22,8 @@
 	import PathArt from '#lib/components/PathArt.svelte';
 	import CoinArt from '#lib/components/CoinArt.svelte';
 	import ClothesArt from '#lib/components/ClothesArt.svelte';
+	import WeightArt from '#lib/components/WeightArt.svelte';
+	import HomeAnimalArt from '#lib/components/HomeAnimalArt.svelte';
 	import favicon from '#lib/assets/favicon.svg';
 	import LumiSun from '#lib/components/LumiSun.svelte';
 
@@ -79,6 +81,8 @@
 	let clearedPath = $state(0);
 	let clearedMoney = $state(0);
 	let clearedDress = $state(0);
+	let clearedHeavy = $state(0);
+	let clearedHomes = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -135,6 +139,8 @@
 	const pathGameHref = $derived(localizeHref('/play/follow-path', { locale }));
 	const moneyHref = $derived(localizeHref('/play/money-coins', { locale }));
 	const dressHref = $derived(localizeHref('/play/dress-weather', { locale }));
+	const heavyHref = $derived(localizeHref('/play/heavy-light', { locale }));
+	const homesHref = $derived(localizeHref('/play/animal-homes', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -192,6 +198,8 @@
 		clearedPath = progress['follow-path'].cleared;
 		clearedMoney = progress['money-coins'].cleared;
 		clearedDress = progress['dress-weather'].cleared;
+		clearedHeavy = progress['heavy-light'].cleared;
+		clearedHomes = progress['animal-homes'].cleared;
 	});
 </script>
 
@@ -960,6 +968,34 @@
 		<div class="row">
 			<a class="btn" href={dressHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedDress })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.heavy_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="weight-thumb" aria-hidden="true"><WeightArt object="rock" /></span>
+	</div>
+	<div>
+		<h2>{m.heavy_name()}</h2>
+		<p>{m.heavy_desc()}</p>
+		<div class="row">
+			<a class="btn" href={heavyHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedHeavy })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.homes_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="homes-thumb" aria-hidden="true"><HomeAnimalArt animal="bird" /></span>
+	</div>
+	<div>
+		<h2>{m.homes_name()}</h2>
+		<p>{m.homes_desc()}</p>
+		<div class="row">
+			<a class="btn" href={homesHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedHomes })}</span>
 		</div>
 	</div>
 </section>

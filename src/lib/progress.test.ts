@@ -75,7 +75,9 @@ describe('progress', () => {
 			'complete-set': { cleared: 0 },
 			'follow-path': { cleared: 0 },
 			'money-coins': { cleared: 0 },
-			'dress-weather': { cleared: 0 }
+			'dress-weather': { cleared: 0 },
+			'heavy-light': { cleared: 0 },
+			'animal-homes': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -193,7 +195,9 @@ describe('progress', () => {
 			'complete-set': { cleared: 0 },
 			'follow-path': { cleared: 0 },
 			'money-coins': { cleared: 0 },
-			'dress-weather': { cleared: 0 }
+			'dress-weather': { cleared: 0 },
+			'heavy-light': { cleared: 0 },
+			'animal-homes': { cleared: 0 }
 		});
 	});
 
@@ -260,7 +264,9 @@ describe('progress', () => {
 			'complete-set': { cleared: 0 },
 			'follow-path': { cleared: 0 },
 			'money-coins': { cleared: 0 },
-			'dress-weather': { cleared: 0 }
+			'dress-weather': { cleared: 0 },
+			'heavy-light': { cleared: 0 },
+			'animal-homes': { cleared: 0 }
 		});
 	});
 });

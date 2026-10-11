@@ -20,12 +20,17 @@
 
 html {
 	-webkit-text-size-adjust: 100%;
+	touch-action: manipulation;
 }
 
 body {
 	margin: 0;
 	min-height: 100vh;
 	min-height: 100dvh;
+	/* Kids PWA: no pinch-zoom delay, no accidental text selection. */
+	user-select: none;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
 	/* iPhone notch and home indicator stay clear of buttons. */
 	padding-left: env(safe-area-inset-left);
 	padding-right: env(safe-area-inset-right);
@@ -64,12 +69,6 @@ button,
 .back-link {
 	touch-action: manipulation;
 	-webkit-tap-highlight-color: transparent;
-}
-
-.back-link {
-	display: inline-flex;
-	align-items: center;
-	min-height: 2.75rem;
 }
 
 .lumi-header {
@@ -288,16 +287,33 @@ button,
 }
 
 .back-link {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.4rem;
 	margin-bottom: 1rem;
-	color: var(--ink-soft);
-	font-weight: 700;
-	text-decoration: none;
+	border: none;
+	border-radius: 999px;
+	background: var(--coral);
+	color: #fff;
+	font: inherit;
+	font-weight: 800;
 	font-size: 1.2rem;
+	padding: 0.75rem 1.6rem;
+	min-height: 3.5rem;
+	text-decoration: none;
+	box-shadow: 0 4px 0 #b93a34;
+	cursor: pointer;
 }
 
 .back-link:hover {
-	color: var(--ink);
+	filter: brightness(1.05);
+	color: #fff;
+}
+
+.back-link:active {
+	transform: translateY(2px);
+	box-shadow: 0 2px 0 #b93a34;
 }
 
 .level-path {
@@ -2500,6 +2516,179 @@ a.level-tile:hover {
 }
 
 .dress-label {
+	font-size: 0.95rem;
+	font-weight: 700;
+	text-align: center;
+}
+
+.weight-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 0.85rem;
+	background: linear-gradient(160deg, #f0ebe0 0%, #d8d0c0 100%);
+	border: 3px solid #a09078;
+	overflow: hidden;
+}
+
+.weight-thumb .weight-art,
+.weight-thumb svg {
+	width: 2.6rem;
+	height: auto;
+}
+
+.weight-thumb.big {
+	width: 5rem;
+	height: 5rem;
+	border-radius: 1.1rem;
+}
+
+.weight-thumb.big .weight-art,
+.weight-thumb.big svg {
+	width: 3.8rem;
+}
+
+.game-card .weight-thumb {
+	width: 4.6rem;
+	height: 4.6rem;
+}
+
+.game-card .weight-thumb .weight-art,
+.game-card .weight-thumb svg {
+	width: 3.4rem;
+}
+
+.level-tile .weight-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+	border-width: 2px;
+}
+
+.level-tile .weight-thumb .weight-art,
+.level-tile .weight-thumb svg {
+	width: 2rem;
+}
+
+.scale-stage {
+	display: flex;
+	justify-content: center;
+	margin: 0.5rem 0 0.25rem;
+}
+
+.scale-stage .scale-art,
+.scale-stage svg {
+	width: min(100%, 14rem);
+	height: auto;
+}
+
+.scale-art g {
+	transition: transform 0.35s ease;
+}
+
+.heavy-row {
+	margin-top: 0.35rem;
+}
+
+.heavy-pile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.35rem;
+	padding: 0.65rem 0.5rem;
+	min-height: auto;
+}
+
+.heavy-label {
+	font-size: 1rem;
+	font-weight: 700;
+	color: var(--ink);
+}
+
+.homes-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 0.85rem;
+	background: linear-gradient(160deg, #e8f6e8 0%, #c8e8c0 100%);
+	border: 3px solid #7aba6a;
+	overflow: hidden;
+}
+
+.homes-thumb .home-art,
+.homes-thumb .home-animal-art,
+.homes-thumb .home-animal-wrap,
+.homes-thumb svg {
+	width: 2.6rem;
+	height: auto;
+}
+
+.homes-thumb .home-animal-wrap {
+	display: grid;
+	place-items: center;
+}
+
+.homes-thumb.big {
+	width: 5.2rem;
+	height: 5.2rem;
+	border-radius: 1.1rem;
+}
+
+.homes-thumb.big .home-art,
+.homes-thumb.big .home-animal-art,
+.homes-thumb.big .home-animal-wrap,
+.homes-thumb.big svg {
+	width: 4rem;
+}
+
+.game-card .homes-thumb {
+	width: 4.6rem;
+	height: 4.6rem;
+}
+
+.game-card .homes-thumb .home-art,
+.game-card .homes-thumb .home-animal-art,
+.game-card .homes-thumb .home-animal-wrap,
+.game-card .homes-thumb svg {
+	width: 3.4rem;
+}
+
+.level-tile .homes-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+	border-width: 2px;
+}
+
+.level-tile .homes-thumb .home-art,
+.level-tile .homes-thumb .home-animal-art,
+.level-tile .homes-thumb .home-animal-wrap,
+.level-tile .homes-thumb svg {
+	width: 2rem;
+}
+
+.homes-stage {
+	display: flex;
+	justify-content: center;
+	margin: 0.75rem 0 0.5rem;
+}
+
+.homes-answers {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(6.5rem, 1fr));
+	gap: 0.65rem;
+}
+
+.homes-btn {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.3rem;
+	padding: 0.55rem 0.4rem;
+	min-height: auto;
+}
+
+.homes-label {
 	font-size: 0.95rem;
 	font-weight: 700;
 	text-align: center;
