@@ -2734,6 +2734,117 @@ a.level-tile:hover {
 	margin: 0.75rem 0 0.5rem;
 }
 
+.inout-thumb,
+.habitat-thumb,
+.wetdry-thumb {
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 0.85rem;
+	overflow: hidden;
+}
+
+.inout-thumb {
+	background: linear-gradient(160deg, #f5e6d0 0%, #7ec8ff 100%);
+	border: 3px solid #a09078;
+}
+
+.habitat-thumb {
+	background: linear-gradient(160deg, #b8e0a0 0%, #7ec8e8 55%, #c8d8f0 100%);
+	border: 3px solid #6a9a70;
+}
+
+.wetdry-thumb {
+	background: linear-gradient(160deg, #5aa0d0 0%, #f0d080 100%);
+	border: 3px solid #6a8aaa;
+}
+
+.inout-thumb .inside-outside-art,
+.inout-thumb svg,
+.habitat-thumb .habitat-art,
+.habitat-thumb .habitat-subject,
+.habitat-thumb .home-animal-art,
+.habitat-thumb .home-animal-wrap,
+.habitat-thumb svg,
+.wetdry-thumb .wet-dry-art,
+.wetdry-thumb svg {
+	width: 2.6rem;
+	height: auto;
+}
+
+.habitat-thumb .habitat-subject {
+	display: grid;
+	place-items: center;
+}
+
+.inout-thumb.big,
+.habitat-thumb.big,
+.wetdry-thumb.big {
+	width: 6.5rem;
+	height: 6.5rem;
+	border-radius: 1.2rem;
+}
+
+.inout-thumb.big .inside-outside-art,
+.inout-thumb.big svg,
+.habitat-thumb.big .habitat-art,
+.habitat-thumb.big .habitat-subject,
+.habitat-thumb.big .home-animal-art,
+.habitat-thumb.big .home-animal-wrap,
+.habitat-thumb.big svg,
+.wetdry-thumb.big .wet-dry-art,
+.wetdry-thumb.big svg {
+	width: 5.5rem;
+}
+
+.game-card .inout-thumb,
+.game-card .habitat-thumb,
+.game-card .wetdry-thumb {
+	width: 4.6rem;
+	height: 4.6rem;
+}
+
+.game-card .inout-thumb .inside-outside-art,
+.game-card .inout-thumb svg,
+.game-card .habitat-thumb .habitat-art,
+.game-card .habitat-thumb .habitat-subject,
+.game-card .habitat-thumb .home-animal-art,
+.game-card .habitat-thumb .home-animal-wrap,
+.game-card .habitat-thumb svg,
+.game-card .wetdry-thumb .wet-dry-art,
+.game-card .wetdry-thumb svg {
+	width: 3.4rem;
+}
+
+.level-tile .inout-thumb,
+.level-tile .habitat-thumb,
+.level-tile .wetdry-thumb {
+	width: 2.8rem;
+	height: 2.8rem;
+	border-width: 2px;
+}
+
+.level-tile .inout-thumb .inside-outside-art,
+.level-tile .inout-thumb svg,
+.level-tile .habitat-thumb .habitat-art,
+.level-tile .habitat-thumb .habitat-subject,
+.level-tile .habitat-thumb .home-animal-art,
+.level-tile .habitat-thumb .home-animal-wrap,
+.level-tile .habitat-thumb svg,
+.level-tile .wetdry-thumb .wet-dry-art,
+.level-tile .wetdry-thumb svg {
+	width: 2rem;
+}
+
+.inout-stage,
+.habitat-stage,
+.wetdry-stage {
+	display: flex;
+	justify-content: center;
+	margin: 0.75rem 0 0.5rem;
+}
+
 .oless-thumb.big,
 .omore-thumb.big,
 .skip-thumb.big {

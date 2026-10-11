@@ -78,7 +78,10 @@ describe('progress', () => {
 			'dress-weather': { cleared: 0 },
 			'heavy-light': { cleared: 0 },
 			'animal-homes': { cleared: 0 },
-			'day-night': { cleared: 0 }
+			'day-night': { cleared: 0 },
+			'inside-outside': { cleared: 0 },
+			'land-water-air': { cleared: 0 },
+			'wet-dry': { cleared: 0 }
 		});
 		expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
 		expect(loadProgress(null)).toEqual(defaultProgress());
@@ -199,7 +202,10 @@ describe('progress', () => {
 			'dress-weather': { cleared: 0 },
 			'heavy-light': { cleared: 0 },
 			'animal-homes': { cleared: 0 },
-			'day-night': { cleared: 0 }
+			'day-night': { cleared: 0 },
+			'inside-outside': { cleared: 0 },
+			'land-water-air': { cleared: 0 },
+			'wet-dry': { cleared: 0 }
 		});
 	});
 
@@ -269,7 +275,10 @@ describe('progress', () => {
 			'dress-weather': { cleared: 0 },
 			'heavy-light': { cleared: 0 },
 			'animal-homes': { cleared: 0 },
-			'day-night': { cleared: 0 }
+			'day-night': { cleared: 0 },
+			'inside-outside': { cleared: 0 },
+			'land-water-air': { cleared: 0 },
+			'wet-dry': { cleared: 0 }
 		});
 	});
 });

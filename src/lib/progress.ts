@@ -67,7 +67,10 @@ export type GameId =
 	| 'dress-weather'
 	| 'heavy-light'
 	| 'animal-homes'
-	| 'day-night';
+	| 'day-night'
+	| 'inside-outside'
+	| 'land-water-air'
+	| 'wet-dry';
 
 export interface Progress {
 	'count-fruit': GameProgress;
@@ -127,6 +130,9 @@ export interface Progress {
 	'heavy-light': GameProgress;
 	'animal-homes': GameProgress;
 	'day-night': GameProgress;
+	'inside-outside': GameProgress;
+	'land-water-air': GameProgress;
+	'wet-dry': GameProgress;
 }
 
 export interface KeyValueStorage {
@@ -192,7 +198,10 @@ export function defaultProgress(): Progress {
 		'dress-weather': { cleared: 0 },
 		'heavy-light': { cleared: 0 },
 		'animal-homes': { cleared: 0 },
-		'day-night': { cleared: 0 }
+		'day-night': { cleared: 0 },
+		'inside-outside': { cleared: 0 },
+		'land-water-air': { cleared: 0 },
+		'wet-dry': { cleared: 0 }
 	};
 }
 
@@ -271,7 +280,10 @@ export function loadProgress(storage?: KeyValueStorage | null): Progress {
 			'dress-weather': sanitizeGame(games['dress-weather']),
 			'heavy-light': sanitizeGame(games['heavy-light']),
 			'animal-homes': sanitizeGame(games['animal-homes']),
-			'day-night': sanitizeGame(games['day-night'])
+			'day-night': sanitizeGame(games['day-night']),
+			'inside-outside': sanitizeGame(games['inside-outside']),
+			'land-water-air': sanitizeGame(games['land-water-air']),
+			'wet-dry': sanitizeGame(games['wet-dry'])
 		};
 	} catch {
 		return defaultProgress();

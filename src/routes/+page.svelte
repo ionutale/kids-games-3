@@ -25,6 +25,9 @@
 	import WeightArt from '#lib/components/WeightArt.svelte';
 	import HomeAnimalArt from '#lib/components/HomeAnimalArt.svelte';
 	import DayNightArt from '#lib/components/DayNightArt.svelte';
+	import InsideOutsideArt from '#lib/components/InsideOutsideArt.svelte';
+	import LandWaterAirArt from '#lib/components/LandWaterAirArt.svelte';
+	import WetDryArt from '#lib/components/WetDryArt.svelte';
 	import favicon from '#lib/assets/favicon.svg';
 	import LumiSun from '#lib/components/LumiSun.svelte';
 
@@ -85,6 +88,9 @@
 	let clearedHeavy = $state(0);
 	let clearedHomes = $state(0);
 	let clearedDayNight = $state(0);
+	let clearedInOut = $state(0);
+	let clearedHabitat = $state(0);
+	let clearedWetDry = $state(0);
 
 	const locale = $derived(getLocale() as (typeof locales)[number]);
 	const gameHref = $derived(localizeHref('/play/count-fruit', { locale }));
@@ -144,6 +150,9 @@
 	const heavyHref = $derived(localizeHref('/play/heavy-light', { locale }));
 	const homesHref = $derived(localizeHref('/play/animal-homes', { locale }));
 	const dayNightHref = $derived(localizeHref('/play/day-night', { locale }));
+	const inOutHref = $derived(localizeHref('/play/inside-outside', { locale }));
+	const habitatHref = $derived(localizeHref('/play/land-water-air', { locale }));
+	const wetDryHref = $derived(localizeHref('/play/wet-dry', { locale }));
 
 	onMount(() => {
 		const progress = loadProgress(localStorage);
@@ -204,6 +213,9 @@
 		clearedHeavy = progress['heavy-light'].cleared;
 		clearedHomes = progress['animal-homes'].cleared;
 		clearedDayNight = progress['day-night'].cleared;
+		clearedInOut = progress['inside-outside'].cleared;
+		clearedHabitat = progress['land-water-air'].cleared;
+		clearedWetDry = progress['wet-dry'].cleared;
 	});
 </script>
 
@@ -1014,6 +1026,48 @@
 		<div class="row">
 			<a class="btn" href={dayNightHref}>{m.play()}</a>
 			<span class="progress-note">{m.progress({ done: clearedDayNight })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.inout_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="inout-thumb" aria-hidden="true"><InsideOutsideArt scene="bedroom" /></span>
+	</div>
+	<div>
+		<h2>{m.inout_name()}</h2>
+		<p>{m.inout_desc()}</p>
+		<div class="row">
+			<a class="btn" href={inOutHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedInOut })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.habitat_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="habitat-thumb" aria-hidden="true"><LandWaterAirArt subject="bird" /></span>
+	</div>
+	<div>
+		<h2>{m.habitat_name()}</h2>
+		<p>{m.habitat_desc()}</p>
+		<div class="row">
+			<a class="btn" href={habitatHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedHabitat })}</span>
+		</div>
+	</div>
+</section>
+
+<section class="card game-card" aria-label={m.wetdry_name()} style="margin-top: 1.25rem;">
+	<div class="thumb">
+		<span class="wetdry-thumb" aria-hidden="true"><WetDryArt scene="puddle" /></span>
+	</div>
+	<div>
+		<h2>{m.wetdry_name()}</h2>
+		<p>{m.wetdry_desc()}</p>
+		<div class="row">
+			<a class="btn" href={wetDryHref}>{m.play()}</a>
+			<span class="progress-note">{m.progress({ done: clearedWetDry })}</span>
 		</div>
 	</div>
 </section>
