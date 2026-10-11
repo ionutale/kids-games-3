@@ -75,12 +75,15 @@ function compactVercelRoutes(log) {
 	config.routes = kept;
 	fs.writeFileSync(configPath, JSON.stringify(config, null, '  '));
 
-	log?.success?.(
-		`Compacted Vercel routes: ${before} → ${kept.length} (dropped ${dropped} trailing-slash pairs)`
-	);
-	console.log(
-		`[@adapter-static-vercel-safe] Compacted Vercel routes: ${before} → ${kept.length} (dropped ${dropped} trailing-slash pairs)`
-	);
+	const message = `Compacted Vercel routes: ${before} → ${kept.length} (dropped ${dropped} trailing-slash pairs)`;
+	log?.success?.(message);
+	console.log(`[@adapter-static-vercel-safe] ${message}`);
+
+	if (kept.length > 2048) {
+		throw new Error(
+			`[@adapter-static-vercel-safe] Still ${kept.length} Vercel routes after compact (max 2048).`
+		);
+	}
 }
 
 /** @param {import('@sveltejs/adapter-static').AdapterOptions} [options] */
