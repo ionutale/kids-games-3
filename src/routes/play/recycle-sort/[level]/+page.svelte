@@ -17,7 +17,7 @@
 	import { playSfx } from '#lib/sound.js';
 
 	const IDLE_MS = 20000;
-	const PAUSE_MS = 1200;
+	const PAUSE_MS = 1400;
 
 	let rounds = $state<RecycleRound[] | null>(null);
 	let roundIndex = $state(0);

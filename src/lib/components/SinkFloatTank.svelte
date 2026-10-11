@@ -10,14 +10,13 @@
 	} = $props();
 </script>
 
-<div class="sf-tank" aria-hidden="true">
+<div class="sf-tank" class:active={result !== null} aria-hidden="true">
 	<div class="sf-sky"></div>
 	<div
 		class="sf-object"
 		class:dropping={result !== null}
 		class:sunk={result === 'sink'}
 		class:floating={result === 'float'}
-		data-object={object}
 	>
 		{#if object === 'rock'}
 			<svg viewBox="0 0 40 40"><ellipse cx="20" cy="22" rx="14" ry="10" fill="#8a8070" /><ellipse cx="16" cy="18" rx="5" ry="3" fill="#a09888" opacity="0.6" /></svg>
@@ -33,14 +32,21 @@
 			<svg viewBox="0 0 40 40"><path d="M6,24 L34,24 L28,32 H12 Z" fill="#c45c3a" /><rect x="18" y="8" width="3" height="16" fill="#8b5a3c" /><path d="M21,10 L32,18 H21 Z" fill="#fff8e0" /></svg>
 		{/if}
 	</div>
+	{#if result !== null}
+		<div class="sf-splash" class:splash-on></div>
+	{/if}
 	<div class="sf-water">
-		<svg class="sf-wave" viewBox="0 0 200 20" preserveAspectRatio="none">
-			<path d="M0,10 Q25,0 50,10 T100,10 T150,10 T200,10 V20 H0 Z" fill="#5aa8d8" />
+		<svg class="sf-wave" viewBox="0 0 200 24" preserveAspectRatio="none">
+			<path d="M0,12 Q25,0 50,12 T100,12 T150,12 T200,12 V24 H0 Z" fill="#5aa8d8" />
+		</svg>
+		<svg class="sf-wave w2" viewBox="0 0 200 24" preserveAspectRatio="none">
+			<path d="M0,14 Q25,4 50,14 T100,14 T150,14 T200,14 V24 H0 Z" fill="#6eb8e0" opacity="0.55" />
 		</svg>
 		<div class="sf-water-body">
 			<span class="sf-bubble b1"></span>
 			<span class="sf-bubble b2"></span>
 			<span class="sf-bubble b3"></span>
+			<span class="sf-bubble b4"></span>
 		</div>
 	</div>
 	<div class="sf-glass"></div>
@@ -49,18 +55,18 @@
 <style>
 	.sf-tank {
 		position: relative;
-		width: 11rem;
-		height: 12rem;
+		width: 12rem;
+		height: 13rem;
 		margin: 0.5rem auto;
-		border-radius: 1rem 1rem 1.2rem 1.2rem;
+		border-radius: 1rem 1rem 1.25rem 1.25rem;
 		overflow: hidden;
 		border: 4px solid #7aa0b8;
-		background: linear-gradient(180deg, #d8eef8 0%, #b8d8e8 42%, #5aa8d8 42%, #3a88b8 100%);
+		background: linear-gradient(180deg, #d8eef8 0%, #b8d8e8 40%, #5aa8d8 40%, #3a88b8 100%);
 		box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.35);
 	}
 	.sf-sky {
 		position: absolute;
-		inset: 0 0 58% 0;
+		inset: 0 0 60% 0;
 		background: linear-gradient(180deg, #e8f6ff, #c8e4f4);
 	}
 	.sf-water {
@@ -68,70 +74,84 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		height: 58%;
+		height: 60%;
 		overflow: hidden;
 	}
 	.sf-wave {
 		position: absolute;
-		top: -6px;
-		left: -20%;
-		width: 140%;
-		height: 18px;
-		animation: sf-wave 2.4s ease-in-out infinite;
+		top: -8px;
+		left: -25%;
+		width: 150%;
+		height: 22px;
+		animation: sf-wave 2.2s ease-in-out infinite;
+	}
+	.sf-wave.w2 {
+		top: -2px;
+		animation-duration: 2.8s;
+		animation-direction: reverse;
+	}
+	.sf-tank.active .sf-wave {
+		animation-duration: 0.9s;
 	}
 	.sf-water-body {
 		position: absolute;
-		inset: 8px 0 0;
+		inset: 10px 0 0;
 		background: linear-gradient(180deg, #6eb8e0 0%, #3a88b8 100%);
 	}
 	.sf-bubble {
 		position: absolute;
-		bottom: 12%;
-		width: 0.45rem;
-		height: 0.45rem;
+		bottom: 10%;
+		width: 0.5rem;
+		height: 0.5rem;
 		border-radius: 50%;
-		background: rgba(255, 255, 255, 0.45);
-		animation: sf-bubble 2.8s ease-in infinite;
+		background: rgba(255, 255, 255, 0.5);
+		animation: sf-bubble 2.6s ease-in infinite;
 	}
-	.sf-bubble.b1 {
-		left: 22%;
-		animation-delay: 0s;
-	}
-	.sf-bubble.b2 {
-		left: 48%;
-		width: 0.35rem;
-		height: 0.35rem;
-		animation-delay: 0.9s;
-	}
-	.sf-bubble.b3 {
-		left: 72%;
-		animation-delay: 1.6s;
-	}
+	.sf-bubble.b1 { left: 18%; }
+	.sf-bubble.b2 { left: 40%; width: 0.35rem; height: 0.35rem; animation-delay: 0.7s; }
+	.sf-bubble.b3 { left: 62%; animation-delay: 1.3s; }
+	.sf-bubble.b4 { left: 80%; width: 0.4rem; height: 0.4rem; animation-delay: 1.9s; }
 	.sf-object {
 		position: absolute;
 		left: 50%;
-		top: 10%;
-		width: 2.8rem;
-		height: 2.8rem;
+		top: 8%;
+		width: 3rem;
+		height: 3rem;
 		transform: translateX(-50%);
-		z-index: 2;
+		z-index: 3;
 		transition:
-			top 0.85s cubic-bezier(0.4, 0.1, 0.3, 1),
-			transform 0.85s cubic-bezier(0.4, 0.1, 0.3, 1);
+			top 0.95s cubic-bezier(0.45, 0.05, 0.25, 1),
+			transform 0.95s cubic-bezier(0.45, 0.05, 0.25, 1);
 	}
 	.sf-object svg {
 		width: 100%;
 		height: 100%;
 		display: block;
-		filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
+		filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.18));
 	}
 	.sf-object.dropping.sunk {
-		top: 72%;
-		transform: translateX(-50%) rotate(12deg);
+		top: 74%;
+		transform: translateX(-50%) rotate(18deg) scale(0.92);
 	}
 	.sf-object.dropping.floating {
-		top: 38%;
-		animation: sf-bob 1.4s ease-in-out infinite;
+		top: 34%;
+		animation: sf-bob 1.25s ease-in-out 0.85s infinite;
+	}
+	.sf-splash {
+		position: absolute;
+		left: 50%;
+		top: 36%;
+		width: 3.5rem;
+		height: 1.2rem;
+		margin-left: -1.75rem;
+		border-radius: 50%;
+		border: 3px solid rgba(255, 255, 255, 0.65);
+		opacity: 0;
+		z-index: 4;
+		pointer-events: none;
+	}
+	.sf-splash.splash-on {
+		animation: sf-splash 0.7s ease-out forwards;
 	}
 	.sf-glass {
 		pointer-events: none;
@@ -139,36 +159,23 @@
 		inset: 0;
 		border-radius: inherit;
 		box-shadow: inset -10px 0 16px rgba(255, 255, 255, 0.18);
+		z-index: 5;
 	}
 	@keyframes sf-wave {
-		0%,
-		100% {
-			transform: translateX(0);
-		}
-		50% {
-			transform: translateX(12%);
-		}
+		0%, 100% { transform: translateX(0); }
+		50% { transform: translateX(14%); }
 	}
 	@keyframes sf-bubble {
-		0% {
-			transform: translateY(0);
-			opacity: 0;
-		}
-		20% {
-			opacity: 0.7;
-		}
-		100% {
-			transform: translateY(-4.5rem);
-			opacity: 0;
-		}
+		0% { transform: translateY(0); opacity: 0; }
+		15% { opacity: 0.75; }
+		100% { transform: translateY(-5rem); opacity: 0; }
 	}
 	@keyframes sf-bob {
-		0%,
-		100% {
-			transform: translateX(-50%) translateY(0);
-		}
-		50% {
-			transform: translateX(-50%) translateY(-6px);
-		}
+		0%, 100% { transform: translateX(-50%) translateY(0) rotate(-4deg); }
+		50% { transform: translateX(-50%) translateY(-10px) rotate(4deg); }
+	}
+	@keyframes sf-splash {
+		0% { transform: scale(0.4); opacity: 0.9; }
+		100% { transform: scale(1.8); opacity: 0; }
 	}
 </style>

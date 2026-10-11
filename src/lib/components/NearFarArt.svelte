@@ -11,32 +11,54 @@
 		<circle class="focus" cx="70" cy="70" r="28" fill="#e07070" />
 		<circle cx="78" cy="62" r="6" fill="#fff" opacity="0.4" />
 	{:else if scene === 'tree-far'}
-		<rect class="focus" x="72" y="48" width="5" height="18" fill="#8b5a3c" />
-		<circle class="focus" cx="74" cy="42" r="12" fill="#5da85f" />
+		<g class="focus">
+			<rect x="72" y="48" width="5" height="18" fill="#8b5a3c" />
+			<circle cx="74" cy="42" r="12" fill="#5da85f" />
+		</g>
 		<path d="M0,78 Q60,70 120,78" fill="none" stroke="#6aaa5a" stroke-width="2" />
 	{:else if scene === 'bird-near'}
-		<ellipse class="focus" cx="60" cy="55" rx="26" ry="16" fill="#7ec8e8" />
-		<path class="focus" d="M40,50 Q30,40 38,48" fill="#7ec8e8" />
-		<circle class="focus" cx="78" cy="50" r="8" fill="#7ec8e8" />
+		<g class="focus">
+			<ellipse cx="60" cy="55" rx="26" ry="16" fill="#7ec8e8" />
+			<path d="M40,50 Q30,40 38,48" fill="#7ec8e8" />
+			<circle cx="78" cy="50" r="8" fill="#7ec8e8" />
+		</g>
 	{:else if scene === 'moon-far'}
-		<circle class="focus" cx="88" cy="28" r="10" fill="#f0e8c8" />
-		<circle cx="92" cy="26" r="7" fill="#9ed0f0" />
+		<g class="focus">
+			<circle cx="88" cy="28" r="10" fill="#f0e8c8" />
+			<circle cx="92" cy="26" r="7" fill="#9ed0f0" />
+		</g>
 	{:else if scene === 'car-near'}
-		<rect class="focus" x="24" y="52" width="70" height="28" rx="8" fill="#e07070" />
-		<path class="focus" d="M36,52 L46,34 H74 L84,52" fill="#7ec8e8" />
-		<circle class="focus" cx="40" cy="82" r="10" fill="#333" />
-		<circle class="focus" cx="78" cy="82" r="10" fill="#333" />
+		<g class="focus">
+			<rect x="24" y="52" width="70" height="28" rx="8" fill="#e07070" />
+			<path d="M36,52 L46,34 H74 L84,52" fill="#7ec8e8" />
+			<circle cx="40" cy="82" r="10" fill="#333" />
+			<circle cx="78" cy="82" r="10" fill="#333" />
+		</g>
 	{:else}
-		<path class="focus" d="M20,78 L50,50 L80,78 Z" fill="#8a9a70" />
-		<path class="focus" d="M50,78 L85,40 L110,78 Z" fill="#6a7a58" />
+		<g class="focus">
+			<path d="M20,78 L50,50 L80,78 Z" fill="#8a9a70" />
+			<path d="M50,78 L85,40 L110,78 Z" fill="#6a7a58" />
+		</g>
 	{/if}
 </svg>
 
 <style>
-	.near-far-art.near .focus { transform-origin: center; animation: near-pulse 1.8s ease-in-out infinite; }
-	.near-far-art.far .focus { opacity: 0.95; }
-	@keyframes near-pulse {
+	.near-far-art.near .focus {
+		transform-origin: center;
+		transform-box: fill-box;
+		animation: near-loom 1.7s ease-in-out infinite;
+	}
+	.near-far-art.far .focus {
+		transform-origin: center;
+		transform-box: fill-box;
+		animation: far-drift 2.4s ease-in-out infinite;
+	}
+	@keyframes near-loom {
 		0%, 100% { transform: scale(1); }
-		50% { transform: scale(1.04); }
+		50% { transform: scale(1.1); }
+	}
+	@keyframes far-drift {
+		0%, 100% { transform: translateY(0) scale(0.92); opacity: 0.85; }
+		50% { transform: translateY(-3px) scale(0.96); opacity: 1; }
 	}
 </style>

@@ -16,14 +16,14 @@
 	{:else if scene === 'bird-up'}
 		<g class="mover">
 			<ellipse cx="60" cy="48" rx="16" ry="10" fill="#7ec8e8" />
-			<path d="M44,48 Q32,36 44,46" fill="#7ec8e8" />
-			<path d="M76,48 Q88,36 76,46" fill="#7ec8e8" />
+			<path class="wing" d="M44,48 Q28,30 44,46" fill="#7ec8e8" />
+			<path class="wing" d="M76,48 Q92,30 76,46" fill="#7ec8e8" />
 		</g>
 	{:else if scene === 'rocket'}
 		<g class="mover">
 			<path d="M60,18 L72,50 L60,46 L48,50 Z" fill="#e07070" />
 			<rect x="52" y="46" width="16" height="28" fill="#7ec8e8" />
-			<path d="M52,74 L48,88 L60,80 L72,88 L68,74" fill="#f5c84c" />
+			<path class="flame" d="M52,74 L48,92 L60,82 L72,92 L68,74" fill="#f5c84c" />
 		</g>
 	{:else if scene === 'slide'}
 		<path d="M24,30 H48 V70 L96,90" fill="none" stroke="#e07070" stroke-width="8" stroke-linecap="round" />
@@ -31,9 +31,9 @@
 	{:else if scene === 'rain'}
 		<ellipse cx="60" cy="28" rx="28" ry="12" fill="#c8d0d8" />
 		<g class="mover">
-			<line x1="40" y1="48" x2="34" y2="78" stroke="#5aa0d0" stroke-width="4" stroke-linecap="round" />
-			<line x1="58" y1="46" x2="52" y2="80" stroke="#5aa0d0" stroke-width="4" stroke-linecap="round" />
-			<line x1="76" y1="48" x2="70" y2="78" stroke="#5aa0d0" stroke-width="4" stroke-linecap="round" />
+			<line x1="40" y1="48" x2="32" y2="86" stroke="#5aa0d0" stroke-width="4" stroke-linecap="round" />
+			<line x1="58" y1="46" x2="50" y2="88" stroke="#5aa0d0" stroke-width="4" stroke-linecap="round" />
+			<line x1="76" y1="48" x2="68" y2="86" stroke="#5aa0d0" stroke-width="4" stroke-linecap="round" />
 		</g>
 	{:else}
 		<rect x="70" y="40" width="8" height="40" fill="#8b5a3c" />
@@ -43,14 +43,26 @@
 </svg>
 
 <style>
-	.up-down-art.up .mover { animation: go-up 1.8s ease-in-out infinite; }
-	.up-down-art.down .mover { animation: go-down 1.6s ease-in-out infinite; }
+	.up-down-art.up .mover {
+		animation: go-up 1.5s ease-in-out infinite;
+	}
+	.up-down-art.down .mover {
+		animation: go-down 1.35s ease-in-out infinite;
+	}
+	.up-down-art .flame {
+		animation: flicker 0.35s ease-in-out infinite alternate;
+		transform-origin: 60px 74px;
+	}
 	@keyframes go-up {
-		0%, 100% { transform: translateY(4px); }
-		50% { transform: translateY(-8px); }
+		0%, 100% { transform: translateY(10px); }
+		50% { transform: translateY(-16px); }
 	}
 	@keyframes go-down {
-		0%, 100% { transform: translateY(-4px); }
-		50% { transform: translateY(8px); }
+		0%, 100% { transform: translateY(-12px); }
+		50% { transform: translateY(14px); }
+	}
+	@keyframes flicker {
+		from { transform: scaleY(1); }
+		to { transform: scaleY(1.25); }
 	}
 </style>

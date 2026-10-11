@@ -11,11 +11,11 @@
 		class="recycle-item"
 		class:dropping={dropBin !== null}
 		style={dropBin === 'paper'
-			? '--tx:-2.4rem'
+			? '--tx:-2.55rem'
 			: dropBin === 'plastic'
 				? '--tx:0'
 				: dropBin === 'trash'
-					? '--tx:2.4rem'
+					? '--tx:2.55rem'
 					: '--tx:0'}
 	>
 		{#if item === 'newspaper' || item === 'cardboard'}
@@ -29,47 +29,91 @@
 		{/if}
 	</div>
 	<div class="recycle-bins">
-		<div class="bin paper" class:target={dropBin === 'paper'}><span>P</span></div>
-		<div class="bin plastic" class:target={dropBin === 'plastic'}><span>Pl</span></div>
-		<div class="bin trash" class:target={dropBin === 'trash'}><span>T</span></div>
+		<div class="bin paper" class:target={dropBin === 'paper'}>
+			<span class="lid"></span><span class="label">P</span>
+		</div>
+		<div class="bin plastic" class:target={dropBin === 'plastic'}>
+			<span class="lid"></span><span class="label">Pl</span>
+		</div>
+		<div class="bin trash" class:target={dropBin === 'trash'}>
+			<span class="lid"></span><span class="label">T</span>
+		</div>
 	</div>
 </div>
 
 <style>
 	.recycle-art-wrap {
 		position: relative;
-		width: 11rem;
-		height: 10rem;
+		width: 12rem;
+		height: 11rem;
 		margin: 0.35rem auto;
 	}
 	.recycle-item {
 		position: absolute;
 		left: 50%;
-		top: 0.4rem;
-		width: 2.6rem;
-		height: 2.6rem;
+		top: 0.2rem;
+		width: 2.8rem;
+		height: 2.8rem;
 		transform: translateX(-50%);
-		z-index: 2;
-		transition: transform 0.7s cubic-bezier(0.4, 0.1, 0.2, 1), top 0.7s cubic-bezier(0.4, 0.1, 0.2, 1);
+		z-index: 3;
+		transition:
+			transform 0.75s cubic-bezier(0.45, 0.05, 0.2, 1),
+			top 0.75s cubic-bezier(0.45, 0.05, 0.2, 1),
+			opacity 0.35s ease 0.45s;
 	}
-	.recycle-item svg { width: 100%; height: 100%; display: block; }
+	.recycle-item svg {
+		width: 100%;
+		height: 100%;
+		display: block;
+		filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
+	}
 	.recycle-item.dropping {
-		top: 5.6rem;
-		transform: translateX(calc(-50% + var(--tx))) scale(0.7);
+		top: 6.4rem;
+		transform: translateX(calc(-50% + var(--tx))) scale(0.45) rotate(20deg);
+		opacity: 0.15;
 	}
 	.recycle-bins {
 		position: absolute;
-		left: 0; right: 0; bottom: 0.2rem;
-		display: flex; justify-content: center; gap: 0.45rem;
+		left: 0;
+		right: 0;
+		bottom: 0.15rem;
+		display: flex;
+		justify-content: center;
+		gap: 0.5rem;
 	}
 	.bin {
-		width: 2.8rem; height: 3.2rem; border-radius: 0.4rem 0.4rem 0.55rem 0.55rem;
-		display: grid; place-items: center; border: 3px solid rgba(0,0,0,0.12);
-		font-weight: 800; font-size: 0.75rem; color: #fff;
-		transition: transform 0.3s ease;
+		position: relative;
+		width: 3rem;
+		height: 3.5rem;
+		border-radius: 0.35rem 0.35rem 0.6rem 0.6rem;
+		display: grid;
+		place-items: center;
+		border: 3px solid rgba(0, 0, 0, 0.12);
+		font-weight: 800;
+		font-size: 0.75rem;
+		color: #fff;
+		transition: transform 0.35s ease, filter 0.35s ease;
 	}
+	.bin .lid {
+		position: absolute;
+		top: -0.35rem;
+		left: 8%;
+		right: 8%;
+		height: 0.45rem;
+		border-radius: 0.25rem;
+		background: rgba(255, 255, 255, 0.35);
+		transform-origin: left center;
+		transition: transform 0.35s ease;
+	}
+	.bin .label { z-index: 1; }
 	.bin.paper { background: #4a90d0; }
 	.bin.plastic { background: #e0b040; color: #4a2c2a; }
 	.bin.trash { background: #6a6a6a; }
-	.bin.target { transform: scale(1.08); }
+	.bin.target {
+		transform: scale(1.12) translateY(-4px);
+		filter: brightness(1.08);
+	}
+	.bin.target .lid {
+		transform: rotate(-28deg);
+	}
 </style>
