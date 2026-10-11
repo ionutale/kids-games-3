@@ -286,34 +286,9 @@ button,
 	box-shadow: none;
 }
 
+/* Spacing only — looks come from `.btn` (same coral CTA as Play / Next level). */
 .back-link {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	gap: 0.4rem;
 	margin-bottom: 1rem;
-	border: none;
-	border-radius: 999px;
-	background: var(--coral);
-	color: #fff;
-	font: inherit;
-	font-weight: 800;
-	font-size: 1.2rem;
-	padding: 0.75rem 1.6rem;
-	min-height: 3.5rem;
-	text-decoration: none;
-	box-shadow: 0 4px 0 #b93a34;
-	cursor: pointer;
-}
-
-.back-link:hover {
-	filter: brightness(1.05);
-	color: #fff;
-}
-
-.back-link:active {
-	transform: translateY(2px);
-	box-shadow: 0 2px 0 #b93a34;
 }
 
 .level-path {

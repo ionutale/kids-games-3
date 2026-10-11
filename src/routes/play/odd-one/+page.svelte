@@ -27,7 +27,7 @@
 	<title>Lumi — {m.odd_name()}</title>
 </svelte:head>
 
-<a class="back-link" href={homeHref}>← Lumi</a>
+<a class="btn back-link" href={homeHref}>← Lumi</a>
 
 <div class="card">
 	<h2 style="margin: 0; font-size: 2rem;">{m.odd_name()}</h2>

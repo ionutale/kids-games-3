@@ -187,18 +187,18 @@
 </svelte:head>
 
 {#if !config}
-	<a class="back-link" href={pathHref}>← {m.allLevels()}</a>
+	<a class="btn back-link" href={pathHref}>← {m.allLevels()}</a>
 	<div class="card">
 		<p>{m.invalidLevel()}</p>
 	</div>
 {:else if !decided}
-	<a class="back-link" href={pathHref}>← {m.allLevels()}</a>
+	<a class="btn back-link" href={pathHref}>← {m.allLevels()}</a>
 	<div class="card">
 		<p class="prompt">…</p>
 		<div class="fruit-board" aria-hidden="true"></div>
 	</div>
 {:else if !unlocked}
-	<a class="back-link" href={pathHref}>← {m.allLevels()}</a>
+	<a class="btn back-link" href={pathHref}>← {m.allLevels()}</a>
 	<div class="card win">
 		<div class="win-art" aria-hidden="true"><span style="font-size: 3.5rem;">🔒</span></div>
 		<h2>{m.level({ n: levelNumber })} — {m.locked()}</h2>
@@ -208,7 +208,7 @@
 		</div>
 	</div>
 {:else}
-	<a class="back-link" href={pathHref}>← {m.allLevels()}</a>
+	<a class="btn back-link" href={pathHref}>← {m.allLevels()}</a>
 
 	<div class="card">
 		{#if !won}
@@ -295,7 +295,7 @@
 						<a class="btn" href={nextHref}>{m.nextLevel()}</a>
 					{/if}
 					<button class="btn secondary" type="button" onclick={startLevel}>{m.replay()}</button>
-					<a class="btn ghost" href={pathHref}>{m.allLevels()}</a>
+					<a class="btn" href={pathHref}>{m.allLevels()}</a>
 				</div>
 			</div>
 		{/if}
