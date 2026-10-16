@@ -22,22 +22,25 @@ export interface AbcLevelConfig {
 	casing: AbcCasing;
 	/** Wrong answers sit next to the right letter. */
 	tight: boolean;
+	/** Rounds played in this level. */
+	rounds: number;
 }
 
 export const MAX_ABC_LEVEL = 10;
+/** Rounds in the earliest levels. */
 export const ABC_ROUNDS = 3;
 
 export const ABC_LEVELS: AbcLevelConfig[] = [
-	{ level: 1, min: 0, max: 4, shown: 2, optionCount: 2, casing: 'upper', tight: false },
-	{ level: 2, min: 0, max: 5, shown: 3, optionCount: 2, casing: 'upper', tight: false },
-	{ level: 3, min: 0, max: 7, shown: 3, optionCount: 3, casing: 'upper', tight: false },
-	{ level: 4, min: 0, max: 9, shown: 3, optionCount: 3, casing: 'upper', tight: false },
-	{ level: 5, min: 0, max: 11, shown: 4, optionCount: 3, casing: 'upper', tight: false },
-	{ level: 6, min: 0, max: 13, shown: 3, optionCount: 3, casing: 'lower', tight: false },
-	{ level: 7, min: 0, max: 15, shown: 3, optionCount: 3, casing: 'lower', tight: false },
-	{ level: 8, min: 0, max: 17, shown: 4, optionCount: 3, casing: 'upper', tight: true },
-	{ level: 9, min: 0, max: 19, shown: 3, optionCount: 3, casing: 'lower', tight: true },
-	{ level: 10, min: 0, max: 25, shown: 4, optionCount: 3, casing: 'upper', tight: true }
+	{ level: 1, min: 0, max: 5, shown: 2, optionCount: 2, casing: 'upper', tight: false, rounds: 3 },
+	{ level: 2, min: 1, max: 7, shown: 3, optionCount: 2, casing: 'upper', tight: false, rounds: 3 },
+	{ level: 3, min: 3, max: 10, shown: 3, optionCount: 3, casing: 'upper', tight: false, rounds: 3 },
+	{ level: 4, min: 6, max: 13, shown: 3, optionCount: 3, casing: 'upper', tight: false, rounds: 4 },
+	{ level: 5, min: 9, max: 17, shown: 4, optionCount: 3, casing: 'upper', tight: false, rounds: 4 },
+	{ level: 6, min: 12, max: 19, shown: 3, optionCount: 3, casing: 'lower', tight: false, rounds: 4 },
+	{ level: 7, min: 15, max: 22, shown: 3, optionCount: 3, casing: 'lower', tight: false, rounds: 4 },
+	{ level: 8, min: 16, max: 25, shown: 4, optionCount: 3, casing: 'upper', tight: true, rounds: 4 },
+	{ level: 9, min: 4, max: 15, shown: 3, optionCount: 3, casing: 'lower', tight: true, rounds: 5 },
+	{ level: 10, min: 0, max: 25, shown: 4, optionCount: 4, casing: 'upper', tight: true, rounds: 5 }
 ];
 
 export function getAbcLevel(level: number): AbcLevelConfig | undefined {
@@ -93,10 +96,10 @@ function optionsFor(
 	return shuffled([answer, ...picked], rand);
 }
 
-/** Three rows. The answer is the next letter in the alphabet. */
+/** The level's rounds. The answer is the next letter in the alphabet. */
 export function pickRounds(config: AbcLevelConfig, rand: () => number = Math.random): AbcRound[] {
 	return shuffled(sequences(config), rand)
-		.slice(0, ABC_ROUNDS)
+		.slice(0, config.rounds)
 		.map(({ shown, answer }) => {
 			const optionIndexes = optionsFor(
 				answer,

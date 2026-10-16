@@ -5,7 +5,6 @@
 	import { m } from '#lib/paraglide/messages.js';
 	import { hintStage, isLevelOpen } from '#lib/count-fruit.js';
 	import {
-		ABC_ROUNDS,
 		MAX_ABC_LEVEL,
 		getAbcLevel,
 		pickRounds,
@@ -63,7 +62,7 @@
 		if (!config) return;
 		rounds = pickRounds(config);
 		roundIndex = 0;
-		pips = Array.from({ length: ABC_ROUNDS }, () => false);
+		pips = Array.from({ length: config.rounds }, () => false);
 		feedback = null;
 		wrongValue = null;
 		won = false;
@@ -77,7 +76,7 @@
 		alive = true;
 		rounds = null;
 		roundIndex = 0;
-		pips = [false, false, false];
+		pips = Array.from({ length: config.rounds }, () => false);
 		misses = 0;
 		manualHints = 0;
 		idleHint = false;
