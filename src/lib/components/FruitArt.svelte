@@ -5,9 +5,11 @@
 		fruit: FruitId;
 		happy?: boolean;
 		label?: string;
+		/** Stagger index for the idle motion phase. */
+		i?: number;
 	}
 
-	let { fruit, happy = false, label = '' }: Props = $props();
+	let { fruit, happy = false, label = '', i = 0 }: Props = $props();
 
 	const mouth = $derived(happy ? 'M25,40 Q32,47 39,40' : 'M27,41 L37,41');
 </script>
@@ -31,7 +33,13 @@
 	</g>
 {/snippet}
 
-<svg viewBox="0 0 64 64" role="img" aria-label={label}>
+<svg
+	viewBox="0 0 64 64"
+	role="img"
+	aria-label={label}
+	class="idle-bob"
+	style="--mn-d:{(i % 6) * 140}ms"
+>
 	{#if fruit === 'apple'}
 		<rect x="30" y="10" width="4" height="9" rx="2" fill="#8a5a3b" />
 		<ellipse cx="40" cy="15" rx="7" ry="4" fill="#6aa84f" transform="rotate(-25 40 15)" />

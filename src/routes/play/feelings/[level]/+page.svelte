@@ -206,7 +206,7 @@
 
 			{#if feelings !== null && current !== null}
 				<div class="answers" class:hint-pulse={stage === 1}>
-					{#each options as option (option)}
+					{#each options as option, i (option)}
 						<button
 							class="figure-btn"
 							class:glow={stage === 2 && option === current}
@@ -216,7 +216,7 @@
 							onclick={() => answer(option)}
 							aria-label={words(`emotion_${option}`)}
 						>
-							<BunnyFace emotion={option} />
+							<BunnyFace emotion={option} i={i} />
 						</button>
 					{/each}
 				</div>

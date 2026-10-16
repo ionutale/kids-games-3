@@ -5,9 +5,11 @@
 		face: KindFaceId;
 		happy?: boolean;
 		label?: string;
+		/** Stagger index for the idle motion phase. */
+		i?: number;
 	}
 
-	let { face, happy = false, label = '' }: Props = $props();
+	let { face, happy = false, label = '', i = 0 }: Props = $props();
 
 	const mouth = $derived(happy ? 'M25,40 Q32,47 39,40' : 'M27,41 L37,41');
 </script>
@@ -17,7 +19,13 @@
 	<circle cx={cx + 6} {cy} r="2.6" fill="#4a2c2a" />
 {/snippet}
 
-<svg viewBox="0 0 64 64" role="img" aria-label={label}>
+<svg
+	viewBox="0 0 64 64"
+	role="img"
+	aria-label={label}
+	class="idle-bob"
+	style="--mn-d:{(i % 6) * 140}ms"
+>
 	{#if face === 'cat'}
 		<ellipse cx="32" cy="36" rx="18" ry="16" fill="#f0c27a" />
 		<path d="M16,28 L20,12 L28,26 Z" fill="#f0c27a" />

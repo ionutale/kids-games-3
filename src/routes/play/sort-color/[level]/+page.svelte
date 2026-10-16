@@ -230,7 +230,7 @@
 					class:hint-pulse={stage === 1 && !!selected}
 					aria-label={m.sort_prompt()}
 				>
-					{#each loose as item (item.id)}
+					{#each loose as item, i (item.id)}
 						<button
 							class="sort-item"
 							class:selected={selectedId === item.id}
@@ -245,6 +245,7 @@
 								shape={item.shape}
 								color={item.color}
 								happy={feedback === 'correct' && selected?.id === item.id}
+								i={i}
 							/>
 						</button>
 					{/each}
@@ -263,9 +264,9 @@
 						>
 							<span class="sort-bucket-label">{words(`color_${bucket}`)}</span>
 							<span class="sort-bucket-tray" aria-hidden="true">
-								{#each inBucket(bucket) as item (item.id)}
+								{#each inBucket(bucket) as item, i (item.id)}
 									<span class="sort-placed">
-										<ShapeArt shape={item.shape} color={item.color} happy={true} />
+										<ShapeArt shape={item.shape} color={item.color} happy={true} i={i} />
 									</span>
 								{/each}
 							</span>

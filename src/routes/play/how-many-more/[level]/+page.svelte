@@ -53,7 +53,7 @@
 	<button class="help-btn" type="button" onclick={askForHelp}>? {m.help()}</button></div>
 	<p class="prompt">{m.howmore_prompt()}</p>
 	<div class="pips">{#each pips as done, i (i)}<span class="pip" class:full={done}></span>{/each}</div>
-	{#if current}<div class="batch25-stage samenum-stage"><div class="compare-pile">{#each Array.from({length:current.left},(_,i)=>i) as i (i)}<FruitArt fruit="apple" />{/each}</div><div class="compare-pile">{#each Array.from({length:current.right},(_,i)=>i) as i (i)}<FruitArt fruit="apple" />{/each}</div></div>
+	{#if current}<div class="batch25-stage samenum-stage"><div class="compare-pile">{#each Array.from({length:current.left},(_,i)=>i) as i (i)}<FruitArt fruit="apple" i={i} />{/each}</div><div class="compare-pile">{#each Array.from({length:current.right},(_,i)=>i) as i (i)}<FruitArt fruit="apple" i={i} />{/each}</div></div>
 	<div class="answers">{#each current.options as option (option)}
 		<button class="answer-btn word" class:glow={stage===2 && option===current.answer}
 			class:shake={feedback==='wrong' && option===wrongValue} type="button" disabled={feedback==='correct'}

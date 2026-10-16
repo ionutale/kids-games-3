@@ -6,9 +6,11 @@
 		color: ColorId;
 		happy?: boolean;
 		label?: string;
+		/** Stagger index for the idle motion phase. */
+		i?: number;
 	}
 
-	let { shape, color, happy = false, label = '' }: Props = $props();
+	let { shape, color, happy = false, label = '', i = 0 }: Props = $props();
 
 	const FILL: Record<ColorId, string> = {
 		red: '#e4574f',
@@ -42,7 +44,13 @@
 	</g>
 {/snippet}
 
-<svg viewBox="0 0 64 64" role="img" aria-label={label}>
+<svg
+	viewBox="0 0 64 64"
+	role="img"
+	aria-label={label}
+	class="idle-sway"
+	style="--mn-d:{(i % 6) * 140}ms"
+>
 	{#if shape === 'circle'}
 		<circle cx="32" cy="36" r="18" {fill} />
 		<ellipse cx="25" cy="29" rx="5" ry="7" fill="#fff" opacity="0.25" />

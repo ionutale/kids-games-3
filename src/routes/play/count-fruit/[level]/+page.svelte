@@ -234,7 +234,7 @@
 					{#if config.layout === 'row'}
 						<div class="fruit-row">
 							{#each Array.from({ length: current }, (_, i) => i) as i (i)}
-								<FruitArt fruit={config.fruit} happy={fruitHappy} />
+								<FruitArt fruit={config.fruit} happy={fruitHappy} i={i} />
 							{/each}
 						</div>
 					{:else}
@@ -243,7 +243,7 @@
 								class="fruit-spot"
 								style={`left: ${spot.x}%; top: ${spot.y}%; transform: translate(-50%, -50%) scale(${spot.size}) rotate(${spot.tilt}deg);`}
 							>
-								<FruitArt fruit={config.fruit} happy={fruitHappy} />
+								<FruitArt fruit={config.fruit} happy={fruitHappy} i={i} />
 							</span>
 						{/each}
 					{/if}

@@ -216,6 +216,7 @@
 								<FruitArt
 									fruit={config.fruit}
 									happy={feedback === 'correct' && side === answerSide}
+									i={i}
 								/>
 							{/each}
 						</button>

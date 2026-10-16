@@ -31,7 +31,7 @@
 	<p style="margin: 0.25rem 0 0; color: var(--ink-soft);">{m.chooseLevel()}</p>
 
 	<ol class="level-path">
-		{#each SHAPE_LEVELS as entry (entry.level)}
+		{#each SHAPE_LEVELS as entry, i (entry.level)}
 			{@const open = isLevelOpen(cleared, entry.level)}
 			<li>
 				<a
@@ -50,6 +50,7 @@
 							shape={entry.shapes[0]}
 							color={entry.colors[0]}
 							happy={entry.level <= cleared}
+							i={i}
 						/>
 					{:else}
 						<span class="lock" aria-hidden="true">🔒</span>

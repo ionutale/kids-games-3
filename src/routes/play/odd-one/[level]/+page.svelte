@@ -212,7 +212,7 @@
 
 			{#if board}
 				<div class="answers quad" class:hint-pulse={stage === 1}>
-					{#each board.cards as card (card.id)}
+					{#each board.cards as card, i (card.id)}
 						<button
 							class="figure-btn"
 							class:glow={stage === 2 && isOddCard(board, card)}
@@ -226,21 +226,24 @@
 								<FruitArt
 									fruit={card.key as FruitId}
 									happy={feedback === 'correct' && isOddCard(board, card)}
+									i={i}
 								/>
 							{:else if board.kind === 'color'}
 								<ShapeArt
 									shape={board.shape}
 									color={card.key as ColorId}
 									happy={feedback === 'correct' && isOddCard(board, card)}
+									i={i}
 								/>
 							{:else if board.kind === 'shape'}
 								<ShapeArt
 									shape={card.key as ShapeId}
 									color={board.color}
 									happy={feedback === 'correct' && isOddCard(board, card)}
+									i={i}
 								/>
 							{:else}
-								<BunnyFace emotion={card.key as EmotionId} />
+								<BunnyFace emotion={card.key as EmotionId} i={i} />
 							{/if}
 						</button>
 					{/each}

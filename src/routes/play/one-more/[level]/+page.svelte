@@ -195,7 +195,7 @@
 					<span class="omore-count">{current.shown}</span>
 					<div class="omore-pile">
 						{#each Array.from({ length: current.shown }, (_, i) => i) as i (i)}
-							<FruitArt fruit={config.fruit} happy={feedback === 'correct'} />
+							<FruitArt fruit={config.fruit} happy={feedback === 'correct'} i={i} />
 						{/each}
 					</div>
 				</div>

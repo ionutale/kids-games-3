@@ -31,7 +31,7 @@
 	<p style="margin: 0.25rem 0 0; color: var(--ink-soft);">{m.chooseLevel()}</p>
 
 	<ol class="level-path">
-		{#each ABOVE_LEVELS as entry (entry.level)}
+		{#each ABOVE_LEVELS as entry, i (entry.level)}
 			{@const open = isLevelOpen(cleared, entry.level)}
 			<li>
 				<a
@@ -46,7 +46,7 @@
 						<span class="badge-new">{m.newLevel()}</span>
 					{/if}
 					{#if open}
-						<span class="above-thumb" aria-hidden="true"><FruitArt fruit="apple" /></span>
+						<span class="above-thumb" aria-hidden="true"><FruitArt fruit="apple" i={i} /></span>
 					{:else}
 						<span class="lock" aria-hidden="true">🔒</span>
 					{/if}

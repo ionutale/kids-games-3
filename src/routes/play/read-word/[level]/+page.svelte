@@ -213,7 +213,7 @@
 			</div>
 			{#if current}
 				<div class="answers" class:hint-pulse={stage === 1}>
-					{#each current.options as option (option)}
+					{#each current.options as option, i (option)}
 						<button
 							class="figure-btn"
 							class:glow={stage === 2 && option === current.answer}
@@ -227,15 +227,17 @@
 								<FruitArt
 									fruit={option as FruitId}
 									happy={feedback === 'correct' && option === current.answer}
+									i={i}
 								/>
 							{:else if current.kind === 'shape'}
 								<ShapeArt
 									shape={option as ShapeId}
 									color={'red' as ColorId}
 									happy={feedback === 'correct' && option === current.answer}
+									i={i}
 								/>
 							{:else}
-								<BunnyFace emotion={option as EmotionId} />
+								<BunnyFace emotion={option as EmotionId} i={i} />
 							{/if}
 						</button>
 					{/each}

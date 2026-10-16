@@ -198,12 +198,13 @@
 								<span class="mem-face back"><img src={favicon} alt="" /></span>
 								<span class="mem-face front">
 									{#if card.face.kind === 'fruit'}
-										<FruitArt fruit={card.face.fruit} happy={card.matched} />
+										<FruitArt fruit={card.face.fruit} happy={card.matched} i={index} />
 									{:else}
 										<ShapeArt
 											shape={card.face.shape}
 											color={card.face.color}
 											happy={card.matched}
+											i={index}
 										/>
 									{/if}
 								</span>

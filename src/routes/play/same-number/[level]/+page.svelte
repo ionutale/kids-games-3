@@ -112,12 +112,12 @@
 				<div class="samenum-stage" class:hint-pulse={stage === 1} aria-hidden="true">
 					<div class="compare-pile"><!-- left -->
 						{#each Array.from({ length: current.left }, (_, i) => i) as i (i)}
-							<FruitArt fruit="apple" />
+							<FruitArt fruit="apple" i={i} />
 						{/each}
 					</div>
 					<div class="compare-pile">
 						{#each Array.from({ length: current.right }, (_, i) => i) as i (i)}
-							<FruitArt fruit="apple" />
+							<FruitArt fruit="apple" i={i} />
 						{/each}
 					</div>
 				</div>

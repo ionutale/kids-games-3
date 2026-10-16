@@ -204,13 +204,13 @@
 				<div class="sum-row" class:hint-pulse={stage === 1} aria-hidden="true">
 					<div class="pile">
 						{#each Array.from({ length: current.left }, (_, i) => i) as i (i)}
-							<FruitArt fruit={config.fruit} happy={fruitHappy} />
+							<FruitArt fruit={config.fruit} happy={fruitHappy} i={i} />
 						{/each}
 					</div>
 					<span class="sum-plus">+</span>
 					<div class="pile">
 						{#each Array.from({ length: current.right }, (_, i) => i) as i (i)}
-							<FruitArt fruit={config.fruit} happy={fruitHappy} />
+							<FruitArt fruit={config.fruit} happy={fruitHappy} i={i} />
 						{/each}
 					</div>
 				</div>

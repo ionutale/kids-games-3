@@ -34,7 +34,7 @@
 	<p style="margin: 0.25rem 0 0; color: var(--ink-soft);">{m.chooseLevel()}</p>
 
 	<ol class="level-path">
-		{#each ODD_LEVELS as entry (entry.level)}
+		{#each ODD_LEVELS as entry, i (entry.level)}
 			{@const open = isLevelOpen(cleared, entry.level)}
 			<li>
 				<a
@@ -50,13 +50,13 @@
 					{/if}
 					{#if open}
 						{#if entry.kind === 'fruit'}
-							<FruitArt fruit={entry.pool[0] as FruitId} />
+							<FruitArt fruit={entry.pool[0] as FruitId} i={i} />
 						{:else if entry.kind === 'color'}
-							<ShapeArt shape="circle" color={entry.pool[0] as ColorId} />
+							<ShapeArt shape="circle" color={entry.pool[0] as ColorId} i={i} />
 						{:else if entry.kind === 'shape'}
-							<ShapeArt shape={entry.pool[0] as ShapeId} color={entry.color} />
+							<ShapeArt shape={entry.pool[0] as ShapeId} color={entry.color} i={i} />
 						{:else}
-							<BunnyFace emotion={entry.pool[0] as EmotionId} />
+							<BunnyFace emotion={entry.pool[0] as EmotionId} i={i} />
 						{/if}
 					{:else}
 						<span class="lock" aria-hidden="true">🔒</span>

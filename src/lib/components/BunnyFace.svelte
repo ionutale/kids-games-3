@@ -4,17 +4,23 @@
 	interface Props {
 		emotion: EmotionId;
 		label?: string;
+		/** Stagger index for the idle motion phase. */
+		i?: number;
 	}
 
-	let { emotion, label = '' }: Props = $props();
+	let { emotion, label = '', i = 0 }: Props = $props();
 </script>
 
-<svg viewBox="4 4 56 56" role="img" aria-label={label}>
+<svg viewBox="4 4 56 56" role="img" aria-label={label} style="--mn-d:{(i % 6) * 140}ms">
 	<!-- ears -->
-	<ellipse cx="24" cy="13" rx="6.5" ry="12" fill="#f3e2cf" />
-	<ellipse cx="40" cy="13" rx="6.5" ry="12" fill="#f3e2cf" />
-	<ellipse cx="24" cy="14" rx="3" ry="7.5" fill="#f4a3a3" opacity="0.8" />
-	<ellipse cx="40" cy="14" rx="3" ry="7.5" fill="#f4a3a3" opacity="0.8" />
+	<g class="ear ear-l">
+		<ellipse cx="24" cy="13" rx="6.5" ry="12" fill="#f3e2cf" />
+		<ellipse cx="24" cy="14" rx="3" ry="7.5" fill="#f4a3a3" opacity="0.8" />
+	</g>
+	<g class="ear ear-r">
+		<ellipse cx="40" cy="13" rx="6.5" ry="12" fill="#f3e2cf" />
+		<ellipse cx="40" cy="14" rx="3" ry="7.5" fill="#f4a3a3" opacity="0.8" />
+	</g>
 	<!-- head -->
 	<circle cx="32" cy="40" r="19" fill="#fffdf7" stroke="#ead9bd" stroke-width="2" />
 	<ellipse cx="21" cy="46" rx="3.6" ry="2.4" fill="#f4a3a3" opacity="0.7" />
@@ -115,3 +121,42 @@
 		<path d="M27,50 L37,49" stroke="#4a2c2a" stroke-width="2.4" stroke-linecap="round" />
 	{/if}
 </svg>
+
+<style>
+	.ear {
+		transform-box: fill-box;
+		transform-origin: 50% 100%;
+	}
+	.ear-l {
+		animation: ear-wiggle-l 2.8s ease-in-out infinite;
+		animation-delay: calc(var(--mn-d, 0ms) + 150ms);
+	}
+	.ear-r {
+		animation: ear-wiggle-r 2.8s ease-in-out infinite;
+		animation-delay: var(--mn-d, 0ms);
+	}
+	@keyframes ear-wiggle-l {
+		0%,
+		100% {
+			transform: rotate(-2.5deg);
+		}
+		50% {
+			transform: rotate(2deg);
+		}
+	}
+	@keyframes ear-wiggle-r {
+		0%,
+		100% {
+			transform: rotate(2.5deg);
+		}
+		50% {
+			transform: rotate(-2deg);
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.ear-l,
+		.ear-r {
+			animation: none;
+		}
+	}
+</style>

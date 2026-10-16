@@ -210,7 +210,7 @@
 							onclick={() => answer(index)}
 						>
 							<span class="above-fruit" aria-hidden="true">
-								<FruitArt {fruit} happy={feedback === 'correct' && index === current.answerIndex} />
+								<FruitArt {fruit} happy={feedback === 'correct' && index === current.answerIndex} i={index} />
 							</span>
 						</button>
 					{/each}

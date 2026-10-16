@@ -255,7 +255,7 @@
 					class:hint-pulse={stage === 1 && !!selected}
 					aria-label={m.kind_prompt()}
 				>
-					{#each loose as item (item.id)}
+					{#each loose as item, i (item.id)}
 						<button
 							class="sort-item"
 							class:selected={selectedId === item.id}
@@ -270,6 +270,7 @@
 								face={item.face}
 								happy={feedback === 'correct' && selected?.id === item.id}
 								label={faceLabel(item.face)}
+								i={i}
 							/>
 						</button>
 					{/each}
@@ -288,9 +289,9 @@
 						>
 							<span class="sort-bucket-label">{bucketLabel(bucket)}</span>
 							<span class="sort-bucket-tray" aria-hidden="true">
-								{#each inBucket(bucket) as item (item.id)}
+								{#each inBucket(bucket) as item, i (item.id)}
 									<span class="sort-placed">
-										<KindArt face={item.face} happy={true} />
+										<KindArt face={item.face} happy={true} i={i} />
 									</span>
 								{/each}
 							</span>

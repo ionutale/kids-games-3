@@ -196,7 +196,7 @@
 					<div class="oless-pile half-pile">
 						{#each Array.from({ length: current.shown }, (_, i) => i) as i (i)}
 							<span class="half-piece" class:split={i < current.answer}>
-								<FruitArt fruit={config.fruit} happy={feedback === 'correct'} />
+								<FruitArt fruit={config.fruit} happy={feedback === 'correct'} i={i} />
 							</span>
 						{/each}
 					</div>

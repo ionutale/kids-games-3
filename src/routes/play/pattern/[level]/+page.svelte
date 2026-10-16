@@ -195,12 +195,12 @@
 			{#if current}
 				<div class="pattern-row" class:hint-pulse={stage === 1} aria-hidden="true">
 					{#each current.shown as color, index (index)}
-						<span class="pattern-spot"><ShapeArt shape="circle" {color} /></span>
+						<span class="pattern-spot"><ShapeArt shape="circle" {color} i={index} /></span>
 					{/each}
 					<span class="pattern-spot blank">?</span>
 				</div>
 				<div class="answers">
-					{#each current.options as color (color)}
+					{#each current.options as color, i (color)}
 						<button
 							class="figure-btn"
 							class:glow={stage === 2 && color === current.answer}
@@ -214,6 +214,7 @@
 								shape="circle"
 								{color}
 								happy={feedback === 'correct' && color === current.answer}
+								i={i}
 							/>
 						</button>
 					{/each}

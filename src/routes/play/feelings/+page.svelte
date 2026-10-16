@@ -31,7 +31,7 @@
 	<p style="margin: 0.25rem 0 0; color: var(--ink-soft);">{m.chooseLevel()}</p>
 
 	<ol class="level-path">
-		{#each FEELINGS_LEVELS as entry (entry.level)}
+		{#each FEELINGS_LEVELS as entry, i (entry.level)}
 			{@const open = isLevelOpen(cleared, entry.level)}
 			<li>
 				<a
@@ -46,7 +46,7 @@
 						<span class="badge-new">{m.newLevel()}</span>
 					{/if}
 					{#if open}
-						<BunnyFace emotion={entry.emotions[0]} />
+						<BunnyFace emotion={entry.emotions[0]} i={i} />
 					{:else}
 						<span class="lock" aria-hidden="true">🔒</span>
 					{/if}

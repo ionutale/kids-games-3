@@ -220,7 +220,7 @@
 								<span class="order-n">{rank}</span>
 							{/if}
 							{#each Array.from({ length: count }, (_, i) => i) as i (i)}
-								<FruitArt fruit={config.fruit} happy={rank !== null} />
+								<FruitArt fruit={config.fruit} happy={rank !== null} i={i} />
 							{/each}
 						</button>
 					{/each}

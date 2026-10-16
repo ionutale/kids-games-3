@@ -31,7 +31,7 @@
 	<p style="margin: 0.25rem 0 0; color: var(--ink-soft);">{m.chooseLevel()}</p>
 
 	<ol class="level-path">
-		{#each KIND_LEVELS as entry (entry.level)}
+		{#each KIND_LEVELS as entry, i (entry.level)}
 			{@const open = isLevelOpen(cleared, entry.level)}
 			<li>
 				<a
@@ -47,7 +47,7 @@
 					{/if}
 					{#if open}
 						<span class="kind-thumb" aria-hidden="true">
-							<KindArt face="cat" />
+							<KindArt face="cat" i={i} />
 						</span>
 					{:else}
 						<span class="lock" aria-hidden="true">🔒</span>

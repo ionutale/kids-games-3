@@ -185,7 +185,7 @@
 					{/if}
 				</div>
 				<div class="answers">
-					{#each current.options as option (option)}
+					{#each current.options as option, i (option)}
 						<button
 							class="answer-btn word"
 							class:glow={stage === 2 && option === current.answer}
@@ -195,7 +195,7 @@
 							onclick={() => answer(option)}
 						>
 							{#if current.mode === 'word-to-pic'}
-								<KindArt face={face(option)} />
+								<KindArt face={face(option)} i={i} />
 							{:else}
 								{option}
 							{/if}

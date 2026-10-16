@@ -27,7 +27,7 @@
 	<h2 style="margin: 0; font-size: 2rem;">{m.wop_name()}</h2>
 	<p style="margin: 0.25rem 0 0; color: var(--ink-soft);">{m.chooseLevel()}</p>
 	<ol class="level-path">
-		{#each WORD_OR_PICTURE_LEVELS as entry (entry.level)}
+		{#each WORD_OR_PICTURE_LEVELS as entry, i (entry.level)}
 			{@const open = isLevelOpen(cleared, entry.level)}
 			<li>
 				<a
@@ -42,7 +42,7 @@
 						<span class="badge-new">{m.newLevel()}</span>
 					{/if}
 					{#if open}
-						<span class="batch25-thumb" aria-hidden="true"><KindArt face="cat" /></span>
+						<span class="batch25-thumb" aria-hidden="true"><KindArt face="cat" i={i} /></span>
 					{:else}
 						<span class="lock" aria-hidden="true">🔒</span>
 					{/if}

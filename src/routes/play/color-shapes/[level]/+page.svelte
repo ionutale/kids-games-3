@@ -224,7 +224,7 @@
 
 			{#if figures !== null && current !== null}
 				<div class="answers" class:hint-pulse={stage === 1}>
-					{#each options as option (option.color + '-' + option.shape)}
+					{#each options as option, i (option.color + '-' + option.shape)}
 						<button
 							class="figure-btn"
 							class:glow={stage === 2 && same(option, current)}
@@ -234,7 +234,7 @@
 							onclick={() => answer(option)}
 							aria-label={figurePhrase(words, locale as WordLocale, option, true)}
 						>
-							<ShapeArt shape={option.shape} color={option.color} happy={figuresHappy} />
+							<ShapeArt shape={option.shape} color={option.color} happy={figuresHappy} i={i} />
 						</button>
 					{/each}
 				</div>

@@ -19,13 +19,13 @@
 	<h2 style="margin: 0; font-size: 2rem;">{m.samenum_name()}</h2>
 	<p style="margin: 0.25rem 0 0; color: var(--ink-soft);">{m.chooseLevel()}</p>
 	<ol class="level-path">
-		{#each SAME_NUMBER_LEVELS as entry (entry.level)}
+		{#each SAME_NUMBER_LEVELS as entry, i (entry.level)}
 			{@const open = isLevelOpen(cleared, entry.level)}
 			<li>
 				<a class="level-tile" class:locked={!open} href={levelHref(entry.level)}
 					aria-label={open ? m.level({ n: entry.level }) : `${m.level({ n: entry.level })} — ${m.locked()}`}>
 					{#if entry.level === cleared + 1 && cleared < MAX_SAME_NUMBER_LEVEL}<span class="badge-new">{m.newLevel()}</span>{/if}
-					{#if open}<span class="samenum-thumb" aria-hidden="true"><FruitArt fruit="apple" /></span>{:else}<span class="lock" aria-hidden="true">🔒</span>{/if}
+					{#if open}<span class="samenum-thumb" aria-hidden="true"><FruitArt fruit="apple" i={i} /></span>{:else}<span class="lock" aria-hidden="true">🔒</span>{/if}
 					<span>{m.level({ n: entry.level })}</span>
 				</a>
 			</li>

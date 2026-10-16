@@ -204,19 +204,19 @@
 				<div class="sum-row equation" class:hint-pulse={stage === 1} aria-hidden="true">
 					<div class="pile">
 						{#each Array.from({ length: current.start }, (_, i) => i) as i (i)}
-							<FruitArt fruit={config.fruit} happy={fruitHappy} />
+							<FruitArt fruit={config.fruit} happy={fruitHappy} i={i} />
 						{/each}
 					</div>
 					<span class="sum-plus">−</span>
 					<div class="pile">
 						{#each Array.from({ length: current.taken }, (_, i) => i) as i (i)}
-							<FruitArt fruit={config.fruit} />
+							<FruitArt fruit={config.fruit} i={i} />
 						{/each}
 					</div>
 					<span class="sum-plus">=</span>
 					<div class="pile result">
 						{#each Array.from({ length: answerRemain ?? 0 }, (_, i) => i) as i (i)}
-							<FruitArt fruit={config.fruit} happy={fruitHappy} />
+							<FruitArt fruit={config.fruit} happy={fruitHappy} i={i} />
 						{/each}
 					</div>
 				</div>
