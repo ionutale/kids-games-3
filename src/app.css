@@ -3905,3 +3905,160 @@ a.level-tile:hover {
 .game-card .batch25-thumb { width: 4.6rem; height: 4.6rem; }
 .level-tile .batch25-thumb { width: 2.8rem; height: 2.8rem; border-width: 2px; }
 .batch25-stage { display: flex; justify-content: center; margin: 0.75rem 0 0.5rem; flex-wrap: wrap; gap: 0.75rem; }
+
+/* Idle motion — gentle ambient loops for scene art (transform/opacity/filter only).
+   Stagger instances with `--mn-d` (e.g. style="--mn-d: 140ms"). */
+.idle-bob {
+	animation: idle-bob 2.6s ease-in-out infinite;
+	animation-delay: var(--mn-d, 0ms);
+}
+
+.idle-sway {
+	transform-box: fill-box;
+	transform-origin: 50% 85%;
+	animation: idle-sway 3s ease-in-out infinite;
+	animation-delay: var(--mn-d, 0ms);
+}
+
+.idle-wiggle {
+	transform-box: fill-box;
+	transform-origin: 50% 60%;
+	animation: idle-wiggle 1.8s ease-in-out infinite;
+	animation-delay: var(--mn-d, 0ms);
+}
+
+.idle-float {
+	animation: idle-float 3.4s ease-in-out infinite;
+	animation-delay: var(--mn-d, 0ms);
+}
+
+.idle-drift {
+	animation: idle-drift 5s ease-in-out infinite;
+	animation-delay: var(--mn-d, 0ms);
+}
+
+.idle-pulse {
+	transform-box: fill-box;
+	transform-origin: center;
+	animation: idle-pulse 2.2s ease-in-out infinite;
+	animation-delay: var(--mn-d, 0ms);
+}
+
+.idle-shine {
+	animation: idle-shine 2s ease-in-out infinite;
+	animation-delay: var(--mn-d, 0ms);
+}
+
+.idle-pop {
+	transform-box: fill-box;
+	transform-origin: center;
+	animation: idle-pop 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+	animation-delay: var(--mn-d, 0ms);
+}
+
+@keyframes idle-bob {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-4px);
+	}
+}
+
+@keyframes idle-sway {
+	0%,
+	100% {
+		transform: rotate(-2.4deg);
+	}
+	50% {
+		transform: rotate(2.4deg);
+	}
+}
+
+@keyframes idle-wiggle {
+	0%,
+	100% {
+		transform: rotate(-3deg);
+	}
+	50% {
+		transform: rotate(3deg);
+	}
+}
+
+@keyframes idle-float {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-8px);
+	}
+}
+
+@keyframes idle-drift {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(8px);
+	}
+}
+
+@keyframes idle-pulse {
+	0%,
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.85;
+		transform: scale(1.04);
+	}
+}
+
+@keyframes idle-shine {
+	0%,
+	100% {
+		filter: brightness(1);
+	}
+	50% {
+		filter: brightness(1.15);
+	}
+}
+
+@keyframes idle-pop {
+	from {
+		opacity: 0;
+		transform: scale(0.7);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes idle-fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.idle-bob,
+	.idle-sway,
+	.idle-wiggle,
+	.idle-float,
+	.idle-drift,
+	.idle-pulse,
+	.idle-shine {
+		animation: none;
+	}
+	.idle-pop {
+		animation-name: idle-fade;
+	}
+}
