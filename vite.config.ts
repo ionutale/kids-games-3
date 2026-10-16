@@ -3,7 +3,7 @@ import { defineConfig } from 'vitest/config';
 import { sveltekit } from '@sveltejs/kit/vite';
 import adapter from './scripts/adapter-static-vercel-safe.js';
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
 	plugins: [
 		sveltekit({
 			compilerOptions: {
@@ -11,6 +11,9 @@ export default defineConfig({
 				runes: ({ filename }) =>
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
+			// Dev builds skip service-worker registration so local sessions never
+			// serve a stale cache after the dev server restarts; production keeps it.
+			serviceWorker: { register: mode === 'production' },
 			// Same as adapter-static, but collapses Vercel's per-page trailing-slash
 			// route pairs so we stay under the 2048 route cap.
 			adapter: adapter()
@@ -51,4 +54,4 @@ export default defineConfig({
 			}
 		]
 	}
-});
+}));

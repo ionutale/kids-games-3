@@ -28,9 +28,9 @@
 		{/if}
 	{:else if scene.includes('drum') || scene === 'siren' || scene === 'cheer'}
 		<ellipse cx="60" cy="40" rx="28" ry="12" fill="#e07070" class="bounce" />
-		<path d="M32,40 V70 Q60,84 88,70 V40" fill="#c04040" />
+		<path class="soft" d="M32,40 V70 Q60,84 88,70 V40" fill="#c04040" />
 	{:else if scene.includes('whisper') || scene === 'library' || scene === 'sleep'}
-		<circle cx="60" cy="48" r="22" fill="#f4d6a8" />
+		<circle class="bob" cx="60" cy="48" r="22" fill="#f4d6a8" />
 		<path d="M48,52 Q60,48 72,52" fill="none" stroke="#4a2c2a" stroke-width="3" class="soft" />
 		{#if scene === 'library'}<rect x="28" y="78" width="64" height="14" fill="#7ec8e8" />{/if}
 	{:else if ['cat','fish','dog','bird','tree','rock','ball','car','block','key','teddy','pillow','cotton','ant','elephant','house','truck','marble','seed','rooster','owl','bat','butterfly','squirrel','firefly'].includes(scene) || scene.startsWith('cat') || scene.startsWith('ball') || scene.startsWith('bike')}
@@ -56,9 +56,19 @@
 		{/if}
 	{:else if scene.includes('bark') || scene === 'sandpaper' || scene === 'pinecone'}
 		<rect x="28" y="24" width="64" height="72" rx="6" fill="#a07850" />
-		<path d="M36,40 H84 M36,55 H80 M36,70 H84" stroke="#6a4a30" stroke-width="4" stroke-linecap="round" class="rough" />
+		<path class="rough soft" d="M36,40 H84 M36,55 H80 M36,70 H84" stroke="#6a4a30" stroke-width="4" stroke-linecap="round" />
 	{:else if scene.includes('glass') || scene === 'marble' || scene === 'mirror'}
-		<rect x="28" y="24" width="64" height="72" rx="6" fill="#d8eef8" stroke="#7ec8e8" stroke-width="3" class="shine" />
+		<rect
+			class="shine bob"
+			x="28"
+			y="24"
+			width="64"
+			height="72"
+			rx="6"
+			fill="#d8eef8"
+			stroke="#7ec8e8"
+			stroke-width="3"
+		/>
 	{:else if scene.includes('magnet') || scene === 'paperclip' || scene === 'nail' || scene === 'wood' || scene === 'plastic' || scene === 'paper'}
 		{#if scene === 'paperclip' || scene === 'nail' || scene === 'key'}
 			<path class="pull" d="M40,30 Q30,60 50,80 Q70,90 70,50 Q70,30 50,30" fill="none" stroke="#888" stroke-width="6" />
@@ -81,7 +91,7 @@
 			<path d="M68,60 H56" stroke="#4a2c2a" stroke-width="4" />
 		{/if}
 	{:else if scene.includes('in') || scene.includes('on') || scene.includes('under')}
-		<rect x="24" y="48" width="72" height="40" rx="4" fill="#c4a070" />
+		<rect class="soft" x="24" y="48" width="72" height="40" rx="4" fill="#c4a070" />
 		{#if scene.includes('-in')}
 			<circle class="bob" cx="60" cy="62" r="14" fill="#e07070" />
 		{:else if scene.includes('-on')}
@@ -105,10 +115,18 @@
 		{#if scene.includes('share') || scene.includes('split') || scene.includes('pass') || scene.includes('ask') || scene.includes('raise') || scene.includes('please') || scene.includes('wait')}
 			<path class="soft" d="M50,70 Q60,82 70,70" fill="none" stroke="#6fbf73" stroke-width="4" />
 		{:else}
-			<path d="M54,60 L66,48" stroke="#e07070" stroke-width="4" />
+			<path class="soft" d="M54,60 L66,48" stroke="#e07070" stroke-width="4" />
 		{/if}
 	{:else}
-		<text x="60" y="64" text-anchor="middle" font-size="14" font-weight="700" fill="#4a2c2a">{label.slice(0, 10)}</text>
+		<text
+			class="soft"
+			x="60"
+			y="64"
+			text-anchor="middle"
+			font-size="14"
+			font-weight="700"
+			fill="#4a2c2a">{label.slice(0, 10)}</text
+		>
 	{/if}
 </svg>
 

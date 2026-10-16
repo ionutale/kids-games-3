@@ -19,16 +19,18 @@
 	<rect x="0" y="68" width="96" height="28" fill={ground} />
 
 	{#if part === 'night'}
-		<circle cx="72" cy="22" r="10" fill="#f4f1c8" />
-		<circle cx="76" cy="20" r="9" fill={sky} />
+		<g class="idle-pulse">
+			<circle cx="72" cy="22" r="10" fill="#f4f1c8" />
+			<circle cx="76" cy="20" r="9" fill={sky} />
+		</g>
 		<circle cx="20" cy="18" r="1.4" fill="#fff" />
 		<circle cx="32" cy="28" r="1.1" fill="#fff" />
 		<circle cx="48" cy="14" r="1.2" fill="#fff" />
 	{:else if part === 'morning'}
-		<circle cx="74" cy="26" r="12" fill="#f2c230" />
+		<circle class="idle-pulse" cx="74" cy="26" r="12" fill="#f2c230" />
 		<path d="M10,58 C24,48 36,52 48,58 C60,64 72,60 86,52 L86,68 L10,68 Z" fill="#fff6" />
 	{:else}
-		<circle cx="72" cy="22" r="13" fill="#f2c230" />
+		<circle class="idle-pulse" cx="72" cy="22" r="13" fill="#f2c230" />
 	{/if}
 
 	<circle cx="40" cy="46" r="24" fill="#fffdf8" stroke="#4a2c2a" stroke-width="3" />

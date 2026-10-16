@@ -11,7 +11,13 @@
 	let { emotion, label = '', i = 0 }: Props = $props();
 </script>
 
-<svg viewBox="4 4 56 56" role="img" aria-label={label} style="--mn-d:{(i % 6) * 140}ms">
+<svg
+	class="idle-bob"
+	viewBox="4 4 56 56"
+	role="img"
+	aria-label={label}
+	style="--mn-d:{(i % 6) * 140}ms"
+>
 	<!-- ears -->
 	<g class="ear ear-l">
 		<ellipse cx="24" cy="13" rx="6.5" ry="12" fill="#f3e2cf" />

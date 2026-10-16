@@ -12,10 +12,14 @@
 	<g transform="rotate({tilt} 110 64)">
 		<g class="beam">
 			<rect x="28" y="58" width="164" height="10" rx="4" fill="#8b6a40" />
-			<line x1="48" y1="68" x2="48" y2="84" stroke="#8b6a40" stroke-width="3" />
-			<path d="M26,84 L70,84 L64,100 L32,100 Z" fill="#e8d4a8" stroke="#c4a878" stroke-width="2.5" />
-			<line x1="172" y1="68" x2="172" y2="84" stroke="#8b6a40" stroke-width="3" />
-			<path d="M150,84 L194,84 L188,100 L156,100 Z" fill="#e8d4a8" stroke="#c4a878" stroke-width="2.5" />
+			<g class="pan pan-l">
+				<line x1="48" y1="68" x2="48" y2="84" stroke="#8b6a40" stroke-width="3" />
+				<path d="M26,84 L70,84 L64,100 L32,100 Z" fill="#e8d4a8" stroke="#c4a878" stroke-width="2.5" />
+			</g>
+			<g class="pan pan-r">
+				<line x1="172" y1="68" x2="172" y2="84" stroke="#8b6a40" stroke-width="3" />
+				<path d="M150,84 L194,84 L188,100 L156,100 Z" fill="#e8d4a8" stroke="#c4a878" stroke-width="2.5" />
+			</g>
 		</g>
 	</g>
 </svg>
@@ -35,8 +39,26 @@
 			transform: rotate(1.1deg);
 		}
 	}
+	.pan {
+		transform-box: fill-box;
+		transform-origin: 50% 5%;
+		animation: pan-swing 3.4s ease-in-out infinite;
+	}
+	.pan-r {
+		animation-delay: 0.7s;
+	}
+	@keyframes pan-swing {
+		0%,
+		100% {
+			transform: rotate(-2.4deg);
+		}
+		50% {
+			transform: rotate(2.4deg);
+		}
+	}
 	@media (prefers-reduced-motion: reduce) {
-		.beam {
+		.beam,
+		.pan {
 			animation: none;
 		}
 	}

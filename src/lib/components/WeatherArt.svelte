@@ -96,83 +96,87 @@
 			<ellipse cx="52" cy="24" rx="14" ry="12" fill="#8799ab" />
 			<ellipse cx="64" cy="28" rx="12" ry="9" fill="#9aabbc" />
 		</g>
-		<line
-			x1="30"
-			y1="42"
-			x2="28"
-			y2="52"
-			stroke="#5a9fd4"
-			stroke-width="2.2"
-			stroke-linecap="round"
-		/>
-		<line
-			x1="42"
-			y1="48"
-			x2="40"
-			y2="58"
-			stroke="#5a9fd4"
-			stroke-width="2.2"
-			stroke-linecap="round"
-		/>
-		<line
-			x1="54"
-			y1="44"
-			x2="52"
-			y2="54"
-			stroke="#5a9fd4"
-			stroke-width="2.2"
-			stroke-linecap="round"
-		/>
-		<line
-			x1="66"
-			y1="50"
-			x2="64"
-			y2="60"
-			stroke="#5a9fd4"
-			stroke-width="2.2"
-			stroke-linecap="round"
-		/>
-		<line
-			x1="36"
-			y1="56"
-			x2="34"
-			y2="66"
-			stroke="#5a9fd4"
-			stroke-width="2.2"
-			stroke-linecap="round"
-		/>
-		<line
-			x1="50"
-			y1="58"
-			x2="48"
-			y2="68"
-			stroke="#5a9fd4"
-			stroke-width="2.2"
-			stroke-linecap="round"
-		/>
-		<line
-			x1="62"
-			y1="54"
-			x2="60"
-			y2="64"
-			stroke="#5a9fd4"
-			stroke-width="2.2"
-			stroke-linecap="round"
-		/>
+		<g class="rain">
+			<line
+				x1="30"
+				y1="42"
+				x2="28"
+				y2="52"
+				stroke="#5a9fd4"
+				stroke-width="2.2"
+				stroke-linecap="round"
+			/>
+			<line
+				x1="42"
+				y1="48"
+				x2="40"
+				y2="58"
+				stroke="#5a9fd4"
+				stroke-width="2.2"
+				stroke-linecap="round"
+			/>
+			<line
+				x1="54"
+				y1="44"
+				x2="52"
+				y2="54"
+				stroke="#5a9fd4"
+				stroke-width="2.2"
+				stroke-linecap="round"
+			/>
+			<line
+				x1="66"
+				y1="50"
+				x2="64"
+				y2="60"
+				stroke="#5a9fd4"
+				stroke-width="2.2"
+				stroke-linecap="round"
+			/>
+			<line
+				x1="36"
+				y1="56"
+				x2="34"
+				y2="66"
+				stroke="#5a9fd4"
+				stroke-width="2.2"
+				stroke-linecap="round"
+			/>
+			<line
+				x1="50"
+				y1="58"
+				x2="48"
+				y2="68"
+				stroke="#5a9fd4"
+				stroke-width="2.2"
+				stroke-linecap="round"
+			/>
+			<line
+				x1="62"
+				y1="54"
+				x2="60"
+				y2="64"
+				stroke="#5a9fd4"
+				stroke-width="2.2"
+				stroke-linecap="round"
+			/>
+		</g>
 	{:else}
 		<g class="idle-drift">
 			<ellipse cx="38" cy="26" rx="16" ry="10" fill="#dce6ef" />
 			<ellipse cx="52" cy="24" rx="14" ry="12" fill="#cfdceb" />
 			<ellipse cx="64" cy="28" rx="12" ry="9" fill="#dce6ef" />
 		</g>
-		<circle cx="30" cy="46" r="1.6" fill="#fff" />
-		<circle cx="42" cy="52" r="1.8" fill="#fff" />
-		<circle cx="54" cy="48" r="1.5" fill="#fff" />
-		<circle cx="66" cy="54" r="1.7" fill="#fff" />
-		<circle cx="36" cy="60" r="1.4" fill="#fff" />
-		<circle cx="50" cy="62" r="1.6" fill="#fff" />
-		<circle cx="62" cy="58" r="1.5" fill="#fff" />
-		<circle cx="74" cy="50" r="1.4" fill="#fff" />
+		<g class="snow">
+			<circle cx="30" cy="46" r="1.6" fill="#fff" />
+			<circle cx="42" cy="52" r="1.8" fill="#fff" />
+			<circle cx="54" cy="48" r="1.5" fill="#fff" />
+			<circle cx="66" cy="54" r="1.7" fill="#fff" />
+			<circle cx="36" cy="60" r="1.4" fill="#fff" />
+			<circle cx="50" cy="62" r="1.6" fill="#fff" />
+			<circle cx="62" cy="58" r="1.5" fill="#fff" />
+			<circle cx="74" cy="50" r="1.4" fill="#fff" />
+		</g>
 		<circle cx="18" cy="74" r="7" fill="#fff" />
 		<circle cx="18" cy="66" r="5.5" fill="#fff" />
 		<circle cx="18" cy="60" r="4" fill="#fff" />
@@ -197,8 +201,46 @@
 			transform: rotate(360deg);
 		}
 	}
+	.rain {
+		animation: rain-fall 1.1s ease-in infinite;
+	}
+	@keyframes rain-fall {
+		0% {
+			transform: translateY(-6px);
+			opacity: 0;
+		}
+		35% {
+			opacity: 0.9;
+		}
+		100% {
+			transform: translateY(7px);
+			opacity: 0;
+		}
+	}
+	.snow circle {
+		animation: snow-fall 3.6s ease-in-out infinite;
+	}
+	.snow circle:nth-child(2n) {
+		animation-delay: 1.2s;
+	}
+	.snow circle:nth-child(3n) {
+		animation-delay: 2.2s;
+	}
+	@keyframes snow-fall {
+		0%,
+		100% {
+			transform: translateY(0);
+			opacity: 0.7;
+		}
+		50% {
+			transform: translateY(6px);
+			opacity: 1;
+		}
+	}
 	@media (prefers-reduced-motion: reduce) {
-		.sun-rays {
+		.sun-rays,
+		.rain,
+		.snow circle {
 			animation: none;
 		}
 	}

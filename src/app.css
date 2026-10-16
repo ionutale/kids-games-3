@@ -3909,43 +3909,43 @@ a.level-tile:hover {
 /* Idle motion — gentle ambient loops for scene art (transform/opacity/filter only).
    Stagger instances with `--mn-d` (e.g. style="--mn-d: 140ms"). */
 .idle-bob {
-	animation: idle-bob 2.6s ease-in-out infinite;
+	animation: idle-bob 2.2s ease-in-out infinite;
 	animation-delay: var(--mn-d, 0ms);
 }
 
 .idle-sway {
 	transform-box: fill-box;
 	transform-origin: 50% 85%;
-	animation: idle-sway 3s ease-in-out infinite;
+	animation: idle-sway 2.6s ease-in-out infinite;
 	animation-delay: var(--mn-d, 0ms);
 }
 
 .idle-wiggle {
 	transform-box: fill-box;
 	transform-origin: 50% 60%;
-	animation: idle-wiggle 1.8s ease-in-out infinite;
+	animation: idle-wiggle 1.6s ease-in-out infinite;
 	animation-delay: var(--mn-d, 0ms);
 }
 
 .idle-float {
-	animation: idle-float 3.4s ease-in-out infinite;
+	animation: idle-float 3s ease-in-out infinite;
 	animation-delay: var(--mn-d, 0ms);
 }
 
 .idle-drift {
-	animation: idle-drift 5s ease-in-out infinite;
+	animation: idle-drift 4.2s ease-in-out infinite;
 	animation-delay: var(--mn-d, 0ms);
 }
 
 .idle-pulse {
 	transform-box: fill-box;
 	transform-origin: center;
-	animation: idle-pulse 2.2s ease-in-out infinite;
+	animation: idle-pulse 2s ease-in-out infinite;
 	animation-delay: var(--mn-d, 0ms);
 }
 
 .idle-shine {
-	animation: idle-shine 2s ease-in-out infinite;
+	animation: idle-shine 1.8s ease-in-out infinite;
 	animation-delay: var(--mn-d, 0ms);
 }
 
@@ -3962,27 +3962,27 @@ a.level-tile:hover {
 		transform: translateY(0);
 	}
 	50% {
-		transform: translateY(-4px);
+		transform: translateY(-6px);
 	}
 }
 
 @keyframes idle-sway {
 	0%,
 	100% {
-		transform: rotate(-2.4deg);
+		transform: rotate(-3.4deg);
 	}
 	50% {
-		transform: rotate(2.4deg);
+		transform: rotate(3.4deg);
 	}
 }
 
 @keyframes idle-wiggle {
 	0%,
 	100% {
-		transform: rotate(-3deg);
+		transform: rotate(-4.5deg);
 	}
 	50% {
-		transform: rotate(3deg);
+		transform: rotate(4.5deg);
 	}
 }
 
@@ -3992,7 +3992,7 @@ a.level-tile:hover {
 		transform: translateY(0);
 	}
 	50% {
-		transform: translateY(-8px);
+		transform: translateY(-11px);
 	}
 }
 
@@ -4002,7 +4002,7 @@ a.level-tile:hover {
 		transform: translateX(0);
 	}
 	50% {
-		transform: translateX(8px);
+		transform: translateX(11px);
 	}
 }
 
@@ -4014,7 +4014,7 @@ a.level-tile:hover {
 	}
 	50% {
 		opacity: 0.85;
-		transform: scale(1.04);
+		transform: scale(1.065);
 	}
 }
 
@@ -4024,7 +4024,7 @@ a.level-tile:hover {
 		filter: brightness(1);
 	}
 	50% {
-		filter: brightness(1.15);
+		filter: brightness(1.2);
 	}
 }
 
@@ -4048,6 +4048,102 @@ a.level-tile:hover {
 	}
 }
 
+/* Idle motion — UI chrome. Buttons move gently; press, hover, and feedback states take over. */
+.btn:not(:active),
+.help-btn:not(:active) {
+	animation: idle-bob-btn 2.4s ease-in-out infinite;
+}
+
+.actions .btn:nth-child(2n):not(:active) {
+	animation-delay: 0.6s;
+}
+
+.actions .btn:nth-child(3n):not(:active) {
+	animation-delay: 1.1s;
+}
+
+.answers > :not(.glow):not(.shake) {
+	animation: idle-bob-btn 2.4s ease-in-out infinite;
+}
+
+.answers > :nth-child(2n):not(.glow):not(.shake) {
+	animation-delay: 0.5s;
+}
+
+.answers > :nth-child(3n):not(.glow):not(.shake) {
+	animation-delay: 1s;
+}
+
+.pips .pip:not(.full) {
+	animation: idle-pip 2.6s ease-in-out infinite;
+}
+
+.pips .pip:nth-child(2n):not(.full) {
+	animation-delay: 0.4s;
+}
+
+.pips .pip:nth-child(3n):not(.full) {
+	animation-delay: 0.9s;
+}
+
+.level-tile:not(:hover) {
+	animation: idle-breathe 3s ease-in-out infinite;
+}
+
+.level-path li:nth-child(2n) .level-tile:not(:hover) {
+	animation-delay: -1.2s;
+}
+
+.level-path li:nth-child(3n) .level-tile:not(:hover) {
+	animation-delay: -2.1s;
+}
+
+.game-card .thumb {
+	animation: idle-breathe 3.2s ease-in-out infinite;
+}
+
+.game-card:nth-of-type(2n) .thumb {
+	animation-delay: -1.1s;
+}
+
+.game-card:nth-of-type(3n) .thumb {
+	animation-delay: -2s;
+}
+
+.lumi-sun {
+	animation: idle-bob 2.4s ease-in-out infinite;
+}
+
+@keyframes idle-bob-btn {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-3px);
+	}
+}
+
+@keyframes idle-pip {
+	0%,
+	100% {
+		opacity: 0.6;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+@keyframes idle-breathe {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.015);
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 	.idle-bob,
 	.idle-sway,
@@ -4055,7 +4151,14 @@ a.level-tile:hover {
 	.idle-float,
 	.idle-drift,
 	.idle-pulse,
-	.idle-shine {
+	.idle-shine,
+	.btn:not(:active),
+	.help-btn:not(:active),
+	.answers > :not(.glow):not(.shake),
+	.pips .pip:not(.full),
+	.level-tile:not(:hover),
+	.game-card .thumb,
+	.lumi-sun {
 		animation: none;
 	}
 	.idle-pop {
