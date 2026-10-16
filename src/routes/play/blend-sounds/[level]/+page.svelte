@@ -195,7 +195,8 @@
 					<span class="blend-plus">+</span>
 					<span class="blend-chip">{current.rime}</span>
 				</div>
-				<div class="answers">
+				{#key roundIndex}
+				<div class="answers idle-pop" style="--mn-d:120ms">
 					{#each current.options as option (option.word)}
 						<button
 							class="figure-btn blend-btn"
@@ -211,6 +212,7 @@
 						</button>
 					{/each}
 				</div>
+				{/key}
 				<p class="feedback" class:good={feedback === 'correct'} class:retry={feedback === 'wrong'}>
 					{#if feedback === 'correct'}{m.correctTap()}{:else if feedback === 'wrong'}{m.tryAgain()}{/if}
 				</p>

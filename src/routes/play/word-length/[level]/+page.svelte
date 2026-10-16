@@ -184,11 +184,12 @@
 				{/each}
 			</div>
 			{#if current}
-				<div class="wordlen-stage" class:hint-pulse={stage === 1} aria-hidden="true">
+				{#key roundIndex}
+				<div class="wordlen-stage idle-pop" class:hint-pulse={stage === 1} aria-hidden="true">
 					<span class="wordlen-card">{wordLabel(current.left)}</span>
 					<span class="wordlen-card">{wordLabel(current.right)}</span>
 				</div>
-				<div class="answers">
+				<div class="answers idle-pop" style="--mn-d:120ms">
 					{#each current.options as option (option)}
 						<button
 							class="answer-btn word"
@@ -200,6 +201,7 @@
 						>
 					{/each}
 				</div>
+				{/key}
 				<p class="feedback" class:good={feedback === 'correct'} class:retry={feedback === 'wrong'}>
 					{#if feedback === 'correct'}{m.correctTap()}{:else if feedback === 'wrong'}{m.tryAgain()}{/if}
 				</p>

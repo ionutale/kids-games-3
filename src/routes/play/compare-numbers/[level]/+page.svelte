@@ -194,7 +194,8 @@
 				{/each}
 			</div>
 			{#if current}
-				<div class="cmp-row" class:hint-pulse={stage === 1}>
+				{#key roundIndex}
+				<div class="cmp-row idle-pop" class:hint-pulse={stage === 1}>
 					<button
 						class="cmp-num"
 						class:glow={stage === 2 && current.left === current.answer}
@@ -217,6 +218,7 @@
 						{current.right}
 					</button>
 				</div>
+				{/key}
 				<p class="feedback" class:good={feedback === 'correct'} class:retry={feedback === 'wrong'}>
 					{#if feedback === 'correct'}{m.correctTap()}{:else if feedback === 'wrong'}{m.tryAgain()}{/if}
 				</p>

@@ -219,10 +219,11 @@
 				{/each}
 			</div>
 			{#if current}
-				<div class="spell-pic" class:hint-pulse={stage === 1} aria-hidden="true">
+				{#key roundIndex}
+				<div class="spell-pic idle-pop" class:hint-pulse={stage === 1} aria-hidden="true">
 					{current.picture}
 				</div>
-				<div class="spell-slots" aria-label={m.spell_prompt()}>
+				<div class="spell-slots idle-pop" style="--mn-d:120ms" aria-label={m.spell_prompt()}>
 					{#each current.letters as _letter, slot (slot)}
 						<span
 							class="spell-slot"
@@ -252,6 +253,7 @@
 						{/if}
 					{/each}
 				</div>
+				{/key}
 				<p class="feedback" class:good={feedback === 'correct'} class:retry={feedback === 'wrong'}>
 					{#if feedback === 'correct'}{m.correctTap()}{:else if feedback === 'wrong'}{m.tryAgain()}{/if}
 				</p>

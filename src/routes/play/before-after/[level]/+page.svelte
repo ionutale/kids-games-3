@@ -196,7 +196,8 @@
 						<span class="pip" class:full={done}></span>
 					{/each}
 				</div>
-				<div class="missing-row" class:hint-pulse={stage === 1} aria-hidden="true">
+				{#key roundIndex}
+				<div class="missing-row idle-pop" class:hint-pulse={stage === 1} aria-hidden="true">
 					{#if current.side === 'before'}
 						<span class="missing-blank">?</span>
 						<span class="missing-num">{current.letter}</span>
@@ -205,7 +206,7 @@
 						<span class="missing-blank">?</span>
 					{/if}
 				</div>
-				<div class="answers">
+				<div class="answers idle-pop" style="--mn-d:120ms">
 					{#each current.options as option (option)}
 						<button
 							class="answer-btn"
@@ -219,6 +220,7 @@
 						</button>
 					{/each}
 				</div>
+				{/key}
 				<p class="feedback" class:good={feedback === 'correct'} class:retry={feedback === 'wrong'}>
 					{#if feedback === 'correct'}{m.correctTap()}{:else if feedback === 'wrong'}{m.tryAgain()}{/if}
 				</p>

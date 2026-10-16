@@ -190,10 +190,11 @@
 				{/each}
 			</div>
 			{#if current}
-				<div class="case-show" class:hint-pulse={stage === 1} aria-hidden="true">
+				{#key roundIndex}
+				<div class="case-show idle-pop" class:hint-pulse={stage === 1} aria-hidden="true">
 					<span class="case-letter">{current.shown}</span>
 				</div>
-				<div class="answers">
+				<div class="answers idle-pop" style="--mn-d:120ms">
 					{#each current.options as option (option)}
 						<button
 							class="answer-btn word"
@@ -207,6 +208,7 @@
 						</button>
 					{/each}
 				</div>
+				{/key}
 				<p class="feedback" class:good={feedback === 'correct'} class:retry={feedback === 'wrong'}>
 					{#if feedback === 'correct'}{m.correctTap()}{:else if feedback === 'wrong'}{m.tryAgain()}{/if}
 				</p>

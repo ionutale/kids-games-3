@@ -86,19 +86,21 @@
 			<p class="prompt">{m.maketen_prompt()}</p>
 			<div class="pips" aria-hidden="true">{#each pips as done, index (index)}<span class="pip" class:full={done}></span>{/each}</div>
 			{#if current}
-				<div class="maketen-stage" class:hint-pulse={stage === 1} aria-hidden="true">
+				{#key roundIndex}
+				<div class="maketen-stage idle-pop" class:hint-pulse={stage === 1} aria-hidden="true">
 					<span class="maketen-shown">{current.shown}</span>
 					<span class="maketen-plus">+</span>
 					<span class="maketen-q">?</span>
 					<span class="maketen-eq">= 10</span>
 				</div>
-				<div class="answers">
+				<div class="answers idle-pop" style="--mn-d:120ms">
 					{#each current.options as option (option)}
 						<button class="answer-btn word" class:glow={stage === 2 && option === current.answer}
 							class:shake={feedback === 'wrong' && option === wrongValue} type="button"
 							disabled={feedback === 'correct'} onclick={() => answer(option)}>{option}</button>
 					{/each}
 				</div>
+				{/key}
 				<p class="feedback" class:good={feedback === 'correct'} class:retry={feedback === 'wrong'}>
 					{#if feedback === 'correct'}{m.correctTap()}{:else if feedback === 'wrong'}{m.tryAgain()}{/if}
 				</p>

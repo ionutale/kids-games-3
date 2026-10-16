@@ -188,13 +188,14 @@
 				{/each}
 			</div>
 			{#if current}
-				<div class="missing-row" class:hint-pulse={stage === 1} aria-hidden="true">
+				{#key roundIndex}
+				<div class="missing-row idle-pop" class:hint-pulse={stage === 1} aria-hidden="true">
 					{#each current.shown as value, index (index)}
 						<span class="missing-num">{value}</span>
 					{/each}
 					<span class="missing-blank">?</span>
 				</div>
-				<div class="answers">
+				<div class="answers idle-pop" style="--mn-d:120ms">
 					{#each current.options as option (option)}
 						<button
 							class="answer-btn"
@@ -208,6 +209,7 @@
 						</button>
 					{/each}
 				</div>
+				{/key}
 				<p class="feedback" class:good={feedback === 'correct'} class:retry={feedback === 'wrong'}>
 					{#if feedback === 'correct'}{m.correctTap()}{:else if feedback === 'wrong'}{m.tryAgain()}{/if}
 				</p>

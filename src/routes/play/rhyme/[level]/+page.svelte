@@ -199,10 +199,11 @@
 				{/each}
 			</div>
 			{#if current}
-				<div class="rhyme-prompt" class:hint-pulse={stage === 1} aria-hidden="true">
+				{#key roundIndex}
+				<div class="rhyme-prompt idle-pop" class:hint-pulse={stage === 1} aria-hidden="true">
 					{@render rhymeFace(current.prompt)}
 				</div>
-				<div class="answers">
+				<div class="answers idle-pop" style="--mn-d:120ms">
 					{#each current.options as option (option.word)}
 						<button
 							class="figure-btn rhyme-btn"
@@ -217,6 +218,7 @@
 						</button>
 					{/each}
 				</div>
+				{/key}
 				<p class="feedback" class:good={feedback === 'correct'} class:retry={feedback === 'wrong'}>
 					{#if feedback === 'correct'}{m.correctTap()}{:else if feedback === 'wrong'}{m.tryAgain()}{/if}
 				</p>

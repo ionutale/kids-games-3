@@ -196,7 +196,8 @@
 				{/each}
 			</div>
 			{#if current}
-				<div class="place-board" class:hint-pulse={stage === 1} aria-hidden="true">
+				{#key roundIndex}
+				<div class="place-board idle-pop" class:hint-pulse={stage === 1} aria-hidden="true">
 					<div class="place-tens">
 						{#each Array.from({ length: current.tens }, (_, i) => i) as i (i)}
 							<span class="place-rod"></span>
@@ -208,7 +209,7 @@
 						{/each}
 					</div>
 				</div>
-				<div class="answers">
+				<div class="answers idle-pop" style="--mn-d:120ms">
 					{#each current.options as option (option)}
 						<button
 							class="answer-btn"
@@ -222,6 +223,7 @@
 						</button>
 					{/each}
 				</div>
+				{/key}
 				<p class="feedback" class:good={feedback === 'correct'} class:retry={feedback === 'wrong'}>
 					{#if feedback === 'correct'}{m.correctTap()}{:else if feedback === 'wrong'}{m.tryAgain()}{/if}
 				</p>
