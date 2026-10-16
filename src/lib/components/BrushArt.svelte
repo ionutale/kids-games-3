@@ -9,7 +9,7 @@
 	let { step, label = '' }: Props = $props();
 </script>
 
-<svg viewBox="0 0 64 64" role="img" aria-label={label}>
+<svg class="idle-wiggle" viewBox="0 0 64 64" role="img" aria-label={label}>
 	{#if step === 'wet'}
 		<rect x="30" y="8" width="6" height="16" rx="3" fill="#d7e6f2" />
 		<path

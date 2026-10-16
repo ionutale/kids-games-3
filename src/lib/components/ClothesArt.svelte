@@ -1,17 +1,23 @@
 <script lang="ts">
 	import type { ClothesId } from '#lib/dress-weather.js';
 
-	let { clothes }: { clothes: ClothesId } = $props();
+	interface Props {
+		clothes: ClothesId;
+		/** Stagger index for the idle motion phase. */
+		i?: number;
+	}
+
+	let { clothes, i = 0 }: Props = $props();
 </script>
 
 {#if clothes === 'hat'}
-	<svg class="clothes-art" viewBox="0 0 80 80" role="img" aria-hidden="true">
+	<svg class="clothes-art idle-sway" style="--mn-d:{(i % 6) * 140}ms" viewBox="0 0 80 80" role="img" aria-hidden="true">
 		<ellipse cx="40" cy="52" rx="28" ry="8" fill="#e07070" />
 		<path d="M22,52 Q22,28 40,24 Q58,28 58,52" fill="#e07070" stroke="#c04040" stroke-width="3" />
 		<rect x="18" y="48" width="44" height="8" rx="3" fill="#c04040" />
 	</svg>
 {:else if clothes === 'coat'}
-	<svg class="clothes-art" viewBox="0 0 80 80" role="img" aria-hidden="true">
+	<svg class="clothes-art idle-sway" style="--mn-d:{(i % 6) * 140}ms" viewBox="0 0 80 80" role="img" aria-hidden="true">
 		<path
 			d="M24,22 L18,68 Q40,74 62,68 L56,22 Q40,28 24,22 Z"
 			fill="#4a7fc0"
@@ -23,7 +29,7 @@
 		<circle cx="34" cy="52" r="2.5" fill="#f5c84c" />
 	</svg>
 {:else if clothes === 'raincoat'}
-	<svg class="clothes-art" viewBox="0 0 80 80" role="img" aria-hidden="true">
+	<svg class="clothes-art idle-sway" style="--mn-d:{(i % 6) * 140}ms" viewBox="0 0 80 80" role="img" aria-hidden="true">
 		<path
 			d="M24,24 L18,66 Q40,72 62,66 L56,24 Q40,30 24,24 Z"
 			fill="#6fbf73"
@@ -34,7 +40,7 @@
 		<circle cx="46" cy="44" r="2.5" fill="#f5c84c" />
 	</svg>
 {:else if clothes === 'boots'}
-	<svg class="clothes-art" viewBox="0 0 80 80" role="img" aria-hidden="true">
+	<svg class="clothes-art idle-sway" style="--mn-d:{(i % 6) * 140}ms" viewBox="0 0 80 80" role="img" aria-hidden="true">
 		<path
 			d="M22,28 L22,58 Q22,66 36,66 L48,66 L48,54 L34,54 L34,28 Z"
 			fill="#8b5a3c"
@@ -49,7 +55,7 @@
 		/>
 	</svg>
 {:else if clothes === 'scarf'}
-	<svg class="clothes-art" viewBox="0 0 80 80" role="img" aria-hidden="true">
+	<svg class="clothes-art idle-sway" style="--mn-d:{(i % 6) * 140}ms" viewBox="0 0 80 80" role="img" aria-hidden="true">
 		<path
 			d="M18,36 Q40,22 62,36 Q54,48 40,46 Q26,48 18,36 Z"
 			fill="#e07070"
@@ -60,7 +66,7 @@
 		<path d="M54,44 L66,68" stroke="#f5c84c" stroke-width="6" stroke-linecap="round" />
 	</svg>
 {:else}
-	<svg class="clothes-art" viewBox="0 0 80 80" role="img" aria-hidden="true">
+	<svg class="clothes-art idle-sway" style="--mn-d:{(i % 6) * 140}ms" viewBox="0 0 80 80" role="img" aria-hidden="true">
 		<ellipse cx="26" cy="40" rx="12" ry="10" fill="#4a2c2a" />
 		<ellipse cx="54" cy="40" rx="12" ry="10" fill="#4a2c2a" />
 		<path d="M34,40 L46,40" stroke="#4a2c2a" stroke-width="4" />

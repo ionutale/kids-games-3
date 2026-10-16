@@ -12,15 +12,17 @@
 				<rect {x} y="70" width="10" height="30" fill="#fff" />
 			{/each}
 		{/if}
-		<circle cx={scene === 'crosswalk' ? 50 : 60} cy="48" r="10" fill="#f4d6a8" />
-		<rect x={scene === 'crosswalk' ? 42 : 52} y="58" width="16" height="18" rx="3" fill="#7ec8e8" />
+		<g class="idle-bob">
+			<circle cx={scene === 'crosswalk' ? 50 : 60} cy="48" r="10" fill="#f4d6a8" />
+			<rect x={scene === 'crosswalk' ? 42 : 52} y="58" width="16" height="18" rx="3" fill="#7ec8e8" />
+		</g>
 		{#if scene === 'mid-street'}
 			<rect x="10" y="78" width="22" height="12" rx="3" fill="#e07070" />
 		{/if}
 	{:else if scene === 'helmet' || scene === 'no-helmet'}
 		<circle cx="56" cy="40" r="10" fill="#f4d6a8" />
 		{#if scene === 'helmet'}
-			<path d="M44,38 Q56,22 68,38" fill="#4a90d0" />
+			<path class="idle-pulse" d="M44,38 Q56,22 68,38" fill="#4a90d0" />
 		{/if}
 		<ellipse cx="56" cy="72" rx="22" ry="8" fill="#5a5a5a" />
 		<circle cx="40" cy="72" r="8" fill="#333" /><circle cx="72" cy="72" r="8" fill="#333" />

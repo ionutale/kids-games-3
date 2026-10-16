@@ -50,14 +50,14 @@
 		<circle cx="19.5" cy="57" r="0.7" fill="#4a2c2a" />
 		<path d="M16,59.5 L20,59.5" stroke="#ef8c3b" stroke-width="1.2" stroke-linecap="round" />
 	{:else if season === 'summer'}
-		<circle cx="74" cy="20" r="12" fill="#f2c230" />
+		<circle class="idle-pulse" cx="74" cy="20" r="12" fill="#f2c230" />
 	{:else if season === 'spring'}
-		<circle cx="74" cy="20" r="10" fill="#f2c230" />
+		<circle class="idle-pulse" cx="74" cy="20" r="10" fill="#f2c230" />
 		<circle cx="16" cy="72" r="3" fill="#f4a3c0" />
 		<circle cx="28" cy="76" r="2.5" fill="#ef8c3b" />
 		<circle cx="40" cy="72" r="3" fill="#9b7ed9" />
 	{:else}
-		<circle cx="74" cy="22" r="9" fill="#f0a04b" />
+		<circle class="idle-pulse" cx="74" cy="22" r="9" fill="#f0a04b" />
 		<path d="M12,58 Q20,50 28,58" stroke="#c45c26" stroke-width="2" fill="none" />
 		<path d="M34,56 Q42,48 50,56" stroke="#e07a2f" stroke-width="2" fill="none" />
 	{/if}
@@ -66,11 +66,12 @@
 	<rect x="44" y="48" width="6" height="22" rx="2" fill="#8a5a3b" />
 	{#if season === 'winter'}
 		<path
+			class="idle-sway"
 			d="M47,50 L36,38 L42,38 L33,28 L41,28 L47,18 L53,28 L61,28 L52,38 L58,38 Z"
 			fill="#9aa7b5"
 		/>
 	{:else}
-		<ellipse cx="47" cy="40" rx="18" ry="16" fill={leaves} />
+		<ellipse class="idle-sway" cx="47" cy="40" rx="18" ry="16" fill={leaves} />
 		{#if season === 'spring'}
 			<circle cx="36" cy="36" r="3" fill="#f4a3c0" />
 			<circle cx="52" cy="32" r="2.8" fill="#ffd0e0" />

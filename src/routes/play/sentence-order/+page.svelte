@@ -27,7 +27,7 @@
 	<h2 style="margin: 0; font-size: 2rem;">{m.sentord_name()}</h2>
 	<p style="margin: 0.25rem 0 0; color: var(--ink-soft);">{m.chooseLevel()}</p>
 	<ol class="level-path">
-		{#each SENTENCE_ORDER_LEVELS as entry (entry.level)}
+		{#each SENTENCE_ORDER_LEVELS as entry, i (entry.level)}
 			{@const open = isLevelOpen(cleared, entry.level)}
 			<li>
 				<a
@@ -43,7 +43,7 @@
 					{/if}
 					{#if open}
 						<span class="sentord-thumb" aria-hidden="true"
-							><SentenceOrderArt story="wash" step={0} /></span
+							><SentenceOrderArt story="wash" step={0} i={i} /></span
 						>
 					{:else}
 						<span class="lock" aria-hidden="true">🔒</span>

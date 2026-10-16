@@ -202,7 +202,7 @@
 			</div>
 			{#if current}
 				<div class="answers place-answers">
-					{#each current.options as option (option)}
+					{#each current.options as option, i (option)}
 						<button
 							class="answer-btn place-btn"
 							class:glow={stage === 2 && option === current.answer}
@@ -213,7 +213,7 @@
 							onclick={() => answer(option)}
 						>
 							<span class="place-thumb big" aria-hidden="true">
-								<PlaceArt place={option} />
+								<PlaceArt place={option} i={i} />
 							</span>
 							<span class="place-label">{labelFor(option)}</span>
 						</button>

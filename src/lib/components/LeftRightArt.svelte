@@ -30,6 +30,7 @@
 
 	{#if cue === 'arrow'}
 		<path
+			class="lr-cue {side}"
 			d={arrowPath}
 			fill="none"
 			stroke="#3d8fd1"
@@ -48,16 +49,49 @@
 			fill={subtle ? '#d6ebf8' : '#b8dff5'}
 		/>
 		{#if side === 'left'}
-			<circle cx={subtle ? 30 : 30} cy="48" r={subtle ? 9 : 12} fill="#e85d4c" />
-			<ellipse cx={subtle ? 30 : 30} cy={subtle ? 38 : 35} rx="4" ry="3" fill="#5da85f" />
+			<g class="idle-bob">
+				<circle cx={subtle ? 30 : 30} cy="48" r={subtle ? 9 : 12} fill="#e85d4c" />
+				<ellipse cx={subtle ? 30 : 30} cy={subtle ? 38 : 35} rx="4" ry="3" fill="#5da85f" />
+			</g>
 		{:else}
-			<circle cx={subtle ? 66 : 66} cy="48" r={subtle ? 9 : 12} fill="#e85d4c" />
-			<ellipse cx={subtle ? 66 : 66} cy={subtle ? 38 : 35} rx="4" ry="3" fill="#5da85f" />
+			<g class="idle-bob">
+				<circle cx={subtle ? 66 : 66} cy="48" r={subtle ? 9 : 12} fill="#e85d4c" />
+				<ellipse cx={subtle ? 66 : 66} cy={subtle ? 38 : 35} rx="4" ry="3" fill="#5da85f" />
+			</g>
 		{/if}
 	{/if}
 </svg>
 
 <style>
+	.lr-cue.left {
+		animation: lr-nudge-left 1.6s ease-in-out infinite;
+	}
+	.lr-cue.right {
+		animation: lr-nudge-right 1.6s ease-in-out infinite;
+	}
+	@keyframes lr-nudge-left {
+		0%,
+		100% {
+			transform: translateX(0);
+		}
+		50% {
+			transform: translateX(-4px);
+		}
+	}
+	@keyframes lr-nudge-right {
+		0%,
+		100% {
+			transform: translateX(0);
+		}
+		50% {
+			transform: translateX(4px);
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.lr-cue {
+			animation: none;
+		}
+	}
 	.subtle {
 		opacity: 0.92;
 	}

@@ -1,4 +1,4 @@
-<svg class="body-art" viewBox="0 0 120 180" role="img" aria-hidden="true">
+<svg class="body-art idle-bob" viewBox="0 0 120 180" role="img" aria-hidden="true">
 	<rect x="38" y="118" width="14" height="42" rx="7" fill="#7ec8e8" />
 	<rect x="68" y="118" width="14" height="42" rx="7" fill="#7ec8e8" />
 	<ellipse cx="60" cy="95" rx="28" ry="32" fill="#fffdf7" stroke="#ead9bd" stroke-width="3" />

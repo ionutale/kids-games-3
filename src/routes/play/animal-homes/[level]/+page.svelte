@@ -237,7 +237,7 @@
 					{/if}
 				</div>
 				<div class="answers homes-answers">
-					{#each current.options as option (option)}
+					{#each current.options as option, i (option)}
 						<button
 							class="answer-btn homes-btn"
 							class:glow={stage === 2 && option === current.answer}
@@ -251,7 +251,7 @@
 								{#if isHomeId(option)}
 									<HomeArt home={option} />
 								{:else}
-									<HomeAnimalArt animal={option} />
+									<HomeAnimalArt animal={option} i={i} />
 								{/if}
 							</span>
 							<span class="homes-label">{choiceLabel(option)}</span>

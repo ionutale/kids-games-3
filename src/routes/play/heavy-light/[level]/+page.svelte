@@ -230,7 +230,7 @@
 					<ScaleArt tip={scaleTip} />
 				</div>
 				<div class="compare-row heavy-row">
-					{#each ['left', 'right'] as side (side)}
+					{#each ['left', 'right'] as side, i (side)}
 						{@const object = side === 'left' ? current.left : current.right}
 						<button
 							class="compare-pile heavy-pile"
@@ -242,7 +242,7 @@
 							onclick={() => answer(side as WeightSide)}
 						>
 							<span class="weight-thumb big" aria-hidden="true">
-								<WeightArt {object} />
+								<WeightArt {object} i={i} />
 							</span>
 							<span class="heavy-label">{labelFor(object)}</span>
 						</button>

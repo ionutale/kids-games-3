@@ -214,7 +214,7 @@
 					<span class="weather-thumb big"><WeatherArt weather={current.weather} /></span>
 				</div>
 				<div class="answers dress-answers">
-					{#each current.options as option (option)}
+					{#each current.options as option, i (option)}
 						<button
 							class="answer-btn dress-btn"
 							class:glow={stage === 2 && option === current.answer}
@@ -225,7 +225,7 @@
 							onclick={() => answer(option)}
 						>
 							<span class="clothes-thumb" aria-hidden="true">
-								<ClothesArt clothes={option} />
+								<ClothesArt clothes={option} i={i} />
 							</span>
 							<span class="dress-label">{clothesLabel(option)}</span>
 						</button>

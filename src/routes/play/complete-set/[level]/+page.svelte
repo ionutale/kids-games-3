@@ -193,13 +193,13 @@
 				<div class="set-row" class:hint-pulse={stage === 1} aria-hidden="true">
 					{#each current.shown as face, index (face + String(index))}
 						<span class="set-slot">
-							<span class="set-face"><SetFaceArt {face} /></span>
+							<span class="set-face"><SetFaceArt {face} i={index} /></span>
 						</span>
 					{/each}
 					<span class="set-slot empty">?</span>
 				</div>
 				<div class="answers set-answers">
-					{#each current.options as option (option)}
+					{#each current.options as option, i (option)}
 						<button
 							class="answer-btn set-btn"
 							class:glow={stage === 2 && option === current.answer}
@@ -208,7 +208,7 @@
 							disabled={feedback === 'correct'}
 							onclick={() => answer(option)}
 						>
-							<span class="set-face" aria-hidden="true"><SetFaceArt face={option} /></span>
+							<span class="set-face" aria-hidden="true"><SetFaceArt face={option} i={i} /></span>
 						</button>
 					{/each}
 				</div>

@@ -19,13 +19,13 @@
 					: '--tx:0'}
 	>
 		{#if item === 'newspaper' || item === 'cardboard'}
-			<svg viewBox="0 0 40 40"><rect x="8" y="6" width="24" height="28" rx="2" fill="#f5f0e0" stroke="#c4b896" stroke-width="2" /><path d="M12,14 H28 M12,20 H24 M12,26 H26" stroke="#a09078" stroke-width="2" /></svg>
+			<svg class="idle-bob" viewBox="0 0 40 40"><rect x="8" y="6" width="24" height="28" rx="2" fill="#f5f0e0" stroke="#c4b896" stroke-width="2" /><path d="M12,14 H28 M12,20 H24 M12,26 H26" stroke="#a09078" stroke-width="2" /></svg>
 		{:else if item === 'bottle' || item === 'cup'}
-			<svg viewBox="0 0 40 40"><rect x="14" y="8" width="12" height="8" fill="#7ec8e8" /><rect x="12" y="16" width="16" height="18" rx="3" fill="#5aa0d0" /></svg>
+			<svg class="idle-bob" viewBox="0 0 40 40"><rect x="14" y="8" width="12" height="8" fill="#7ec8e8" /><rect x="12" y="16" width="16" height="18" rx="3" fill="#5aa0d0" /></svg>
 		{:else if item === 'banana'}
-			<svg viewBox="0 0 40 40"><path d="M10,28 Q20,8 32,22 Q22,30 10,28 Z" fill="#f5c84c" stroke="#e0a820" stroke-width="2" /></svg>
+			<svg class="idle-bob" viewBox="0 0 40 40"><path d="M10,28 Q20,8 32,22 Q22,30 10,28 Z" fill="#f5c84c" stroke="#e0a820" stroke-width="2" /></svg>
 		{:else}
-			<svg viewBox="0 0 40 40"><path d="M8,28 Q20,8 32,28 Z" fill="#e07070" opacity="0.85" /><path d="M12,28 H28" stroke="#c04040" stroke-width="2" /></svg>
+			<svg class="idle-bob" viewBox="0 0 40 40"><path d="M8,28 Q20,8 32,28 Z" fill="#e07070" opacity="0.85" /><path d="M12,28 H28" stroke="#c04040" stroke-width="2" /></svg>
 		{/if}
 	</div>
 	<div class="recycle-bins">

@@ -210,7 +210,7 @@
 			</div>
 			{#if current}
 				<div class="answers healthy-answers">
-					{#each current.options as option (option)}
+					{#each current.options as option, i (option)}
 						<button
 							class="answer-btn food-btn"
 							class:glow={stage === 2 && option === current.answer}
@@ -221,7 +221,7 @@
 							onclick={() => answer(option)}
 						>
 							<span class="food-thumb big" aria-hidden="true">
-								<FoodArt food={option} />
+								<FoodArt food={option} i={i} />
 							</span>
 							<span class="food-label">{labelFor(option)}</span>
 						</button>

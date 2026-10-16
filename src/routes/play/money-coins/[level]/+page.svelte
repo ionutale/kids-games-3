@@ -208,7 +208,7 @@
 					{/if}
 				</div>
 				<div class="answers money-answers">
-					{#each current.options as option (option)}
+					{#each current.options as option, i (option)}
 						<button
 							class="answer-btn money-btn"
 							class:glow={stage === 2 && option === current.answer}
@@ -221,7 +221,7 @@
 							{#if current.mode === 'coin-to-value'}
 								<span class="money-opt-num">{option}</span>
 							{:else}
-								<span class="coin-thumb" aria-hidden="true"><CoinArt value={option} /></span>
+								<span class="coin-thumb" aria-hidden="true"><CoinArt value={option} i={i} /></span>
 							{/if}
 						</button>
 					{/each}

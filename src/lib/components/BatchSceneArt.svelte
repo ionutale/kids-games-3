@@ -15,15 +15,15 @@
 		<circle cx="60" cy="68" r="10" fill={scene.includes('green') ? '#40b060' : '#555'} class:pulse={scene.includes('green')} />
 	{:else if scene.includes('bowl') || scene.includes('glass') || scene.includes('box-full') || scene.includes('box-empty')}
 		{#if scene.includes('bowl')}
-			<path d="M28,48 H92 L84,84 H36 Z" fill="#d4a574" stroke="#a07850" stroke-width="3" />
+			<path class="bob" d="M28,48 H92 L84,84 H36 Z" fill="#d4a574" stroke="#a07850" stroke-width="3" />
 			{#if scene.includes('full')}<ellipse cx="60" cy="56" rx="26" ry="8" fill="#7ec8e8" class="bob" />{/if}
 		{:else if scene.includes('glass')}
-			<path d="M40,28 H80 L74,90 H46 Z" fill="#c8e4f4" stroke="#7aa0b8" stroke-width="3" />
+			<path class="bob" d="M40,28 H80 L74,90 H46 Z" fill="#c8e4f4" stroke="#7aa0b8" stroke-width="3" />
 			{#if scene.includes('full')}<path d="M48,48 H72 L70,86 H50 Z" fill="#5aa0d0" class="bob" />{/if}
 		{:else}
-			<rect x="30" y="36" width="60" height="48" rx="4" fill="#e8a04a" stroke="#c08030" stroke-width="3" />
+			<rect class="bob" x="30" y="36" width="60" height="48" rx="4" fill="#e8a04a" stroke="#c08030" stroke-width="3" />
 			{#if scene.includes('full')}
-				<circle cx="48" cy="54" r="8" fill="#e07070" /><circle cx="70" cy="60" r="7" fill="#7ec8e8" />
+				<circle class="bob" cx="48" cy="54" r="8" fill="#e07070" /><circle class="bob" cx="70" cy="60" r="7" fill="#7ec8e8" />
 			{/if}
 		{/if}
 	{:else if scene.includes('drum') || scene === 'siren' || scene === 'cheer'}
@@ -64,7 +64,7 @@
 			<path class="pull" d="M40,30 Q30,60 50,80 Q70,90 70,50 Q70,30 50,30" fill="none" stroke="#888" stroke-width="6" />
 			<rect x="78" y="40" width="18" height="40" rx="4" fill="#e04040" />
 		{:else}
-			<rect x="34" y="30" width="52" height="60" rx="4" fill="#d4b896" />
+			<rect class="bob" x="34" y="30" width="52" height="60" rx="4" fill="#d4b896" />
 		{/if}
 	{:else if scene.includes('water') || scene.includes('juice') || scene.includes('milk') || scene === 'ice-cube'}
 		{#if scene === 'ice-cube'}
@@ -93,15 +93,15 @@
 		<rect width="120" height="120" rx="18" fill={scene.includes('sun') || scene.includes('break') || scene.includes('brush') ? '#f0d080' : '#2a3048'} />
 		<circle class="core" cx="60" cy={scene.includes('set') || scene.includes('bed') || scene.includes('pajama') ? 70 : 40} r="18" fill="#f5c84c" />
 	{:else if scene.includes('clean') || scene.includes('messy') || scene.includes('muddy') || scene.includes('soap') || scene.includes('stain')}
-		<ellipse cx="60" cy="64" rx="34" ry="16" fill="#eee" stroke="#bbb" stroke-width="3" />
+		<ellipse cx="60" cy="64" rx="34" ry="16" fill="#eee" stroke="#bbb" stroke-width="3" class="bob" />
 		{#if scene.includes('messy') || scene.includes('muddy') || scene.includes('stain')}
 			<circle cx="48" cy="58" r="8" fill="#8a5a3a" /><circle cx="70" cy="66" r="6" fill="#6a4030" />
 		{:else}
 			<path class="shine" d="M40,56 Q60,48 80,56" stroke="#7ec8e8" stroke-width="4" fill="none" />
 		{/if}
 	{:else if scene.includes('share') || scene.includes('keep') || scene.includes('ask') || scene.includes('grab') || scene.includes('snatch') || scene.includes('raise') || scene.includes('please') || scene.includes('wait') || scene.includes('push-in') || scene.includes('take') || scene.includes('split') || scene.includes('pass') || scene.includes('hug') || scene.includes('own') || scene.includes('private') || scene.includes('hand-stop') || scene.includes('walk') || scene.includes('gate') || scene.includes('shoe') || scene.includes('gift') || scene.includes('book') || scene.includes('toy') || scene.includes('wood') || scene.includes('plastic') || scene.includes('paper') && !scene.includes('clip')}
-		<circle cx="40" cy="48" r="14" fill="#f4d6a8" />
-		<circle cx="80" cy="48" r="14" fill="#f4d6a8" />
+		<circle class="bob" cx="40" cy="48" r="14" fill="#f4d6a8" />
+		<circle class="bob" cx="80" cy="48" r="14" fill="#f4d6a8" />
 		{#if scene.includes('share') || scene.includes('split') || scene.includes('pass') || scene.includes('ask') || scene.includes('raise') || scene.includes('please') || scene.includes('wait')}
 			<path class="soft" d="M50,70 Q60,82 70,70" fill="none" stroke="#6fbf73" stroke-width="4" />
 		{:else}

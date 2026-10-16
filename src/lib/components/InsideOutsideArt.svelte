@@ -31,18 +31,24 @@
 		{/if}
 	{:else}
 		<rect width="120" height="120" rx="18" fill="#7ec8ff" />
-		<circle cx="92" cy="26" r="12" fill="#f5c84c" />
+		<circle class="idle-pulse" cx="92" cy="26" r="12" fill="#f5c84c" />
 		<rect x="0" y="78" width="120" height="42" fill="#5da85f" />
 		{#if scene === 'park'}
-			<rect x="28" y="50" width="8" height="28" fill="#8b5a3c" />
-			<circle cx="32" cy="42" r="16" fill="#6fbf73" />
-			<rect x="70" y="56" width="7" height="22" fill="#8b5a3c" />
-			<circle cx="73" cy="48" r="12" fill="#7fd18a" />
+			<g class="idle-sway">
+				<rect x="28" y="50" width="8" height="28" fill="#8b5a3c" />
+				<circle cx="32" cy="42" r="16" fill="#6fbf73" />
+			</g>
+			<g class="idle-sway">
+				<rect x="70" y="56" width="7" height="22" fill="#8b5a3c" />
+				<circle cx="73" cy="48" r="12" fill="#7fd18a" />
+			</g>
 		{:else if scene === 'yard'}
 			<rect x="18" y="48" width="36" height="30" rx="3" fill="#f4d6a8" stroke="#d4a574" stroke-width="2" />
 			<path d="M14,48 L36,30 L58,48" fill="#c45c3a" />
-			<rect x="72" y="54" width="8" height="24" fill="#8b5a3c" />
-			<circle cx="76" cy="46" r="14" fill="#6fbf73" />
+			<g class="idle-sway">
+				<rect x="72" y="54" width="8" height="24" fill="#8b5a3c" />
+				<circle cx="76" cy="46" r="14" fill="#6fbf73" />
+			</g>
 		{:else}
 			<rect x="28" y="62" width="64" height="8" rx="2" fill="#e0a040" />
 			<rect x="36" y="42" width="6" height="20" fill="#c08030" />

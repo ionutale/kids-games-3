@@ -5,9 +5,11 @@
 		shape: SideShape;
 		happy?: boolean;
 		label?: string;
+		/** Stagger index for the idle motion phase. */
+		i?: number;
 	}
 
-	let { shape, happy = false, label = '' }: Props = $props();
+	let { shape, happy = false, label = '', i = 0 }: Props = $props();
 
 	const mouth = $derived(happy ? 'M25,40 Q32,47 39,40' : 'M27,41 L37,41');
 
@@ -22,7 +24,13 @@
 	}
 </script>
 
-<svg viewBox="0 0 64 64" role="img" aria-label={label}>
+<svg
+	class="idle-wiggle"
+	viewBox="0 0 64 64"
+	role="img"
+	aria-label={label}
+	style="--mn-d:{(i % 6) * 140}ms"
+>
 	{#if shape === 'square'}
 		<rect x="14" y="14" width="36" height="36" rx="2" fill="#5aa9e6" />
 	{:else if shape === 'triangle'}

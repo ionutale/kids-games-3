@@ -1,9 +1,21 @@
 <script lang="ts">
 	import type { StoryId } from '#lib/sentence-order.js';
-	let { story, step }: { story: StoryId; step: number } = $props();
+	interface Props {
+		story: StoryId;
+		step: number;
+		/** Stagger index for the idle motion phase. */
+		i?: number;
+	}
+	let { story, step, i = 0 }: Props = $props();
 </script>
 
-<svg class="sentence-art" viewBox="0 0 80 80" role="img" aria-hidden="true">
+<svg
+	class="sentence-art idle-bob"
+	viewBox="0 0 80 80"
+	role="img"
+	aria-hidden="true"
+	style="--mn-d:{(i % 6) * 140}ms"
+>
 	<rect width="80" height="80" rx="12" fill="#f5efe4" />
 	{#if story === 'wash'}
 		{#if step === 0}

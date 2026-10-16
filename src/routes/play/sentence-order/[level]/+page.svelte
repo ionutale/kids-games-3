@@ -189,7 +189,7 @@
 							disabled={feedback === 'correct'}
 							onclick={() => answer(i)}
 						>
-							<SentenceOrderArt story={current.story} {step} />
+							<SentenceOrderArt story={current.story} {step} i={i} />
 						</button>
 					{/each}
 				</div>

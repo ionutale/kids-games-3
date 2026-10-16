@@ -53,9 +53,31 @@
 		y1="46"
 		x2="40"
 		y2="26"
+		class="minute-hand"
 		stroke="#e4574f"
 		stroke-width="2.2"
 		stroke-linecap="round"
 	/>
 	<circle cx="40" cy="46" r="3" fill="#4a2c2a" />
 </svg>
+
+<style>
+	.minute-hand {
+		transform-box: view-box;
+		transform-origin: 40px 46px;
+		animation: clock-tick 60s steps(60) infinite;
+	}
+	@keyframes clock-tick {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.minute-hand {
+			animation: none;
+		}
+	}
+</style>

@@ -13,7 +13,7 @@
 {:else if word === 'moon'}
 	<span class="first-sound-art"><DayNightArt scene="moon" /></span>
 {:else}
-	<svg class="first-sound-art" viewBox="0 0 80 80" role="img" aria-hidden="true">
+	<svg class="first-sound-art idle-sway" viewBox="0 0 80 80" role="img" aria-hidden="true">
 		<rect x="36" y="40" width="8" height="28" fill="#8b5a3c" />
 		<circle cx="40" cy="30" r="18" fill="#6fbf73" />
 	</svg>

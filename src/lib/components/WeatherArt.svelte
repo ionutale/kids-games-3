@@ -33,8 +33,9 @@
 	<rect x="0" y="64" width="96" height="32" fill={ground} />
 
 	{#if weather === 'sunny'}
-		<circle cx="68" cy="26" r="12" fill="#f2c230" />
-		<line x1="68" y1="8" x2="68" y2="2" stroke="#f2c230" stroke-width="3" stroke-linecap="round" />
+		<circle class="idle-pulse" cx="68" cy="26" r="12" fill="#f2c230" />
+		<g class="sun-rays">
+			<line x1="68" y1="8" x2="68" y2="2" stroke="#f2c230" stroke-width="3" stroke-linecap="round" />
 		<line
 			x1="68"
 			y1="44"
@@ -82,14 +83,19 @@
 			stroke-width="3"
 			stroke-linecap="round"
 		/>
+		</g>
 	{:else if weather === 'cloudy'}
-		<ellipse cx="38" cy="30" rx="16" ry="10" fill="#fff" />
-		<ellipse cx="52" cy="28" rx="14" ry="12" fill="#f4f7fa" />
-		<ellipse cx="64" cy="32" rx="12" ry="9" fill="#fff" />
+		<g class="idle-drift">
+			<ellipse cx="38" cy="30" rx="16" ry="10" fill="#fff" />
+			<ellipse cx="52" cy="28" rx="14" ry="12" fill="#f4f7fa" />
+			<ellipse cx="64" cy="32" rx="12" ry="9" fill="#fff" />
+		</g>
 	{:else if weather === 'rainy'}
-		<ellipse cx="38" cy="26" rx="16" ry="10" fill="#9aabbc" />
-		<ellipse cx="52" cy="24" rx="14" ry="12" fill="#8799ab" />
-		<ellipse cx="64" cy="28" rx="12" ry="9" fill="#9aabbc" />
+		<g class="idle-drift">
+			<ellipse cx="38" cy="26" rx="16" ry="10" fill="#9aabbc" />
+			<ellipse cx="52" cy="24" rx="14" ry="12" fill="#8799ab" />
+			<ellipse cx="64" cy="28" rx="12" ry="9" fill="#9aabbc" />
+		</g>
 		<line
 			x1="30"
 			y1="42"
@@ -154,9 +160,11 @@
 			stroke-linecap="round"
 		/>
 	{:else}
-		<ellipse cx="38" cy="26" rx="16" ry="10" fill="#dce6ef" />
-		<ellipse cx="52" cy="24" rx="14" ry="12" fill="#cfdceb" />
-		<ellipse cx="64" cy="28" rx="12" ry="9" fill="#dce6ef" />
+		<g class="idle-drift">
+			<ellipse cx="38" cy="26" rx="16" ry="10" fill="#dce6ef" />
+			<ellipse cx="52" cy="24" rx="14" ry="12" fill="#cfdceb" />
+			<ellipse cx="64" cy="28" rx="12" ry="9" fill="#dce6ef" />
+		</g>
 		<circle cx="30" cy="46" r="1.6" fill="#fff" />
 		<circle cx="42" cy="52" r="1.8" fill="#fff" />
 		<circle cx="54" cy="48" r="1.5" fill="#fff" />
@@ -177,3 +185,21 @@
 		<ellipse cx="74.5" cy="46" rx="11" ry="10" fill="#4f9a4a" />
 	{/if}
 </svg>
+
+<style>
+	.sun-rays {
+		transform-box: view-box;
+		transform-origin: 68px 26px;
+		animation: sun-rays-spin 40s linear infinite;
+	}
+	@keyframes sun-rays-spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.sun-rays {
+			animation: none;
+		}
+	}
+</style>

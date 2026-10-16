@@ -51,9 +51,9 @@
 						{#if entry.rounds[0] === 'size'}
 							<FruitArt fruit={entry.fruits[0]} i={i} />
 						{:else if entry.rounds[0] === 'sky'}
-							<OppositeArt sky="sun" />
+							<OppositeArt sky="sun" i={i} />
 						{:else if entry.rounds[0] === 'way'}
-							<OppositeArt way="up" />
+							<OppositeArt way="up" i={i} />
 						{:else}
 							<BunnyFace emotion="happy" i={i} />
 						{/if}
