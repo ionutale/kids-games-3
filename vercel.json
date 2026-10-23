@@ -2,9 +2,20 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "kids-games-3.vercel.app" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "kids-games-3.vercel.app"
+        }
+      ],
       "destination": "https://lumi.aiu-media.com/$1",
-      "statusCode": 301
+      "statusCode": 301,
+      "missing": [
+        {
+          "type": "header",
+          "key": "x-aiu-proxy"
+        }
+      ]
     }
   ]
 }
